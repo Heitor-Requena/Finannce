@@ -1,0 +1,255 @@
+create database finannce;
+
+use finannce;
+
+-- Estrutura da tabela `tb_administrador`
+CREATE TABLE `tb_administrador` (
+  ID_ADM int NOT NULL AUTO_INCREMENT,
+  NOME_ADM varchar(60) NOT NULL,
+  EMAIL_ADM varchar(80) NOT NULL,
+  SENHA_ADM char(8) NOT NULL,
+  CPF_ADM char(14) NOT NULL,
+  RG_ADM CHAR(12) NOT NULL,
+  DATA_ENTRADA datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`ID_ADM`),
+  UNIQUE KEY `EMAIL_ADM` (`EMAIL_ADM`));
+
+INSERT INTO tb_administrador (NOME_ADM, EMAIL_ADM, SENHA_ADM, CPF_ADM, RG_ADM)
+VALUES
+('Paulo Souza', 'adm1@finannce.com', '12345678', '000.000.000-00', '00.000.000.0'),
+('Maria Silva', 'adm2@finannce.com', '23456789', '111.111.111-11', '11.111.111.1'),
+('Carlos Santos', 'adm3@finannce.com', '34567890', '222.222.222-22', '22.222.222.2'),
+('Ana Oliveira', 'adm4@finannce.com', '45678901', '333.333.333-33', '33.333.333.3'),
+('Fernando Pereira', 'adm5@finannce.com', '56789012', '444.444.444-44', '44.444.444.4'),
+('Luiza Rodrigues', 'adm6@finannce.com', '67890123', '555.555.555-55', '55.555.555.5'),
+('Ricardo Mendes', 'adm7@finannce.com', '78901234', '666.666.666-66', '66.666.666.6'),
+('Camila Fernandes', 'adm8@finannce.com', '89012345', '777.777.777-77', '77.777.777.7'),
+('Mariana Lima', 'adm9@finannce.com', '90123456', '888.888.888-88', '88.888.888.8'),
+('Pedro Gomes', 'adm10@finannce.com', '01234567', '999.999.999-99', '99.999.999.9'),
+('Luisa Almeida', 'adm11@finannce.com', '12345678', '123.123.123-12', '12.123.123.1'),
+('João Carvalho', 'adm12@finannce.com', '23456789', '234.234.234-23', '23.234.234.2'),
+('Eduardo Sousa', 'adm13@finannce.com', '34567890', '345.345.345-34', '34.345.345.3'),
+('Carolina Santos', 'adm14@finannce.com', '45678901', '456.456.456-45', '45.456.456.4'),
+('Beatriz Fernandes', 'adm15@finannce.com', '56789012', '567.567.567-56', '56.567.567.5'),
+('Daniel Pereira', 'adm16@finannce.com', '67890123', '678.678.678-67', '67.678.678.6'),
+('Juliana Lima', 'adm17@finannce.com', '78901234', '789.789.789-78', '78.789.789.7'),
+('Gustavo Mendes', 'adm18@finannce.com', '89012345', '890.890.890-89', '89.890.890.8'),
+('Amanda Silva', 'adm19@finannce.com', '90123456', '901.901.901-90', '90.901.901.9'),
+('Bruno Santos', 'adm20@finannce.com', '01234567', '012.012.012-01', '01.012.012.0');
+
+select * from tb_administrador;
+
+-- Estrutura da tabela `tb_artigo`
+CREATE TABLE  `tb_artigo` (
+  `ID_ARTIGO` int NOT NULL AUTO_INCREMENT,
+  `DATA_PUBLICACAO` datetime DEFAULT CURRENT_TIMESTAMP,
+  `TITULO_ARTIGO` varchar(200) NOT NULL,
+  `ARTIGO` text NOT NULL,
+  `AUTOR_ARTIGO` varchar(60) NOT NULL,
+  PRIMARY KEY (`ID_ARTIGO`),
+  UNIQUE KEY `TITULO_ARTIGO` (`TITULO_ARTIGO`)
+);
+INSERT INTO tb_artigo (TITULO_ARTIGO, ARTIGO, AUTOR_ARTIGO)
+VALUES
+('Gestão Financeira Eficiente', 'Este artigo aborda estratégias para uma gestão financeira eficiente em empresas de todos os tamanhos. Exploraremos práticas recomendadas e dicas para otimizar o fluxo de caixa.', 'João Silva'),
+('Investimentos Inteligentes', 'Descubra como fazer investimentos inteligentes e diversificados para alcançar seus objetivos financeiros de longo prazo. Este artigo apresenta conceitos-chave e opções de investimento.', 'Maria Santos'),
+('Orçamento Familiar: Economize e Invista', 'Aprenda a criar um orçamento familiar sólido que o ajudará a economizar dinheiro e investir para o futuro. Vamos compartilhar dicas práticas para o gerenciamento financeiro pessoal.', 'Carlos Oliveira'),
+('Como Controlar Suas Finanças Pessoais de Forma Fácil','Administrar suas finanças pessoais é uma habilidade essencial para alcançar estabilidade financeira e paz de espírito. No entanto, muitas pessoas consideram esse processo complexo e intimidante. Felizmente, com algumas estratégias simples e práticas, é possível controlar suas finanças de maneira fácil e eficaz. Neste artigo, exploraremos dicas que podem ajudá-lo a tomar as rédeas de suas finanças pessoais sem complicações.
+															Crie um Orçamento Realista:
+															O primeiro passo para controlar suas finanças pessoais é criar um orçamento realista. Anote todas as suas fontes de renda e despesas mensais. Isso inclui gastos fixos como aluguel, hipoteca, contas de serviços públicos, bem como gastos variáveis como alimentação, entretenimento e vestuário. Use ferramentas como a nossa área de controle financeiro para ajudar a categorizar e acompanhar seus gastos.
+															Estabeleça Metas Financeiras Claras:
+															Definir metas financeiras é crucial para manter o foco e a motivação. Determine objetivos de curto prazo, como construir uma reserva de emergência, e metas de longo prazo, como comprar uma casa ou se aposentar confortavelmente. Ter metas claras em mente o ajudará a direcionar seus esforços financeiros de maneira mais eficaz.
+															Pague a Si Mesmo Primeiro:
+															Ao receber sua renda, priorize economizar uma porção dela antes de qualquer outra despesa. Isso é conhecido como "pagar a si mesmo primeiro". Configure transferências automáticas para sua conta de poupança ou investimento assim que receber seu salário. Isso garante que você esteja construindo sua segurança financeira antes de gastar com outras coisas.
+															Evite Dívidas Desnecessárias
+															Dívidas podem rapidamente desequilibrar suas finanças. Evite usar cartões de crédito de maneira impulsiva e só recorra a empréstimos quando realmente necessário. Se você já possui dívidas, crie um plano de pagamento para eliminá-las gradualmente enquanto continua a manter suas despesas sob controle.
+															Acompanhe seus Gastos:
+															Mantenha o controle regular de seus gastos para identificar áreas onde você pode reduzir ou eliminar gastos desnecessários. Ver suas despesas detalhadas pode ser uma revelação surpreendente e ajudar a ajustar seu comportamento financeiro.
+															Automatize suas Finanças:
+															Automatizar pagamentos de contas e transferências para economias ou investimentos é uma maneira eficaz de garantir que você não se esqueça de cumprir suas obrigações financeiras. Isso também ajuda a evitar a tentação de gastar dinheiro que deveria ser reservado.
+															Financeiramente:
+															Aprender sobre finanças pessoais é um investimento valioso. Existem muitos recursos disponíveis, desde livros até cursos online, que podem ajudá-lo a entender conceitos como investimentos, impostos e planejamento de aposentadoria. Quanto mais você souber, mais capacitado se sentirá para tomar decisões financeiras informadas.
+															Reveja e Ajuste Regularmente:
+															As circunstâncias da vida mudam, e suas finanças também devem se adaptar a essas mudanças. Regularmente, reveja seu orçamento, suas metas e suas estratégias financeiras. Isso permitirá que você faça ajustes conforme necessário e continue no caminho certo. Em conclusão, controlar suas finanças pessoais não precisa ser uma tarefa assustadora. Com um plano bem estruturado, disciplina e educação financeira básica, você pode simplificar o processo e garantir um futuro financeiro mais estável e seguro. Comece com passos pequenos e vá construindo sua confiança ao longo do tempo - sua saúde financeira agradecerá!',
+	'Davidson Vitoriano'),
+('Como investir com sabedoria','Investir é uma maneira inteligente de fazer o dinheiro trabalhar para você, mas requer conhecimento e estratégia para alcançar resultados positivos. Aqui estão algumas dicas essenciais para investir com sabedoria:
+								Defina Objetivos Claros:
+								Antes de começar a investir, estabeleça objetivos claros. Determine se você está investindo para aposentadoria, comprar uma casa ou alcançar qualquer outro objetivo financeiro. Isso ajudará a moldar sua abordagem de investimento.
+								Conheça Seu Perfil de Risco:
+								Entenda sua tolerância ao risco. Investimentos têm diferentes níveis de risco e retorno potencial. Avalie quanta volatilidade você está disposto a aceitar e escolha investimentos que estejam alinhados com sua conforto.
+								Diversificação é Chave:
+								Diversificar seus investimentos é crucial. Não coloque todo o seu dinheiro em um único ativo, como ações de uma única empresa. Espalhe seus investimentos por diferentes classes de ativos, como ações, títulos e imóveis, para reduzir o risco.
+								Aprenda Antes de Investir:
+								Aprenda Antes de Investir:
+								Invista no Longo Prazo:
+								O investimento de sucesso requer paciência. Os melhores retornos geralmente vêm ao longo do tempo. Evite tomar decisões impulsivas com base em flutuações de curto prazo no mercado.
+								Evite Tentar Cronometrar o Mercado:
+								É difícil prever os movimentos do mercado consistentemente. Tentar cronometrar o mercado pode levar a decisões erradas e perdas desnecessárias. Em vez disso, mantenha uma abordagem consistente e disciplinada.
+								Esteja Preparado para Mudanças:
+								O mercado financeiro é dinâmico. Esteja pronto para ajustar sua carteira de investimentos conforme as condições mudam. Reavalie periodicamente seus investimentos para garantir que ainda estejam alinhados com seus objetivos.
+								Evite Investimentos Impulsivos:
+								Não deixe que emoções ditem suas decisões de investimento. Investir com base em dicas quentes ou notícias do momento pode levar a resultados desfavoráveis. Mantenha-se focado em sua estratégia de longo prazo.
+								Acompanhe e Reavalie Regularmente:
+								Mantenha um olho constante em seus investimentos. Verifique seu progresso regularmente e faça ajustes conforme necessário. À medida que sua vida e metas mudam, sua estratégia de investimento também pode precisar mudar.',
+	'Davidson Vitoriano');
+
+select * from tb_artigo;
+
+-- Estrutura da tabela `tb_cliente`
+CREATE TABLE `tb_cliente` (
+  `ID_CLIENTE` int NOT NULL AUTO_INCREMENT,
+  `NOME_CLIENTE` varchar(60)  NOT NULL,
+  `EMAIL_CLIENTE` varchar(80) NOT NULL,
+  `SENHA_CLIENTE` char(8) NOT NULL,
+  `FONE_CLIENTE` char(15) NOT NULL,
+  `DATA_ENTRADA` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`ID_CLIENTE`),
+  UNIQUE KEY `EMAIL_CLIENTE` (`EMAIL_CLIENTE`)
+);
+
+INSERT INTO `tb_cliente` (`NOME_CLIENTE`, `EMAIL_CLIENTE`, `SENHA_CLIENTE`, `FONE_CLIENTE`)
+VALUES
+  ('Cliente 1', 'cliente1@example.com', 'senha123', '123-456-7890'),
+  ('Cliente 2', 'cliente2@example.com', 'senha456', '987-654-3210'),
+  ('Cliente 3', 'cliente3@example.com', 'senha789', '555-555-5555'),
+  ('Cliente 4', 'cliente4@example.com', 'senhaabc', '999-999-9999'),
+  ('Cliente 5', 'cliente5@example.com', 'senhaxyz', '111-222-3333'),
+  ('Cliente 6', 'cliente6@example.com', 'senhajkl', '444-555-6666'),
+  ('Cliente 7', 'cliente7@example.com', 'senha456', '777-888-9999'),
+  ('Cliente 8', 'cliente8@example.com', 'senha789', '333-444-5555'),
+  ('Cliente 9', 'cliente9@example.com', 'senha123', '222-333-4444'),
+  ('Cliente 10', 'cliente10@example.com', 'senhaabc', '666-777-8888'),
+  ('Cliente 11', 'cliente11@example.com', 'senhaxyz', '888-999-0000'),
+  ('Cliente 12', 'cliente12@example.com', 'senhajkl', '000-111-2222'),
+  ('Cliente 13', 'cliente13@example.com', 'senha123', '444-555-6666'),
+  ('Cliente 14', 'cliente14@example.com', 'senha456', '999-888-7777'),
+  ('Cliente 15', 'cliente15@example.com', 'senha789', '111-222-3333'),
+  ('Cliente 16', 'cliente16@example.com', 'senhaabc', '555-666-7777'),
+  ('Cliente 17', 'cliente17@example.com', 'senhaxyz', '222-333-4444'),
+  ('Cliente 18', 'cliente18@example.com', 'senhajkl', '666-777-8888'),
+  ('Cliente 19', 'cliente19@example.com', 'senha123', '777-888-9999'),
+  ('Cliente 20', 'cliente20@example.com', 'senha456', '888-999-0000');
+
+select * from tb_cliente;
+
+-- Estrutura da tabela `tb_consultoria`
+CREATE TABLE  `tb_consultoria`(
+  `ID_CONSULTORIA` int NOT NULL AUTO_INCREMENT,
+  `ID_CLIENTE` int NOT NULL,
+  `ID_CONSULTOR` int NOT NULL,
+  `DATA_CONSULTORIA` date NOT NULL,
+  `AVALIACAO_CONSULTORIA` int DEFAULT NULL,
+  PRIMARY KEY (`ID_CONSULTORIA`),
+  KEY `ID_CLIENTE` (`ID_CLIENTE`),
+  KEY `ID_CONSULTOR` (`ID_CONSULTOR`)
+);
+select * from tb_consultoria;
+
+-- Estrutura da tabela `tb_consultor`
+
+CREATE TABLE `tb_consultor`(
+  `ID_CONSULTOR` int NOT NULL AUTO_INCREMENT,
+  `NOME_CONSULTOR` varchar(60) NOT NULL,
+  `EMAIL_CONSULTOR` varchar(80) NOT NULL,
+  `SENHA_CONSULTOR` char(8) NOT NULL,
+  `DATA_ENTRADA` datetime DEFAULT CURRENT_TIMESTAMP,
+  `AVALIAÇÃO_CONSULTOR` char(2) NULL,
+  `DESCRICAO_CONSULTOR` text,
+  PRIMARY KEY (`ID_CONSULTOR`),
+  UNIQUE KEY `EMAIL_CONSULTOR` (`EMAIL_CONSULTOR`));
+INSERT INTO tb_consultor (NOME_CONSULTOR, EMAIL_CONSULTOR, SENHA_CONSULTOR)
+VALUES
+  ('João Silva', 'consultor2@x.com', '5678'),
+  ('Maria Santos', 'consultor3@x.com', 'abcd'),
+  ('Pedro Oliveira', 'consultor4@x.com', 'efgh'),
+  ('Ana Pereira', 'consultor5@x.com', 'ijkl'),
+  ('Carlos Ferreira', 'consultor6@x.com', 'mnop'),
+  ('Marta Teixeira', 'consultor7@x.com', 'qrst'),
+  ('Ricardo Santos', 'consultor8@x.com', 'uvwx'),
+  ('Isabel Rodrigues', 'consultor9@x.com', 'yz01'),
+  ('Fernando Alves', 'consultor10@x.com', '2345'),
+  ('Sofia Pereira', 'consultor11@x.com', '6789'),
+  ('Manuel Silva', 'consultor12@x.com', 'abcd'),
+  ('Carla Sousa', 'consultor13@x.com', 'efgh'),
+  ('António Santos', 'consultor14@x.com', 'ijkl'),
+  ('Lúcia Oliveira', 'consultor15@x.com', 'mnop'),
+  ('Gustavo Fernandes', 'consultor16@x.com', 'qrst'),
+  ('Teresa Almeida', 'consultor17@x.com', 'uvwx'),
+  ('Hugo Sousa', 'consultor18@x.com', 'yz01'),
+  ('Rita Silva', 'consultor19@x.com', '2345'),
+  ('Miguel Gonçalves', 'consultor20@x.com', '6789');
+  
+select * from tb_consultor;
+-- ------------------------------------------------------
+-- Estrutura da tabela `faq/sac`
+CREATE TABLE tb_perguntasFaq(
+	ID_PERGUNTA int NOT NULL AUTO_INCREMENT,
+	NOME_USUARIO varchar(60) NOT NULL,
+	EMAIL_USUARIO varchar(80) NOT NULL,
+	PERGUNTA varchar(280),
+	RESPOSTA varchar(280),
+  	PRIMARY KEY (ID_PERGUNTA)
+);
+INSERT INTO tb_perguntasFaq (NOME_USUARIO, EMAIL_USUARIO, PERGUNTA)
+VALUES
+    ('Usuário 1', 'usuario1@email.com', 'Qual é a importância de um orçamento financeiro?'),
+    ('Usuário 2', 'usuario2@email.com', 'Como criar um plano de pagamento de dívidas?'),
+    ('Usuário 3', 'usuario3@email.com', 'Quais são os principais indicadores de desempenho financeiro?'),
+    ('Usuário 4', 'usuario4@email.com', 'Como montar uma reserva de emergência?'),
+    ('Usuário 5', 'usuario5@email.com', 'Qual a diferença entre ativos e passivos?'),
+    ('Usuário 6', 'usuario6@email.com', 'Como calcular o ponto de equilíbrio financeiro?'),
+    ('Usuário 7', 'usuario7@email.com', 'O que é análise de fluxo de caixa?'),
+    ('Usuário 8', 'usuario8@email.com', 'Como evitar gastos supérfluos?'),
+    ('Usuário 9', 'usuario9@email.com', 'Quais são as vantagens de investir a longo prazo?'),
+    ('Usuário 10', 'usuario10@email.com', 'Como diversificar uma carteira de investimentos?');
+
+select * from tb_perguntasFaq;
+
+-- Estrutura da tabela `tb_cronograma`
+CREATE TABLE tb_cronograma(
+	NOME varchar(60) not null,
+	ATIVIDADE text not null,
+    SEMANA varchar(2) not null);
+select * from tb_cronograma;
+
+-- Inserindo dados para a Semana 1
+INSERT INTO tb_cronograma (NOME, ATIVIDADE, SEMANA) VALUES
+    ('Davidson', 'Reunião (discussão sobre o projeto, levantamento de requisitos) e escolha da nomenclatura.', 's1'),
+    ('Fernanda', 'Reunião (discussão sobre o projeto, levantamento de requisitos) e escolha da nomenclatura.', 's1'),
+    ('Heitor', 'Reunião (discussão sobre o projeto, levantamento de requisitos) e escolha da nomenclatura.', 's1'),
+    ('Jéssica', 'Reunião (discussão sobre o projeto, levantamento de requisitos) e escolha da nomenclatura.', 's1'),
+    ('João Santos', 'Reunião (discussão sobre o projeto, levantamento de requisitos) e escolha da nomenclatura.', 's1'),
+    ('Matheus Cerqueira', 'Reunião (discussão sobre o projeto, levantamento de requisitos) e escolha da nomenclatura.', 's1'),
+    ('Ranielly', 'Reunião (discussão sobre o projeto, levantamento de requisitos) e escolha da nomenclatura.', 's1');
+
+-- Inserindo dados para a Semana 2
+INSERT INTO tb_cronograma (NOME, ATIVIDADE, SEMANA) VALUES
+    ('Davidson', 'Construção do Banco de Dados', 's2'),
+    ('Fernanda', 'Construção do Banco de Dados', 's2'),
+    ('Heitor', 'Ajuda na programação do site', 's2'),
+    ('Jéssica', 'Criação da Página FAQ', 's2'),
+    ('João Santos', 'Criação Pag Login e Cadastro e Início Desenv. Homepage', 's2'),
+    ('Matheus Cerqueira', 'Criação da Logo', 's2'),
+    ('Ranielly', 'Organização e apresentação do site', 's2');
+
+-- Inserindo dados para a Semana 3
+INSERT INTO tb_cronograma (NOME, ATIVIDADE, SEMANA) VALUES
+    ('Davidson', 'Alterações no banco de dados / Criação da página sobre nós', 's3'),
+    ('Fernanda', 'Alterações no banco de dados / Criação da página minha área', 's3'),
+    ('Heitor', 'Programação do Back-End', 's3'),
+    ('Jéssica', 'Manutenção da página FAQ / Ajuste no Rodapé da página FAQ', 's3'),
+    ('João Santos', 'Criação da Home page', 's3'),
+    ('Matheus Cerqueira', 'Criação da Header e Home page', 's3'),
+    ('Ranielly', 'Início da programação da vitrine', 's3');
+
+-- Inserindo dados para a Semana 4
+INSERT INTO tb_cronograma (NOME, ATIVIDADE, SEMANA) VALUES
+    ('Davidson', 'Criação da página Artigos / Alterações no banco de dados', 's4'),
+    ('Fernanda', 'Atualização da documentação do TCC', 's4'),
+    ('Heitor', 'Programação do Back-End', 's4'),
+    ('Jéssica', 'Ajustes gerais no Site', 's4'),
+    ('João Santos', 'Finalização da Home page, login e cadastro. Função Listagem e documentação.', 's4'),
+    ('Matheus Cerqueira', 'Ajuste da Logo e Design da Home', 's4'),
+    ('Ranielly', 'Ajustes na vitrine e desenvolvimento do TCC (documentação)', 's4');
+
+select NOME,ATIVIDADE,SEMANA from tb_cronograma order by SEMANA;

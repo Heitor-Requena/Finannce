@@ -1,0 +1,133 @@
+:root {
+    --light-font-color: #EBF0F2;
+    --bg-color: #051225;
+}
+
+*{
+    /*border: 1px solid red;*/
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.btn-lgn i{
+    margin: 0;
+    margin-right: 7px;
+}
+
+main{
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container2{
+    min-width: 266px;
+    height: 400px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--light-font-color);
+
+    margin: 10px;
+    border: 1px solid;
+    border-radius: 15px;
+}
+
+.container2 h2 i{
+    margin-right: 10px;
+}
+
+.container2 form{
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container2 form .inpt-box{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container2 form .inpt-box i{
+    margin-right: -18px;
+}
+
+.container2 .fgtPasslink{
+    color: var(--light-font-color);
+    font-size: 0.85em;
+    text-decoration: none;
+    margin: 10px 10px;
+    font-style: italic;
+}
+
+.container2 form .inpt{
+    width: 70%;
+    height: 30px;
+    text-align: center;
+    outline: none;
+
+    background-color: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid var(--light-font-color);
+    color: var(--light-font-color);
+}
+
+.container2 form .inpt::placeholder{
+    color: var(--light-font-color);
+}
+
+.container2 form input[type="submit"]{
+    width: 35%;
+    padding: 4px;
+    border-radius: 10px;
+    background-color: var(--light-font-color);
+    color: var(--bg-color);
+    font-weight: bold;
+    border: 1px solid transparent;
+}
+
+.container2 form input[type="submit"]:hover{
+    cursor: pointer;
+    border: 1px solid var(--light-font-color);
+    color: var(--light-font-color);
+    background-color: var(--bg-color);
+    transition: ease-in-out 0.5s;
+}
+
+.container2 p{
+    margin: 0 17px;
+}
+
+.container2 .link-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.container2 .link-form a{
+    color: var(--light-font-color);
+}
+
+.container2 .link-form .a2{
+    text-decoration: none;
+}
+
+.container2 .link-form a i{
+    margin: 0;
+    margin-right: 7px;
+}

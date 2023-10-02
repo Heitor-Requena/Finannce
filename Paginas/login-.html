@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Css/style.css">
+    <link rel="stylesheet" href="../Css/Login.css">
+    <script src="../Js/menu.js"></script>
+    <title>Login</title>
+</head>
+<body>
+    
+
+    <header id="header">
+        <div class="container">
+            <div class="flex">
+                <a class="logo" href="../index.html"><img src="../Img/logo branca finannce.png"></a>
+                <nav class="nav">
+                    <button class="hamburger"></button>
+                    <ul class="nav-list">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="sobrenos.html">Sobre nós</a></li>
+                        <li><a href="faq.html">FAQ/SAQ</a></li>
+                        <li><a href="artigos.html">Artigos</a></li>
+                        <li><a href="../Paginas/Area-Consultor 1.6/area-consultor.html">Consultores</a></li>
+                    </ul>
+                </nav>
+                    
+            </div>
+        </div>
+
+    </header>
+
+    <div class="align">
+        <div class="container2" id="container">
+            <div class="topctn2">
+                <div id="div_Cliente">
+                    <div>
+                        <h2>Entrar Usuário</h2>
+                        <form action="../Php/AreaCliente/ControleLogin-Cliente.php" method="get">
+                            <label for="Email_Cliente"></label>
+                            <input type="email" name="Email_Cliente" id="Email_Cliente" placeholder="Email" class="inpt">
+                            <br>
+            
+                            <label for="Senha_Cliente"></label>
+                            <input type="password" name="Senha_Cliente" id="Senha_Cliente" placeholder="Senha" class="inpt">
+            
+                            <input type="submit" name="btn_EntrarCliente" id="btn_EntrarCliente" value="Entrar">
+                            <br>
+                        </form>
+                        <button onclick="RecuperarSenha_Cliente()" class="btn2">Esqueceu a senha?</button>
+                    </div>
+            
+            
+                    <div>
+                        <h2>Cadastro Usuário</h2>
+                        <form action="../Php/AreaCliente/ControleLogin-Cliente.php" method="get" id="">
+                            <label for="Nome_Cliente"></label>
+                            <input type="text" name="Nome_Cliente" id="Nome_Cliente" placeholder="Nome" class="inpt">
+                            <br>
+            
+                            <label for="EmailCadastro_Cliente"></label>
+                            <input type="email" name="EmailCadastro_Cliente" id="EmailCadastro_Cliente" placeholder="Email" class="inpt">
+                            <br>
+            
+                            <label for="SenhaCadastro_Cliente"></label>
+                            <input type="password" name="SenhaCadastro_Cliente" id="SenhaCadastro_Cliente" placeholder="Senha" class="inpt">
+                            <br>
+            
+                            <label for="Fone_Cliente"></label>
+                            <input type="tel" name="Fone_Cliente" id="Fone_Cliente" placeholder="Telefone" class="inpt">
+                            <br>
+            
+                            <input type="submit" name="btn_CadastrarCliente" id="btn_CadastrarCliente" value="Cadastrar">
+                        </form>
+                    </div>
+                </div>
+            
+                <div id="frm_SenhaCliente">
+                    <form action="../Php/AreaCliente/ControleLogin-Cliente.php" method="get" class="frmEsqSenha">
+                        <label for="EmailSenha_Cliente" class="inpt"></label>
+                        <input type="email" name="EmailSenha_Cliente" id="EmailSenha_Cliente" class="inpt2 inpt" placeholder="Email">
+                        <br>
+                        <br>
+                        <input type="submit" value="Pedir Senha" class="inpt3">
+                    </form>
+                </div>
+            
+                <div id="div_Consultor" class="frm">
+                    <div>
+                        <h2>Entrar Consultor</h2>
+                        <form action="../Php/AreaConsultor/ControleLogin-Consultor.php" method="get">
+                            <label for="Email_Consultor"></label>
+                            <input type="email" name="Email_Consultor" id="Email_Consultor" placeholder="Email" class="inpt">
+                            <br>
+            
+                            <label for="Senha_Consultor"></label>
+                            <input type="password" name="Senha_Consultor" id="Senha_Consultor" placeholder="Senha" class="inpt">
+                            <br>
+                            <br>
+            
+                            <input type="submit" name="btn_EntrarConsultor" id="btn_EntrarConsultor" value="Entrar">
+                        </form>
+                    </div>
+            
+                    <div>
+                        <h2>Cadastro Consultor</h2>
+                        <form action="../Php/AreaConsultor/ControleLogin-Consultor.php" method="get">
+                            <label for="Nome_Consultor"></label>
+                            <input type="text" name="Nome_Consultor" id="Nome_Consultor" placeholder="Nome" class="inpt">
+                            <br>
+            
+                            <label for="EmailCadastro_Consultor"></label>
+                            <input type="email" name="EmailCadastro_Consultor" id="EmailCadastro_Consultor" placeholder="Email" class="inpt">
+                            <br>
+            
+                            <label for="SenhaCadastro_Consultor"></label>
+                            <input type="password" name="SenhaCadastro_Consultor" id="SenhaCadastro_Consultor" placeholder="Senha" class="inpt">
+                            <br>
+                            <br>
+            
+                            <input type="submit" value="Cadastrar" id="btn_CadastrarConsultor" name="btn_CadastrarConsultor">
+                        </form>
+                    </div>
+                </div>
+            
+                <div id="div_Adm">
+                    <div>
+                        <h2>Entrar Adm</h2>
+                        <form action="../Php/AreaAdm/ControleLogin-Adm.php" method="get" id="frmDiv_Adm">
+                            <label for="Email_Adm"></label>
+                            <input type="email" name="Email_Adm" id="Email_Adm" maxlength="80" class="inpt" placeholder="Email">
+                            <br>
+            
+                            <label for="Senha_Adm"></label>
+                            <input type="password" name="Senha_Adm" id="Senha_Adm" maxlength="8" class="inpt" placeholder="Senha">
+                            <br>
+                            <br>
+            
+                            <input type="submit" name="btn_EntrarAdm" id="btn_EntrarAdm" value="Entrar" class="inpt">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <section class="btn">
+                <button id="" class="btn2" onclick="AparecerCliente()">Usuario</button>
+                <button id="" class="btn2" onclick="AparecerConsultor()">Colaborador</button>
+                <button id="" class="btn2" onclick="AparecerAdm()">Adm</button>
+            </section>
+        </div>
+    </div>
+    
+
+
+    <script>
+        var div_Cliente = document.getElementById("div_Cliente")
+        var div_Consultor = document.getElementById("div_Consultor")
+        var div_Adm = document.getElementById("div_Adm")
+        var frm_SenhaCliente = document.getElementById("frm_SenhaCliente")
+
+        function AparecerCliente(){
+            div_Cliente.style.display = "flex"
+            div_Consultor.style.display = "none"
+            div_Adm.style.display = "none"
+            frm_SenhaCliente.style.display = "none"
+        }
+
+        function AparecerConsultor(){
+            div_Cliente.style.display = "none"
+            div_Consultor.style.display = "flex"
+            div_Adm.style.display = "none"
+            frm_SenhaCliente.style.display = "none"
+        }
+
+        function AparecerAdm(){
+            div_Cliente.style.display = "none"
+            div_Consultor.style.display = "none"
+            div_Adm.style.display = "flex"
+            frm_SenhaCliente.style.display = "none"
+        }
+
+        function RecuperarSenha_Cliente(){
+            frm_SenhaCliente.style.display = "flex"
+            div_Cliente.style.display = "none"
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+body{
+    background-color: #051225;
+}
+
+a{
+    color: white;
+}
+
+#resposta-perguntas{
+    background-color: white;
+    max-width: 450px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin: auto;
+}
+
+#resposta-perguntas > div > h3{
+    padding-top: 5px;
+    text-align: center;
+}
+
+#resposta-perguntas > div > p{
+    padding-left: 20px;
+}
+
+.indentado{
+    margin: 0px 0px 0px 20px;
+    padding-bottom: 10px;
+}

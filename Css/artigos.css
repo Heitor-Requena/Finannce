@@ -1,0 +1,530 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+    
+   /* border: 1px solid red;*/
+}
+
+body {
+    overflow-x: hidden;
+    font-size: 16px;
+    background-color: #051225;
+}
+
+html {
+    height: 200vh;
+
+}
+
+.container {
+    width: 100%;
+    margin: auto;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header {
+    width: 100%;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: .5s;
+
+    z-index: 1;
+    padding-inline: 16px;
+}
+
+#header {
+    margin: 0;
+    padding: 0;
+}
+
+header.rolagem {
+    background-color: #051225;
+    padding: 20px 4%;
+}
+
+header.rolagem a,
+header.rolagem i {
+    color: #EBF0F2;
+}
+
+header i {
+    display: inline-block;
+    margin: 0 40px;
+}
+
+.nav {
+    max-width: 1280px;
+    height: 70px;
+    margin-inline: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;
+    list-style-type: none;
+}
+
+.nav-list li {
+    display: flex !important;
+    margin: 0 40px;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.nav-list li a {
+    color: #EBF0F2;
+    text-decoration: none;
+}
+
+.btn-lgn {
+    appearance: none;
+    background-color: transparent;
+    border: 0.125em solid #EBF0F2;
+    border-radius: 0.9375em;
+    box-sizing: border-box;
+    color: #EBF0F2;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    min-height: 3.75em;
+    min-width: 0;
+    outline: none;
+    padding: 1em 2.3em;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    will-change: transform;
+    margin: 0 10px;
+}
+
+.btn-lgn a {
+    text-decoration: none;
+    color: #EBF0F2;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+.btn-lgn:disabled {
+    pointer-events: none;
+}
+
+.btn-lgn:hover {
+    color: #051225;
+    background-color: #EBF0F2;
+    box-shadow: rgba(255, 255, 255, 0) 0 8px 15px;
+    transform: translateY(-2px);
+    font-weight: bolder;
+}
+
+.btn-lgn a:hover {
+    color: #051225;
+}
+
+.btn-lgn:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+.logo img {
+    width: 200px;
+}
+
+.imgbg {
+    width: 100%;
+    margin: auto;
+    position: relative;
+}
+
+.imgbg .centro {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #EBF0F2;
+}
+
+.imgbg .centro h1 {
+    font-size: 14em;
+    margin-bottom: -70px;
+}
+
+.imgbg .centro p {
+    font-size: 5em;
+}
+
+.imgbg img {
+    width: 100%;
+    min-width: 1920px;
+}
+
+.hamburger {
+    display: none;
+    border: none;
+    background: none;
+    border-top: 3px solid #fff;
+    cursor: pointer;
+}
+
+.hamburger::after,
+.hamburger::before {
+    content: " ";
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    margin-top: 5px;
+    position: relative;
+    transition: 0.3s;
+}
+
+@media (max-width: 750px) {
+    .hamburger {
+        display: block;
+        z-index: 1;
+    }
+
+    .nav-list {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: #051225;
+        clip-path: circle(100px at 90% -15%);
+        transition: 1s ease-out;
+
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        gap: 0;
+        pointer-events: none;
+    }
+
+    .nav-list a {
+        font-size: 24px;
+        opacity: 0;
+    }
+
+    .nav-list li:nth-child(1) a {
+        transition: 0.5s 0.2s;
+    }
+
+    .nav-list li:nth-child(2) a {
+        transition: 0.5s 0.4s;
+    }
+
+    .nav-list li:nth-child(3) a {
+        transition: 0.5s 0.6s;
+    }
+
+    /* estilos ativos */
+
+    .nav.active .nav-list {
+        clip-path: circle(1500px at 90% -15%);
+        pointer-events: all;
+    }
+
+    .nav.active .nav-list a {
+        opacity: 1;
+    }
+
+    .nav.active .hamburger {
+        position: fixed;
+        top: 26px;
+        right: 16px;
+        border-top-color: transparent;
+
+    }
+
+    .nav.active .hamburger::before {
+        transform: rotate(135deg);
+    }
+
+    .nav.active .hamburger::after {
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+
+
+}
+
+/* Estilos para a lista de artigos */
+.article-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.article-list article {
+    background-color: #ffffff;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    /* Tamanho padrão ocupando toda a largura */
+    max-width: 800px;
+    /* Definindo um tamanho máximo */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.article-list h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.article-list p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Estilos para o artigo individual */
+.article {
+    background-color: #ffffff;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    /* Tamanho padrão ocupando toda a largura */
+    max-width: 800px;
+    /* Definindo um tamanho máximo */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.article img {
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+.article h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.article h3 {
+    color: #333;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.article p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Estilos para informações do autor */
+.author-info {
+    margin-top: 30px;
+}
+
+.author-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.author-info p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.author-info span {
+    font-weight: bold;
+}
+
+/* Estilos para o rodapé */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #598392;
+    border-top: 2px solid #e0e0e0; /* Adicionando borda no topo */
+  }
+  
+  /* Estilos para a seção de links relacionados */
+  .related-links {
+    flex: 1; /* Ocupa o espaço disponível */
+  }
+  
+  .related-links h3 {
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .related-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .related-links li {
+    margin-bottom: 10px;
+  }
+  
+  .related-links a {
+    color: #ccc;
+    text-decoration: none;
+  }
+  
+  /* Estilos para a seção de comentários */
+  .comments {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Alinha no lado direito */
+    flex: 1; /* Ocupa o espaço disponível */
+    margin-right: 20px;
+  }
+  
+  .comments h3 {
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .comments p {
+    color: #fff;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+  
+  .comments textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+  }
+  
+  .comments button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .comments button:hover {
+    background-color: #555;
+  }
+
+/* Estilos para o botão "Curtir" com ícone */
+
+/* Estilos para os botões de curtir e comentar */
+.article-interactions {
+    display: flex;
+    gap: 10px; /* Espaço entre os botões */
+    align-items: center;
+  }
+  
+  .like-button,
+  .comment-button {
+    background-color: #eee;
+    color: #333;
+    border: none;
+    padding: 5px 10px; /* Tamanho menor */
+    border-radius: 3px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Espaço entre o ícone e o texto */
+    transition: background-color 0.3s ease;
+  }
+  
+  .like-button i,
+  .comment-button i {
+    font-size: 12px; /* Tamanho menor para o ícone */
+  }
+  
+  .like-button:hover,
+  .comment-button:hover {
+    background-color: #ddd;
+  }
+
+
+
+/* Estilos para a caixa de comentário */
+.comment-box {
+    display: none;
+    width: 100%; /* Define a largura da caixa de comentário igual ao bloco do artigo */
+    box-sizing: border-box; /* Inclui o padding e a borda no cálculo da largura */
+    padding: 20px; /* Adiciona um espaçamento interno para a caixa de comentário */
+    background-color: #f5f5f5; /* Adiciona um fundo de cor diferente */
+    text-align: center; /* Centraliza o conteúdo dentro da caixa de comentário */
+  }
+  
+  .comment-box textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    resize: none;
+    box-sizing: border-box;
+    margin: 10px 0; /* Adiciona espaçamento vertical para separar do botão */
+  }
+  
+  .comment-box button {
+    background-color: #598392;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .comment-box button:hover {
+    background-color: #3c6173;
+  }
+  
+  /* Ajuste responsivo */
+  @media screen and (max-width: 768px) {
+    .article-list article,
+    .article {
+      padding: 10px;
+      margin-bottom: 15px;
+    }
+  
+    .comment-box {
+      padding: 10px;
+    }
+  
+    .comment-box textarea {
+      height: 80px;
+    }
+  }
+  
+.article a{
+    text-decoration: none;
+    color: #051225;
+    font-weight: bolder;
+    font-size: 1.5em;
+}
