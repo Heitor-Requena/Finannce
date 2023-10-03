@@ -35,9 +35,7 @@ class Cls_LoginAdm{
             {
                 if($Comando->rowCount() == 1)
                 {
-                    session_start();
-                    $_SESSION["email"] = $this->Email_Adm;
-                    header('Location: indexAdm.php');
+                    $Retorno = $Comando->fetchALL(PDO::FETCH_OBJ);
                 }
             }
             else

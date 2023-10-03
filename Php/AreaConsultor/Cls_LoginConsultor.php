@@ -44,9 +44,7 @@
                 {
                     if($Comando->rowCount() == 1)
                     {
-                        session_start();
-                        $_SESSION["email"] = $this->Email_Consultor;
-                        header('Location: indexConsultor.php');
+                        $Retorno = $Comando->fetchALL(PDO::FETCH_OBJ);
                     }
                 }
                 else

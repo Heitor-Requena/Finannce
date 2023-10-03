@@ -1,6 +1,6 @@
 <?php
   session_start();
-  $Email = $_SESSION["email"];
+  $Nome = $_SESSION["nome"];
 ?>
 
 <!DOCTYPE html>
@@ -57,7 +57,7 @@
     </nav>
 
     <section id="section" style="margin-top: 100px;">
-        <h1 class="text-center align-middle mt-5">Seja bem vindo, <?php echo $Email?></h1>
+        <h1 class="text-center align-middle mt-5">Seja bem vindo, <?php echo $Nome?></h1>
     </section>
 
     <section id="result"></section>

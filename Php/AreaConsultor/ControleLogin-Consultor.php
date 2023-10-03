@@ -13,7 +13,16 @@ $login = new Cls_LoginConsultor();
 if(isset($_GET["btn_EntrarConsultor"])){
     $login->setEmail_Consultor($Email_Consultor);
     $login->setSenha_Consultor($Senha_Consultor);
-    echo $login->EntrarConsultor();
+
+    $Dados = $login->EntrarConsultor();
+    
+    foreach ($Dados as $Dd){
+        session_start();
+        $_SESSION["email"] = $Dd->EMAIL_ADM;
+        $_SESSION["nome"] = $Dd->NOME_ADM;
+        $_SESSION["id"] = $Dd->ID_ADM;
+        header('Location: indexConsultor.php');
+    }
 }
 
 if(isset($_GET["btn_CadastrarConsultor"])){
