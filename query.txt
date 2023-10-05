@@ -251,5 +251,37 @@ INSERT INTO tb_cronograma (NOME, ATIVIDADE, SEMANA) VALUES
     ('João Santos', 'Finalização da Home page, login e cadastro. Função Listagem e documentação.', 's4'),
     ('Matheus Cerqueira', 'Ajuste da Logo e Design da Home', 's4'),
     ('Ranielly', 'Ajustes na vitrine e desenvolvimento do TCC (documentação)', 's4');
+    
+-- Inserindo dados para a Semana 5
+INSERT INTO tb_cronograma (NOME, ATIVIDADE, SEMANA)
+VALUES 	('Davidson', 'Alteração e inclusão de novas tabelas no BD', 's5'),
+	('João Santos', 'Esboço da Área ADM', 's5');
+
+-- Inserindo dados para a Semana 6
+INSERT INTO tb_cronograma (NOME, ATIVIDADE, SEMANA)
+VALUES 	('Davidson', 'Alteração na estrutura do BD e atualização do Diagrama e do Dicionário de dados', 's6'),
+	('Fernanda', 'Inclusão de tabelas no banco de dados, desenvolvimento da documentação do TCC', 's6'),
+	('Heitor', 'Login', 's6'),
+	('Jéssica', 'Criação da pagina FAQ/SAC do novo layout', 's6'),
+	('João Santos', 'Criação da Área Adm', 's6'),
+	('Matheus Cerqueira', 'Reestruturação da Home', 's6'),
+	('Ranielly', 'Criação do Ciclo de Vida, alterações na vitrine, criação do perfil do consultor', 's6');
+
+-- Inserindo dados para a Semana 7
+INSERT INTO tb_cronograma (NOME, ATIVIDADE, SEMANA)
+VALUES 	('Davidson', 'Alteração na página Artigos e Tabela "Cliente" e "Consultor".', 's7'),
+	('Fernanda', 'Desenvolvimento do Perfil Consultor', 's7'),
+	('Heitor', 'Desenvolvimento da Área Adm', 's7'),
+	('João Santos', 'Desenvolvimento da Área Adm', 's7'),
+	('Matheus Cerqueira', 'Finalização dos Cards da Home', 's7'),
+	('Ranielly', 'Reunião, implementação do avaliador na vitrine, fluxograma e mapa do site', 's7');
+
+-- Inserindo dados para a Semana 8
+INSERT INTO tb_cronograma (NOME, ATIVIDADE, SEMANA)
+VALUES 	('Davidson', 'Home', 's8'),
+	('Heitor', 'Finalização da Área Adm', 's8'),
+	('João Santos', 'Finalização da Área Adm e Ajustes no layout do Login', 's8',
+	('Matheus Cerqueira', 'Carrossel e Ajustes na responsividade do site', 's8'),
+	('Ranielly','Documentacao', 's8');
 
 select NOME,ATIVIDADE,SEMANA from tb_cronograma order by SEMANA;

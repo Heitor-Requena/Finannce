@@ -11,23 +11,29 @@ function ConsultarCon(event){
     })
 
     .done(function(dadosPHP){
+        document.getElementById("result").innerHTML = "";
         if (dadosPHP.trim() === ""){
             console.log("Resposta vazia do servidor.");
         }
         else{
             var Consultores = JSON.parse(dadosPHP);
     
-            // CONSULTA EM BLOCO
-            var Bloco = '';
+            // CONSULTA EM Tabela
+            var Tabela = '';
+            Tabela += "<table class='table table-bordered table-striped table-dark ml-5'";
+
+            Tabela += "<tr><th scope='col' class='text-center'>ID</th><th scope='col' class='text-center'>Nome</th><th scope='col' class='text-center'>Email</th><th scope='col' class='text-center'>Data de Cadastro</th>"
             for (i=0; i<Consultores.length; i++){
-                Bloco += "<hr><p class='text-center m-0'><strong class='text-center m-0'>ID: </strong>"             +Consultores[i].ID_CONSULTOR     +  "</p><br>";
-                Bloco += "<p class='text-center m-0'><strong class='text-center m-0'>Nome: </strong>"               +Consultores[i].NOME_CONSULTOR   +  "</p><br>";
-                Bloco += "<p class='text-center m-0'><strong class='text-center m-0'>Email: </strong>"              +Consultores[i].EMAIL_CONSULTOR  +  "</p><br>";
-                Bloco += "<p class='text-center m-0'><strong class='text-center m-0'>Data de Cadastro: </strong>"   +Consultores[i].DATA_ENTRADA     +  "</p><br>";
+                Tabela += "<tr>";
+                    Tabela += "<td class='text-center align-middle'>" + Consultores[i].ID_CONSULTOR     +  "</td>";
+                    Tabela += "<td class='text-center align-middle'>" + Consultores[i].NOME_CONSULTOR   +  "</td>";
+                    Tabela += "<td class='text-center align-middle'>" + Consultores[i].EMAIL_CONSULTOR  +  "</td>";
+                    Tabela += "<td class='text-center align-middle'>" + Consultores[i].DATA_ENTRADA     +  "</td>";
+                Tabela+= "</tr>"
             }
-    
-            $("#result").html(Bloco);
-        }
+
+            $("#result").append(Tabela); 
+            }
     })
 
     .fail(function(){
@@ -35,7 +41,6 @@ function ConsultarCon(event){
     })
 
     return false;
-
 }
 
 // Listar Todos Consultores
@@ -51,30 +56,36 @@ function ListarCon(event){
     })
 
     .done(function(dadosPHP){
+        document.getElementById("result").innerHTML = "";
         if (dadosPHP.trim() === ""){
             console.log("Resposta vazia do servidor.");
         }
         else{
             var Consultores = JSON.parse(dadosPHP);
     
-            // CONSULTA EM BLOCO
-            var Bloco = '';
-            for (i=0; i<Consultores.length; i++){
-                Bloco += "<hr><p class='text-center m-0'><strong class='text-center m-0'>ID: </strong>"             +Consultores[i].ID_CONSULTOR     +  "</p><br>";
-                Bloco += "<p class='text-center m-0'><strong class='text-center m-0'>Nome: </strong>"               +Consultores[i].NOME_CONSULTOR   +  "</p><br>";
-                Bloco += "<p class='text-center m-0'><strong class='text-center m-0'>Email: </strong>"              +Consultores[i].EMAIL_CONSULTOR  +  "</p><br>";
-                Bloco += "<p class='text-center m-0'><strong class='text-center m-0'>Data de Cadastro: </strong>"   +Consultores[i].DATA_ENTRADA     +  "</p><br>";
-            }
-    
-            $("#result").html(Bloco);
-        }
-    })
+           // CONSULTA EM Tabela
+           var Tabela = '';
+           Tabela += "<table class='table table-bordered table-striped table-dark ml-5'";
 
-    .fail(function(){
-        alert("falha");
-    })
+           Tabela += "<tr><th scope='col' class='text-center'>ID</th><th scope='col' class='text-center'>Nome</th><th scope='col' class='text-center'>Email</th><th scope='col' class='text-center'>Data de Cadastro</th>"
+           for (i=0; i<Consultores.length; i++){
+               Tabela += "<tr>";
+                   Tabela += "<td class='text-center align-middle'>" + Consultores[i].ID_CONSULTOR     +  "</td>";
+                   Tabela += "<td class='text-center align-middle'>" + Consultores[i].NOME_CONSULTOR   +  "</td>";
+                   Tabela += "<td class='text-center align-middle'>" + Consultores[i].EMAIL_CONSULTOR  +  "</td>";
+                   Tabela += "<td class='text-center align-middle'>" + Consultores[i].DATA_ENTRADA     +  "</td>";
+               Tabela+= "</tr>"
+           }
 
-    return false;
+           $("#result").append(Tabela); 
+           }
+   })
+
+   .fail(function(){
+       alert("falha");
+   })
+
+   return false;
 
 }
 

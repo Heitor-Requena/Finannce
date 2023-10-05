@@ -100,10 +100,4 @@ function alterarPag(pagName) {
         document.querySelector("#section").innerHTML = `<h1>Configurações</h1>`
         document.querySelector("#result").innerHTML  = ``;
     }
-
-    // Artigos Cliente--------------------------------------------------------------------------------------------------------
-    else if (pagName === "Artigos") {
-      document.querySelector("#section").innerHTML = `<button onclick="CarregarArtigos(event)">Artigos</button>`;
-      document.querySelector("#result").innerHTML  = ``;
-  }
 }

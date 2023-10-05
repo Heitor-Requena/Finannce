@@ -37,24 +37,31 @@ function ConsultarAdm(event){
     })
 
     .done(function(dadosPHP){
+        document.getElementById("result").innerHTML = "";
+        
         if (dadosPHP.trim() === ''){
             console.log ("Administrador Não Encontrado");
         }
         else{
             var Administradores = JSON.parse(dadosPHP);
     
-            // CONSULTA EM BLOCO
-            var Bloco = '';
+            // CONSULTA EM Tabela
+            var Tabela = '';
+            Tabela += "<table class='table table-bordered table-striped table-dark ml-5'";
+
+            Tabela += "<tr><th scope='col' class='text-center'>ID</th><th scope='col' class='text-center'>Nome</th><th scope='col' class='text-center'>Email</th><th scope='col' class='text-center'>CPF</th><th scope='col' class='text-center'>RG</th><th scope='col' class='text-center'>Data de Entrada</th>"
             for (i=0; i<Administradores.length; i++){
-                Bloco += "<hr><p class='text-center m-0'><strong class='text-center m-0'>ID: </strong>"             +Administradores[i].ID_ADM      +  "</p><br>";
-                Bloco += "<p class='text-center m-0'><strong class='text-center m-0'>Nome: </strong>"               +Administradores[i].NOME_ADM    +  "</p><br>";
-                Bloco += "<p class='text-center m-0'><strong class='text-center m-0'>Email: </strong>"              +Administradores[i].EMAIL_ADM   +  "</p><br>";
-                Bloco += "<p class='text-center m-0'><strong class='text-center m-0'>CPF: </strong>"                +Administradores[i].CPF_ADM     +  "</p><br>";
-                Bloco += "<p class='text-center m-0'><strong class='text-center m-0'>RG: </strong>"                 +Administradores[i].RG_ADM      +  "</p><br>";
-                Bloco += "<p class='text-center m-0'><strong class='text-center m-0'>Data de Cadastro: </strong>"   +Administradores[i].DATA_ENTRADA+  "</p><br>";
+                Tabela += "<tr>";
+                    Tabela += "<td class='text-center'>" + Administradores[i].ID_ADM      +  "</td>";
+                    Tabela += "<td class='text-center'>" + Administradores[i].NOME_ADM    +  "</td>";
+                    Tabela += "<td class='text-center'>" + Administradores[i].EMAIL_ADM   +  "</td>";
+                    Tabela += "<td class='text-center'>" + Administradores[i].CPF_ADM     +  "</td>";
+                    Tabela += "<td class='text-center'>" + Administradores[i].RG_ADM      +  "</td>";
+                    Tabela += "<td class='text-center'>" + Administradores[i].DATA_ENTRADA+  "</td>";
+                Tabela+= "</tr>"
             }
     
-            $("#result").html(Bloco); 
+            $("#result").append(Tabela); 
         }
     })
 
@@ -78,24 +85,30 @@ function ListarAdm(event){
     })
 
     .done(function(dadosPHP){
+        document.getElementById("result").innerHTML = "";
         if (dadosPHP.trim() === ''){
             console.log ("Administrador Não Encontrado");
         }
         else{
             var Administradores = JSON.parse(dadosPHP);
     
-            // CONSULTA EM BLOCO
-            var Bloco = '';
+            // CONSULTA EM Tabela
+            var Tabela = '';
+            Tabela += "<table class='table table-bordered table-striped table-dark ml-5'";
+
+            Tabela += "<tr><th scope='col' class='text-center'>ID</th><th scope='col' class='text-center'>Nome</th><th scope='col' class='text-center'>Email</th><th scope='col' class='text-center'>CPF</th><th scope='col' class='text-center'>RG</th><th scope='col' class='text-center'>Data de Entrada</th>"
             for (i=0; i<Administradores.length; i++){
-                Bloco += "<hr><p class='text-center m-0'><strong class='text-center m-0'>ID: </strong>"             +Administradores[i].ID_ADM      +  "</p><br>";
-                Bloco += "<p class='text-center m-0'><strong class='text-center m-0'>Nome: </strong>"               +Administradores[i].NOME_ADM    +  "</p><br>";
-                Bloco += "<p class='text-center m-0'><strong class='text-center m-0'>Email: </strong>"              +Administradores[i].EMAIL_ADM   +  "</p><br>";
-                Bloco += "<p class='text-center m-0'><strong class='text-center m-0'>CPF: </strong>"                +Administradores[i].CPF_ADM     +  "</p><br>";
-                Bloco += "<p class='text-center m-0'><strong class='text-center m-0'>RG: </strong>"                 +Administradores[i].RG_ADM      +  "</p><br>";
-                Bloco += "<p class='text-center m-0'><strong class='text-center m-0'>Data de Cadastro: </strong>"   +Administradores[i].DATA_ENTRADA+  "</p><br>";
+                Tabela += "<tr>";
+                    Tabela += "<td class='text-center'>" + Administradores[i].ID_ADM      +  "</td>";
+                    Tabela += "<td class='text-center'>" + Administradores[i].NOME_ADM    +  "</td>";
+                    Tabela += "<td class='text-center'>" + Administradores[i].EMAIL_ADM   +  "</td>";
+                    Tabela += "<td class='text-center'>" + Administradores[i].CPF_ADM     +  "</td>";
+                    Tabela += "<td class='text-center'>" + Administradores[i].RG_ADM      +  "</td>";
+                    Tabela += "<td class='text-center'>" + Administradores[i].DATA_ENTRADA+  "</td>";
+                Tabela+= "</tr>"
             }
     
-            $("#result").html(Bloco); 
+            $("#result").append(Tabela); 
         }
     })
 

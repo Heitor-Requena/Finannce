@@ -131,3 +131,86 @@ main{
     margin: 0;
     margin-right: 7px;
 }
+
+/* Container3 ----------------------------------------------------------------------------------------------------------------------------*/
+.container3{
+    height: 400px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--light-font-color);
+
+    margin: 10px;
+    border: 1px solid;
+    border-radius: 15px;
+}
+
+.container3 #formCadpt2{
+    width: 100%;
+    margin: 10px;
+}
+
+.container3 form .row{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 5px;
+    margin: 5px;
+}
+
+.container3 form .row .col{
+    width: 50%;
+}
+
+
+.container3 form .inpt{
+    width: 90%;
+    height: 30px;
+    text-align: center;
+    outline: none;
+    margin: 5px 5px;
+    
+    background-color: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid var(--light-font-color);
+    color: var(--light-font-color);
+}
+
+.container3 form .inpt::placeholder{
+    color: var(--light-font-color);
+}
+
+hr{
+    border: 1px solid var(--light-font-color);
+    width: 90%;
+    margin: 0 auto;
+}
+
+.container3 form .row .dt{
+    display: flex;
+    width: 100%;
+}
+
+.container3 form .row .dt label{
+    margin-top: 15px;
+}
+
+.container3 form .row .dt .DtNasc{
+    width: 50%;
+    height: 30px;
+    text-align: center;
+    outline: none;
+    margin: 5px 5px;
+
+    background-color: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid var(--light-font-color);
+    color: var(--light-font-color);   
+}

@@ -64,6 +64,8 @@ function ConsultarArtigo(event){
     })
 
     .done(function(dadosPHP){
+        document.getElementById("result").innerHTML = "";
+
         if (dadosPHP.trim() === ''){
             console.log ("ARTIGO Não Encontrado");
         }
@@ -72,15 +74,22 @@ function ConsultarArtigo(event){
         var Artigo = JSON.parse(dadosPHP);
         console.log(Artigo)
     
-        var Bloco = '';
-        for (i = 0 ; i < Artigo.length; i++){
-            Bloco += "<hr><p class='text-center m-0'><strong class='text-center m-0'>ID Artigo: </strong>"   + Artigo[i].ID_ARTIGO      +  "</p><br>";
-            Bloco += "<p class='text-center m-0'><strong class='text-center m-0'>Título: </strong>"          + Artigo[i].TITULO_ARTIGO  +  "</p><br>";
-            Bloco += "<p class='text-center m-0'><strong class='text-center m-0'>Conteudo Artigo: </strong>" + Artigo[i].ARTIGO         +  "</p><br>";
-            Bloco += "<p class='text-center m-0'><strong class='text-center m-0'>Autor Artigo: </strong>"    + Artigo[i].AUTOR_ARTIGO   +  "</p><br>";
+        // CONSULTA EM Tabela
+        var Tabela = '';
+        Tabela += "<table class='table table-bordered table-striped table-dark ml-5'";
+
+        Tabela += "<tr><th scope='col' class='text-center'>ID</th><th scope='col' class='text-center'>Título</th><th scope='col' class='text-center'>Artigo</th><th scope='col' class='text-center'>Autor</th><th scope='col' class='text-center'>Data de Publicação</th>"
+        for (i=0; i<Artigo.length; i++){
+            Tabela += "<tr>";
+                Tabela += "<td class='text-center align-middle'>" + Artigo[i].ID_ARTIGO          +  "</td>";
+                Tabela += "<td class='text-center align-middle'>" + Artigo[i].TITULO_ARTIGO      +  "</td>";
+                Tabela += "<td class='text-center align-middle'>" + Artigo[i].ARTIGO             +  "</td>";
+                Tabela += "<td class='text-center align-middle'>" + Artigo[i].AUTOR_ARTIGO       +  "</td>";
+                Tabela += "<td class='text-center align-middle'>" + Artigo[i].DATA_PUBLICACAO    +  "</td>";
+            Tabela+= "</tr>"
         }
 
-        $("#result").html(Bloco); 
+        $("#result").append(Tabela); 
     })
 
     .fail(function(){
@@ -92,6 +101,7 @@ function ConsultarArtigo(event){
 }
 
 function ListarArtigo(event){
+    document.getElementById("result").innerHTML = "";
     event.preventDefault()
     var DadosForm = $('#frm_Artigo2').serialize()
     console.log(DadosForm)
@@ -109,18 +119,23 @@ function ListarArtigo(event){
     .done(function(dadosPHP){
         var Artigo = JSON.parse(dadosPHP);
         console.log(Artigo)
-    
-        var Bloco = '';
-        for (i = 0 ; i < Artigo.length; i++){
-            Bloco += "<hr><p class='text-center m-0'><strong class='text-center m-0'>ID Artigo: </strong>"      + Artigo[i].ID_ARTIGO       +  "</p><br>";
-            Bloco += "<p class='text-center m-0'><strong class='text-center m-0'>Título: </strong>"             + Artigo[i].TITULO_ARTIGO   +  "</p><br>";
-            Bloco += "<p class='text-center m-0'><strong class='text-center m-0'>Conteudo Artigo: </strong>"    + Artigo[i].ARTIGO          +  "</p><br>";
-            Bloco += "<p class='text-center m-0'><strong class='text-center m-0'>Autor Artigo: </strong>"       + Artigo[i].AUTOR_ARTIGO    +  "</p><br>";
-            Bloco += "<p class='text-center m-0'><strong class='text-center m-0'>Data de publicação: </strong>" + Artigo[i].DATA_PUBLICACAO +  "</p><br>";
 
+        // CONSULTA EM Tabela
+        var Tabela = '';
+        Tabela += "<table class='table table-bordered table-striped table-dark ml-5'";
+
+        Tabela += "<tr><th scope='col' class='text-center'>ID</th><th scope='col' class='text-center'>Título</th><th scope='col' class='text-center'>Artigo</th><th scope='col' class='text-center'>Autor</th><th scope='col' class='text-center'>Data de Publicação</th>"
+        for (i=0; i<Artigo.length; i++){
+            Tabela += "<tr>";
+                Tabela += "<td class='text-center align-middle'>" + Artigo[i].ID_ARTIGO          +  "</td>";
+                Tabela += "<td class='text-center align-middle'>" + Artigo[i].TITULO_ARTIGO      +  "</td>";
+                Tabela += "<td class='text-center align-middle'>" + Artigo[i].ARTIGO             +  "</td>";
+                Tabela += "<td class='text-center align-middle'>" + Artigo[i].AUTOR_ARTIGO       +  "</td>";
+                Tabela += "<td class='text-center align-middle'>" + Artigo[i].DATA_PUBLICACAO    +  "</td>";
+            Tabela+= "</tr>"
         }
 
-        $("#result").html(Bloco); 
+        $("#result").append(Tabela); 
     })
 
     .fail(function(){

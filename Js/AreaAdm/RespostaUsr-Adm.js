@@ -11,26 +11,32 @@ function ConsultarUsr(event){
         })
 
         .done(function(dadosPHP){
+            document.getElementById("result").innerHTML = "";
+            
             if (dadosPHP.trim() === ""){
                 console.log("Usuário Não Encontrado");
             }
             else{
                 var Usuarios = JSON.parse(dadosPHP);
     
-                // CONSULTA EM BLOCO
-                var Bloco = '';
-                for (i=0; i<Usuarios.length; i++){
-                    Bloco += "<hr><p class='text-center m-0'><strong class='text-center m-0'>ID: </strong>"             +Usuarios[i].ID_CLIENTE     +  "</p><br>";
-                    Bloco += "<p class='text-center m-0'><strong class='text-center m-0'>Nome: </strong>"               +Usuarios[i].NOME_CLIENTE   +  "</p><br>";
-                    Bloco += "<p class='text-center m-0'><strong class='text-center m-0'>Email: </strong>"              +Usuarios[i].EMAIL_CLIENTE  +  "</p><br>";
-                    Bloco += "<p class='text-center m-0'><strong class='text-center m-0'>Telefone: </strong>"           +Usuarios[i].FONE_CLIENTE   +  "</p><br>";
-                    Bloco += "<p class='text-center m-0'><strong class='text-center m-0'>Data de Cadastro: </strong>"   +Usuarios[i].DATA_ENTRADA   +  "</p><br>";
-                }
-        
-                $("#result").html(Bloco);
+                // CONSULTA EM Tabela
+            var Tabela = '';
+            Tabela += "<table class='table table-bordered table-striped table-dark table-striped ml-5 table-sm'";
+
+            Tabela += "<tr><th scope='col' class='text-center'>ID</th><th scope='col' class='text-center'>Nome</th><th scope='col' class='text-center'>Email</th><th scope='col' class='text-center'>Telefone</th><th scope='col' class='text-center'>Data de Entrada</th>"
+            for (i=0; i<Usuarios.length; i++){
+                Tabela += "<tr>";
+                    Tabela += "<td class='text-center'>" + Usuarios[i].ID_CLIENTE      +  "</td>";
+                    Tabela += "<td class='text-center'>" + Usuarios[i].NOME_CLIENTE    +  "</td>";
+                    Tabela += "<td class='text-center'>" + Usuarios[i].EMAIL_CLIENTE   +  "</td>";
+                    Tabela += "<td class='text-center'>" + Usuarios[i].FONE_CLIENTE     +  "</td>";
+                    Tabela += "<td class='text-center'>" + Usuarios[i].DATA_ENTRADA      +  "</td>";
+                Tabela+= "</tr>"
             }
+
+            $("#result").append(Tabela); 
             
-        })
+        }})
 
         .fail(function(){
             alert("falha");
@@ -53,28 +59,34 @@ function ListarUsr(event){
     })
 
     .done(function(dadosPHP){
+        document.getElementById("result").innerHTML = "";
         if (dadosPHP.trim() === ""){
             console.log("Nenhum Usuário Encontrado");
         }
         else{
             var Usuarios = JSON.parse(dadosPHP);
 
-            // CONSULTA EM BLOCO
-            var Bloco = '';
+            // CONSULTA EM Tabela
+            var Tabela = '';
+            Tabela += "<table class='table table-bordered table-striped table-dark table-striped ml-5 table-sm'";
+
+            Tabela += "<tr><th scope='col' class='text-center'>ID</th><th scope='col' class='text-center'>Nome</th><th scope='col' class='text-center'>Email</th><th scope='col' class='text-center'>Telefone</th><th scope='col' class='text-center'>Data de Entrada</th>"
             for (i=0; i<Usuarios.length; i++){
-                Bloco += "<hr><p class='text-center m-0'><strong class='text-center m-0'>ID: </strong>"             +Usuarios[i].ID_CLIENTE     +  "</p><br>";
-                Bloco += "<p class='text-center m-0'><strong class='text-center m-0'>Nome: </strong>"               +Usuarios[i].NOME_CLIENTE   +  "</p><br>";
-                Bloco += "<p class='text-center m-0'><strong class='text-center m-0'>Email: </strong>"              +Usuarios[i].EMAIL_CLIENTE  +  "</p><br>";
-                Bloco += "<p class='text-center m-0'><strong class='text-center m-0'>Telefone: </strong>"           +Usuarios[i].FONE_CLIENTE   +  "</p><br>";
-                Bloco += "<p class='text-center m-0'><strong class='text-center m-0'>Data de Cadastro: </strong>"   +Usuarios[i].DATA_ENTRADA   +  "</p><br>";
+                Tabela += "<tr>";
+                    Tabela += "<td class='text-center'>" + Usuarios[i].ID_CLIENTE      +  "</td>";
+                    Tabela += "<td class='text-center'>" + Usuarios[i].NOME_CLIENTE    +  "</td>";
+                    Tabela += "<td class='text-center'>" + Usuarios[i].EMAIL_CLIENTE   +  "</td>";
+                    Tabela += "<td class='text-center'>" + Usuarios[i].FONE_CLIENTE     +  "</td>";
+                    Tabela += "<td class='text-center'>" + Usuarios[i].DATA_ENTRADA      +  "</td>";
+                Tabela+= "</tr>"
             }
 
-        $("#result").html(Bloco);
-        }
-    })
+            $("#result").append(Tabela); 
+        
+    }})
 
     .fail(function(){
-        alert("falha")
+        alert("falha");
     })
 
     return false;
