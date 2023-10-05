@@ -2,7 +2,7 @@
 function Cadastro_Cliente() {
     document.querySelector(".container2").innerHTML =
         `<h2><i class="bi bi-person-circle"></i>Cadastre-se</h2>
-    <form action="../Php/AreaCliente/ControleLogin-Cliente.php" method="get" id="">
+    <form action="../../Php/AreaCliente/ControleLogin-Cliente.php" method="get" id="">
         <div class="inpt-box">
             <label for="Nome_Cliente"></label>
             <i class="bi bi-person"></i><input type="text" name="Nome_Cliente" id="Nome_Cliente" placeholder="Nome" class="inpt">
@@ -55,7 +55,7 @@ function Login_Cliente() {
 
     document.querySelector(".container2").innerHTML =
         `<h2><i class="bi bi-person-circle"></i>Login</h2>
-    <form action="../Php/AreaCliente/ControleLogin-Cliente.php" method="get">
+    <form action="../../Php/AreaCliente/ControleLogin-Cliente.php" method="get">
         <div class="inpt-box">
             <label for="Email_Cliente"></label>
             <i class="bi bi-envelope-at"></i><input type="email" name="Email_Cliente" id="Email_Cliente" placeholder="Email" class="inpt">
@@ -80,7 +80,7 @@ function Login_Cliente() {
 function RecuperarSenha_Cliente() {
     document.querySelector(".container2").innerHTML =
         `<h2 id="title"><i class="bi bi-person-circle"></i>Recuperar Senha</h2>
-    <form action="../Php/AreaCliente/ControleLogin-Cliente.php" method="get" class="frmEsqSenha">
+    <form action="../../Php/AreaCliente/ControleLogin-Cliente.php" method="get" class="frmEsqSenha">
         <div class="inpt-box">
             <label for="EmailSenha_Cliente"></label>
             <i class="bi bi-envelope-at"></i><input type="email" name="EmailSenha_Cliente" id="EmailSenha_Cliente" class="inpt2 inpt" placeholder="Email">
@@ -97,7 +97,7 @@ function RecuperarSenha_Cliente() {
 function Cadastro_Consultor() {
     document.querySelector(".container2").innerHTML =
         `<h2><i class="bi bi-briefcase"></i>Cadastro Consultor</h2>
-    <form action="../Php/AreaConsultor/ControleLogin-Consultor.php" method="get">
+    <form action="../../Php/AreaConsultor/ControleLogin-Consultor.php" method="get">
         <div class="inpt-box">
             <label for="Nome_Consultor"></label>
             <i class="bi bi-person"></i><input type="text" name="Nome_Consultor" id="Nome_Consultor" placeholder="Nome" class="inpt">
@@ -127,7 +127,7 @@ function Cadastro_Consultor() {
 function Login_Consultor() {
     document.querySelector(".container2").innerHTML =
         `<h2><i class="bi bi-briefcase"></i>Login Consultor</h2>
-    <form action="../Php/AreaConsultor/ControleLogin-Consultor.php" method="get">
+    <form action="../../Php/AreaConsultor/ControleLogin-Consultor.php" method="get">
         <div class="inpt-box">
             <label for="Email_Consultor"></label>
             <i class="bi bi-envelope-at"></i><input type="email" name="Email_Consultor" id="Email_Consultor" placeholder="Email" class="inpt">
@@ -152,7 +152,7 @@ function Login_Consultor() {
 function RecuperarSenha_Consultor() {
     document.querySelector(".container2").innerHTML =
         `<h2 id="title"><i class="bi bi-briefcase"></i>Recuperar Senha</h2>
-    <form action="../Php/AreaConsultor/ControleLogin-Consultor.php" method="get" class="frmEsqSenha">
+    <form action="../../Php/AreaConsultor/ControleLogin-Consultor.php" method="get" class="frmEsqSenha">
         <div class="inpt-box">
             <label for="EmailSenha_Consultor"></label>
             <i class="bi bi-envelope-at"></i><input type="email" name="EmailSenha_Consultor" id="EmailSenha_Consultor" class="inpt2 inpt" placeholder="Email">
@@ -186,7 +186,7 @@ function Login_Adm() {
 
     document.querySelector(".container2").innerHTML =
         `<h2><i class="bi bi-person-gear"></i>Login Adm</h2>
-    <form action="../Php/AreaAdm/ControleLogin-Adm.php" method="get" id="frmDiv_Adm">
+    <form action="../../Php/AreaAdm/ControleLogin-Adm.php" method="get" id="frmDiv_Adm">
         <div class="inpt-box">
             <label for="Email_Adm"></label>
             <i class="bi bi-envelope-at"></i><input type="email" name="Email_Adm" id="Email_Adm" maxlength="80" class="inpt" placeholder="Email">
