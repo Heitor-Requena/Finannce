@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cards_cons.css">
+    <title>Finannce</title>
+    <link rel="shortcut icon" type="imagex/png"
+        href="../Imagens/Icon/Icon-fundo-Colorido-Finannce-removebg-preview.png">
+
+</head>
+
+<body>
+    <header id="header">
+        <div class="container">
+            <div class="flex">
+                <a class="logo" href="#"><img src="../../../Img/logo branca finannce.png"></a>
+                <nav class="nav">
+                    <button class="hamburger"></button>
+                    <ul class="nav-list">
+                        <li><a href="../../../index.html">Inicio</a></li>
+                        <li><a href="../sobrenos.html">Sobre nós</a></li>
+                        <li><a href="../artigos.html">Artigos</a></li>
+                        <a class="btn-lgn" href="../login.html">LOGIN</a>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <script src="../../Js/menu.js"></script>
+
+
+
+    <div class="consfavs">
+        <div class="title">
+            <h1 class="card-title">Consultores com <br>maior recomendação</h1> <br>
+        </div>
+
+
+        <div class="consfav">
+
+            <img src="Icons_img/icon_men.jpg" alt="cardimg" id="cardimg">
+
+            <h2>Jorge Almeida</h2>
+            <p>
+                Especialista em Risco e Compliance; <br>
+                Possui uma sólida formação em Direito e certificações em gestão de riscos e conformidade;<br>
+                7 anos de experiência em instituições financeiras de renome; <br>
+                Possui uma visão estratégica aguçada.
+
+            </p>
+
+
+            <!--Estrelhinhas-->
+            <div class="avaliador">
+                <ul class="avaliacao">
+
+                    <li class="star-avaliacao ativo" nota-avaliacao="1"></li>
+                    <li class="star-avaliacao " nota-avaliacao="2"></li>
+                    <li class="star-avaliacao" nota-avaliacao="3"></li>
+                    <li class="star-avaliacao" nota-avaliacao="4"></li>
+                    <li class="star-avaliacao" nota-avaliacao="5"></li>
+
+                </ul>
+            </div>
+
+            <script>
+                var stars = document.querySelectorAll('.star-avaliacao');
+                document.addEventListener('click', function (e) {
+                    var classStar = e.target.classList;
+                    if (!classStarcontains('ativo')) {
+                        stars.forEach(function (star) {
+                            star.classList.remove('ativo');
+                        });
+                        classStar.add('ativo');
+                    }
+                });
+
+                classStar.add('ativo');
+                console.log(e.target.getAtribute('nota-avaliacao'))
+            </script>
+
+            <BR>
+
+        </div>
+
+
+        <div class="consfav">
+            <img src="Icons_img/icon_cacheada.jpg" alt="cardimg" id="cardimg">
+
+            <h2>Eduarda Mendonça</h2>
+            <p> Bacharelado em Estatística; <br>
+                Ela trabalhou como analista de mercado em uma startup financeira;<br>
+                Possui 2 anos no mercado econômico;<br>
+                Habilidade em traduzir dados complexos em estratégias tangíveis.
+            </p>
+            <BR>
+
+            <!--Estrelhinhas-->
+            <div class="avaliador">
+                <ul class="avaliacao">
+
+                    <li class="star-avaliacao ativo" nota-avaliacao="1"></li>
+                    <li class="star-avaliacao " nota-avaliacao="2"></li>
+                    <li class="star-avaliacao" nota-avaliacao="3"></li>
+                    <li class="star-avaliacao" nota-avaliacao="4"></li>
+                    <li class="star-avaliacao" nota-avaliacao="5"></li>
+
+                </ul>
+            </div>
+
+            <script>
+                var stars = document.querySelectorAll('.star-avaliacao');
+                document.addEventListener('click', function (e) {
+                    var classStar = e.target.classList;
+                    if (!classStarcontains('ativo')) {
+                        stars.forEach(function (star) {
+                            star.classList.remove('ativo');
+                        });
+                        classStar.add('ativo');
+                    }
+                });
+
+                classStar.add('ativo');
+                console.log(e.target.getAtribute('nota-avaliacao'))
+            </script>
+
+            <BR>
+
+        </div>
+
+        <div class="consfav">
+            <img src="Icons_img/icon_baroc.jpg" alt="cardimg" id="cardimg">
+
+            <h2>Pedro Mota</h2>
+            <p>Especialista em Finanças Corporativas; <br>
+                Possui experiência notável em consultoria econômica no setor público; <br>
+                Sua carreira inclui a colaboração com agências governamentais em projetos de políticas fiscais; <br>
+                Possui habilidade para apresentar dados complexos de maneira acessível.
+
+            </p>
+            <BR>
+
+
+            <!--Estrelhinhas-->
+            <div class="avaliador">
+                <ul class="avaliacao">
+
+                    <li class="star-avaliacao ativo" nota-avaliacao="1"></li>
+                    <li class="star-avaliacao " nota-avaliacao="2"></li>
+                    <li class="star-avaliacao" nota-avaliacao="3"></li>
+                    <li class="star-avaliacao" nota-avaliacao="4"></li>
+                    <li class="star-avaliacao" nota-avaliacao="5"></li>
+
+                </ul>
+            </div>
+
+            <script>
+                var stars = document.querySelectorAll('.star-avaliacao');
+                document.addEventListener('click', function (e) {
+                    var classStar = e.target.classList;
+                    if (!classStarcontains('ativo')) {
+                        stars.forEach(function (star) {
+                            star.classList.remove('ativo');
+                        });
+                        classStar.add('ativo');
+                    }
+                });
+
+                classStar.add('ativo');
+                console.log(e.target.getAtribute('nota-avaliacao'))
+            </script>
+
+            <BR>
+
+        </div>
+
+    </div>
+
+    </div>
+
+
+    <br><br>
+
+
+    <h1 class="title2">Todos os nossos Consultores</h1>
+    <br>
+    <div class="container-vit">
+
+        <!--Cards-->
+
+
+        <div class="cardcons">
+            <img src="Icons_img/Icon_ocmulher.jpg" alt="cardimg" id="cardimg">
+
+            <h2>Aline Barbosa</h2>
+            <p>Analista de Investimentos; <br>
+                Mestrado em Economia Financeira; <br>
+                5 anos de experiência em análise de investimentos;<br>
+                Fluente em análise quantitativa e qualitativa.
+            </p>
+            <BR>
+
+            <div class="btn-cards">
+                <a class="desbtn" href="">Ver Perfil</a>
+            </div>
+
+            <BR>
+
+        </div>
+
+
+
+        <div class="cardcons">
+            <img src="Icons_img/icon_men.jpg" alt="cardimg" id="cardimg">
+
+            <h2>Jorge Almeida</h2>
+            <p>
+                Especialista em Risco e Compliance; <br>
+                Possui uma sólida formação em Direito e certificações em gestão de riscos e conformidade;<br>
+                7 anos de experiência em instituições financeiras de renome; <br>
+                Possui uma visão estratégica aguçada.
+
+            </p>
+            <BR>
+
+
+            <div class="btn-cards">
+                <a class="desbtn" href="">Ver Perfil</a>
+            </div>
+
+            <BR>
+        </div>
+
+
+        <div class="cardcons">
+            <img src="Icons_img/icon_barmen.jpg" alt="cardimg" id="cardimg">
+
+            <p>
+
+            <h2>Fernando Dias</h2>
+            <p> Trader de Mercado de Capitais;<br>
+                Formação em Engenharia de Software; <br>
+                Ele fez a transição para a negociação de ativos financeiros nos últimos 4 anos; <br>
+                Possui uma abordagem analítica, combinada com sua agilidade nos processos.
+            </p>
+            <br>
+
+            <div class="btn-cards">
+                <a class="desbtn" href="">Ver Perfil</a>
+            </div>
+
+        </div>
+
+
+        <div class="cardcons">
+            <img src="Icons_img/icon_barba.jpg" alt="cardimg" id="cardimg">
+
+            <h2>Luiz Franca</h2>
+            <p> Formação interdisciplinar, combinando economia com ciência de dados; <br>
+                Economista júnior com energia e entusiasmo contagiantes; <br>
+                Possui 3 anos de experiência; <br>
+                Tem uma abordagem fresca e criativa para a resolução de problemas econômicos.
+
+            </p>
+            <BR>
+
+            <div class="btn-cards">
+                <a class="desbtn" href="">Ver Perfil</a>
+            </div>
+
+            <BR>
+
+        </div>
+
+
+        <div class="cardcons">
+            <img src="Icons_img/icon_baroc.jpg" alt="cardimg" id="cardimg">
+
+            <h2>Pedro Mota</h2>
+            <p>Especialista em Finanças Corporativas; <br>
+                Possui experiência notável em consultoria econômica no setor público; <br>
+                Sua carreira inclui a colaboração com agências governamentais em projetos de políticas fiscais; <br>
+                Possui habilidade para apresentar dados complexos de maneira acessível.
+
+            </p>
+            <BR>
+
+            <div class="btn-cards">
+                <a class="desbtn" href="">Ver Perfil</a>
+            </div>
+            <BR>
+
+
+        </div>
+
+
+        <div class="cardcons">
+            <img src="Icons_img/icons.jpg" alt="cardimg" id="cardimg">
+
+            <h2>Liandra Costa</h2>
+            <p>Especialista em Finanças Corporativas;<br>
+                Mariana é uma contadora certificada em análise financeira corporativa; <br>
+                Trabalhou como consultora júnior; <br>
+                Está há seis anos no mercado.
+            </p>
+            <BR>
+
+            <div class="btn-cards">
+                <a class="desbtn" href="">Ver Perfil </a>
+            </div>
+
+            <BR>
+
+        </div>
+
+
+        <div class="cardcons">
+            <img src="Icons_img/icon_topete.jpg" alt="cardimg" id="cardimg">
+
+            <h2>Leonardo Silvano</h2>
+            <p>Possui experiência internacional; <br>
+                Tem conhecimento em análise de risco, modelagem econômica avançada e estratégias de otimização
+                financeira; <br>
+                Sua capacidade de fornecer insights globais e localmente relevantes é um grande trunfo.
+            </p>
+            <BR>
+
+            <div class="btn-cards">
+                <a class="desbtn" href="">Ver Perfil</a>
+            </div>
+            <BR>
+
+        </div>
+
+
+        <div class="cardcons">
+            <img src="Icons_img/icon_cacheada.jpg" alt="cardimg" id="cardimg">
+
+            <h2>Eduarda Mendonça</h2>
+            <p> Bacharelado em Estatística; <br>
+                Ela trabalhou como analista de mercado em uma startup financeira;<br>
+                Possui 2 anos no mercado econômico;<br>
+                Habilidade em traduzir dados complexos em estratégias tangíveis.
+            </p>
+            <BR>
+
+            <div class="btn-cards">
+                <a class="desbtn" href="">Ver Perfil</a>
+            </div>
+            <BR>
+
+        </div>
+
+
+    </div>
+</body>
+
+</html>
