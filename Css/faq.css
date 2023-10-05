@@ -5,7 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'poppins', sans-serif;
-   /* border: 1px solid red;*/
+    /* border: 1px solid red;*/
 }
 
 body {
@@ -283,11 +283,11 @@ main {
     width: 60%;
     margin: 20px auto;
     height: 1000px;
-    
+
 }
 
-.intro-cards .card1st{
-    
+.intro-cards .card1st {
+
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -301,7 +301,7 @@ main {
     border-radius: 15px;
 }
 
-.cardtext{
+.cardtext {
     color: #fff;
     width: 500px;
     font-size: 30px;
@@ -309,12 +309,12 @@ main {
     border-bottom-style: outset;
     border-right-style: outset;
     border-bottom-width: 1px;
-    border-right-width: 1px ;
+    border-right-width: 1px;
     border-bottom-right-radius: 15px;
 }
 
 .cardtext p {
-text-align: center;
+    text-align: center;
 }
 
 /*CARDS DE PERGUNTAS*/
@@ -334,7 +334,7 @@ text-align: center;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color:#051225;
+    background-color: #051225;
     border-radius: 30px;
     border-style: outset;
 

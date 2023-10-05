@@ -20,4 +20,3 @@ if(isset($_GET["btn_EntrarAdm"])){
         header('Location: indexAdm.php');
     }
 }
-?>

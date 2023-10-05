@@ -19,4 +19,3 @@ class Cls_ArtigoCliente{
         return $Retorno;
     }
 }
-?>

@@ -33,4 +33,3 @@
         $Retorno = $Adm->ListarArtigo();
         echo $Retorno;
     }
-?>

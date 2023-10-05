@@ -1,10 +1,10 @@
 function alterarPag(pagName) {
     if (pagName === "Home") {
-        document.querySelector("#section").innerHTML = 
-        `<h1 class="text-center align-middle">Seja bem vindo, Administrador</h1>`;
+        document.querySelector("#section").innerHTML =
+            `<h1 class="text-center align-middle">Seja bem vindo, Administrador</h1>`;
         document.querySelector("#result").innerHTML =
-        ``;
-    } 
+            ``;
+    }
     // Artigos--------------------------------------------------------------------------------------------------------
     else if (pagName === "Artigos") {
         document.querySelector("#section").innerHTML = ` <h1 class="text-center mt-3">Artigos</h1>
@@ -45,13 +45,13 @@ function alterarPag(pagName) {
             </div>
         </div>`;
         document.querySelector("#result").innerHTML =
-        ``;
+            ``;
     }
 
     // Usuário--------------------------------------------------------------------------------------------------------
-    else if (pagName === "ConsUsr"){
-        document.querySelector("#section").innerHTML = 
-        `<h1 class="text-center mt-3">Consultar Usuário</h1>
+    else if (pagName === "ConsUsr") {
+        document.querySelector("#section").innerHTML =
+            `<h1 class="text-center mt-3">Consultar Usuário</h1>
         <h2></h2>
 
         <form action="ControleUsr-Adm.php" method="get" class="container mt-5" id="frm_ConListUsr">
@@ -67,9 +67,9 @@ function alterarPag(pagName) {
             </div>
         </form>`;
         document.querySelector("#result").innerHTML =
-        ``;
+            ``;
     }
-    else if (pagName === "AltUsr"){
+    else if (pagName === "AltUsr") {
         document.querySelector("#section").innerHTML = `<h1 class="text-center mt-3">Alterar Login Usuário</h1>
 
         <form action="ControleUsr-Adm.php" method="get" class="container mt-5" id="frm_AltUsr">
@@ -91,9 +91,9 @@ function alterarPag(pagName) {
             </div>
         </form>`;
         document.querySelector("#result").innerHTML =
-        ``;
+            ``;
     }
-    else if (pagName === "DelUsr"){
+    else if (pagName === "DelUsr") {
         document.querySelector("#section").innerHTML = `<h1 class="text-center mt-3">Deletar Usuário</h1>
 
         <form action="ControleUsr-Adm.php" method="get" class="container mt-5" id="frm_DelUsr">
@@ -107,11 +107,11 @@ function alterarPag(pagName) {
             </div>
         </form>`;
         document.querySelector("#result").innerHTML =
-        ``;
+            ``;
     }
 
     // Consultor--------------------------------------------------------------------------------------------------------
-    else if (pagName === "ConsCon"){
+    else if (pagName === "ConsCon") {
         document.querySelector("#section").innerHTML = `<h1 class="text-center mt-3">Consultar Consultor</h1>
 
         <form action="ControleCon-Adm.php" method="get" class="container mt-5" id="frm_ConListCon">
@@ -126,10 +126,10 @@ function alterarPag(pagName) {
             </div>
         </form>`;
         document.querySelector("#result").innerHTML =
-        ``;
+            ``;
     }
-    else if (pagName === "AltCon"){
-       document.querySelector("#section").innerHTML = `<h1 class="text-center mt-3">Alterar Login Consultor</h1>
+    else if (pagName === "AltCon") {
+        document.querySelector("#section").innerHTML = `<h1 class="text-center mt-3">Alterar Login Consultor</h1>
 
        <form action="ControleCon-Adm.php" method="get" class="container mt-5" id="frm_AltCon">
            <div class="row">
@@ -150,10 +150,10 @@ function alterarPag(pagName) {
            </div>
        </form>`;
         document.querySelector("#result").innerHTML =
-        ``;
+            ``;
     }
-    else if (pagName === "DelCon"){
-       document.querySelector("#section").innerHTML = `<h1 class="text-center mt-3">Deletar Consultor</h1>
+    else if (pagName === "DelCon") {
+        document.querySelector("#section").innerHTML = `<h1 class="text-center mt-3">Deletar Consultor</h1>
 
        <form action="ControleCon-Adm.php" method="get" class="container mt-5" id="frm_DelCon">
            <div class="row">
@@ -166,7 +166,7 @@ function alterarPag(pagName) {
            </div>
        </form>`;
         document.querySelector("#result").innerHTML =
-        ``;
+            ``;
     }
 
     // Adm--------------------------------------------------------------------------------------------------------
@@ -201,7 +201,7 @@ function alterarPag(pagName) {
             </div>
         </form>`;
         document.querySelector("#result").innerHTML =
-        ``;
+            ``;
     }
     else if (pagName === "ConsAdm") {
         document.querySelector("#section").innerHTML = `<h1 class="text-center mt-3">Consultar Administrador</h1>
@@ -218,7 +218,7 @@ function alterarPag(pagName) {
             </div>
         </form>`;
         document.querySelector("#result").innerHTML =
-        ``;
+            ``;
     }
     else if (pagName === "AltLogAdm") {
         document.querySelector("#section").innerHTML = `<h1 class="text-center mt-3">Alterar Administrador</h1>
@@ -242,7 +242,7 @@ function alterarPag(pagName) {
             </div>
         </form>`;
         document.querySelector("#result").innerHTML =
-        ``;
+            ``;
     }
     else if (pagName === "DelAdm") {
         document.querySelector("#section").innerHTML = `<h1 class="text-center mt-3">Deletar Administrador</h1>
@@ -258,12 +258,12 @@ function alterarPag(pagName) {
             </div>
         </form>`;
         document.querySelector("#result").innerHTML =
-        ``;
+            ``;
     }
 
     // FAQ--------------------------------------------------------------------------------------------------------
-    else if(pagName === "RespFAQ") {
-        document.querySelector('#section').innerHTML=`<h1 class="text-center mt-3">Resposta</h1>
+    else if (pagName === "RespFAQ") {
+        document.querySelector('#section').innerHTML = `<h1 class="text-center mt-3">Resposta</h1>
         <form action="ControleFAQ-Adm.php" id="frm_PerguntaResposta" method="get" class="container mt-5">
             <div class="row">
                 <div class="col">
@@ -283,8 +283,8 @@ function alterarPag(pagName) {
                 <input type="submit" value="Ver todas Perguntas" id="btn_ListarPergunta" name="btn_ListarPergunta" class="iframe-btn btn m-3 col-6 btn-outline-light" onclick="ListarPergunta(event)">
             </div>
         </form>`;
-        
+
         document.querySelector("#result").innerHTML =
-        ``;
+            ``;
     }
 }

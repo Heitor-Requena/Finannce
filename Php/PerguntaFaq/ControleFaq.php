@@ -19,4 +19,3 @@ else if(isset($_GET["CarregarPerguntas"])){
     $Retorno = $Faq->CarregarPerguntas();
     echo $Retorno;
 }
-?>

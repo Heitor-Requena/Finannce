@@ -27,5 +27,3 @@
         $Retorno = $Adm->DeletarUsr();
         echo $Retorno;
     }
-    
-?>

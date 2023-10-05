@@ -1,7 +1,7 @@
 // Login Usuário
-function Cadastro_Cliente(){
-    document.querySelector(".container2").innerHTML = 
-    `<h2><i class="bi bi-person-circle"></i>Cadastre-se</h2>
+function Cadastro_Cliente() {
+    document.querySelector(".container2").innerHTML =
+        `<h2><i class="bi bi-person-circle"></i>Cadastre-se</h2>
     <form action="../Php/AreaCliente/ControleLogin-Cliente.php" method="get" id="">
         <div class="inpt-box">
             <label for="Nome_Cliente"></label>
@@ -35,9 +35,9 @@ function Cadastro_Cliente(){
     </div>`
 }
 
-function Login_Cliente(){
-    document.querySelector("#header").innerHTML = 
-    `<div class="container">
+function Login_Cliente() {
+    document.querySelector("#header").innerHTML =
+        `<div class="container">
         <div class="flex">
             <a class="logo" href="#"><img src="../Imagens/header/logo branca finannce.png"></a>
             <nav class="nav">
@@ -53,8 +53,8 @@ function Login_Cliente(){
         </div>
     </div>`
 
-    document.querySelector(".container2").innerHTML = 
-    `<h2><i class="bi bi-person-circle"></i>Login</h2>
+    document.querySelector(".container2").innerHTML =
+        `<h2><i class="bi bi-person-circle"></i>Login</h2>
     <form action="../Php/AreaCliente/ControleLogin-Cliente.php" method="get">
         <div class="inpt-box">
             <label for="Email_Cliente"></label>
@@ -77,9 +77,9 @@ function Login_Cliente(){
     </div>`
 }
 
-function RecuperarSenha_Cliente(){
-    document.querySelector(".container2").innerHTML = 
-    `<h2 id="title"><i class="bi bi-person-circle"></i>Recuperar Senha</h2>
+function RecuperarSenha_Cliente() {
+    document.querySelector(".container2").innerHTML =
+        `<h2 id="title"><i class="bi bi-person-circle"></i>Recuperar Senha</h2>
     <form action="../Php/AreaCliente/ControleLogin-Cliente.php" method="get" class="frmEsqSenha">
         <div class="inpt-box">
             <label for="EmailSenha_Cliente"></label>
@@ -94,9 +94,9 @@ function RecuperarSenha_Cliente(){
 }
 
 // Login Consultor
-function Cadastro_Consultor(){
-    document.querySelector(".container2").innerHTML = 
-    `<h2><i class="bi bi-briefcase"></i>Cadastro Consultor</h2>
+function Cadastro_Consultor() {
+    document.querySelector(".container2").innerHTML =
+        `<h2><i class="bi bi-briefcase"></i>Cadastro Consultor</h2>
     <form action="../Php/AreaConsultor/ControleLogin-Consultor.php" method="get">
         <div class="inpt-box">
             <label for="Nome_Consultor"></label>
@@ -124,9 +124,9 @@ function Cadastro_Consultor(){
     </div>`
 }
 
-function Login_Consultor(){
-    document.querySelector(".container2").innerHTML = 
-    `<h2><i class="bi bi-briefcase"></i>Login Consultor</h2>
+function Login_Consultor() {
+    document.querySelector(".container2").innerHTML =
+        `<h2><i class="bi bi-briefcase"></i>Login Consultor</h2>
     <form action="../Php/AreaConsultor/ControleLogin-Consultor.php" method="get">
         <div class="inpt-box">
             <label for="Email_Consultor"></label>
@@ -149,9 +149,9 @@ function Login_Consultor(){
     </div>`
 }
 
-function RecuperarSenha_Consultor(){
-    document.querySelector(".container2").innerHTML = 
-    `<h2 id="title"><i class="bi bi-briefcase"></i>Recuperar Senha</h2>
+function RecuperarSenha_Consultor() {
+    document.querySelector(".container2").innerHTML =
+        `<h2 id="title"><i class="bi bi-briefcase"></i>Recuperar Senha</h2>
     <form action="../Php/AreaConsultor/ControleLogin-Consultor.php" method="get" class="frmEsqSenha">
         <div class="inpt-box">
             <label for="EmailSenha_Consultor"></label>
@@ -166,9 +166,9 @@ function RecuperarSenha_Consultor(){
 }
 
 // Adm
-function Login_Adm(){
-    document.querySelector("#header").innerHTML = 
-    `<div class="container">
+function Login_Adm() {
+    document.querySelector("#header").innerHTML =
+        `<div class="container">
         <div class="flex">
             <a class="logo" href="#"><img src="../Imagens/header/logo branca finannce.png"></a>
             <nav class="nav">
@@ -184,8 +184,8 @@ function Login_Adm(){
         </div>
     </div>`
 
-    document.querySelector(".container2").innerHTML = 
-    `<h2><i class="bi bi-person-gear"></i>Login Adm</h2>
+    document.querySelector(".container2").innerHTML =
+        `<h2><i class="bi bi-person-gear"></i>Login Adm</h2>
     <form action="../Php/AreaAdm/ControleLogin-Adm.php" method="get" id="frmDiv_Adm">
         <div class="inpt-box">
             <label for="Email_Adm"></label>

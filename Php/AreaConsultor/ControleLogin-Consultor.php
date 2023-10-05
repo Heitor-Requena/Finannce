@@ -31,5 +31,3 @@ if(isset($_GET["btn_CadastrarConsultor"])){
     $login->setNome_Consultor($NomeCadastro_Consultor);
     echo $login->CadastrarConsultor();
 }
-
-?>

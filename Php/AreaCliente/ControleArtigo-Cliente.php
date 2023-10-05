@@ -7,4 +7,3 @@ if(isset($_GET["CarregarArtigos"])){
     $Retorno = $Artigos->CarregarArtigos();
     echo $Retorno;
 }
-?>

@@ -27,5 +27,3 @@
         $Retorno = $Adm->DeletarCon();
         echo $Retorno;
     }
-
-?>

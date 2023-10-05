@@ -3,19 +3,19 @@
     --bg-color: #051225;
 }
 
-*{
+* {
     /*border: 1px solid red;*/
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-.btn-lgn i{
+.btn-lgn i {
     margin: 0;
     margin-right: 7px;
 }
 
-main{
+main {
     width: 100%;
     height: 100vh;
 
@@ -24,7 +24,7 @@ main{
     align-items: center;
 }
 
-.container2{
+.container2 {
     min-width: 266px;
     height: 400px;
 
@@ -39,31 +39,31 @@ main{
     border-radius: 15px;
 }
 
-.container2 h2 i{
+.container2 h2 i {
     margin-right: 10px;
 }
 
-.container2 form{
+.container2 form {
     width: 100%;
-    
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.container2 form .inpt-box{
+.container2 form .inpt-box {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.container2 form .inpt-box i{
+.container2 form .inpt-box i {
     margin-right: -18px;
 }
 
-.container2 .fgtPasslink{
+.container2 .fgtPasslink {
     color: var(--light-font-color);
     font-size: 0.85em;
     text-decoration: none;
@@ -71,7 +71,7 @@ main{
     font-style: italic;
 }
 
-.container2 form .inpt{
+.container2 form .inpt {
     width: 70%;
     height: 30px;
     text-align: center;
@@ -85,11 +85,11 @@ main{
     color: var(--light-font-color);
 }
 
-.container2 form .inpt::placeholder{
+.container2 form .inpt::placeholder {
     color: var(--light-font-color);
 }
 
-.container2 form input[type="submit"]{
+.container2 form input[type="submit"] {
     width: 35%;
     padding: 4px;
     border-radius: 10px;
@@ -99,7 +99,7 @@ main{
     border: 1px solid transparent;
 }
 
-.container2 form input[type="submit"]:hover{
+.container2 form input[type="submit"]:hover {
     cursor: pointer;
     border: 1px solid var(--light-font-color);
     color: var(--light-font-color);
@@ -107,11 +107,11 @@ main{
     transition: ease-in-out 0.5s;
 }
 
-.container2 p{
+.container2 p {
     margin: 0 17px;
 }
 
-.container2 .link-form{
+.container2 .link-form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -119,21 +119,21 @@ main{
     gap: 5px;
 }
 
-.container2 .link-form a{
+.container2 .link-form a {
     color: var(--light-font-color);
 }
 
-.container2 .link-form .a2{
+.container2 .link-form .a2 {
     text-decoration: none;
 }
 
-.container2 .link-form a i{
+.container2 .link-form a i {
     margin: 0;
     margin-right: 7px;
 }
 
 /* Container3 ----------------------------------------------------------------------------------------------------------------------------*/
-.container3{
+.container3 {
     height: 400px;
 
     display: flex;
@@ -147,12 +147,12 @@ main{
     border-radius: 15px;
 }
 
-.container3 #formCadpt2{
+.container3 #formCadpt2 {
     width: 100%;
     margin: 10px;
 }
 
-.container3 form .row{
+.container3 form .row {
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -161,18 +161,18 @@ main{
     margin: 5px;
 }
 
-.container3 form .row .col{
+.container3 form .row .col {
     width: 50%;
 }
 
 
-.container3 form .inpt{
+.container3 form .inpt {
     width: 90%;
     height: 30px;
     text-align: center;
     outline: none;
     margin: 5px 5px;
-    
+
     background-color: transparent;
     border-top: none;
     border-left: none;
@@ -181,26 +181,26 @@ main{
     color: var(--light-font-color);
 }
 
-.container3 form .inpt::placeholder{
+.container3 form .inpt::placeholder {
     color: var(--light-font-color);
 }
 
-hr{
+hr {
     border: 1px solid var(--light-font-color);
     width: 90%;
     margin: 0 auto;
 }
 
-.container3 form .row .dt{
+.container3 form .row .dt {
     display: flex;
     width: 100%;
 }
 
-.container3 form .row .dt label{
+.container3 form .row .dt label {
     margin-top: 15px;
 }
 
-.container3 form .row .dt .DtNasc{
+.container3 form .row .dt .DtNasc {
     width: 50%;
     height: 30px;
     text-align: center;
@@ -212,5 +212,5 @@ hr{
     border-left: none;
     border-right: none;
     border-bottom: 1px solid var(--light-font-color);
-    color: var(--light-font-color);   
+    color: var(--light-font-color);
 }

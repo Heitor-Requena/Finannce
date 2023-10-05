@@ -42,5 +42,3 @@ if(isset($_GET["btn_CadastrarCliente"])){
 
     header('Location: indexCliente.php');
 }
-
-?>

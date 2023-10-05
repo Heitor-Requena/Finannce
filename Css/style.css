@@ -274,14 +274,15 @@ header i {
 /* QUERRY DE RESPONSIVIDADE */
 /* tablet */
 @media screen and (max-width: 1050px) {
+
     /* imgbg e escritas */
     .imgbg img {
         width: 750px;
         display: grid;
         justify-content: center;
-        min-width: 1050px
-        ;
+        min-width: 1050px;
     }
+
     .centro {
         height: 700px;
     }
@@ -290,9 +291,10 @@ header i {
         margin-top: 150px;
         text-align: center;
         font-size: 180px;
-        
-        
+
+
     }
+
     .centro p {
         width: 60%;
         text-align: center;
@@ -301,7 +303,7 @@ header i {
         margin-left: 20%;
         font-size: 10px;
     }
-    
+
 
     /* cards intro */
     .intro-cards {
@@ -310,25 +312,27 @@ header i {
         justify-content: center;
         align-items: center;
     }
+
     .card1st {
         margin-top: 20px;
         width: 950px;
-        
+
     }
-    .intro-cards .card1st{
+
+    .intro-cards .card1st {
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
-    
+
     .intro-cards .card1st img {
         width: 200%;
         margin-top: 15px;
         border: 5px;
         border-radius: 15px;
     }
-    
-    .cardtext{
+
+    .cardtext {
         color: #fff;
         width: 50px;
         margin-left: 70px;
@@ -337,13 +341,15 @@ header i {
         border-bottom-style: outset;
         border-right-style: outset;
         border-bottom-width: 1px;
-        border-right-width: 1px ;
+        border-right-width: 1px;
         border-bottom-right-radius: 15px;
     }
-    .cardtext h3{
+
+    .cardtext h3 {
         text-align: center;
         font-size: 40px;
     }
+
     .cardtext p {
         text-align: center;
         font-size: 25px;
@@ -358,17 +364,20 @@ header i {
         align-items: center;
         width: 950px;
     }
+
     .card2st {
         margin-top: 20px;
         width: 950px;
-        
+
     }
-    .intro-cards2 .card2st{
+
+    .intro-cards2 .card2st {
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
-    .cardtext2{
+
+    .cardtext2 {
         color: #fff;
         margin-right: 70px;
         font-size: 10px;
@@ -376,18 +385,20 @@ header i {
         border-bottom-style: outset;
         border-right-style: outset;
         border-bottom-width: 1px;
-        border-right-width: 1px ;
+        border-right-width: 1px;
         border-bottom-right-radius: 15px;
         margin-bottom: 500px;
     }
-    .cardtext2 h3{
+
+    .cardtext2 h3 {
         text-align: center;
         font-size: 30px;
     }
+
     .cardtext2 p {
         text-align: center;
         font-size: 25px;
-        
+
     }
 
 }
@@ -404,11 +415,11 @@ main {
     margin: 20px auto;
     height: auto;
     display: grid;
-    
+
 }
 
-.intro-cards .card1st{
-    
+.intro-cards .card1st {
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -423,7 +434,7 @@ main {
     border-radius: 15px;
 }
 
-.cardtext{
+.cardtext {
     color: #fff;
     width: 500px;
     margin-right: 10%;
@@ -432,12 +443,12 @@ main {
     border-bottom-style: outset;
     border-right-style: outset;
     border-bottom-width: 1px;
-    border-right-width: 1px ;
+    border-right-width: 1px;
     border-bottom-right-radius: 15px;
 }
 
 .cardtext p {
-text-align: center;
+    text-align: center;
 }
 
 .intro-cards2 {
@@ -446,11 +457,11 @@ text-align: center;
     height: auto;
     display: flex;
     justify-content: space-between;
-    
+
 }
 
-.intro-cards2 .card2st{
-    
+.intro-cards2 .card2st {
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -462,9 +473,10 @@ text-align: center;
     margin-top: 5px;
     border: 5px;
     border-radius: 15px;
-    
+
 }
-.cardtext2{
+
+.cardtext2 {
     color: #fff;
     width: 500px;
     height: 250px;
@@ -473,18 +485,19 @@ text-align: center;
     border-top-style: outset;
     border-left-style: outset;
     border-top-width: 1px;
-    border-left-width: 1px ;
+    border-left-width: 1px;
     border-top-left-radius: 15px;
     margin-top: 20%;
     margin-left: 10%;
     text-align: center;
     justify-content: center;
-    
+
 }
 
 .cardtext2 p {
-text-align: center;
+    text-align: center;
 }
+
 /*CARDS DE PERGUNTAS*/
 .questao-card {
     width: 100%;
@@ -630,7 +643,7 @@ text-align: center;
     transition: 1s;
 }
 
-.manual-btn:not(:last-child){
+.manual-btn:not(:last-child) {
     margin-right: 40px;
 }
 
@@ -638,20 +651,23 @@ text-align: center;
     background-color: #fff;
 }
 
-#radio1:checked ~ .first {
+#radio1:checked~.first {
     margin-left: 0;
 }
-#radio2:checked ~ .first {
+
+#radio2:checked~.first {
     margin-left: -25%;
 }
-#radio3:checked ~ .first {
+
+#radio3:checked~.first {
     margin-left: -50%;
 }
-#radio4:checked ~ .first {
+
+#radio4:checked~.first {
     margin-left: -75%;
 }
 
-.navigation-auto div{
+.navigation-auto div {
     border: 2px solid #051225;
     padding: 5px;
     border-radius: 10px;
@@ -663,7 +679,7 @@ text-align: center;
     position: absolute;
     width: 800px;
     margin-top: 360px;
-    display: flex; 
+    display: flex;
     justify-content: center;
 }
 
@@ -671,27 +687,30 @@ text-align: center;
     margin-right: 40px;
 }
 
-#radio1:checked ~ .navigation-auto .auto-btn1 {
-    background-color: #fff;
-}
-#radio2:checked ~ .navigation-auto .auto-btn2 {
-    background-color: #fff;
-}
-#radio3:checked ~ .navigation-auto .auto-btn3 {
-    background-color: #fff;
-}
-#radio4:checked ~ .navigation-auto .auto-btn4 {
+#radio1:checked~.navigation-auto .auto-btn1 {
     background-color: #fff;
 }
 
-footer{
+#radio2:checked~.navigation-auto .auto-btn2 {
+    background-color: #fff;
+}
+
+#radio3:checked~.navigation-auto .auto-btn3 {
+    background-color: #fff;
+}
+
+#radio4:checked~.navigation-auto .auto-btn4 {
+    background-color: #fff;
+}
+
+footer {
     height: 20px;
     color: #e0e0e0;
     background: #051225;
     text-align: end;
 }
 
-footer a{
+footer a {
     text-decoration: none;
     color: #e0e0e0;
     margin-right: 20px;

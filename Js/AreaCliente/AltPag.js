@@ -1,13 +1,13 @@
 function alterarPag(pagName) {
-    if (pagName === "Home") {
-        document.querySelector("#section").innerHTML = 
-        `<h1 class="text-center align-middle">Seja bem vindo, Usuário</h1>`;
-        document.querySelector("#result").innerHTML =
-        ``;
-    } 
-    // Perfil Cliente--------------------------------------------------------------------------------------------------------
-    else if (pagName === "InfoPess") {
-        document.querySelector("#section").innerHTML = `<h1 class="text-center mt-3">Meus Dados</h1>
+  if (pagName === "Home") {
+    document.querySelector("#section").innerHTML =
+      `<h1 class="text-center align-middle">Seja bem vindo, Usuário</h1>`;
+    document.querySelector("#result").innerHTML =
+      ``;
+  }
+  // Perfil Cliente--------------------------------------------------------------------------------------------------------
+  else if (pagName === "InfoPess") {
+    document.querySelector("#section").innerHTML = `<h1 class="text-center mt-3">Meus Dados</h1>
         <p class="text-center">Se quiser fazer alguma alteração apenas mude os campos e clique no botão "Salvar"</p>
           
         <form class="container mt-5" action="" method="get">
@@ -85,19 +85,19 @@ function alterarPag(pagName) {
             <button type="button" id="iframe-submit-btn2" class="iframe-btn btn m-3 col-6 btn-outline-light">Salvar</button>
           </div>
         </form>`;
-        document.querySelector("#result").innerHTML =
-        ``;
-    }
+    document.querySelector("#result").innerHTML =
+      ``;
+  }
 
-    // Perfil Cliente--------------------------------------------------------------------------------------------------------
-    else if (pagName === "MeusGastos") {
-        document.querySelector("#section").innerHTML = `<h1>Meus Gastos</h1>`
-        document.querySelector("#result").innerHTML  = ``;
-    }
+  // Perfil Cliente--------------------------------------------------------------------------------------------------------
+  else if (pagName === "MeusGastos") {
+    document.querySelector("#section").innerHTML = `<h1>Meus Gastos</h1>`
+    document.querySelector("#result").innerHTML = ``;
+  }
 
-    // Perfil Cliente--------------------------------------------------------------------------------------------------------
-    else if (pagName === "Configuracoes") {
-        document.querySelector("#section").innerHTML = `<h1>Configurações</h1>`
-        document.querySelector("#result").innerHTML  = ``;
-    }
+  // Perfil Cliente--------------------------------------------------------------------------------------------------------
+  else if (pagName === "Configuracoes") {
+    document.querySelector("#section").innerHTML = `<h1>Configurações</h1>`
+    document.querySelector("#result").innerHTML = ``;
+  }
 }

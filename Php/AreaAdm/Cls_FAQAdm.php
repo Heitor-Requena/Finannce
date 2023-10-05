@@ -86,4 +86,3 @@ class ClsFAQAdm{
         return $Retorno;
     }
 }
-?>

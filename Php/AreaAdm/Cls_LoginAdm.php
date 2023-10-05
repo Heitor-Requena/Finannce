@@ -51,4 +51,3 @@ class Cls_LoginAdm{
         return $Retorno;
     }
 }
-?>

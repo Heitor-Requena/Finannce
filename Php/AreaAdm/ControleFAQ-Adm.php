@@ -23,4 +23,3 @@
         $Retorno = $Adm->ListarPerguntas();
         echo $Retorno;
     }
-?>
