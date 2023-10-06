@@ -29,7 +29,7 @@
 
         /*Inserir no Banco----------------------------------*/
         public function Inserir(){
-            include_once "../../Php/conexao.php";
+            include_once "../../../Php/conexao.php";
 
             try
             {
@@ -54,7 +54,7 @@
 
         /*Excuir do Banco----------------------------------*/
         public function Excluir(){
-            include_once "../../Php/conexao.php";
+            include_once "../../../Php/conexao.php";
 
             try
             {
@@ -78,7 +78,7 @@
 
         /*Pesquisar Semana----------------------------------*/
         public function Pesquisar(){
-            include_once "../../Php/conexao.php";
+            include_once "../../../Php/conexao.php";
 
             try
             {
@@ -97,7 +97,7 @@
 
         /*Listar Tudo----------------------------------*/
         public function Listar(){
-            include_once "../../Php/conexao.php";
+            include_once "../../../Php/conexao.php";
 
             try
             {
@@ -115,7 +115,7 @@
 
         /*Alterar dado no Banco----------------------------------*/
         public function Alterar(){
-            include_once "../../Php/conexao.php";
+            include_once "../../../Php/conexao.php";
 
             try
             {
