@@ -285,3 +285,16 @@ VALUES 	('Davidson', 'Home', 's8'),
 	('Ranielly','Documentacao', 's8');
 
 select NOME,ATIVIDADE,SEMANA from tb_cronograma order by SEMANA;
+
+
+CREATE TABLE `tb_gastos`(
+  `ID_CONSULTOR` int NOT NULL AUTO_INCREMENT,
+  `ID_CLIENTE` int NOT NULL,
+  `NOME_GASTO` varchar(30) NOT NULL,
+  `VALOR_GASTO` int NOT NULL,
+  `SITUACAO` char(10) NOT NULL,
+  `DATA_INCLUSAO` datetime DEFAULT CURRENT_TIMESTAMP,
+
+  PRIMARY KEY (`ID_GASTO`),
+  FOREIGN KEY (ID_CLIENTE) REFERENCES tb_cliente(ID_CLIENTE)
+  );

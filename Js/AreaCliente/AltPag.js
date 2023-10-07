@@ -92,40 +92,72 @@ function alterarPag(pagName) {
   // Perfil Cliente--------------------------------------------------------------------------------------------------------
   else if (pagName === "MeusGastos") {
     document.querySelector("#section").innerHTML = `<h1>Meus Gastos</h1>
-    <div class="row">
-      <div id="graficoRosca" style="width: 900px; height: 500px;"></div>
-      <section id="secaoForm">
-        <form action="ControleGrafico-Cliente.php" id="frm_Grafico" method="get" class="container mt-5">
-      
+    <br>
+    <div class="container">
+
+      <div class="row">
+        <button onclick="GraficoRosca(event)" class="col-4 iframe-btn btn btn-outline-light">Gráfico de Gastos Recentes</button><br>
+        <button onclick="TabelaRosca(event)" class="col-4 iframe-btn btn btn-outline-light">Tabela de Gastos Recentes</button>
+      </div>
+
+      <br><br>
+
+      <div class="row">
+        <div id="GraficoRosca" style="width: 400px; height: 300px;" class="col-6"></div>
+        
+        <div class="col-6">
+          
           <div class="row">
-            <div class="col-3">
-              <input type="text" name="NomeGasto" id="NomeGasto" class="form-control m-2" placeholder="Nome do Gasto">
-            </div>
-          </div>
-      
-          <div class="row">
-            <div class="col-3">
-              <input type="number" name="ValorGasto" id="ValorGasto" min=0 step=0.1 class="form-control m-2" placeholder="Valor">
-            </div>
+            <div id="TabelaGraficoRosca" class="col-12"></div>
           </div>
 
           <div class="row">
-            <div class="col-3">
-              <input type="number" name="Id_Gasto" id="Id_Gasto"  min=0 step=0.1 class="form-control m-2" placeholder="Número Gasto">
-            </div>
-          </div>
+            <div id="secaoForm" class="col-12 center">
+              <form action="ControleGrafico-Cliente.php" id="frm_Grafico" method="get" class="container mt-12">
+            
+                <div class="row">
+                  <div class="col-12">
+                    <input type="text" name="NomeGasto" id="NomeGasto" class="form-control m-2  col-9" placeholder="Nome do Gasto">
+                  </div>
+                </div>
+            
+                <div class="row">
+                  <div class="col-12">
+                    <input type="number" name="ValorGasto" id="ValorGasto" min=0 step=0.1 class="form-control m-2  col-9" placeholder="Valor">
+                  </div>
+                </div>
 
-          <div class="row">
-            <div class="col-3">
-              <input type="submit" id="btn_AdicionarGasto" name="btn_AdicionarGasto" class="iframe-btn btn m-3 col-6 btn-outline-light" value="Adicionar" onclick="">
-              <input type="submit" id="btn_ExcluirGasto" name="btn_ExcluirGasto" class="iframe-btn btn m-3 col-6 btn-outline-light" value="Excluir" onclick="(event)">
+                <div class="row">
+                  <div class="col-12">
+                    <input type="number" name="Id_Gasto" id="Id_Gasto"  min=0 class="form-control m-2 col-9" placeholder="Número">
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-12 text-center">
+                    <input type="submit" id="btn_AdicionarGasto" name="btn_AdicionarGasto" class="iframe-btn btn m-1 col-6 btn-outline-light" value="Adicionar" onclick="AdicionarGasto(event)">
+                    <input type="submit" id="btn_ExcluirGasto" name="btn_ExcluirGasto" class="iframe-btn btn m-1 col-6 btn-outline-light" value="Excluir" onclick="ExcluirGasto(event)">
+                  </div>
+                </div>
+              </form>
             </div>
           </div>
-        </form>
-      </section>
-      <section id="TabelaGraficoRosca"></section>
+        </div>
+      </div>
+
+      <div class="row">
+        <button onclick="" class="col-4 iframe-btn btn btn-outline-light">Todos Gastos</button><br>
+      </div>
+
+      <div class="row">
+        <div id="graficoLinha"></div>
+      </div>
+
+      <div class="row">
+        <div id="TabelaGraficoLinha"></div>
+      </div>
+
     </div>
-    <button onclick="GraficoRosca(event)"></button>
     `;
     document.querySelector("#result").innerHTML = ``;
   }
