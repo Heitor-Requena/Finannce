@@ -91,7 +91,42 @@ function alterarPag(pagName) {
 
   // Perfil Cliente--------------------------------------------------------------------------------------------------------
   else if (pagName === "MeusGastos") {
-    document.querySelector("#section").innerHTML = `<h1>Meus Gastos</h1>`
+    document.querySelector("#section").innerHTML = `<h1>Meus Gastos</h1>
+    <div class="row">
+      <div id="graficoRosca" style="width: 900px; height: 500px;"></div>
+      <section id="secaoForm">
+        <form action="ControleGrafico-Cliente.php" id="frm_Grafico" method="get" class="container mt-5">
+      
+          <div class="row">
+            <div class="col-3">
+              <input type="text" name="NomeGasto" id="NomeGasto" class="form-control m-2" placeholder="Nome do Gasto">
+            </div>
+          </div>
+      
+          <div class="row">
+            <div class="col-3">
+              <input type="number" name="ValorGasto" id="ValorGasto" min=0 step=0.1 class="form-control m-2" placeholder="Valor">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-3">
+              <input type="number" name="Id_Gasto" id="Id_Gasto"  min=0 step=0.1 class="form-control m-2" placeholder="Número Gasto">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-3">
+              <input type="submit" id="btn_AdicionarGasto" name="btn_AdicionarGasto" class="iframe-btn btn m-3 col-6 btn-outline-light" value="Adicionar" onclick="">
+              <input type="submit" id="btn_ExcluirGasto" name="btn_ExcluirGasto" class="iframe-btn btn m-3 col-6 btn-outline-light" value="Excluir" onclick="(event)">
+            </div>
+          </div>
+        </form>
+      </section>
+      <section id="TabelaGraficoRosca"></section>
+    </div>
+    <button onclick="GraficoRosca(event)"></button>
+    `;
     document.querySelector("#result").innerHTML = ``;
   }
 

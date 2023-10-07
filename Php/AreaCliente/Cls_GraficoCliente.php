@@ -1,6 +1,7 @@
 <?php 
     class Cls_GraficoCliente{
         private $Id_Cliente;
+        private $Id_Gasto;
         private $Nome_Gasto;
         private $Valor_Gastos;
 
@@ -11,6 +12,15 @@
 
         public function setID_Cliente($id){
             $this->Id_Cliente = $id;
+        }
+
+        //-------------------------------------
+        public function getID_Gasto(){
+            return $this->Id_Gasto;
+        }
+
+        public function setID_Gasto($id){
+            $this->Id_Gasto = $id;
         }
 
         //-------------------------------------
@@ -92,9 +102,9 @@
 
             try
             {
-                $Comando = $conexao->prepare("UPDATE tb_gastos SET SITUACAO = 'DESATIVADO' WHERE NOME_GASTO = ? AND ID_CLIENTE = ?;");
+                $Comando = $conexao->prepare("UPDATE tb_gastos SET SITUACAO = 'DESATIVADO' WHERE ID_GASTO = ? AND ID_CLIENTE = ?;");
                 $Comando->bindParam(1, $this->Nome_Gasto);
-                $Comando->bindParam(2, $this->Id_Cliente);
+                $Comando->bindParam(2, $this->Id_Gasto);
 
                 if($Comando->execute())
                 {

@@ -59,13 +59,16 @@ $Nome = $_SESSION["nome"];
   </nav>
 
   <section id="section" style="margin-top: 100px;">
-    <h1 class="text-center align-middle mt-5">Seja bem vindo, <?php echo $Nome ?></h1>
+    <h1 class="text-center align-middle mt-5">Seja bem vindo, <?php echo $Nome?></h1>
   </section>
 
   <section id="result"></section>
-
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script src="../../Js/AreaCliente/AltPag.js"></script>
-  <script src="../../Js/AreaCliente/Js-InfoPess.js"></script>
+  <!--<script src="../../Js/AreaCliente/Js-InfoPess.js"></script>-->
+  <script src="../../Js/AreaCliente/RespostaGrafico-Cliente.js"></script>
 </body>
 
 </html>

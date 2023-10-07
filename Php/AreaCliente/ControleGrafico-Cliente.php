@@ -3,8 +3,9 @@
 
     session_start();
     $ID_Cliente  = $_SESSION["id"];
-    $Nome_Gasto  = filter_input(INPUT_GET, "");
-    $Valor_Gasto = filter_input(INPUT_GET, "");
+    $ID_Gasto    = filter_input(INPUT_GET, "Id_Gasto", FILTER_SANITIZE_NUMBER_INT);
+    $Nome_Gasto  = filter_input(INPUT_GET, "NomeGasto", FILTER_SANITIZE_STRING);
+    $Valor_Gasto = filter_input(INPUT_GET, "ValorGasto");
 
     $data = new Cls_GraficoCliente();
 
