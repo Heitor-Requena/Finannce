@@ -16,7 +16,21 @@ $Nome = $_SESSION["nome"];
 </head>
 
 <body>
+  <?php
+    session_start();
 
+    if ((!isset($_SESSION["id"]) == true) and (!isset($_SESSION["nome"]) == true) and (!isset($_SESSION["email"]) == true))
+    {
+      unset($_SESSION["id"]);
+      unset($_SESSION["id"]);
+      unset($_SESSION["id"]);
+      header('location: ../../index.html');
+    } 
+    else{
+      $Nome = $_SESSION["nome"];
+
+    }
+  ?>  
   <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top bg-primary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#" id="alterarLogo"><img src="../../Img/logo branca finannce.png" alt="" style="height: 56px;"></a>

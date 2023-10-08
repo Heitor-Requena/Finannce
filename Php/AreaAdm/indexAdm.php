@@ -1,8 +1,3 @@
-<?php
-session_start();
-$Nome = $_SESSION["nome"];
-?>
-
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
 
@@ -19,6 +14,21 @@ $Nome = $_SESSION["nome"];
 </head>
 
 <body>
+  <?php
+    session_start();
+
+    if ((!isset($_SESSION["id"]) == true) and (!isset($_SESSION["nome"]) == true) and (!isset($_SESSION["email"]) == true))
+    {
+      unset($_SESSION["id"]);
+      unset($_SESSION["id"]);
+      unset($_SESSION["id"]);
+      header('location: ../../index.html');
+    } 
+    else{
+      $Nome = $_SESSION["nome"];
+
+    }
+  ?>
 
   <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
     <div class="container-fluid ml-2">
