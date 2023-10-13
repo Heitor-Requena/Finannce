@@ -1,7 +1,3 @@
-<?php
-session_start();
-$Nome = $_SESSION["nome"];
-?>
 
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
@@ -45,17 +41,17 @@ $Nome = $_SESSION["nome"];
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#" name="Home" onclick="alterarPag('Home')">Home</a>
+              <a class="nav-link active" aria-current="page" href="indexCliente.php" name="Home">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#" name="MeusGastos" onclick="alterarPag('MeusGastos')">Meus Gastos</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" onclick="alterarPag('Configuracoes')">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Configurações
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#" onclick="alterarPag('InfoPess')">Meus Dados</a></li>
+                <li><a class="dropdown-item" href="infopess.php">Meus Dados</a></li>
                 <li><a class="dropdown-item" href="#">Another action</a></li>
                 <li>
                   <hr class="dropdown-divider">
@@ -74,6 +70,9 @@ $Nome = $_SESSION["nome"];
 
   <section id="section" style="margin-top: 100px;">
     <h1 class="text-center align-middle mt-5">Seja bem vindo, <?php echo $Nome?></h1>
+    <div class="text-center">
+      <img src="../../Img/Area/cute-penguin.gif" class="rounded" alt="...">
+    </div>
   </section>
 
   <section id="result"></section>

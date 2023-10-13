@@ -84,7 +84,8 @@ function alterarPag(pagName) {
           <div class="text-center">
             <button type="button" id="iframe-submit-btn2" class="iframe-btn btn m-3 col-6 btn-outline-light">Salvar</button>
           </div>
-        </form>`;
+        </form>
+  `;
     document.querySelector("#result").innerHTML =
       ``;
   }
