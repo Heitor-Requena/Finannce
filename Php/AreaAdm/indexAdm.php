@@ -15,19 +15,16 @@
 
 <body>
   <?php
-    session_start();
+  session_start();
 
-    if ((!isset($_SESSION["id"]) == true) and (!isset($_SESSION["nome"]) == true) and (!isset($_SESSION["email"]) == true))
-    {
-      unset($_SESSION["id"]);
-      unset($_SESSION["id"]);
-      unset($_SESSION["id"]);
-      header('location: ../../index.html');
-    } 
-    else{
-      $Nome = $_SESSION["nome"];
-
-    }
+  if ((!isset($_SESSION["id"]) == true) and (!isset($_SESSION["nome"]) == true) and (!isset($_SESSION["email"]) == true)) {
+    unset($_SESSION["id"]);
+    unset($_SESSION["id"]);
+    unset($_SESSION["id"]);
+    header('location: ../../index.html');
+  } else {
+    $Nome = $_SESSION["nome"];
+  }
   ?>
 
   <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">

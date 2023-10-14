@@ -1,13 +1,13 @@
 @import url(https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap);
 
-*{
+* {
     /*border: 1px solid red;*/
     margin: 0;
     padding: 0;
-    font-family: "Poppins", sans-serif; 
+    font-family: "Poppins", sans-serif;
 }
 
-main{
+main {
     width: 100%;
     height: 100vh;
     background: #051225;
@@ -16,12 +16,12 @@ main{
     align-items: center;
 }
 
-a{
+a {
     text-decoration: none;
     color: #01161e;
 }
 
-.container{
+.container {
     background-color: #E4E9EB;
     border-radius: 7px;
     padding: 15px;
@@ -33,7 +33,7 @@ a{
     width: 50%;
 }
 
-form{
+form {
     background-color: #E4E9EB;
     padding: 15px;
     display: flex;
@@ -43,10 +43,10 @@ form{
     border-radius: 7px;
 }
 
-form input{
+form input {
     height: 100%;
     outline: none;
-    border: none; 
+    border: none;
     font-size: 16px;
     font-weight: 500;
     border-bottom: 2px solid rgba(0, 0, 0, 0.2);
@@ -54,11 +54,11 @@ form input{
     transition: all 0.3s ease;
 }
 
-form .input-txt{
+form .input-txt {
     background-color: #E4E9EB;
 }
 
-form .input-sbmt{
+form .input-sbmt {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -66,14 +66,14 @@ form .input-sbmt{
     gap: 10px;
 }
 
-form .input-sbmt .sbmt-align{
+form .input-sbmt .sbmt-align {
     width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
-form .input-sbmt .sbmt-align input{
+form .input-sbmt .sbmt-align input {
     width: 150px;
     cursor: pointer;
     border: 2px solid #01161e;
@@ -82,7 +82,7 @@ form .input-sbmt .sbmt-align input{
     border-radius: 7px;
 }
 
-form .input-sbmt .sbmt-align input:hover{
+form .input-sbmt .sbmt-align input:hover {
     border: 2px solid #01161e;
     background-color: #E4E9EB;
     color: #01161e;
@@ -90,7 +90,7 @@ form .input-sbmt .sbmt-align input:hover{
 }
 
 /*alinhar listagem*/
-.conatiner .List-box{
+.conatiner .List-box {
     display: flex;
     flex-wrap: wrap;
     width: 500px;

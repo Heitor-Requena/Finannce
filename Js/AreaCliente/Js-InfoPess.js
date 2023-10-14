@@ -8,7 +8,7 @@ function buscaCep() {
         fetch(url)
             .then(response => {
                 if (!response.ok) {
-                    throw new Error("CEP inválido");
+                    throw new Error("CEP inválido")
                 }
                 return response.json();
             })
@@ -24,7 +24,7 @@ function buscaCep() {
     }
 }
 
-window.onload = function () {
+document.addEventListener("DOMContentLoaded", function () {
     let Cep = document.getElementById("CEP");
     Cep.addEventListener("blur", buscaCep);
-}
+});
