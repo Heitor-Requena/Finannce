@@ -1,5 +1,7 @@
 <?php 
     include_once "Cls_GraficoCliente.php";
+    require_once '../dompdf/autoload.inc.php';
+    use Dompdf\Dompdf;
 
     session_start();
     $ID_Cliente  = $_SESSION["id"];
@@ -24,16 +26,6 @@
         $Retorno = $data->GerarTabelaRosca();
         echo $Retorno;
     }
-    
-    else if(isset($_GET["GerarGraficoBarra"])){
-        $Retorno = $data->GerarGraficoBarra();
-        echo $Retorno;
-    }
-
-    else if(isset($_GET["GerarGraficoLinha"])){
-        $Retorno = $data->GerarGraficoLinha();
-        echo $Retorno;
-    }
 
     else if(isset($_GET["btn_AdicionarGasto"])){
         $Retorno = $data->AdicionarGasto();
@@ -43,5 +35,31 @@
     else if(isset($_GET["btn_ExcluirGasto"])){
         $Retorno = $data->ExcluirGasto();
         echo $Retorno;
+    }
+
+    else if(isset($_GET["GerarGraficoColuna"])){
+        $Retorno = $data->GerarGraficoColuna();
+        echo $Retorno;
+    }
+
+    else if(isset($_GET["GerarTabelaColuna"])){
+        $Retorno = $data->GerarTabelaColuna();
+        echo $Retorno;
+    }
+
+    else if(isset($_GET["btn_Relatorio"])){
+        $Retorno = $data->GerarRelatorio();
+
+        echo $Retorno;
+
+        $dompdf = new Dompdf();
+
+        $dompdf->load_Html('<h1 style="text-aling: center;">Relatorio de Gastos</h1>'. $Retorno);
+
+        $dompdf->setPaper('A4', 'portrait');
+
+        $dompdf->render();
+
+        $dompdf->stream("relatorio.pdf", array("Attachment" => false));
     }
 ?>

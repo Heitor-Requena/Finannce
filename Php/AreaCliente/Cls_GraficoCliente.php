@@ -1,4 +1,4 @@
-<?php 
+<?php
     class Cls_GraficoCliente{
         private $Id_Cliente;
         private $Id_Gasto;
@@ -101,7 +101,7 @@
 
             try
             {
-                $Comando = $conexao->prepare("INSERT INTO tb_gastos (ID_CLIENTE, NOME_GASTO, VALOR_GASTO, SITUACAO) VALUES (?, ?, ?, 'Ativo');");
+                $Comando = $conexao->prepare("INSERT INTO tb_gastos (ID_CLIENTE, NOME_GASTO, VALOR_GASTO, SITUACAO, DATA_INCLUSAO) VALUES (?, ?, ?, 'Ativo', NOW());");
                 $Comando->bindParam(1, $this->Id_Cliente);
                 $Comando->bindParam(2, $this->Nome_Gasto);
                 $Comando->bindParam(3, $this->Valor_Gastos);
@@ -151,12 +151,12 @@
         }
 
         //----------------------------------------
-        public function GerarGraficoLinha(){
+        public function GerarGraficoColuna(){
             include_once "../conexao.php";
 
             try
             {
-                $Comando = $conexao->prepare("SELECT NOME_GASTO, VALOR_GASTO, DATA_CRIACAO FROM tb_gastos WHERE ID_CLIENTE = ?;");
+                $Comando = $conexao->prepare("SELECT NOME_GASTO, VALOR_GASTO, DATA_INCLUSAO FROM `tb_gastos` WHERE ID_CLIENTE = ? ORDER BY `tb_gastos`.`DATA_INCLUSAO` DESC;");
                 $Comando->bindParam(1, $this->Id_Cliente);
 
                 if($Comando->execute())
@@ -178,12 +178,14 @@
         }
 
         //----------------------------------------
-        public function GerarGraficoBarra(){
+        public function GerarTabelaColuna(){
             include_once "../conexao.php";
+
+            //TENTAR FAZER UM DE COLUNA
 
             try
             {
-                $Comando = $conexao->prepare("SELECT NOME_GASTO, VALOR_GASTO, DATA_CRIACAO FROM tb_gastos WHERE ID_CLIENTE = ?;");
+                $Comando = $conexao->prepare("SELECT NOME_GASTO, VALOR_GASTO, DATA_INCLUSAO FROM `tb_gastos` WHERE ID_CLIENTE = ? ORDER BY `tb_gastos`.`DATA_INCLUSAO` DESC;");
                 $Comando->bindParam(1, $this->Id_Cliente);
 
                 if($Comando->execute())
@@ -193,12 +195,81 @@
                 }
                 else
                 {   
-                    $Retorno = json_encode('Não foi possível Carregar o grafico/Erro na query. Parte 1');
+                    $Retorno = json_encode('Não foi possível Carregar a Tabela/Erro na query. Parte 1');
                 }
             }
             catch (PDOException $Erro)
             {
                 $Retorno = json_encode("ERRO: " . $Erro->getMessage());
+            }
+            
+            return $Retorno;
+        }
+
+        //----------------------------------------
+        public function GerarRelatorio(){
+            include_once "../conexao.php";
+
+            try
+            {
+                $Comando = $conexao->prepare("SELECT `ID_GASTO`, `NOME_GASTO`, `VALOR_GASTO`, `SITUACAO`, `DATA_INCLUSAO` FROM `tb_gastos` WHERE ID_CLIENTE = ?;");
+                $Comando->bindParam(1, $this->Id_Cliente);
+
+                $Comando->execute();
+
+                $Relat = "";
+                $Relat .= '<table>';
+                $Relat .= '<tr>';
+                $Relat .= '<th>ID do Gasto</th>';
+                $Relat .= '<th>Nome Gasto</th>';
+                $Relat .= '<th>Valor</th>';
+                $Relat .= '<th>Situação</th>';
+                $Relat .= '<th>Data de Inclusão</th>';
+                $Relat .= '</tr>';
+
+                $Linha = $Comando->fetchALL(PDO::FETCH_OBJ);
+
+                foreach ($Linha as $L)
+                {
+                    $Relat .= '<tr>';
+                        $Relat .= '<td>' . $L->ID_GASTO . '</td>';
+                        $Relat .= '<td>' . $L->NOME_GASTO . '</td>';
+                        $Relat .= '<td>' . $L->VALOR_GASTO . '</td>';
+                        $Relat .= '<td>' . $L->SITUACAO . '</td>';
+                        $Relat .= '<td>' . $L->DATA_INCLUSAO . '</td>';
+                    $Relat .= '</tr>';
+                }
+                $Relat .= '</table>';
+
+                $Relat .= '<br><table>';
+                $Relat .= '<th>Média de valor do Gastos</th>';
+                $Relat .= '<th>Soma dos Valores</th>';
+                $Relat .= '<th>Valor do Maior Gasto</th>';
+                $Relat .= '<th>Valor do Menor Gasto</th>';
+                $Relat .= '</tr>';
+
+                $Comando = $conexao->prepare("SELECT MAX(VALOR_GASTO) AS MAIOR, MIN(VALOR_GASTO) AS MINIMO, SUM(VALOR_GASTO) AS SOMA, TRUNCATE(AVG(VALOR_GASTO), 2) AS MEDIA FROM `tb_gastos` WHERE ID_CLIENTE = ?;");
+                $Comando->bindParam(1, $this->Id_Cliente);
+                $Comando->execute();
+
+                $Linha = $Comando->fetchALL(PDO::FETCH_OBJ);
+
+                foreach ($Linha as $L)
+                {
+                    $Relat .= '<tr>';
+                        $Relat .= '<td>' . $L->MAIOR . '</td>';
+                        $Relat .= '<td>' . $L->MINIMO . '</td>';
+                        $Relat .= '<td>' . $L->SOMA . '</td>';
+                        $Relat .= '<td>' . $L->MEDIA . '</td>';
+                    $Relat .= '</tr>';
+                }
+                $Relat .= '</table>';
+
+                $Retorno = $Relat;
+            }
+            catch (PDOException $Erro)
+            {
+                $Retorno =  "ERRO: " . $Erro->getMessage();
             }
             
             return $Retorno;
