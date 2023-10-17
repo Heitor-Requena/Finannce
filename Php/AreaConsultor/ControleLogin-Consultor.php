@@ -16,12 +16,19 @@ if(isset($_GET["btn_EntrarConsultor"])){
 
     $Dados = $login->EntrarConsultor();
     
-    foreach ($Dados as $Dd){
-        session_start();
-        $_SESSION["email"] = $Dd->EMAIL_ADM;
-        $_SESSION["nome"] = $Dd->NOME_ADM;
-        $_SESSION["id"] = $Dd->ID_ADM;
-        header('Location: indexConsultor.php');
+    if(empty($Dados))
+    {
+        echo "NENHUM REGISTRO ENCONTRADO";
+    }
+    else
+    {
+        foreach ($Dados as $Dd){
+            session_start();
+            $_SESSION["email"] = $Dd->EMAIL_CONSULTOR;
+            $_SESSION["nome"] = $Dd->NOME_CONSULTOR;
+            $_SESSION["id"] = $Dd->ID_CONSULTOR;
+            header('Location: indexConsultor.php');
+        }
     }
 }
 

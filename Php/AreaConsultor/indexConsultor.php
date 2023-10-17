@@ -18,12 +18,13 @@
     if ((!isset($_SESSION["id"]) == true) and (!isset($_SESSION["nome"]) == true) and (!isset($_SESSION["email"]) == true))
     {
       unset($_SESSION["id"]);
-      unset($_SESSION["id"]);
-      unset($_SESSION["id"]);
+      unset($_SESSION["nome"]);
+      unset($_SESSION["email"]);
       header('location: ../../index.html');
     } 
     else{
       $Nome = $_SESSION["nome"];
+      $ID = $_SESSION["id"];
 
     }
   ?>
@@ -44,15 +45,12 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#" name="Home" onclick="alterarPag('Home')">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#" name="MeusGastos" onclick="alterarPag('MeusGastos')">Meus Gastos</a>
-            </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" onclick="alterarPag('Configuracoes')">
                 Configurações
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#" onclick="alterarPag('InfoPess')">Meus Dados</a></li>
+                <li><a class="dropdown-item" href="infopess.php">Meus Dados</a></li>
                 <li><a class="dropdown-item" href="#">Another action</a></li>
                 <li>
                   <hr class="dropdown-divider">

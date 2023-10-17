@@ -26,7 +26,6 @@ function ExcluirArtigo(event) {
 function AdicionarArtigo(event) {
     event.preventDefault()
     var DadosForm = $('#frm_Artigo').serialize()
-    console.log(DadosForm)
 
     $.ajax({
         method: 'GET',
@@ -51,7 +50,6 @@ function AdicionarArtigo(event) {
 function ConsultarArtigo(event) {
     event.preventDefault()
     var DadosForm = $('#frm_Artigo2').serialize()
-    console.log(DadosForm)
 
     $.ajax({
         method: 'GET',
@@ -70,9 +68,7 @@ function ConsultarArtigo(event) {
                 console.log("ARTIGO Não Encontrado");
             }
 
-            console.log("PARTE ANTES DO DADOS PHP")
             var Artigo = JSON.parse(dadosPHP);
-            console.log(Artigo)
 
             // CONSULTA EM Tabela
             var Tabela = '';
@@ -118,7 +114,6 @@ function ListarArtigo(event) {
 
         .done(function (dadosPHP) {
             var Artigo = JSON.parse(dadosPHP);
-            console.log(Artigo)
 
             // CONSULTA EM Tabela
             var Tabela = '';

@@ -102,13 +102,26 @@ CREATE TABLE `tb_cliente` (
   `EMAIL_CLIENTE` varchar(80) NOT NULL,
   `SENHA_CLIENTE` char(8) NOT NULL,
   `FONE_CLIENTE` char(15) NOT NULL,
-  `DATA_ENTRADA` datetime DEFAULT CURRENT_TIMESTAMP,
+  `CPF_CLIENTE` int (14) UNIQUE,
+  `RG_CLIENTE` int (12)  UNIQUE,
+  `DTA_NASC_CLIENTE DATE NOT NULL,
+  `CEP_CLIENTE` int (8),
+  `RUA_CLIENTE` varchar (150),
+  `BAIRRO_CLIENTE` varchar (50),
+  `NUMERO_CASA_CLIENTE` int (6),
+  `COMPLEMENTO_CLIENTE` varchar (50),
+  `CIDADE_CLIENTE` varchar (50),
+  `ESTADO_CLIENTE`char (2),
+  `DTA_ENTRADA` datetime DEFAULT CURRENT_TIMESTAMP,
+  `FOTO_PERF_CLIENTE` BLOB,
+  `STATUS_CLIENTE` varchar (40),
   PRIMARY KEY (`ID_CLIENTE`),
   UNIQUE KEY `EMAIL_CLIENTE` (`EMAIL_CLIENTE`)
 );
 
-INSERT INTO `tb_cliente` (`NOME_CLIENTE`, `EMAIL_CLIENTE`, `SENHA_CLIENTE`, `FONE_CLIENTE`)
-VALUES
+INSERT INTO `tb_cliente` (NOME_CLIENTE, EMAIL_CLIENTE, SENHA_CLIENTE, FONE_CLIENTE, FONE_CLIENTE, CPF_CLIENTE, RG_CLIENTE, DTA_NASC_CLIENTE, CEP_CLIENTE, RUA_CLIENTE, BAIRRO_CLIENTE, NUMERO_CASA_CLIENTE, COMPLEMENTO_CLIENTE, CIDADE_CLIENTE, ESTADO_CLIENTE, DTA_ENTRADA_CLIENTE, FOTO_PERF_CLIENTE, STATUS_CLIENTE) VALUES
+
+
   ('Cliente 1', 'cliente1@example.com', 'senha123', '123-456-7890'),
   ('Cliente 2', 'cliente2@example.com', 'senha456', '987-654-3210'),
   ('Cliente 3', 'cliente3@example.com', 'senha789', '555-555-5555'),
@@ -152,13 +165,26 @@ CREATE TABLE `tb_consultor`(
   `NOME_CONSULTOR` varchar(60) NOT NULL,
   `EMAIL_CONSULTOR` varchar(80) NOT NULL,
   `SENHA_CONSULTOR` char(8) NOT NULL,
+  `CPF_CONSULTOR` int (14) UNIQUE,
+  `RG_CONSULTOR` int (12) UNIQUE,
+  `FONE_CONSULTOR` int (14), NOT NULL,
+  `CEP_CONSULTOR` int (8),
+  `RUA_CONSULTOR` varchar (150),
+  `BAIRRO_CONSULTOR` varchar (50),
+  `NUMERO_CASA_CONSULTOR`  int (6),
+  `COMPLEMENTO_CONSULTOR` varchar (50),
+  `CIDADE_CONSULTOR` varchar (50),
+  `ESTADO_CONSULTOR` char (2),
+  `FOTO_PERF_CONSULTOR` BLOB,
+  `ANEXO_CONSULTOR` BLOB,
+  `STATUS_CONSULTOR` char (20),
   `DATA_ENTRADA` datetime DEFAULT CURRENT_TIMESTAMP,
-  `AVALIAÇÃO_CONSULTOR` char(2) NULL,
-  `DESCRICAO_CONSULTOR` text,
+  `AVALIAÇAO_CONSULTOR` char(2) NULL,
+  `DESC_CONSULTOR` text,
   PRIMARY KEY (`ID_CONSULTOR`),
   UNIQUE KEY `EMAIL_CONSULTOR` (`EMAIL_CONSULTOR`));
-INSERT INTO tb_consultor (NOME_CONSULTOR, EMAIL_CONSULTOR, SENHA_CONSULTOR)
-VALUES
+INSERT INTO tb_consultor (NOME_CONSULTOR, EMAIL_CONSULTOR, SENHA_CONSULTOR, CPF_CONSULTOR, RG_CONSULTOR, FONE_CONSULTOR, CEP_CONSULTOR, RUA_CONSULTOR, BAIRRO_CONSULTOR, NUMERO_CONSULTOR, COMPLEMENTO_CASA_CONSULTOR, CIDADE_CASA_CONSULTOR, ESTADO_CONSULTOR, FOTO_PERF_CONSULTOR, ANEXO_CONSULTOR, STATUS_CONSULTOR, DATA_ENTRADA, AVALIAÇAO_CONSULTOR, DESC_CONSULTOR) VALUES
+
   ('João Silva', 'consultor2@x.com', '5678'),
   ('Maria Santos', 'consultor3@x.com', 'abcd'),
   ('Pedro Oliveira', 'consultor4@x.com', 'efgh'),
@@ -251,50 +277,5 @@ INSERT INTO tb_cronograma (NOME, ATIVIDADE, SEMANA) VALUES
     ('João Santos', 'Finalização da Home page, login e cadastro. Função Listagem e documentação.', 's4'),
     ('Matheus Cerqueira', 'Ajuste da Logo e Design da Home', 's4'),
     ('Ranielly', 'Ajustes na vitrine e desenvolvimento do TCC (documentação)', 's4');
-    
--- Inserindo dados para a Semana 5
-INSERT INTO tb_cronograma (NOME, ATIVIDADE, SEMANA)
-VALUES 	('Davidson', 'Alteração e inclusão de novas tabelas no BD', 's5'),
-	('João Santos', 'Esboço da Área ADM', 's5');
-
--- Inserindo dados para a Semana 6
-INSERT INTO tb_cronograma (NOME, ATIVIDADE, SEMANA)
-VALUES 	('Davidson', 'Alteração na estrutura do BD e atualização do Diagrama e do Dicionário de dados', 's6'),
-	('Fernanda', 'Inclusão de tabelas no banco de dados, desenvolvimento da documentação do TCC', 's6'),
-	('Heitor', 'Login', 's6'),
-	('Jéssica', 'Criação da pagina FAQ/SAC do novo layout', 's6'),
-	('João Santos', 'Criação da Área Adm', 's6'),
-	('Matheus Cerqueira', 'Reestruturação da Home', 's6'),
-	('Ranielly', 'Criação do Ciclo de Vida, alterações na vitrine, criação do perfil do consultor', 's6');
-
--- Inserindo dados para a Semana 7
-INSERT INTO tb_cronograma (NOME, ATIVIDADE, SEMANA)
-VALUES 	('Davidson', 'Alteração na página Artigos e Tabela "Cliente" e "Consultor".', 's7'),
-	('Fernanda', 'Desenvolvimento do Perfil Consultor', 's7'),
-	('Heitor', 'Desenvolvimento da Área Adm', 's7'),
-	('João Santos', 'Desenvolvimento da Área Adm', 's7'),
-	('Matheus Cerqueira', 'Finalização dos Cards da Home', 's7'),
-	('Ranielly', 'Reunião, implementação do avaliador na vitrine, fluxograma e mapa do site', 's7');
-
--- Inserindo dados para a Semana 8
-INSERT INTO tb_cronograma (NOME, ATIVIDADE, SEMANA)
-VALUES 	('Davidson', 'Home', 's8'),
-	('Heitor', 'Finalização da Área Adm', 's8'),
-	('João Santos', 'Finalização da Área Adm e Ajustes no layout do Login', 's8',
-	('Matheus Cerqueira', 'Carrossel e Ajustes na responsividade do site', 's8'),
-	('Ranielly','Documentacao', 's8');
 
 select NOME,ATIVIDADE,SEMANA from tb_cronograma order by SEMANA;
-
-
-CREATE TABLE `tb_gastos`(
-  `ID_CONSULTOR` int NOT NULL AUTO_INCREMENT,
-  `ID_CLIENTE` int NOT NULL,
-  `NOME_GASTO` varchar(30) NOT NULL,
-  `VALOR_GASTO` int NOT NULL,
-  `SITUACAO` char(10) NOT NULL,
-  `DATA_INCLUSAO` datetime DEFAULT CURRENT_TIMESTAMP,
-
-  PRIMARY KEY (`ID_GASTO`),
-  FOREIGN KEY (ID_CLIENTE) REFERENCES tb_cliente(ID_CLIENTE)
-  );
