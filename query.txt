@@ -1,3 +1,4 @@
+
 create database finannce;
 
 use finannce;
@@ -148,7 +149,6 @@ CREATE TABLE  `tb_consultoria`(
 select * from tb_consultoria;
 
 -- Estrutura da tabela `tb_consultor`
-drop table tb_consultor;
 CREATE TABLE `tb_consultor`(
   `ID_CONSULTOR` int NOT NULL AUTO_INCREMENT,
   `NOME_CONSULTOR` varchar(60) NOT NULL,
@@ -173,7 +173,6 @@ CREATE TABLE `tb_consultor`(
   PRIMARY KEY (`ID_CONSULTOR`),
   UNIQUE KEY `EMAIL_CONSULTOR` (`EMAIL_CONSULTOR`));
 INSERT INTO tb_consultor (NOME_CONSULTOR, EMAIL_CONSULTOR, SENHA_CONSULTOR, CPF_CONSULTOR, RG_CONSULTOR, FONE_CONSULTOR, CEP_CONSULTOR, RUA_CONSULTOR, BAIRRO_CONSULTOR, NUMERO_CASA_CONSULTOR, COMPLEMENTO_CONSULTOR, CIDADE_CONSULTOR, ESTADO_CONSULTOR, FOTO_PERF_CONSULTOR, ANEXO_CONSULTOR, STATUS_CONSULTOR, AVALIAÇAO_CONSULTOR, DESC_CONSULTOR) VALUES
-  ('João Silva', 'consultor2@x.com', '5678', '123.456.789-01', '12.345.678-9', '123-456-7890', 12345678, 'Rua 1', 'Bairro 1', 1, 'Complemento 1', 'Cidade 1', 'SP', NULL, NULL, 'A', '8', 'Descrição 1'),
   ('Maria Santos', 'consultor3@x.com', 'abcd', '234.567.890-12', '23.456.789-3', '987-654-3210', 23456789, 'Rua 2', 'Bairro 2', 2, 'Complemento 2', 'Cidade 2', 'RJ', NULL, NULL, 'A', '7', 'Descrição 2'),
   ('Pedro Oliveira', 'consultor4@x.com', 'efgh', '345.678.901-23', '34.567.890-3', '555-555-5555', 34567890, 'Rua 3', 'Bairro 3', 3, 'Complemento 3', 'Cidade 3', 'MG', NULL, NULL, 'A', '6', 'Descrição 3'),
   ('Ana Pereira', 'consultor5@x.com', 'ijkl', '456.789.012-34', '45.678.901-4', '999-999-9999', 45678901, 'Rua 4', 'Bairro 4', 4, 'Complemento 4', 'Cidade 4', 'BA', NULL, NULL, 'A', '5', 'Descrição 4'),
