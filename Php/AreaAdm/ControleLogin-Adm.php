@@ -14,9 +14,9 @@ if(isset($_GET["btn_EntrarAdm"])){
 
     foreach ($Dados as $Dd){
         session_start();
-        $_SESSION["email"] = $Dd->EMAIL_CONSULTOR;
-        $_SESSION["nome"] = $Dd->NOME_CONSULTOR;
-        $_SESSION["id"] = $Dd->ID_CONSULTOR;
+        $_SESSION["email"] = $Dd->EMAIL_ADM;
+        $_SESSION["nome"] = $Dd->NOME_ADM;
+        $_SESSION["id"] = $Dd->ID_ADM;
         header('Location: indexAdm.php');
     }
 }
