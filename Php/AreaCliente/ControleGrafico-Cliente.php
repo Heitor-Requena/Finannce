@@ -51,7 +51,7 @@
         $Retorno = $data->GerarRelatorio();
 
         echo $Retorno;
-
+        
         $dompdf = new Dompdf();
 
         $dompdf->load_Html('<h1 style="text-aling: center;">Relatorio de Gastos</h1>'. $Retorno);
@@ -60,6 +60,7 @@
 
         $dompdf->render();
 
-        $dompdf->stream("relatorio.pdf", array("Attachment" => false));
+        $dompdf->stream("relatorio", array("Attachment" => false));
+        
     }
 ?>

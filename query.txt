@@ -258,6 +258,23 @@ INSERT INTO tb_cronograma (NOME, ATIVIDADE, SEMANA) VALUES
 
 select NOME,ATIVIDADE,SEMANA from tb_cronograma order by SEMANA;
 
+CREATE TABLE tb_gasto(
+	ID_GASTO int NOT NULL AUTO_INCREMENT,
+	ID_CLIENTE int not null, 
+	NOME_GASTO varchar(30) not null,
+	VALOR_GASTO int not null,
+	SITUACAO varchar(10) not null,
+	DATA_INCLUSAO date not null,
+	
+	PRIMARY KEY (ID_GASTO),
+  FOREIGN KEY (ID_CLIENTE) REFERENCES tb_cliente(ID_CLIENTE));
+
+INSERT INTO tb_gastos ( ID_CLIENTE, NOME_GASTO, VALOR_GASTO, SITUACAO, DATA_INCLUSAO) VALUES (1, 'Escola', 250, 'Ativo', now()),(1, 'Mercado', 300, 'Ativo', now()),(1, 'Faculdade', 350, 'Ativo',  now());
+
+INSERT INTO tb_gastos ( ID_CLIENTE, NOME_GASTO, VALOR_GASTO, SITUACAO, DATA_INCLUSAO) VALUES (1, 'Praia', 100, 'Desativado',  now());
+
+SELECT `ID_GASTO`, `NOME_GASTO`, `VALOR_GASTO`, `SITUACAO`, `DATA_INCLUSAO` FROM `tb_gastos` WHERE ID_CLIENTE = '1';
+
 CREATE TABLE tb_cronograma(
 	NOME varchar(60) not null,
 	ATIVIDADE text not null,
