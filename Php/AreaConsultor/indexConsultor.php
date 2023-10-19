@@ -73,8 +73,8 @@
 
   <section id="result"></section>
 
-  <script src="../../Js/AreaCliente/AltPag.js"></script>
-  <script src="../../Js/AreaCliente/Js-InfoPess.js"></script>
+  <script src="../../Js/AreaConsultor/AltPag.js"></script>
+  <script src="../../Js/AreaConsultor/InfoPess.php"></script>
 </body>
 
 </html>
