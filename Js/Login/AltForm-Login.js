@@ -111,8 +111,14 @@ function Cadastro_Consultor() {
         <br>
 
         <div class="inpt-box">
+            <label for="FoneCadastro_Consultor"></label>
+            <i class="bi bi-telephone"></i><input type="tel" name="FoneCadastro_Consultor" id="FoneCadastro_Consultor" placeholder="Telefone" class="inpt">
+        </div>
+        <br>
+
+        <div class="inpt-box">
             <label for="SenhaCadastro_Consultor"></label>
-            <i class="bi bi-lock"></i><input type="password" name="SenhaCadastro_Consultor" id="SenhaCadastro_Consultor" placeholder="Senha" class="inpt">
+            <i class="bi bi-lock"></i><input type="password" name="SenhaCadastro_Consultor" id="SenhaCadastro_Consultor" placeholder="Senha" class="inpt" max=11111111>
         </div>
         <br>
 

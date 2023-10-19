@@ -29,7 +29,14 @@
         public function setNome_Consultor($nome){
             $this->Nome_Consultor = $nome;
         }
+        //-----------------------------
+        public function getFone_Consultor(){
+            return $this->Fone_Consultor;
+        }
 
+        public function setFone_Consultor($Fone){
+            $this->tFone_Consultor = $Fone;
+        }
         //-----------------------------
         public function EntrarConsultor(){
             include_once "../conexao.php";
@@ -66,17 +73,18 @@
     
             try
             {
-                $Comando = $conexao->prepare("INSERT INTO tb_consultor (NOME_CONSULTOR, EMAIL_CONSULTOR, SENHA_CONSULTOR) VALUES (?, ?, ?);");
+                $Comando = $conexao->prepare("INSERT INTO tb_consultor (NOME_CONSULTOR, EMAIL_CONSULTOR, SENHA_CONSULTOR, FONE_CONSULTOR) VALUES (?, ?, ?, ?);");
                 $Comando->bindParam(1, $this->Nome_Consultor);
                 $Comando->bindParam(2, $this->Email_Consultor);
                 $Comando->bindParam(3, $this->Senha_Consultor);
+                $Comando->bindParam(4, $this->Fone_Consultor);
     
                 if($Comando->execute())
                 {
                     session_start();
                     $_SESSION["email"] = $this->Email_Consultor;
                     $_SESSION["nome"]  = $this->Nome_Consultor;
-                    header('Location: indexConsultor.php');
+                    header('Location: infopess.php');
                 }
                 else
                 {   

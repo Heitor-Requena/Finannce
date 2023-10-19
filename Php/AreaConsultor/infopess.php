@@ -43,9 +43,7 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#" name="Home" onclick="alterarPag('Home')">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#" name="MeusGastos" onclick="alterarPag('MeusGastos')">Meus Gastos</a>
-            </li>
+           
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" onclick="alterarPag('Configuracoes')">
                 Configurações
@@ -69,84 +67,126 @@
   </nav>
 
   <section id="section" style="margin-top: 100px;">
+  <h1 class="text-center align-middle mt-5">Seja bem vindo, <? echo $Email?></h1>
+    </section>
+
+
+
     <h1 class="text-center mt-3">Meus Dados</h1>
-        <p class="text-center">Se quiser fazer alguma alteração apenas mude os campos e clique no botão "Salvar".</p>
+               
+               <form class="container mt-5" action="" method="POST">
+                 <h4 class="text-start">Informações pessoais</h4>
+                 <div class="row">
+                   <div class="col-6">
+                     <input type="text" name="Nome" id="Nome" class="form-control m-2" placeholder="Nome">
+                   </div>
+                   <div class="col-6">
+                     <input type="text" name="Sobrenome" id="Sobrenome" class="form-control m-2" placeholder="Sobrenome">
+                   </div>
+                 </div>
+             
+                 <div class="row">
+                     <div class="col-6">
+                       <input type="email" name="Email" id="Email" class="form-control m-2" placeholder="Email">
+                 </div>
+       
+                  
+                 <div class="col-6">
+                     <input type="text" name="Tel:" id="Tel:" class="form-control m-2" placeholder="Contato: (00) 00000-0000">
+                   </div>
+                 </div>
+                
+                 
+                 <div class="row">
+                   <div class="col-6">
+                     <input type="text" name="CPF" id="CPF" class="form-control m-2" placeholder="CNPJ - 000.000/0000-00" pattern="[0-9]{3}.[0-9]{3}/[0-9]{4}-[0-9]{2}">
+                   </div>
+                   <div class="col-6">
+                     <input type="text" name="RG" id="RG" class="form-control m-2" placeholder="RG - 00.000.000-0" pattern="[0-9]{2}.[0-9]{3}.[0-9]{3}-[0-9]{1}">
+                   </div>
+                 </div>
+       
+       
+           
+
+
+                  <!--MAIS DADOS-->
+                 <div class="row">
+                   <div class="col-6">
+                     <input type="text" name="Cidade" id="Cidade" class="form-control m-2" placeholder="Cidade">
+                   </div>
+                   <div class="col-6">
+                     <input type="text" name="Estado" id="Estado" class="form-control m-2" placeholder="Estado">
+                   </div>
+                 </div>
+       
+             
+                 <div class="row">
+                   <label for="Nasc" class="col-sm-2 col-form-label text-center "><h6>Data de Nascimento: </h6></label>
+                   <div class="col-md-4">
+                     <input type="date" class="form-control" id="Nasc" min="2005-01-01">
+                   </div>
+                 </div> <br>
+       
+       
+                 <!--MAIS DADOS-->
+                
+               <div class="row">
+                       <div class="col-sm-5 col-md-6">
+                         <label for="Modalidade"><h5>Modalidade:</h5></label> <br>
+                         
+                         <input type="radio" name="Modalidade" id="EAD"> EAD <br>
+       
+                         <input type="radio" name="Modalidade" id="Presencial" >Presencial
+                       </div>
+       
+       
+                       <div class="col-sm-5 col-md-6">
+                         <label for="PubAlvo"><H5>Público Alvo:</H5></label> <br>
+                         <input type="radio" name="PubAlvo" id="Adultos"> Adultos <br>
+       
+                         <input type="radio" name="PubAlvo" id="Adolescentes"> Adolescentes
+                       </div>
+               </div>
+               <br>
+         
+             
+                    <div class="col-6">
+                      <label for="Formacao"  class=" col-form-label  "><h5>Formação: </h5></label>
+                       <textarea name="Formacao" id="Formacao"  rows="3" class="form-control" ></textarea>
+                    </div>
+
+                   <br>
+       
+                   <div class="mb-3">
+                     <label for="Experiencia" class=" col-form-label  "><h5>Escreva sobre sua Experiência:</h5></label>
+                     <textarea class="form-control" name="Experiencia" id="Experiencia" rows="3" placeholder="Experiencia"></textarea></div>  
+
+                     <div class="mb-3">
+                     <label for="Habilidade" class=" col-form-label  "><h5>Escreva sobre sua Habilidade:</h5></label>
+                     <textarea class="form-control" name="Habilidade" id="Habilidade" rows="3" placeholder="Habilidades profissionais adquiridas ao longo da vida"></textarea></div>  
           
-        <form class="container mt-5" action="" method="get">
-          <h4 class="text-start">Informações pessoais</h4>
-          <div class="row">
-            <div class="col-6">
-              <input type="text" name="Nome" id="Nome" class="form-control m-2" placeholder="Nome">
-            </div>
-            <div class="col-6">
-              <input type="text" name="Sobrenome" id="Sobrenome" class="form-control m-2" placeholder="Sobrenome">
-            </div>
-          </div>
-      
-          <div class="row">
-              <div class="col">
-                <input type="email" name="Email" id="Email" class="form-control m-2" placeholder="Email">
-              </div>
-          </div>
-              
-          <div class="row">
-            <div class="col-7">
-              <input type="text" name="CPF" id="CPF" class="form-control m-2" placeholder="CPF - 000.000.000-00" pattern="[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}">
-            </div>
-            <div class="col-5">
-              <input type="text" name="RG" id="RG" class="form-control m-2" placeholder="RG - 00.000.000-0" pattern="[0-9]{2}.[0-9]{3}.[0-9]{3}-[0-9]{1}">
-            </div>
-          </div>
-      
-          <div class="row">
-            <label for="Nasc" class="col-sm-2 col-form-label text-center" >Data de Nascimento: </label>
-            <div class="col-sm-10">
-              <input type="date" class="form-control" id="Nasc" placeholder="Senha" min="2005-01-01">
-            </div>
-          </div>
-      
-          <div class="text-center">
-            <button type="button" id="iframe-submit-btn1" class="iframe-btn btn m-3 col-6 btn-outline-light">Salvar</button>
-          </div>
-        </form>
-      
-        <form action="" method="get" class="container mt-5">
-          <h4 class="text-start">Endereço</h4>
-      
-          <div class="row">
-            <div class="col-4">
-              <input type="number" name="CEP" id="CEP" class="form-control m-2" placeholder="CEP" pattern="[0-9]{9}">
-            </div>
-            <div class="col-4">
-              <input type="text" name="Rua" id="Rua" class="form-control m-2" placeholder="Rua">
-            </div>
-            <div class="col-4">
-              <input type="text" name="Bairro" id="Bairro" class="form-control m-2" placeholder="Bairro">
-            </div>
-          </div>
-      
-          <div class="row">
-            <div class="col-3">
-              <input type="number" name="Numero" id="Numero" class="form-control m-2" placeholder="Número">
-            </div>
-            <div class="col-9">
-              <input type="text" name="Complemento" id="Complemento" class="form-control m-2" placeholder="Complemento">
-            </div>
-          </div>
-      
-          <div class="row">
-            <div class="col-6">
-              <input type="text" name="Cidade" id="Cidade" class="form-control m-2" placeholder="Cidade">
-            </div>
-            <div class="col-6">
-              <input type="text" name="Estado" id="Estado" class="form-control m-2" placeholder="Estado">
-            </div>
-          </div>
-      
-          <div class="text-center">
-            <button type="button" id="iframe-submit-btn2" class="iframe-btn btn m-3 col-6 btn-outline-light">Salvar</button>
-          </div>
-        </form>
+       
+                   <div class="row">
+                   <div class="col-6">
+                     <label class="col-form-label "for="TempCons"><h5>Duração da Consultoria</h5></label>
+                     <input type="time" name="TempCons" id="TempCons" class="form-control m-2" placeholder="TempCons">
+                   </div>
+
+                   <div>
+                    <h1>Fotinha</h1>
+
+                   </div>
+       
+                   <div class="text-center">
+                   <button type="button" id="iframe-submit-btn2" class="iframe-btn btn m-3 col-6 btn-outline-light">Salvar</button>
+                 </div>
+       
+             
+
+
+               </form>
+
   </section>
 
   <section id="result"></section>
