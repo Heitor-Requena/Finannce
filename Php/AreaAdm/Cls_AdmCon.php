@@ -39,7 +39,7 @@ class ClsAdmCon
         include_once "../conexao.php";
 
         try {
-            $Comando = $conexao->prepare("SELECT ID_CONSULTOR, NOME_CONSULTOR, EMAIL_CONSULTOR, DATA_ENTRADA FROM tb_consultor WHERE ID_CONSULTOR = ?;");
+            $Comando = $conexao->prepare("SELECT * FROM tb_consultor WHERE ID_CONSULTOR = ?;");
             $Comando->bindParam(1, $this->Id);
             $Comando->execute();
 
@@ -57,7 +57,7 @@ class ClsAdmCon
         include_once "../conexao.php";
 
         try {
-            $Comando = $conexao->prepare("SELECT ID_CONSULTOR, NOME_CONSULTOR, EMAIL_CONSULTOR, DATA_ENTRADA FROM tb_consultor");
+            $Comando = $conexao->prepare("SELECT * FROM tb_consultor");
             $Comando->execute();
 
             $Matriz     = $Comando->fetchAll();
