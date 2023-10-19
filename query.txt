@@ -257,3 +257,8 @@ INSERT INTO tb_cronograma (NOME, ATIVIDADE, SEMANA) VALUES
     ('Ranielly', 'Ajustes na vitrine e desenvolvimento do TCC (documentação)', 's4');
 
 select NOME,ATIVIDADE,SEMANA from tb_cronograma order by SEMANA;
+
+CREATE TABLE tb_cronograma(
+	NOME varchar(60) not null,
+	ATIVIDADE text not null,
+    SEMANA varchar(2) not null);
