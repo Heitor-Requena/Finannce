@@ -57,7 +57,7 @@ class ClsAdmUsr
         include_once "../conexao.php";
 
         try {
-            $Comando = $conexao->prepare("SELECT ID_CLIENTE, NOME_CLIENTE, EMAIL_CLIENTE, FONE_CLIENTE, DATA_ENTRADA FROM tb_cliente");
+            $Comando = $conexao->prepare("SELECT ID_CLIENTE, NOME_CLIENTE, EMAIL_CLIENTE, FONE_CLIENTE, DTA_ENTRADA FROM tb_cliente");
             $Comando->execute();
 
             $Matriz  =  $Comando->fetchALL();

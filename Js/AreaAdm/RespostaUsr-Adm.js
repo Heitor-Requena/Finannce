@@ -30,7 +30,7 @@ function ConsultarUsr(event) {
                     Tabela += "<td class='text-center'>" + Usuarios[i].NOME_CLIENTE + "</td>";
                     Tabela += "<td class='text-center'>" + Usuarios[i].EMAIL_CLIENTE + "</td>";
                     Tabela += "<td class='text-center'>" + Usuarios[i].FONE_CLIENTE + "</td>";
-                    Tabela += "<td class='text-center'>" + Usuarios[i].DATA_ENTRADA + "</td>";
+                    Tabela += "<td class='text-center'>" + Usuarios[i].DTA_ENTRADA + "</td>";
                     Tabela += "</tr>"
                 }
 
@@ -78,7 +78,7 @@ function ListarUsr(event) {
                     Tabela += "<td class='text-center'>" + Usuarios[i].NOME_CLIENTE + "</td>";
                     Tabela += "<td class='text-center'>" + Usuarios[i].EMAIL_CLIENTE + "</td>";
                     Tabela += "<td class='text-center'>" + Usuarios[i].FONE_CLIENTE + "</td>";
-                    Tabela += "<td class='text-center'>" + Usuarios[i].DATA_ENTRADA + "</td>";
+                    Tabela += "<td class='text-center'>" + Usuarios[i].DTA_ENTRADA + "</td>";
                     Tabela += "</tr>"
                 }
 
