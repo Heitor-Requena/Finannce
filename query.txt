@@ -5,7 +5,7 @@ use finannce;
 
 -- Estrutura da tabela `tb_administrador`
 CREATE TABLE `tb_administrador` (
-  ID_ADM int NOT NULL AUTO_INCREMENT,
+  ID_ADM int AUTO_INCREMENT,
   NOME_ADM varchar(60) NOT NULL,
   EMAIL_ADM varchar(80) NOT NULL,
   SENHA_ADM char(8) NOT NULL,
@@ -274,8 +274,3 @@ INSERT INTO tb_gastos ( ID_CLIENTE, NOME_GASTO, VALOR_GASTO, SITUACAO, DATA_INCL
 INSERT INTO tb_gastos ( ID_CLIENTE, NOME_GASTO, VALOR_GASTO, SITUACAO, DATA_INCLUSAO) VALUES (1, 'Praia', 100, 'Desativado',  now());
 
 SELECT `ID_GASTO`, `NOME_GASTO`, `VALOR_GASTO`, `SITUACAO`, `DATA_INCLUSAO` FROM `tb_gastos` WHERE ID_CLIENTE = '1';
-
-CREATE TABLE tb_cronograma(
-	NOME varchar(60) not null,
-	ATIVIDADE text not null,
-    SEMANA varchar(2) not null);
