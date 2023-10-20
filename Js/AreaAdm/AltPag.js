@@ -112,7 +112,7 @@ function alterarPag(pagName) {
 
     // Consultor--------------------------------------------------------------------------------------------------------
     else if (pagName === "ConsCon") {
-        document.querySelector("#section").innerHTML = `<h1 class="text-center mt-3">Consultar Consultor</h1>
+        document.querySelector("#section").innerHTML = `<h1 class="text-center mt-3">Consultar Consultores</h1>
 
         <form action="ControleCon-Adm.php" method="get" class="container mt-5" id="frm_ConListCon">
             <div class="row">
@@ -121,12 +121,12 @@ function alterarPag(pagName) {
                 </div>
             </div>
             <div class="text-center">
-                <input type="submit" id="btn_ConsultarCon"  name="btn_ConsultarCon"     class="iframe-btn btn m-3 col-6 btn-outline-light" value="Consultar" onclick="ConsultarCon(event)">
-                <input type="submit" id="btn_ListarCon"     name="btn_ListarCon"        class="iframe-btn btn m-3 col-6 btn-outline-light" value="Ver Todos Consultores" onclick="ListarCon(event)"> <br>
-                <input type="submit" id="btn_ListarConA"     name="btn_ListarConA"       class="iframe-btn btn m-3 col-3 btn-outline-light" value="Ver Apenas Consultores Ativados" onclick="ListarConA(event)">
-                <input type="submit" id="btn_ListarConD"     name="btn_ListarConD"       class="iframe-btn btn m-3 col-3 btn-outline-light" value="Ver Apenas Consultores Desativados" onclick="ListarConD(event)">
+                <input type="submit" id="btn_ConsultarCon"              name="btn_ConsultarCon"             class="iframe-btn btn m-2 col-6 btn-outline-light" value="Consultar"                            onclick="ConsultarCon(event)">
+                <input type="submit" id="btn_ListarCon"                 name="btn_ListarCon"                class="iframe-btn btn m-2 col-6 btn-outline-light" value="Ver Todos Consultores"                onclick="ListarCon(event)"> <br>
+                <input type="submit" id="btn_ConsultoresAtivados"       name="btn_ConsultoresAtivados"      class="iframe-btn btn m-2 col-3 btn-outline-light" value="Ver Apenas Consultores Ativados"      onclick="ConsultoresAtivados(event)">
+                <input type="submit" id="btn_ConsultoresDesativados"    name="btn_ConsultoresDesativados"   class="iframe-btn btn m-2 col-3 btn-outline-light" value="Ver Apenas Consultores Desativados"   onclick="ConsultoresDesativados(event)">
             </div>
-        </form>`;
+        </form><br>`;
         document.querySelector("#result").innerHTML =
             ``;
     }

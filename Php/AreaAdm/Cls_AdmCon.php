@@ -68,6 +68,61 @@ class ClsAdmCon
         return $Retorno;
     }
 
+    // Listar Consultores Ativados
+    public function ListarConA()
+    {
+        include_once "../conexao.php";
+
+        try {
+            $Comando = $conexao->prepare("SELECT * FROM tb_consultor WHERE STATUS_CONSULTOR = 'A';");
+            $Comando->execute();
+
+            $Matriz     = $Comando->fetchAll();
+            $Retorno    = json_encode($Matriz);
+        } catch (PDOException $Eroo) {
+            $Retorno = json_encode("Erro" . $Erro->getMessage());
+        }
+        return $Retorno;
+    }
+
+    // Listar Consultores Desativados
+    public function ListarConD()
+    {
+        include_once "../conexao.php";
+
+        try {
+            $Comando = $conexao->prepare("SELECT * FROM tb_consultor WHERE STATUS_CONSULTOR = 'D';");
+            $Comando->execute();
+
+            $Matriz     = $Comando->fetchAll();
+            $Retorno    = json_encode($Matriz);
+        } catch (PDOException $Eroo) {
+            $Retorno = json_encode("Erro" . $Erro->getMessage());
+        }
+        return $Retorno;
+    }
+
+    // Desativar Consultor
+    public function DesatCon()
+    {
+        include_once "../conexao.php";
+
+        try {
+            $Comando = $conexao->prepare("  UPDATE tb_consultor SET STATUS_CONSULTOR = 'D' WHERE ID_CONSULTOR = ?;");
+            $Comando->bindParam(1, $this->Id);
+
+            if ($Comando->execute()) {
+                $Retorno = "<script>window.alert('Desativado com sucesso'); location.href='indexAdm.php'</script>;";
+            } else {
+                $Retorno = "<script>window.alert('Não foi possível desativar'); location.href='indexAdm.php'</script>;";
+            }
+        } catch (PDOException $Erro) {
+            $Retorno = "Erro" . $Erro->getMessage();
+        }
+
+        return $Retorno;
+    }
+
     // Alterar Login do Consultor
     public function AlterarLoginCon()
     {
