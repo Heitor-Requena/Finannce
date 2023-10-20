@@ -26,7 +26,11 @@ if (isset($_GET["btn_ConsultarCon"])) {
 } else if (isset($_GET["btn_DesativarConsultor"])) {
     $Retorno = $Adm->DesatCon();
     echo $Retorno;
-} else if (isset($_GET["btn_AltLogCon"])) {
+}  else if(isset($_GET["btn_AtivarConsultor"])) {
+    $Retorno = $Adm->AtvCon();
+    echo $Retorno;
+}
+else if (isset($_GET["btn_AltLogCon"])) {
     $Retorno = $Adm->AlterarLoginCon();
     echo $Retorno;
 } else if (isset($_GET["btn_DeletarCon"])) {

@@ -168,7 +168,7 @@ function ConsultoresDesativados(event) {
                 var Tabela = '';
                 Tabela += "<table class='table table-bordered table-striped table-dark ml-5'";
 
-                Tabela += "<tr><th scope='col' class='text-center'>ID</th><th scope='col' class='text-center'>Nome</th><th scope='col' class='text-center'>CPF</th><th scope='col' class='text-center'>Email</th><th scope='col' class='text-center'>Telefone</th><th scope='col' class='text-center'>Data de Cadastro</th><th scope='col' class='text-center'>Status</th>"
+                Tabela += "<tr><th scope='col' class='text-center'>ID</th><th scope='col' class='text-center'>Nome</th><th scope='col' class='text-center'>CPF</th><th scope='col' class='text-center'>Email</th><th scope='col' class='text-center'>Telefone</th><th scope='col' class='text-center'>Data de Cadastro</th><th scope='col' class='text-center'>Status</th><th scope='col' class='text-center'></th>"
                 for (i = 0; i < Consultores.length; i++) {
                     Tabela += "<tr>";
                     Tabela += "<td class='text-center align-middle'>" + Consultores[i].ID_CONSULTOR + "</td>";
@@ -177,7 +177,9 @@ function ConsultoresDesativados(event) {
                     Tabela += "<td class='text-center align-middle'>" + Consultores[i].EMAIL_CONSULTOR + "</td>";
                     Tabela += "<td class='text-center align-middle'>" + Consultores[i].FONE_CONSULTOR + "</td>";
                     Tabela += "<td class='text-center align-middle'>" + Consultores[i].DATA_ENTRADA + "</td>";
-                    Tabela += "<td class='text-center align-middle'>" + Consultores[i].STATUS_CONSULTOR + "</td>"; Tabela += "</tr>"
+                    Tabela += "<td class='text-center align-middle'>" + Consultores[i].STATUS_CONSULTOR + "</td>"; 
+                    Tabela += "<td class='text-center align-middle'><form action='ControleCon-Adm.php' method='get' id='frm_AtvCon'> <input style='display: none' type='number' name='IdCon' id='IdCon' class='form-control m-2' value=" + Consultores[i].ID_CONSULTOR + "><input type='submit' id='btn_AtivarConsultor' name='btn_AtivarConsultor' class='iframe-btn btn m-3 col-6 btn-outline-light' value='Ativar'></form></td>";
+                    Tabela += "</tr>"
                 }
 
                 $("#result").append(Tabela);

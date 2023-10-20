@@ -123,6 +123,26 @@ class ClsAdmCon
         return $Retorno;
     }
 
+    // Ativar Consultor
+    public function AtvCon(){
+        include_once "../conexao.php";
+
+        try {
+            $Comando = $conexao->prepare("  UPDATE tb_consultor SET STATUS_CONSULTOR = 'A' WHERE ID_CONSULTOR = ?;");
+            $Comando->bindParam(1, $this->Id);
+
+            if ($Comando->execute()) {
+                $Retorno = "<script>window.alert('Ativado com sucesso'); location.href='indexAdm.php'</script>;";
+            } else {
+                $Retorno = "<script>window.alert('Não foi possível ativar'); location.href='indexAdm.php'</script>;";
+            }
+        } catch (PDOException $Erro) {
+            $Retorno = "Erro" . $Erro->getMessage();
+        }
+
+        return $Retorno;
+    }
+
     // Alterar Login do Consultor
     public function AlterarLoginCon()
     {
