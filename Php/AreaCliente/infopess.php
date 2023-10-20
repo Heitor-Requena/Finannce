@@ -1,8 +1,3 @@
-<?php
-session_start();
-$Nome = $_SESSION["nome"];
-?>
-
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
 
@@ -74,7 +69,7 @@ $Nome = $_SESSION["nome"];
 
   <section id="section" style="margin-top: 100px;">
     <h1 class="text-center mt-3">Meus Dados</h1>
-        <p class="text-center">Se quiser fazer alguma alteração apenas mude os campos e clique no botão "Salvar"</p>
+        <p class="text-center">Se quiser fazer alguma alteração apenas mude os campos e clique no botão "Salvar".</p>
           
         <form class="container mt-5" action="" method="get">
           <h4 class="text-start">Informações pessoais</h4>

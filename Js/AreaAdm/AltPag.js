@@ -122,7 +122,9 @@ function alterarPag(pagName) {
             </div>
             <div class="text-center">
                 <input type="submit" id="btn_ConsultarCon"  name="btn_ConsultarCon"     class="iframe-btn btn m-3 col-6 btn-outline-light" value="Consultar" onclick="ConsultarCon(event)">
-                <input type="submit" id="btn_ListarCon"     name="btn_ListarCon"        class="iframe-btn btn m-3 col-6 btn-outline-light" value="Ver Todos Consultores" onclick="ListarCon(event)">
+                <input type="submit" id="btn_ListarCon"     name="btn_ListarCon"        class="iframe-btn btn m-3 col-6 btn-outline-light" value="Ver Todos Consultores" onclick="ListarCon(event)"> <br>
+                <input type="submit" id="btn_ListarConA"     name="btn_ListarConA"       class="iframe-btn btn m-3 col-3 btn-outline-light" value="Ver Apenas Consultores Ativados" onclick="ListarConA(event)">
+                <input type="submit" id="btn_ListarConD"     name="btn_ListarConD"       class="iframe-btn btn m-3 col-3 btn-outline-light" value="Ver Apenas Consultores Desativados" onclick="ListarConD(event)">
             </div>
         </form>`;
         document.querySelector("#result").innerHTML =

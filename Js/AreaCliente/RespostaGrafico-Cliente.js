@@ -84,7 +84,7 @@ function TabelaRosca(event){
                 Tabela += "</tr>"
             }
 
-            Tabela += "<table>";
+            Tabela += "</table>";
             $("#TabelaGraficoRosca").html(Tabela);
         })
 
@@ -143,4 +143,105 @@ function ExcluirGasto(event) {
         })
 
     return false
+}
+
+function GraficoColuna(event){
+    console.log("CHAMOU")
+    var DadosForm = $("#frm_Grafico").serialize()
+
+    $.ajax({
+        method: 'GET',
+        url: 'ControleGrafico-Cliente.php?GerarGraficoColuna',
+        data: DadosForm,
+
+        beforeSend: function () {
+            console.log("DAdos enviados")
+        }
+    })
+
+        .done(function (dadosPHP) {
+            var GASTO = JSON.parse(dadosPHP);
+            let campo = [['Ano', 'Valor', { role: 'annotation' }]];
+            let cores = ['#2F4F4F', '#00FA9A', '#00FF7F	', '#98FB98', '#90EE90', '#8FBC8F', '#3CB371', '#2E8B57', '#006400', '#008000', '#228B22', '#32CD32', '#00FF00', '#7CFC00', '	#7FFF00', '#ADFF2F', '#9ACD32', '#6B8E23', '#556B2F', '#808000', '#BDB76B', '#DAA520', '#B8860B', '#BC8F8F'];
+
+            //google.charts.load('current', {'packages':['bar']});
+            google.charts.load("current", {packages:["corechart"]});
+            google.charts.setOnLoadCallback(drawChart);
+
+            for (i = 0; i < GASTO.length; i++){
+                campo.push([GASTO[i].DATA_INCLUSAO, parseFloat(GASTO[i].VALOR_GASTO),GASTO[i].NOME_GASTO]);
+            }
+
+            console.log(campo)
+
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable(campo);
+                
+                var view = new google.visualization.DataView(data);
+                view.setColumns([0, 1,
+                    { calc: "stringify",
+                        sourceColumn: 1,
+                        type: "string",
+                        role: "annotation" },
+                    2]);
+
+                var options = {
+                    title: "Todos os seus Gastos",
+                    subtitle: 'Periodo de login até o dia atual',
+                    width: 900,
+                    height: 500,
+                    bar: {groupWidth: "70%"},
+                    legend: { position: 'top', maxLines: 3 },                
+                };
+
+                var chart = new google.visualization.BarChart(document.getElementById("GraficoColuna"));
+                chart.draw(view, options);
+            }
+        })
+
+        .fail(function () {
+            alert("DEU ERRADO A CONSULTA");
+        })
+
+    return false;
+}
+
+function TabelaColuna(event){
+    var DadosForm = $("#frm_Grafico").serialize()
+
+    $.ajax({
+        method: 'GET',
+        url: 'ControleGrafico-Cliente.php?GerarTabelaColuna',
+        data: DadosForm,
+
+        beforeSend: function () {
+            console.log("DAdos enviados tabela")
+        }
+    })
+
+        .done(function (dadosPHP) {
+            var GASTO = JSON.parse(dadosPHP);
+
+            var Tabela = "";
+            Tabela += "<table class='col-12 text-center table table-dark table-striped'>";
+
+            Tabela += "<tr> <th>#</th> <th>Gasto</th> <th>Valor</th> <th>Data Do Gasto</th></tr>";
+            for (i = 0; i < GASTO.length; i++){
+                Tabela += "<tr>";
+                Tabela += "<td>" + i + "</td>";
+                Tabela += "<td>" + GASTO[i].NOME_GASTO + "</td>";
+                Tabela += "<td>" + GASTO[i].VALOR_GASTO + "</td>";
+                Tabela += "<td>" + GASTO[i].DATA_INCLUSAO + "</td>";
+                Tabela += "</tr>"
+            }
+
+            Tabela += "</table>";
+            $("#TabelaGraficoColuna").html(Tabela);
+        })
+
+        .fail(function () {
+            alert("DEU ERRADO A CONSULTA");
+        })
+
+    return false;
 }

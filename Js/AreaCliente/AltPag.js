@@ -147,15 +147,21 @@ function alterarPag(pagName) {
       </div>
 
       <div class="row">
-        <button onclick="" class="col-4 iframe-btn btn btn-outline-light">Todos Gastos</button><br>
+        <button onclick="TabelaColuna(event), GraficoColuna(event)" class="col-4 iframe-btn btn btn-outline-light">Todos Gastos</button><br>
       </div>
 
       <div class="row">
-        <div id="graficoLinha"></div>
+        <div id="GraficoColuna" class="col-12"></div>
       </div>
 
       <div class="row">
-        <div id="TabelaGraficoLinha"></div>
+        <div id="TabelaGraficoColuna" class="col-12"></div>
+      </div>
+
+      <div class="row">
+        <form action="ControleGrafico-Cliente.php" id="frm_Grafico" method="get">
+          <input type="submit" id="btn_Relatorio" name="btn_Relatorio" class="col-4 iframe-btn btn btn-outline-light" value="Relatorio">
+        </form>
       </div>
 
     </div>

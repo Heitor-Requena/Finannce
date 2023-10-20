@@ -1,3 +1,4 @@
+
 create database finannce;
 
 use finannce;
@@ -102,33 +103,35 @@ CREATE TABLE `tb_cliente` (
   `EMAIL_CLIENTE` varchar(80) NOT NULL,
   `SENHA_CLIENTE` char(8) NOT NULL,
   `FONE_CLIENTE` char(15) NOT NULL,
-  `DATA_ENTRADA` datetime DEFAULT CURRENT_TIMESTAMP,
+  `CPF_CLIENTE` char (14) UNIQUE,
+  `RG_CLIENTE` char (12)  UNIQUE,
+  `DTA_NASC_CLIENTE` DATE NOT NULL,
+  `CEP_CLIENTE` int (8),
+  `RUA_CLIENTE` varchar (150),
+  `BAIRRO_CLIENTE` varchar (50),
+  `NUMERO_CASA_CLIENTE` int (6),
+  `COMPLEMENTO_CLIENTE` varchar (50),
+  `CIDADE_CLIENTE` varchar (50),
+  `ESTADO_CLIENTE`char (2),
+  `DTA_ENTRADA` datetime DEFAULT CURRENT_TIMESTAMP,
+  `FOTO_PERF_CLIENTE` BLOB,
+  `STATUS_CLIENTE` varchar (40),
   PRIMARY KEY (`ID_CLIENTE`),
   UNIQUE KEY `EMAIL_CLIENTE` (`EMAIL_CLIENTE`)
 );
 
-INSERT INTO `tb_cliente` (`NOME_CLIENTE`, `EMAIL_CLIENTE`, `SENHA_CLIENTE`, `FONE_CLIENTE`)
-VALUES
-  ('Cliente 1', 'cliente1@example.com', 'senha123', '123-456-7890'),
-  ('Cliente 2', 'cliente2@example.com', 'senha456', '987-654-3210'),
-  ('Cliente 3', 'cliente3@example.com', 'senha789', '555-555-5555'),
-  ('Cliente 4', 'cliente4@example.com', 'senhaabc', '999-999-9999'),
-  ('Cliente 5', 'cliente5@example.com', 'senhaxyz', '111-222-3333'),
-  ('Cliente 6', 'cliente6@example.com', 'senhajkl', '444-555-6666'),
-  ('Cliente 7', 'cliente7@example.com', 'senha456', '777-888-9999'),
-  ('Cliente 8', 'cliente8@example.com', 'senha789', '333-444-5555'),
-  ('Cliente 9', 'cliente9@example.com', 'senha123', '222-333-4444'),
-  ('Cliente 10', 'cliente10@example.com', 'senhaabc', '666-777-8888'),
-  ('Cliente 11', 'cliente11@example.com', 'senhaxyz', '888-999-0000'),
-  ('Cliente 12', 'cliente12@example.com', 'senhajkl', '000-111-2222'),
-  ('Cliente 13', 'cliente13@example.com', 'senha123', '444-555-6666'),
-  ('Cliente 14', 'cliente14@example.com', 'senha456', '999-888-7777'),
-  ('Cliente 15', 'cliente15@example.com', 'senha789', '111-222-3333'),
-  ('Cliente 16', 'cliente16@example.com', 'senhaabc', '555-666-7777'),
-  ('Cliente 17', 'cliente17@example.com', 'senhaxyz', '222-333-4444'),
-  ('Cliente 18', 'cliente18@example.com', 'senhajkl', '666-777-8888'),
-  ('Cliente 19', 'cliente19@example.com', 'senha123', '777-888-9999'),
-  ('Cliente 20', 'cliente20@example.com', 'senha456', '888-999-0000');
+INSERT INTO tb_cliente (NOME_CLIENTE, EMAIL_CLIENTE, SENHA_CLIENTE, FONE_CLIENTE, CPF_CLIENTE, RG_CLIENTE, DTA_NASC_CLIENTE, CEP_CLIENTE, RUA_CLIENTE, BAIRRO_CLIENTE, NUMERO_CASA_CLIENTE, COMPLEMENTO_CLIENTE, CIDADE_CLIENTE, ESTADO_CLIENTE,FOTO_PERF_CLIENTE, STATUS_CLIENTE) VALUES
+  ('Cliente 2', 'cliente2@example.com', 'senha456', '987-654-3210', '234.567.890-12', '23.456.789-3', '2000-02-02', 23456789, 'Rua 2', 'Bairro 2', 2, 'Complemento 2', 'Cidade 2', 'RJ', NULL, 'Ativo'),
+  ('Cliente 3', 'cliente3@example.com', 'senha789', '555-555-5555', '345.678.901-23', '35.678.901-3', '2000-03-03', 34567890, 'Rua 3', 'Bairro 3', 3, 'Complemento 3', 'Cidade 3', 'MG', NULL, 'Ativo'),
+  ('Cliente 4', 'cliente4@example.com', 'senhaabc', '999-999-9999', '456.789.012-34', '46.789.012-4', '2000-04-04', 45678901, 'Rua 4', 'Bairro 4', 4, 'Complemento 4', 'Cidade 4', 'BA', NULL, 'Ativo'),
+  ('Cliente 5', 'cliente5@example.com', 'senhaxyz', '111-222-3333', '567.890.123-45', '56.890.123-5', '2000-05-05', 56789012, 'Rua 5', 'Bairro 5', 5, 'Complemento 5', 'Cidade 5', 'SC', NULL, 'Ativo'),
+  ('Cliente 6', 'cliente6@example.com', 'senhajkl', '444-555-6666', '678.901.234-56', '67.890.123-4', '2000-06-06', 67890123, 'Rua 6', 'Bairro 6', 6, 'Complemento 6', 'Cidade 6', 'RS', NULL, 'Ativo'),
+  ('Cliente 7', 'cliente7@example.com', 'senha456', '777-888-9999', '789.012.345-67', '78.901.234-5', '2000-07-07', 78901234, 'Rua 7', 'Bairro 7', 7, 'Complemento 7', 'Cidade 7', 'PR', NULL, 'Ativo'),
+  ('Cliente 8', 'cliente8@example.com', 'senha789', '333-444-5555', '890.123.456-78', '89.012.345-6', '2000-08-08', 89012345, 'Rua 8', 'Bairro 8', 8, 'Complemento 8', 'Cidade 8', 'PA', NULL, 'Ativo'),
+  ('Cliente 9', 'cliente9@example.com', 'senha123', '222-333-4444', '901.234.567-89', '90.123.456-7', '2000-09-09', 90123456, 'Rua 9', 'Bairro 9', 9, 'Complemento 9', 'Cidade 9', 'MA', NULL, 'Ativo'),
+  ('Cliente 10', 'cliente10@example.com', 'senhaabc', '666-777-8888', '123.456.789-01', '12.345.678-9', '2000-10-10', 12345678, 'Rua 10', 'Bairro 10', 10, 'Complemento 10', 'Cidade 10', 'TO', NULL, 'Ativo');
+
+
 
 select * from tb_cliente;
 
@@ -146,38 +149,39 @@ CREATE TABLE  `tb_consultoria`(
 select * from tb_consultoria;
 
 -- Estrutura da tabela `tb_consultor`
-
 CREATE TABLE `tb_consultor`(
   `ID_CONSULTOR` int NOT NULL AUTO_INCREMENT,
   `NOME_CONSULTOR` varchar(60) NOT NULL,
   `EMAIL_CONSULTOR` varchar(80) NOT NULL,
   `SENHA_CONSULTOR` char(8) NOT NULL,
+  `CPF_CONSULTOR` varchar (14) UNIQUE,
+  `RG_CONSULTOR` varchar (12) UNIQUE,
+  `FONE_CONSULTOR` varchar (14) NOT NULL,
+  `CEP_CONSULTOR` int (8),
+  `RUA_CONSULTOR` varchar (150),
+  `BAIRRO_CONSULTOR` varchar (50),
+  `NUMERO_CASA_CONSULTOR`  int (6),
+  `COMPLEMENTO_CONSULTOR` varchar (50),
+  `CIDADE_CONSULTOR` varchar (50),
+  `ESTADO_CONSULTOR` char (2),
+  `FOTO_PERF_CONSULTOR` BLOB,
+  `ANEXO_CONSULTOR` BLOB,
+  `STATUS_CONSULTOR` char (1),
   `DATA_ENTRADA` datetime DEFAULT CURRENT_TIMESTAMP,
-  `AVALIAÇÃO_CONSULTOR` char(2) NULL,
-  `DESCRICAO_CONSULTOR` text,
+  `AVALIAÇAO_CONSULTOR` char(2) NULL,
+  `DESC_CONSULTOR` text,
   PRIMARY KEY (`ID_CONSULTOR`),
   UNIQUE KEY `EMAIL_CONSULTOR` (`EMAIL_CONSULTOR`));
-INSERT INTO tb_consultor (NOME_CONSULTOR, EMAIL_CONSULTOR, SENHA_CONSULTOR)
-VALUES
-  ('João Silva', 'consultor2@x.com', '5678'),
-  ('Maria Santos', 'consultor3@x.com', 'abcd'),
-  ('Pedro Oliveira', 'consultor4@x.com', 'efgh'),
-  ('Ana Pereira', 'consultor5@x.com', 'ijkl'),
-  ('Carlos Ferreira', 'consultor6@x.com', 'mnop'),
-  ('Marta Teixeira', 'consultor7@x.com', 'qrst'),
-  ('Ricardo Santos', 'consultor8@x.com', 'uvwx'),
-  ('Isabel Rodrigues', 'consultor9@x.com', 'yz01'),
-  ('Fernando Alves', 'consultor10@x.com', '2345'),
-  ('Sofia Pereira', 'consultor11@x.com', '6789'),
-  ('Manuel Silva', 'consultor12@x.com', 'abcd'),
-  ('Carla Sousa', 'consultor13@x.com', 'efgh'),
-  ('António Santos', 'consultor14@x.com', 'ijkl'),
-  ('Lúcia Oliveira', 'consultor15@x.com', 'mnop'),
-  ('Gustavo Fernandes', 'consultor16@x.com', 'qrst'),
-  ('Teresa Almeida', 'consultor17@x.com', 'uvwx'),
-  ('Hugo Sousa', 'consultor18@x.com', 'yz01'),
-  ('Rita Silva', 'consultor19@x.com', '2345'),
-  ('Miguel Gonçalves', 'consultor20@x.com', '6789');
+INSERT INTO tb_consultor (NOME_CONSULTOR, EMAIL_CONSULTOR, SENHA_CONSULTOR, CPF_CONSULTOR, RG_CONSULTOR, FONE_CONSULTOR, CEP_CONSULTOR, RUA_CONSULTOR, BAIRRO_CONSULTOR, NUMERO_CASA_CONSULTOR, COMPLEMENTO_CONSULTOR, CIDADE_CONSULTOR, ESTADO_CONSULTOR, FOTO_PERF_CONSULTOR, ANEXO_CONSULTOR, STATUS_CONSULTOR, AVALIAÇAO_CONSULTOR, DESC_CONSULTOR) VALUES
+  ('Maria Santos', 'consultor3@x.com', 'abcd', '234.567.890-12', '23.456.789-3', '987-654-3210', 23456789, 'Rua 2', 'Bairro 2', 2, 'Complemento 2', 'Cidade 2', 'RJ', NULL, NULL, 'A', '7', 'Descrição 2'),
+  ('Pedro Oliveira', 'consultor4@x.com', 'efgh', '345.678.901-23', '34.567.890-3', '555-555-5555', 34567890, 'Rua 3', 'Bairro 3', 3, 'Complemento 3', 'Cidade 3', 'MG', NULL, NULL, 'A', '6', 'Descrição 3'),
+  ('Ana Pereira', 'consultor5@x.com', 'ijkl', '456.789.012-34', '45.678.901-4', '999-999-9999', 45678901, 'Rua 4', 'Bairro 4', 4, 'Complemento 4', 'Cidade 4', 'BA', NULL, NULL, 'A', '5', 'Descrição 4'),
+  ('Carlos Ferreira', 'consultor6@x.com', 'mnop', '567.890.123-45', '56.789.012-5', '111-222-3333', 56789012, 'Rua 5', 'Bairro 5', 5, 'Complemento 5', 'Cidade 5', 'SC', NULL, NULL, 'A', '4', 'Descrição 5'),
+  ('Marta Teixeira', 'consultor7@x.com', 'qrst', '678.901.234-56', '67.890.123-4', '444-555-6666', 67890123, 'Rua 6', 'Bairro 6', 6, 'Complemento 6', 'Cidade 6', 'RS', NULL, NULL, 'A', '3', 'Descrição 6'),
+  ('Ricardo Santos', 'consultor8@x.com', 'uvwx', '789.012.345-67', '78.901.234-5', '777-888-9999', 78901234, 'Rua 7', 'Bairro 7', 7, 'Complemento 7', 'Cidade 7', 'PR', NULL, NULL, 'A', '2', 'Descrição 7'),
+  ('Isabel Rodrigues', 'consultor9@x.com', 'yz01', '890.123.456-78', '89.012.345-6', '888-999-0000', 89012345, 'Rua 8', 'Bairro 8', 8, 'Complemento 8', 'Cidade 8', 'PA', NULL, NULL, 'A', '1', 'Descrição 8'),
+  ('Fernando Alves', 'consultor10@x.com', '2345', '901.234.567-89', '90.123.456-9', '222-333-4444', 90123456, 'Rua 9', 'Bairro 9', 9, 'Complemento 9', 'Cidade 9', 'MA', NULL, NULL, 'A', NULL, 'Descrição 9'),
+  ('Sofia Pereira', 'consultor11@x.com', '6789', '123.456.789-01', '12.345.678-9', '666-777-8888', 12345678, 'Rua 10', 'Bairro 10', 10, 'Complemento 10', 'Cidade 10', 'TO', NULL, NULL, 'A', NULL, 'Descrição 10');
   
 select * from tb_consultor;
 -- ------------------------------------------------------
@@ -251,50 +255,27 @@ INSERT INTO tb_cronograma (NOME, ATIVIDADE, SEMANA) VALUES
     ('João Santos', 'Finalização da Home page, login e cadastro. Função Listagem e documentação.', 's4'),
     ('Matheus Cerqueira', 'Ajuste da Logo e Design da Home', 's4'),
     ('Ranielly', 'Ajustes na vitrine e desenvolvimento do TCC (documentação)', 's4');
-    
--- Inserindo dados para a Semana 5
-INSERT INTO tb_cronograma (NOME, ATIVIDADE, SEMANA)
-VALUES 	('Davidson', 'Alteração e inclusão de novas tabelas no BD', 's5'),
-	('João Santos', 'Esboço da Área ADM', 's5');
-
--- Inserindo dados para a Semana 6
-INSERT INTO tb_cronograma (NOME, ATIVIDADE, SEMANA)
-VALUES 	('Davidson', 'Alteração na estrutura do BD e atualização do Diagrama e do Dicionário de dados', 's6'),
-	('Fernanda', 'Inclusão de tabelas no banco de dados, desenvolvimento da documentação do TCC', 's6'),
-	('Heitor', 'Login', 's6'),
-	('Jéssica', 'Criação da pagina FAQ/SAC do novo layout', 's6'),
-	('João Santos', 'Criação da Área Adm', 's6'),
-	('Matheus Cerqueira', 'Reestruturação da Home', 's6'),
-	('Ranielly', 'Criação do Ciclo de Vida, alterações na vitrine, criação do perfil do consultor', 's6');
-
--- Inserindo dados para a Semana 7
-INSERT INTO tb_cronograma (NOME, ATIVIDADE, SEMANA)
-VALUES 	('Davidson', 'Alteração na página Artigos e Tabela "Cliente" e "Consultor".', 's7'),
-	('Fernanda', 'Desenvolvimento do Perfil Consultor', 's7'),
-	('Heitor', 'Desenvolvimento da Área Adm', 's7'),
-	('João Santos', 'Desenvolvimento da Área Adm', 's7'),
-	('Matheus Cerqueira', 'Finalização dos Cards da Home', 's7'),
-	('Ranielly', 'Reunião, implementação do avaliador na vitrine, fluxograma e mapa do site', 's7');
-
--- Inserindo dados para a Semana 8
-INSERT INTO tb_cronograma (NOME, ATIVIDADE, SEMANA)
-VALUES 	('Davidson', 'Home', 's8'),
-	('Heitor', 'Finalização da Área Adm', 's8'),
-	('João Santos', 'Finalização da Área Adm e Ajustes no layout do Login', 's8',
-	('Matheus Cerqueira', 'Carrossel e Ajustes na responsividade do site', 's8'),
-	('Ranielly','Documentacao', 's8');
 
 select NOME,ATIVIDADE,SEMANA from tb_cronograma order by SEMANA;
 
+CREATE TABLE tb_gasto(
+	ID_GASTO int NOT NULL AUTO_INCREMENT,
+	ID_CLIENTE int not null, 
+	NOME_GASTO varchar(30) not null,
+	VALOR_GASTO int not null,
+	SITUACAO varchar(10) not null,
+	DATA_INCLUSAO date not null,
+	
+	PRIMARY KEY (ID_GASTO),
+  FOREIGN KEY (ID_CLIENTE) REFERENCES tb_cliente(ID_CLIENTE));
 
-CREATE TABLE `tb_gastos`(
-  `ID_CONSULTOR` int NOT NULL AUTO_INCREMENT,
-  `ID_CLIENTE` int NOT NULL,
-  `NOME_GASTO` varchar(30) NOT NULL,
-  `VALOR_GASTO` int NOT NULL,
-  `SITUACAO` char(10) NOT NULL,
-  `DATA_INCLUSAO` datetime DEFAULT CURRENT_TIMESTAMP,
+INSERT INTO tb_gastos ( ID_CLIENTE, NOME_GASTO, VALOR_GASTO, SITUACAO, DATA_INCLUSAO) VALUES (1, 'Escola', 250, 'Ativo', now()),(1, 'Mercado', 300, 'Ativo', now()),(1, 'Faculdade', 350, 'Ativo',  now());
 
-  PRIMARY KEY (`ID_GASTO`),
-  FOREIGN KEY (ID_CLIENTE) REFERENCES tb_cliente(ID_CLIENTE)
-  );
+INSERT INTO tb_gastos ( ID_CLIENTE, NOME_GASTO, VALOR_GASTO, SITUACAO, DATA_INCLUSAO) VALUES (1, 'Praia', 100, 'Desativado',  now());
+
+SELECT `ID_GASTO`, `NOME_GASTO`, `VALOR_GASTO`, `SITUACAO`, `DATA_INCLUSAO` FROM `tb_gastos` WHERE ID_CLIENTE = '1';
+
+CREATE TABLE tb_cronograma(
+	NOME varchar(60) not null,
+	ATIVIDADE text not null,
+    SEMANA varchar(2) not null);
