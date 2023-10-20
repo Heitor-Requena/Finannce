@@ -40,18 +40,11 @@
         </div>
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Usuário
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#" onclick="alterarPag('ConsUsr')">Consultar</a></li>
-                <li><a class="dropdown-item" href="#" onclick="alterarPag('AltUsr')">Alterar Login</a></li>
-                <li><a class="dropdown-item" href="#" onclick="alterarPag('DelUsr')">Deletar</a></li>
-              </ul>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="pagUsr.php" name="Usuário">Usuário</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="pagConsultor.php" name="Consultor">Consultor</a>
+              <a class="nav-link active" aria-current="page" href="pagCons.php" name="Consultor">Consultor</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active  fw-bold text-uppercase" aria-current="page" href="pagAdm.php" name="Adm">Adm</a>
