@@ -69,7 +69,7 @@ function ListarUsr(event) {
 
                 // CONSULTA EM Tabela
                 var Tabela = '';
-                Tabela += "<table class='table table-bordered table-striped table-dark table-striped ml-5 table-sm'";
+                Tabela += "<table class='table table-bordered table-striped table-dark table-striped table-sm>'";
 
                 Tabela += "<tr><th scope='col' class='text-center'>ID</th><th scope='col' class='text-center'>Nome</th><th scope='col' class='text-center'>Email</th><th scope='col' class='text-center'>Telefone</th><th scope='col' class='text-center'>Data de Entrada</th>"
                 for (i = 0; i < Usuarios.length; i++) {

@@ -129,7 +129,7 @@ function ConsultoresAtivados(event) {
                     Tabela += "<td class='text-center align-middle'>" + Consultores[i].FONE_CONSULTOR + "</td>";
                     Tabela += "<td class='text-center align-middle'>" + Consultores[i].DATA_ENTRADA + "</td>";
                     Tabela += "<td class='text-center align-middle'>" + Consultores[i].STATUS_CONSULTOR + "</td>";
-                    Tabela += "<td class='text-center align-middle'><form action='ControleCon-Adm.php' method='get' id='frm_DestvCon'> <input style='display: none' type='number' name='IdCon' id='IdCon' class='form-control m-2' value=" + Consultores[i].ID_CONSULTOR + "><input type='submit' id='btn_DesativarConsultor' name='btn_DesativarConsultor' class='iframe-btn btn m-3 col-6 btn-outline-light' value='Desativar'></form></td>";
+                    Tabela += "<td class='text-center align-middle'><form action='ControleCon-Adm.php' method='get' id='frm_DestvCon'> <input style='display: none' type='number' name='IdCon' id='IdCon' class='form-control m-2' value=" + Consultores[i].ID_CONSULTOR + "><input type='submit' id='btn_DesativarConsultor' name='btn_DesativarConsultor' class='iframe-btn btn m-3 btn-outline-light' value='Desativar'></form></td>";
                     Tabela += "</tr>"
                 }
 
@@ -178,7 +178,7 @@ function ConsultoresDesativados(event) {
                     Tabela += "<td class='text-center align-middle'>" + Consultores[i].FONE_CONSULTOR + "</td>";
                     Tabela += "<td class='text-center align-middle'>" + Consultores[i].DATA_ENTRADA + "</td>";
                     Tabela += "<td class='text-center align-middle'>" + Consultores[i].STATUS_CONSULTOR + "</td>"; 
-                    Tabela += "<td class='text-center align-middle'><form action='ControleCon-Adm.php' method='get' id='frm_AtvCon'> <input style='display: none' type='number' name='IdCon' id='IdCon' class='form-control m-2' value=" + Consultores[i].ID_CONSULTOR + "><input type='submit' id='btn_AtivarConsultor' name='btn_AtivarConsultor' class='iframe-btn btn m-3 col-6 btn-outline-light' value='Ativar'></form></td>";
+                    Tabela += "<td class='text-center align-middle'><form action='ControleCon-Adm.php' method='get' id='frm_AtvCon'> <input style='display: none' type='number' name='IdCon' id='IdCon' class='form-control m-2' value=" + Consultores[i].ID_CONSULTOR + "><input type='submit' id='btn_AtivarConsultor' name='btn_AtivarConsultor' class='iframe-btn btn m-3 btn-outline-light' value='Ativar'></form></td>";
                     Tabela += "</tr>"
                 }
 
