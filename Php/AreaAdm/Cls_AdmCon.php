@@ -112,9 +112,9 @@ class ClsAdmCon
             $Comando->bindParam(1, $this->Id);
 
             if ($Comando->execute()) {
-                $Retorno = "<script>window.alert('Desativado com sucesso'); location.href='indexAdm.php'</script>;";
+                $Retorno = "<script>window.alert('Desativado com sucesso'); location.href='pagConsultor.php'</script>;";
             } else {
-                $Retorno = "<script>window.alert('Não foi possível desativar'); location.href='indexAdm.php'</script>;";
+                $Retorno = "<script>window.alert('Não foi possível desativar'); location.href='pagConsultor.php'</script>;";
             }
         } catch (PDOException $Erro) {
             $Retorno = "Erro" . $Erro->getMessage();
@@ -132,9 +132,9 @@ class ClsAdmCon
             $Comando->bindParam(1, $this->Id);
 
             if ($Comando->execute()) {
-                $Retorno = "<script>window.alert('Ativado com sucesso'); location.href='indexAdm.php'</script>;";
+                $Retorno = "<script>window.alert('Ativado com sucesso'); location.href='pagConsultor.php'</script>;";
             } else {
-                $Retorno = "<script>window.alert('Não foi possível ativar'); location.href='indexAdm.php'</script>;";
+                $Retorno = "<script>window.alert('Não foi possível ativar'); location.href='pagConsultor.php'</script>;";
             }
         } catch (PDOException $Erro) {
             $Retorno = "Erro" . $Erro->getMessage();

@@ -112,6 +112,9 @@ function alterarPag(pagName) {
 
     // Consultor--------------------------------------------------------------------------------------------------------
     else if (pagName === "ConsCon") {
+        document.querySelector("#btn_cons").setAttribute("class", "btn btn-light");
+        document.querySelector("#btn_alt").setAttribute("class", "btn btn-outline-light");
+        document.querySelector("#btn_del").setAttribute("class", "btn btn-outline-light");
         document.querySelector("#section").innerHTML = `<h1 class="text-center mt-3">Consultar Consultores</h1>
 
         <form action="ControleCon-Adm.php" method="get" class="container mt-5" id="frm_ConListCon">
@@ -131,6 +134,9 @@ function alterarPag(pagName) {
             ``;
     }
     else if (pagName === "AltCon") {
+        document.querySelector("#btn_cons").setAttribute("class", "btn btn-outline-light");
+        document.querySelector("#btn_alt").setAttribute("class", "btn btn-light");
+        document.querySelector("#btn_del").setAttribute("class", "btn btn-outline-light");
         document.querySelector("#section").innerHTML = `<h1 class="text-center mt-3">Alterar Login Consultor</h1>
 
        <form action="ControleCon-Adm.php" method="get" class="container mt-5" id="frm_AltCon">
@@ -155,6 +161,9 @@ function alterarPag(pagName) {
             ``;
     }
     else if (pagName === "DelCon") {
+        document.querySelector("#btn_cons").setAttribute("class", "btn btn-outline-light");
+        document.querySelector("#btn_alt").setAttribute("class", "btn btn-outline-light");
+        document.querySelector("#btn_del").setAttribute("class", "btn btn-light");
         document.querySelector("#section").innerHTML = `<h1 class="text-center mt-3">Deletar Consultor</h1>
 
        <form action="ControleCon-Adm.php" method="get" class="container mt-5" id="frm_DelCon">

@@ -27,7 +27,7 @@
   }
   ?>
 
-  <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
     <div class="container-fluid ml-2">
       <a class="navbar-brand" href="#" id="alterarLogo"><img src="../../Img/Logo/logo branca finannce.png" alt="" style="height: 56px;"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
@@ -50,26 +50,11 @@
                 <li><a class="dropdown-item" href="#" onclick="alterarPag('DelUsr')">Deletar</a></li>
               </ul>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Consultor
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#" onclick="alterarPag('ConsCon')">Consultar</a></li>
-                <li><a class="dropdown-item" href="#" onclick="alterarPag('AltCon')">Alterar Login</a></li>
-                <li><a class="dropdown-item" href="#" onclick="alterarPag('DelCon')">Deletar</a></li>
-              </ul>
+            <li class="nav-item">
+              <a class="nav-link active fw-bold text-uppercase" aria-current="page" href="pagConsultor.php" name="Consultor">Consultor</a>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Adm
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#" onclick="alterarPag('CadAdm')">Cadastrar</a></li>
-                <li><a class="dropdown-item" href="#" onclick="alterarPag('ConsAdm')">Consultar</a></li>
-                <li><a class="dropdown-item" href="#" onclick="alterarPag('AltLogAdm')">Alterar Login</a></li>
-                <li><a class="dropdown-item" href="#" onclick="alterarPag('DelAdm')">Deletar</a></li>
-              </ul>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="pagAdm.php" name="Adm">Adm</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#" name="Artigos" onclick="alterarPag('RespFAQ')">FAQ</a>
@@ -78,7 +63,7 @@
               <a class="nav-link active" aria-current="page" href="#" name="Artigos" onclick="alterarPag('Artigos')">Artigos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#" name="Home" onclick="alterarPag('Home')">Home</a>
+              <a class="nav-link active" aria-current="page" href="indexAdm.php" name="Home" onclick="alterarPag('Home')">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active text-danger" aria-current="page" href="../../index.html" name="Sair">Sair</a>
@@ -89,27 +74,22 @@
     </div>
   </nav>
   
-  <nav class="navbar navbar-expand-lg navbar-light bg-light mt-5 mt-5">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-    <a class="navbar-brand" href="#">Hidden brand</a>
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
-    </ul>
+  <div class="nav2-align">
+    <nav class="nav nav-pills nav-fill mt-5">
+        <a class="nav-item active " href="#">
+            <button id="btn_cons" class="btn btn-outline-light " onclick="alterarPag('ConsCon')">Consultar</button>
+        </a>
+        <a class="nav-item active" href="#">
+            <button id="btn_alt" class="btn btn-outline-light" onclick="alterarPag('AltCon')">Alterar Login</button>
+        </a>
+        <a class="nav-item active" href="#">
+            <button id="btn_del" class="btn btn-outline-light" onclick="alterarPag('DelCon')">Deletar</button>
+        </a>
+    </nav>
+    
   </div>
-</nav>
   <section id="section" style="margin-top: 100px;">
-    <h1 class="text-center align-middle mt-5">Seja bem vindo, <?php echo $Nome ?></h1>
+    <h1 class="text-center align-middle mt-5"></h1>
   </section>
 
 

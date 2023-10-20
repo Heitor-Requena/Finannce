@@ -27,7 +27,7 @@
   }
   ?>
 
-  <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
     <div class="container-fluid ml-2">
       <a class="navbar-brand" href="#" id="alterarLogo"><img src="../../Img/Logo/logo branca finannce.png" alt="" style="height: 56px;"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
@@ -54,7 +54,7 @@
               <a class="nav-link active" aria-current="page" href="pagConsultor.php" name="Consultor">Consultor</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="pagAdm.php" name="Adm">Adm</a>
+              <a class="nav-link active  fw-bold text-uppercase" aria-current="page" href="pagAdm.php" name="Adm">Adm</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#" name="Artigos" onclick="alterarPag('RespFAQ')">FAQ</a>
@@ -63,7 +63,7 @@
               <a class="nav-link active" aria-current="page" href="#" name="Artigos" onclick="alterarPag('Artigos')">Artigos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active fw-bold text-uppercase" aria-current="page" href="indexAdm.php" name="Home" onclick="alterarPag('Home')">Home</a>
+              <a class="nav-link active" aria-current="page" href="indexAdm.php" name="Home" onclick="alterarPag('Home')">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active text-danger" aria-current="page" href="../../index.html" name="Sair">Sair</a>
@@ -73,10 +73,28 @@
       </div>
     </div>
   </nav>
-
+  
+  <div class="nav2-align">
+    <nav class="nav nav-pills nav-fill mt-5">
+        <a class="nav-item active " href="#">
+            <button id="btn_cons" class="btn btn-outline-light " onclick="alterarPag('CadAdm')">Cadastrar</button>
+        </a>
+        <a class="nav-item active" href="#">
+            <button id="btn_alt" class="btn btn-outline-light" onclick="alterarPag('ConsAdm')">Consultar</button>
+        </a>
+        <a class="nav-item active" href="#">
+            <button id="btn_del" class="btn btn-outline-light" onclick="alterarPag('AltLogAdm')">Alterar Login</button>
+        </a>
+        <a class="nav-item active" href="#">
+            <button id="btn_del" class="btn btn-outline-light" onclick="alterarPag('DelAdm')">Deletar</button>
+        </a>
+    </nav>
+    
+  </div>
   <section id="section" style="margin-top: 100px;">
-    <h1 class="text-center align-middle mt-5">Seja bem vindo, <?php echo $Nome ?></h1>
+    <h1 class="text-center align-middle mt-5"></h1>
   </section>
+
 
   <section id="result"></section>
 
