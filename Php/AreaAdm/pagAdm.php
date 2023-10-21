@@ -50,13 +50,13 @@
               <a class="nav-link active  fw-bold text-uppercase" aria-current="page" href="pagAdm.php" name="Adm">Adm</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#" name="Artigos" onclick="alterarPag('RespFAQ')">FAQ</a>
+              <a class="nav-link active" aria-current="page" href="pagFAQ.php" name="Artigos">FAQ</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#" name="Artigos" onclick="alterarPag('Artigos')">Artigos</a>
+              <a class="nav-link active" aria-current="page" href="pagArtigos.php" name="Artigos">Artigos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="indexAdm.php" name="Home" onclick="alterarPag('Home')">Home</a>
+              <a class="nav-link active" aria-current="page" href="indexAdm.php" name="Home">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active text-danger" aria-current="page" href="../../index.html" name="Sair">Sair</a>
@@ -70,13 +70,13 @@
   <div class="nav2-align">
     <nav class="nav nav-pills nav-fill mt-5">
         <a class="nav-item active " href="#">
-            <button id="btn_cons" class="btn btn-outline-light " onclick="alterarPag('CadAdm')">Cadastrar</button>
+            <button id="btn_cad" class="btn btn-outline-light " onclick="alterarPag('CadAdm')">Cadastrar</button>
         </a>
         <a class="nav-item active" href="#">
-            <button id="btn_alt" class="btn btn-outline-light" onclick="alterarPag('ConsAdm')">Consultar</button>
+            <button id="btn_con" class="btn btn-outline-light" onclick="alterarPag('ConsAdm')">Consultar</button>
         </a>
         <a class="nav-item active" href="#">
-            <button id="btn_del" class="btn btn-outline-light" onclick="alterarPag('AltLogAdm')">Alterar Login</button>
+            <button id="btn_altlog" class="btn btn-outline-light" onclick="alterarPag('AltLogAdm')">Alterar Login</button>
         </a>
         <a class="nav-item active" href="#">
             <button id="btn_del" class="btn btn-outline-light" onclick="alterarPag('DelAdm')">Deletar</button>

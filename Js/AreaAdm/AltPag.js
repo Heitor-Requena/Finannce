@@ -1,55 +1,8 @@
-function alterarPag(pagName) {
-    if (pagName === "Home") {
-        document.querySelector("#section").innerHTML =
-            `<h1 class="text-center align-middle">Seja bem vindo, Administrador</h1>`;
-        document.querySelector("#result").innerHTML =
-            ``;
-    }
-    // Artigos--------------------------------------------------------------------------------------------------------
-    else if (pagName === "Artigos") {
-        document.querySelector("#section").innerHTML = ` <h1 class="text-center mt-3">Artigos</h1>
-
-        <div class="d-flex justify-content-around">
-            <div class="flex row col-4 m-5">
-                <form action="ControleArtigo-Adm.php" method="get" id="frm_Artigo" class="container mt-5">
-                    <h4 class="text-start">Publicar</h4>
-            
-                    <div class="row">
-                        <input type="text" name="TituloArtigo" id="TituloArtigo" class="form-control m-2" placeholder="Título Artigo">
-                    </div>
-                    <div class="row">
-                        <input type="text" name="AutorArtigo" id="AutorArtigo" class="form-control m-2" placeholder="Autor do Artigo">
-                    </div>
-                    <div class="row">
-                        <textarea class="form-control m-2" name="Artigo" id="Artigo" rows="15" placeholder="Digite aqui o artigo"></textarea>
-                    </div>
-                    <div class="text-center">
-                        <input type="submit" id="btn_AdicionarArtigo" name="btn_AdicionarArtigo" class="iframe-btn btn m-3 btn-outline-light" value="Adicionar" onclick="AdicionarArtigo(event)">
-                    </div>
-                </form>
-            </div>
-        
-            <div class="flex row col-4 m-5 justify-content-around">
-                <form action="ControleArtigo-Adm.php" method="get" id="frm_Artigo2" class="container mt-5">
-                    <div class="row">
-                        <input type="number" name="IdArtigo" id="IdArtigo" class="form-control m-2" placeholder="Id do Artigo" min="1" max-length="999999">
-                    </div>
-                    <div class="text-center">
-                        <input type="submit" id="btn_ListarArtigo" name="btn_ListarArtigo" class="iframe-btn btn m-3  btn-outline-light" value="Ver Todos" onclick="ListarArtigo(event)">
-                        <input type="submit" id="btn_ConsultarArtigo" name="btn_ConsultarArtigo" class="iframe-btn btn m-3  btn-outline-light" value="Consultar" onclick="ConsultarArtigo(event)">
-                        <input type="submit" id="btn_ExcluirArtigo" name="btn_ExcluirArtigo" class="iframe-btn btn m-3  btn-outline-light" value="Excluir" onclick="ExcluirArtigo(event)">
-                    </div>
-                </form>
-
-                <section id="resultArtigo"></section>
-            </div>
-        </div>`;
-        document.querySelector("#result").innerHTML =
-            ``;
-    }
-
     // Usuário--------------------------------------------------------------------------------------------------------
-    else if (pagName === "ConsUsr") {
+    if (pagName === "ConsUsr") {
+        document.querySelector("#btn_cons").setAttribute("class", "btn btn-light");
+        document.querySelector("#btn_altlog").setAttribute("class", "btn btn-outline-light");
+        document.querySelector("#btn_del").setAttribute("class", "btn btn-outline-light");
         document.querySelector("#section").innerHTML =
             `<h1 class="text-center mt-3">Consultar Usuário</h1>
         <h2></h2>
@@ -70,6 +23,9 @@ function alterarPag(pagName) {
             ``;
     }
     else if (pagName === "AltUsr") {
+        document.querySelector("#btn_cons").setAttribute("class", "btn btn-outline-light");
+        document.querySelector("#btn_altlog").setAttribute("class", "btn btn-light");
+        document.querySelector("#btn_del").setAttribute("class", "btn btn-outline-light");
         document.querySelector("#section").innerHTML = `<h1 class="text-center mt-3">Alterar Login Usuário</h1>
 
         <form action="ControleUsr-Adm.php" method="get" class="container mt-5" id="frm_AltUsr">
@@ -94,6 +50,9 @@ function alterarPag(pagName) {
             ``;
     }
     else if (pagName === "DelUsr") {
+        document.querySelector("#btn_cons").setAttribute("class", "btn btn-outline-light");
+        document.querySelector("#btn_altlog").setAttribute("class", "btn btn-outline-light");
+        document.querySelector("#btn_del").setAttribute("class", "btn btn-light");
         document.querySelector("#section").innerHTML = `<h1 class="text-center mt-3">Deletar Usuário</h1>
 
         <form action="ControleUsr-Adm.php" method="get" class="container mt-5" id="frm_DelUsr">
@@ -182,6 +141,10 @@ function alterarPag(pagName) {
 
     // Adm--------------------------------------------------------------------------------------------------------
     else if (pagName === "CadAdm") {
+        document.querySelector("#btn_cad").setAttribute("class", "btn btn-light")
+        document.querySelector("#btn_con").setAttribute("class", "btn btn-outline-light")
+        document.querySelector("#btn_altlog").setAttribute("class", "btn btn-outline-light")
+        document.querySelector("#btn_del").setAttribute("class", "btn btn-outline-light")
         document.querySelector("#section").innerHTML = `<h1 class="text-center mt-3">Cadastrar Administrador</h1>
 
         <form action="ControleAdm-Adm.php" method="get" class="container mt-5" id="frm_CadAdm">
@@ -215,6 +178,10 @@ function alterarPag(pagName) {
             ``;
     }
     else if (pagName === "ConsAdm") {
+        document.querySelector("#btn_cad").setAttribute("class", "btn btn-outline-light")
+        document.querySelector("#btn_con").setAttribute("class", "btn btn-light")
+        document.querySelector("#btn_altlog").setAttribute("class", "btn btn-outline-light")
+        document.querySelector("#btn_del").setAttribute("class", "btn btn-outline-light")
         document.querySelector("#section").innerHTML = `<h1 class="text-center mt-3">Consultar Administrador</h1>
 
         <form action="ControleAdm-Adm.php" method="get" class="container mt-5" id="frm_ConsAdm">
@@ -232,6 +199,10 @@ function alterarPag(pagName) {
             ``;
     }
     else if (pagName === "AltLogAdm") {
+        document.querySelector("#btn_cad").setAttribute("class", "btn btn-outline-light")
+        document.querySelector("#btn_con").setAttribute("class", "btn btn-outline-light")
+        document.querySelector("#btn_altlog").setAttribute("class", "btn btn-light")
+        document.querySelector("#btn_del").setAttribute("class", "btn btn-outline-light")
         document.querySelector("#section").innerHTML = `<h1 class="text-center mt-3">Alterar Administrador</h1>
 
         <form action="ControleAdm-Adm.php" method="get" class="container mt-5" id="frm_AltLogAdm">
@@ -256,6 +227,10 @@ function alterarPag(pagName) {
             ``;
     }
     else if (pagName === "DelAdm") {
+        document.querySelector("#btn_cad").setAttribute("class", "btn btn-outline-light")
+        document.querySelector("#btn_con").setAttribute("class", "btn btn-outline-light")
+        document.querySelector("#btn_altlog").setAttribute("class", "btn btn-outline-light")
+        document.querySelector("#btn_del").setAttribute("class", "btn btn-light")
         document.querySelector("#section").innerHTML = `<h1 class="text-center mt-3">Deletar Administrador</h1>
 
         <form action="ControleAdm-Adm.php" method="get" class="container mt-5" id="frm_DelAdm">
@@ -271,31 +246,3 @@ function alterarPag(pagName) {
         document.querySelector("#result").innerHTML =
             ``;
     }
-
-    // FAQ--------------------------------------------------------------------------------------------------------
-    else if (pagName === "RespFAQ") {
-        document.querySelector('#section').innerHTML = `<h1 class="text-center mt-3">Resposta</h1>
-        <form action="ControleFAQ-Adm.php" id="frm_PerguntaResposta" method="get" class="container mt-5">
-            <div class="row">
-                <div class="col">
-                    <input type="number" name="Id_Pergunta" id="Id_Pergunta" class="form-control m-2" placeholder="ID da pergunta">
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col">
-                    <textarea class="form-control m-2" name="Resposta" id="Resposta" rows="15" placeholder="Responda Aqui"></textarea>
-                </div>
-            </div>
-
-            <div class="text-center">
-                <input type="submit" value="Responder" id="btn_ResponderPergunta" name="btn_ResponderPergunta" class="iframe-btn btn m-3  btn-outline-light" onclick="EnviarResposta(event)">
-                <input type="submit" value="Consultar" id="btn_ConsultarPergunta" name="btn_ConsultarPergunta" class="iframe-btn btn m-3  btn-outline-light" onclick="ConsultarPergunta(event)">
-                <input type="submit" value="Ver todas Perguntas" id="btn_ListarPergunta" name="btn_ListarPergunta" class="iframe-btn btn m-3  btn-outline-light" onclick="ListarPergunta(event)">
-            </div>
-        </form>`;
-
-        document.querySelector("#result").innerHTML =
-            ``;
-    }
-}

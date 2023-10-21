@@ -27,7 +27,7 @@
   }
   ?>
 
-  <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
     <div class="container-fluid ml-2">
       <a class="navbar-brand" href="#" id="alterarLogo"><img src="../../Img/Logo/logo branca finannce.png" alt="" style="height: 56px;"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
@@ -50,13 +50,13 @@
               <a class="nav-link active" aria-current="page" href="pagAdm.php" name="Adm">Adm</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="pagFAQ.php" name="Artigos">FAQ</a>
+              <a class="nav-link active fw-bold text-uppercase" aria-current="page" href="#" name="Artigos">FAQ</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="pagArtigos.php" name="Artigos">Artigos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active fw-bold text-uppercase" aria-current="page" href="indexAdm.php" name="Home">Home</a>
+              <a class="nav-link active" aria-current="page" href="indexAdm.php" name="Home">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active text-danger" aria-current="page" href="../../index.html" name="Sair">Sair</a>
@@ -66,10 +66,34 @@
       </div>
     </div>
   </nav>
-
+  
+  
   <section id="section" style="margin-top: 100px;">
-    <h1 class="text-center align-middle mt-5">Seja bem vindo, <?php echo $Nome ?></h1>
+    <h1 class="text-center align-middle mt-5">FAQ/SAQ</h1>
   </section>
+
+  <h3 class="text-center mt-3">Resposta</h3>
+        <form action="ControleFAQ-Adm.php" id="frm_PerguntaResposta" method="get" class="container mt-5">
+            <div class="row">
+                <div class="col">
+                    <input type="number" name="Id_Pergunta" id="Id_Pergunta" class="form-control m-2" placeholder="ID da pergunta">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <textarea class="form-control m-2" name="Resposta" id="Resposta" rows="15" placeholder="Responda Aqui"></textarea>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <input type="submit" value="Responder" id="btn_ResponderPergunta" name="btn_ResponderPergunta" class="iframe-btn btn m-3  btn-outline-light" onclick="EnviarResposta(event)">
+                <input type="submit" value="Consultar" id="btn_ConsultarPergunta" name="btn_ConsultarPergunta" class="iframe-btn btn m-3  btn-outline-light" onclick="ConsultarPergunta(event)">
+                <input type="submit" value="Ver todas Perguntas" id="btn_ListarPergunta" name="btn_ListarPergunta" class="iframe-btn btn m-3  btn-outline-light" onclick="ListarPergunta(event)">
+            </div>
+        </form>
+    
+  </div>
 
   <section id="result"></section>
 

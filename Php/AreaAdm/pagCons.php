@@ -50,13 +50,13 @@
               <a class="nav-link active" aria-current="page" href="pagAdm.php" name="Adm">Adm</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#" name="Artigos" onclick="alterarPag('RespFAQ')">FAQ</a>
+              <a class="nav-link active" aria-current="page" href="pagFAQ.php" name="Artigos">FAQ</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#" name="Artigos" onclick="alterarPag('Artigos')">Artigos</a>
+              <a class="nav-link active" aria-current="page" href="pagArtigos.php" name="Artigos">Artigos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="indexAdm.php" name="Home" onclick="alterarPag('Home')">Home</a>
+              <a class="nav-link active" aria-current="page" href="indexAdm.php" name="Home">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active text-danger" aria-current="page" href="../../index.html" name="Sair">Sair</a>
