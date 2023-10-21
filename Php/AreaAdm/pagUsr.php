@@ -67,18 +67,12 @@
     </div>
   </nav>
   
-  <div class="nav2-align">
-    <nav class="nav nav-pills nav-fill mt-5">
-        <a class="nav-item active " href="#">
-            <button id="btn_cons" class="btn btn-outline-light " onclick="alterarPag('ConsUsr')">Consultar</button>
-        </a>
-        <a class="nav-item active" href="#">
-            <button id="btn_altlog" class="btn btn-outline-light" onclick="alterarPag('AltUsr')">Alterar Login</button>
-        </a>
-        <a class="nav-item active" href="#">
-            <button id="btn_del" class="btn btn-outline-light" onclick="alterarPag('DelUsr')">Deletar</button>
-        </a>
-    </nav>
+  <div class="nav2-align text-center">
+    <div class="btn-group">
+      <a href="#" class="btn btn-outline-light" id="btn_cons"  onclick="alterarPag('ConsUsr')">Consultar</a>
+      <a href="#" class="btn btn-outline-light" id="btn_altlog"   onclick="alterarPag('AltUsr')">Alterar Login</a>
+      <a href="#" class="btn btn-outline-light" id="btn_del"    onclick="alterarPag('DelUsr')">Deletar</a>
+    </div>
     
   </div>
   <section id="section" style="margin-top: 100px;">
