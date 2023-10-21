@@ -1,3 +1,4 @@
+function alterarPag(pagName) {
     // Usuário--------------------------------------------------------------------------------------------------------
     if (pagName === "ConsUsr") {
         document.querySelector("#btn_cons").setAttribute("class", "btn btn-light");
@@ -246,3 +247,4 @@
         document.querySelector("#result").innerHTML =
             ``;
     }
+}
