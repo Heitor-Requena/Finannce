@@ -56,10 +56,10 @@
               <a class="nav-link active" aria-current="page" href="pagArtigos.php" name="Artigos">Artigos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="indexAdm.php" name="Home">Home</a>
+              <a class="nav-link active" aria-current="page" href="indexAdm.php" name="Home" title="Home"><i class="bi bi-house"></i></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active text-danger" aria-current="page" href="../../index.html" name="Sair">Sair</a>
+              <a class="nav-link active text-danger" aria-current="page" href="../../index.html" name="Sair" title="Sair"><i class="bi bi-box-arrow-right"></i></a>
             </li>
           </ul>
         </div>
@@ -75,7 +75,7 @@
       <a href="#" class="btn btn-outline-light" id="btn_del"    onclick="alterarPag('DelAdm')">Deletar</a>
     </div>
   </div>
-  
+
   <section id="section" style="margin-top: 100px;">
     <h1 class="text-center align-middle mt-5"></h1>
   </section>
