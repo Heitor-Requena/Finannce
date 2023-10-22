@@ -171,13 +171,23 @@ function alterarPag(pagName) {
 
   // Perfil Cliente--------------------------------------------------------------------------------------------------------
   else if (pagName === "Configuracoes") {
-    document.querySelector("#section").innerHTML = `<h1>Configurações</h1>`
+    document.querySelector("#section").innerHTML = `<h1>Configurações</h1>`;
     document.querySelector("#result").innerHTML = ``;
   }
 
   // Perfil Cliente--------------------------------------------------------------------------------------------------------
   else if (pagName === "Consultores") {
-    document.querySelector("#section").innerHTML = `<h1>Consultores</h1>`
+    document.querySelector("#section").innerHTML = `<h1>Consultores</h1>
+    <div class='container'>
+      <form>
+        <input type="text" name="" id="" class="" placeholder="Nome Consultor">
+        <input type="submit" id="" name="" class="iframe-btn btn btn-outline-light" value="Pesquisar">
+      </form>
+
+      <div id='Consulotes-resposta'>
+      </div>
+    </div>
+    `;
     document.querySelector("#result").innerHTML = ``;
   }
 }

@@ -284,3 +284,5 @@ INNER JOIN tb_cliente
 ON tb_feedback.ID_CLIENTE = tb_cliente.ID_CLIENTE WHERE NOME_CONSULTOR = ? AND EMAIL_CONSULTOR = ?;
 
 INSERT INTO `tb_feedback`(`ID_CLIENTE`, `NOME_CONSULTOR`, `EMAIL_CONSULTOR`, `AVALIACAO`, `NOTA_CONSULTOR`, `DATA_INCLUSAO`) VALUES (1,'Maria Santos','consultor3@x.com', 'Muito bom ele', 4, NOW())
+
+SELECT * FROM tb_consultor WHERE NOME_CONSULTOR LIKE "%Carlos Ferreira%";

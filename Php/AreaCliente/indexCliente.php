@@ -82,10 +82,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script src="../../Js/AreaCliente/AltPag.js"></script>
-
-
   <script src="../../Js/AreaCliente/Js-InfoPess.js"></script>
   <script src="../../Js/AreaCliente/RespostaGrafico-Cliente.js"></script>
+  <script src="../../Js/AreaCliente/RespostaConsultores-Cliente.js"></script>
+
 </body>
 
 </html>
