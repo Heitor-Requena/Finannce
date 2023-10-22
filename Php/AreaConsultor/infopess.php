@@ -11,6 +11,7 @@
 </head>
 
 <body>
+
   <?php
     session_start();
 
@@ -23,10 +24,11 @@
     } 
     else{
       $Nome = $_SESSION["nome"];
+      $Email = $_SESSION["email"];
       $ID = $_SESSION["id"];
-
     }
   ?>  
+
   <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top bg-primary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#" id="alterarLogo"><img src="../../Img/logo branca finannce.png" alt="" style="height: 56px;"></a>
@@ -45,7 +47,7 @@
             </li>
            
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" onclick="alterarPag('Configuracoes')">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Configurações
               </a>
               <ul class="dropdown-menu">
@@ -67,12 +69,12 @@
   </nav>
 
   <section id="section" style="margin-top: 100px;">
-  <h1 class="text-center align-middle mt-5">Seja bem vindo, <? echo $Nome?></h1>
+  <h1 class="text-center align-middle mt-5">Seja bem vindo, <?php echo $Nome ?></h1>
     </section>
 
 
 
-    <h1 class="text-center mt-3">Meus Dados</h1>
+    <h2 class="text-center mt-3">Meus Dados</h2>
                
                <form class="container mt-5" action="" method="POST">
                  <h4 class="text-start">Informações pessoais</h4>
@@ -105,29 +107,50 @@
                      <input type="text" name="RG" id="RG" class="form-control m-2" placeholder="RG - 00.000.000-0" pattern="[0-9]{2}.[0-9]{3}.[0-9]{3}-[0-9]{1}">
                    </div>
                  </div>
-       
-       
-           
 
-
-                  <!--MAIS DADOS-->
-                 <div class="row">
-                   <div class="col-6">
-                     <input type="text" name="Cidade" id="Cidade" class="form-control m-2" placeholder="Cidade">
-                   </div>
-                   <div class="col-6">
-                     <input type="text" name="Estado" id="Estado" class="form-control m-2" placeholder="Estado">
-                   </div>
-                 </div>
-       
-             
                  <div class="row">
                    <label for="Nasc" class="col-sm-2 col-form-label text-center "><h6>Data de Nascimento: </h6></label>
                    <div class="col-md-4">
                      <input type="date" class="form-control" id="Nasc" min="2005-01-01">
                    </div>
                  </div> <br>
-       
+
+
+                  <!--MAIS DADOS-->
+
+                  <h4 class="text-start">Endereço</h4>
+      
+                  <div class="row">
+                    <div class="col-4">
+                      <input type="number" name="CEP" id="CEP" class="form-control m-2" placeholder="CEP (Sem traço)" pattern="[0-9]{9}">
+                    </div>
+                    <div class="col-4">
+                      <input type="text" name="Rua" id="Rua" class="form-control m-2" placeholder="Rua">
+                    </div>
+                    <div class="col-4">
+                      <input type="text" name="Bairro" id="Bairro" class="form-control m-2" placeholder="Bairro">
+                    </div>
+                  </div>
+              
+                  <div class="row">
+                    <div class="col-3">
+                      <input type="number" name="Numero" id="Numero" class="form-control m-2" placeholder="Número">
+                    </div>
+                    <div class="col-9">
+                      <input type="text" name="Complemento" id="Complemento" class="form-control m-2" placeholder="Complemento">
+                    </div>
+                  </div>
+              
+                  <div class="row">
+                    <div class="col-6">
+                      <input type="text" name="Cidade" id="Cidade" class="form-control m-2" placeholder="Cidade">
+                    </div>
+                    <div class="col-6">
+                      <input type="text" name="Estado" id="Estado" class="form-control m-2" placeholder="Estado">
+                    </div>
+                  </div>
+
+                  <br>
        
                  <!--MAIS DADOS-->
                 
@@ -137,7 +160,7 @@
                          
                          <input type="radio" name="Modalidade" id="EAD"> EAD <br>
        
-                         <input type="radio" name="Modalidade" id="Presencial" >Presencial
+                         <input type="radio" name="Modalidade" id="Presencial" > Presencial
                        </div>
        
        
@@ -151,7 +174,7 @@
                <br>
          
              
-                    <div class="col-6">
+                    <div class="">
                       <label for="Formacao"  class=" col-form-label  "><h5>Formação: </h5></label>
                        <textarea name="Formacao" id="Formacao"  rows="3" class="form-control" ></textarea>
                     </div>
@@ -169,7 +192,7 @@
        
                    <div class="row">
                    <div class="col-6">
-                     <label class="col-form-label "for="TempCons"><h5>Duração da Consultoria</h5></label>
+                     <label class="col-form-label "for="TempCons"><h5>Duração da Consultoria (Em Horas)</h5></label>
                      <input type="time" name="TempCons" id="TempCons" class="form-control m-2" placeholder="TempCons">
                    </div>
 

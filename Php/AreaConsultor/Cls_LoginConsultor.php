@@ -36,7 +36,7 @@
         }
 
         public function setFone_Consultor($Fone){
-            $this->tFone_Consultor = $Fone;
+            $this->Fone_Consultor = $Fone;
         }
         //-----------------------------
         public function EntrarConsultor(){
@@ -85,7 +85,7 @@
                     session_start();
                     $_SESSION["email"] = $this->Email_Consultor;
                     $_SESSION["nome"]  = $this->Nome_Consultor;
-                    header('Location: infopess.php');
+                    header('Location: ../../Html/Home/login.html');
                 }
                 else
                 {   

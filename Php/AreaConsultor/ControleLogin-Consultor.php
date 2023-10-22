@@ -28,7 +28,7 @@ if(isset($_GET["btn_EntrarConsultor"])){
             $_SESSION["email"] = $Dd->EMAIL_CONSULTOR;
             $_SESSION["nome"] = $Dd->NOME_CONSULTOR;
             $_SESSION["id"] = $Dd->ID_CONSULTOR;
-            header('Location: indexConsultor.php');
+            header('Location: infopess.php');
         }
     }
 }
