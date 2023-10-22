@@ -41,7 +41,7 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#" name="Home" onclick="alterarPag('Home')">Home</a>
+              <a class="nav-link active" aria-current="page" href="indexConsultor.php" name="Home" onclick="alterarPag('Home')">Home</a>
             </li>
            
             <li class="nav-item dropdown">
@@ -67,7 +67,7 @@
   </nav>
 
   <section id="section" style="margin-top: 100px;">
-  <h1 class="text-center align-middle mt-5">Seja bem vindo, <? echo $Email?></h1>
+  <h1 class="text-center align-middle mt-5">Seja bem vindo, <? echo $Nome?></h1>
     </section>
 
 

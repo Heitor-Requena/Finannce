@@ -3,6 +3,7 @@
         private $Email_Consultor;
         private $Senha_Consultor;
         private $Nome_Consultor;
+        private $Fone_Consultor;
         
         //------------------------------
         public function getEmail_Consultor(){
@@ -73,7 +74,7 @@
     
             try
             {
-                $Comando = $conexao->prepare("INSERT INTO tb_consultor (NOME_CONSULTOR, EMAIL_CONSULTOR, SENHA_CONSULTOR, FONE_CONSULTOR) VALUES (?, ?, ?, ?);");
+                $Comando = $conexao->prepare("INSERT INTO tb_consultor (NOME_CONSULTOR, EMAIL_CONSULTOR, SENHA_CONSULTOR, FONE_CONSULTOR, STATUS_CONSULTOR) VALUES (?, ?, ?, ?, 'D');");
                 $Comando->bindParam(1, $this->Nome_Consultor);
                 $Comando->bindParam(2, $this->Email_Consultor);
                 $Comando->bindParam(3, $this->Senha_Consultor);

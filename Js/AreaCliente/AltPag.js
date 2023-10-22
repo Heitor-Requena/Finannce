@@ -174,4 +174,10 @@ function alterarPag(pagName) {
     document.querySelector("#section").innerHTML = `<h1>Configurações</h1>`
     document.querySelector("#result").innerHTML = ``;
   }
+
+  // Perfil Cliente--------------------------------------------------------------------------------------------------------
+  else if (pagName === "Consultores") {
+    document.querySelector("#section").innerHTML = `<h1>Consultores</h1>`
+    document.querySelector("#result").innerHTML = ``;
+  }
 }

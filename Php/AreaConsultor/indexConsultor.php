@@ -24,8 +24,8 @@
     } 
     else{
       $Nome = $_SESSION["nome"];
+      $Email = $_SESSION["email"];
       $ID = $_SESSION["id"];
-
     }
   ?>
 
@@ -44,6 +44,9 @@
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#" name="Home" onclick="alterarPag('Home')">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#" name="FeedBack" onclick="alterarPag('FeedBack')">FeedBack's</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" onclick="alterarPag('Configuracoes')">
@@ -73,7 +76,9 @@
 
   <section id="result"></section>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="../../Js/AreaConsultor/AltPag.js"></script>
+  <script src="../../Js/AreaConsultor/RespostaFeedBack-Consultor.js"></script>
   <script src="../../Js/AreaConsultor/InfoPess.php"></script>
 </body>
 
