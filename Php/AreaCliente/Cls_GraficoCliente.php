@@ -217,14 +217,14 @@
 
                 $Comando->execute();
 
-                $Relat = "";
+                $Relat = '';
                 $Relat .= '<table>';
                 $Relat .= '<tr>';
                 $Relat .= '<th>ID do Gasto</th>';
                 $Relat .= '<th>Nome Gasto</th>';
                 $Relat .= '<th>Valor</th>';
-                $Relat .= '<th>Situação</th>';
-                $Relat .= '<th>Data de Inclusão</th>';
+                $Relat .= '<th>Situacao</th>';
+                $Relat .= '<th>Data de Inclusao</th>';
                 $Relat .= '</tr>';
 
                 $Linha = $Comando->fetchALL(PDO::FETCH_OBJ);
@@ -239,13 +239,13 @@
                         $Relat .= '<td>' . $L->DATA_INCLUSAO . '</td>';
                     $Relat .= '</tr>';
                 }
-                $Relat .= '</table>';
+                  $Relat .= '</table>';
 
-                $Relat .= '<br><table>';
-                $Relat .= '<th>Média de valor do Gastos</th>';
+                $Relat .= '<br><table><tr>';
+                $Relat .= '<th>Maior Valor</th>';
+                $Relat .= '<th>Menor Valor</th>';
                 $Relat .= '<th>Soma dos Valores</th>';
-                $Relat .= '<th>Valor do Maior Gasto</th>';
-                $Relat .= '<th>Valor do Menor Gasto</th>';
+                $Relat .= '<th>Média dos Valores</th>';
                 $Relat .= '</tr>';
 
                 $Comando = $conexao->prepare("SELECT MAX(VALOR_GASTO) AS MAIOR, MIN(VALOR_GASTO) AS MINIMO, SUM(VALOR_GASTO) AS SOMA, TRUNCATE(AVG(VALOR_GASTO), 2) AS MEDIA FROM `tb_gastos` WHERE ID_CLIENTE = ?;");
