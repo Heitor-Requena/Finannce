@@ -48,6 +48,9 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#" name="MeusGastos" onclick="alterarPag('Consultores')">Consultores</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#" name="MeusGastos" onclick="alterarPag('FeedBack')">FeedBack's</a>
+            </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Configurações
@@ -85,7 +88,7 @@
   <script src="../../Js/AreaCliente/Js-InfoPess.js"></script>
   <script src="../../Js/AreaCliente/RespostaGrafico-Cliente.js"></script>
   <script src="../../Js/AreaCliente/RespostaConsultores-Cliente.js"></script>
+  <script src="../../Js/AreaCliente/RespostaFeedBack-Cliente.js"></script>
 
 </body>
-
 </html>

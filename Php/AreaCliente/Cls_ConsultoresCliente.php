@@ -44,6 +44,33 @@ class Cls_ConsultoresCliente{
             
         return $Retorno;
     }
+
+    //----------------------------------------
+    public function ConsultoresAnuncio(){
+        include_once "../conexao.php";
+
+        try
+        {
+            $Comando = $conexao->prepare("SELECT * FROM `tb_consultor` WHERE NOME_CONSULTOR LIKE '%?%';");
+            $Comando->bindParam(1, $this->Nome_Consultor);
+
+            if($Comando->execute())
+            {
+                $Matriz  = $Comando->fetchALL(PDO::FETCH_OBJ);
+                $Retorno = json_encode($Matriz);
+            }
+            else
+            {   
+                $Retorno = json_encode('Erro na query. Parte 1');
+            }
+        }
+        catch (PDOException $Erro)
+        {
+            $Retorno = json_encode("ERRO: " . $Erro->getMessage());
+        }
+        
+        return $Retorno;
+    }
     
     //----------------------------------------
     public function PesquisaConsultorNome(){
@@ -51,8 +78,7 @@ class Cls_ConsultoresCliente{
 
         try
         {
-            $Comando = $conexao->prepare("SELECT * FROM `tb_consultor` WHERE NOME_CONSULTOR LIKE '%?%';");
-            $Comando->bindParam(1, $this->Nome_Consultor);
+            $Comando = $conexao->prepare("SELECT * FROM tb_consultor WHERE SITUACAO = 'P';");
 
             if($Comando->execute())
             {
