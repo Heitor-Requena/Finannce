@@ -18,6 +18,7 @@
     $Experiencia = filter_input(INPUT_POST, "Experiencia");
     $Habilidade = filter_input(INPUT_POST, "Habilidade");
     $Avaliacao = filter_input(INPUT_POST, "Avaliacao");
+    $Anexo_Cons= filter_input(INPUT_POST, "Anexo_Cons");
     
 
     /*Envio dos dados para a classe*/
@@ -28,6 +29,7 @@
     $Cad->setFormacao($Formacao);
     $Cad->setExperiencia ($Experiencia);
     $Cad->setHabilidade ($Habilidades);
+    $Cad->setAnexo_Cons($Anexo_Cons);
 
 
     if(isset($_GET["btn_CadastrarConsultor"])){
