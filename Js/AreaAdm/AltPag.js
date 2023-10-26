@@ -91,14 +91,16 @@ function alterarPag(pagName) {
                 <input type="submit" id="btn_ConsultoresDesativados"    name="btn_ConsultoresDesativados"   class="iframe-btn btn m-2  btn-outline-light" value="Ver Apenas Consultores Desativados"   onclick="ConsultoresDesativados(event)">
             </div>
         </form><br>
-        <div class="row mx-1">
-            <div class="col-6" id="tableCon"></div>
-            <div class="col-6" id="infoCon"></div>
+        <div class="row mx-1 d-flex justify-content-around">
+            <div class="" id="tableCon"></div>
+            <div class="" id="infoCon"></div>
         </div>`;
-        document.querySelector("#result").innerHTML =
-            ``;
+        document.querySelector("#result").innerHTML =    ``;
+        document.getElementById("tableCon").innerHTML = "";
     }
     else if (pagName === "AltCon") {
+        document.getElementById("tableCon").innerHTML = "";
+        document.querySelector("#infoCon").setAttribute("class", "col-6 border border-light rounded");
         document.querySelector("#btn_cons").setAttribute("class", "btn btn-outline-light");
         document.querySelector("#btn_alt").setAttribute("class", "btn btn-light active");
         document.querySelector("#btn_del").setAttribute("class", "btn btn-outline-light");

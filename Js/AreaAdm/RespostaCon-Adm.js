@@ -110,6 +110,8 @@ function ConsultoresAtivados(event) {
     })
 
         .done(function (dadosPHP) {
+            document.querySelector("#infoCon").setAttribute("class", "");
+            document.querySelector("#infoCon").innerHTML = "";
             document.getElementById("result").innerHTML = "";
             document.getElementById("tableCon").innerHTML = "";
             if (dadosPHP.trim() === "") {
@@ -162,7 +164,6 @@ function ConsultoresDesativados(event) {
         .done(function (dadosPHP) {
             document.getElementById("result").innerHTML = "";
             document.getElementById("tableCon").innerHTML = "";
-            document.querySelector("#infoCon").setAttribute("class", "col-6 border border-light rounded");
             if (dadosPHP.trim() === "") {
                 console.log("Resposta vazia do servidor.");
             }
@@ -200,6 +201,7 @@ function ConsultoresDesativados(event) {
 
 }
 
+// Vizualizar Informações Consultores Desativados
 function verinfo(event) {
     event.preventDefault();
     var DadosForm = $('#frm_ConCon').serialize();
@@ -213,6 +215,7 @@ function verinfo(event) {
 
         .done(function (dadosPHP) {
             document.getElementById("result").innerHTML = "";
+            document.querySelector("#infoCon").setAttribute("class", "col-6 border border-light rounded text-center");
             if (dadosPHP.trim() === "") {
                 console.log("Resposta vazia do servidor.");
             }
@@ -220,23 +223,31 @@ function verinfo(event) {
                 var Consultores = JSON.parse(dadosPHP);
 
                 // CONSULTA EM Tabela
-                var Tabela = '';
-                Tabela += "<table class='table table-bordered table-striped table-dark ml-x'";
-
-                Tabela += "<tr><th scope='col' class='text-center'>ID</th><th scope='col' class='text-center'>Nome</th><th scope='col' class='text-center'>CPF</th><th scope='col' class='text-center'>Email</th><th scope='col' class='text-center'>Telefone</th><th scope='col' class='text-center'>Data de Cadastro</th><th scope='col' class='text-center'>Status</th>"
+                var Bloco = '';
                 for (i = 0; i < Consultores.length; i++) {
-                    Tabela += "<tr>";
-                    Tabela += "<td class='text-center align-middle'>" + Consultores[i].ID_CONSULTOR + "</td>";
-                    Tabela += "<td class='text-center align-middle'>" + Consultores[i].NOME_CONSULTOR + "</td>";
-                    Tabela += "<td class='text-center align-middle'>" + Consultores[i].CPF_CONSULTOR + "</td>";
-                    Tabela += "<td class='text-center align-middle'>" + Consultores[i].EMAIL_CONSULTOR + "</td>";
-                    Tabela += "<td class='text-center align-middle'>" + Consultores[i].FONE_CONSULTOR + "</td>";
-                    Tabela += "<td class='text-center align-middle'>" + Consultores[i].DATA_ENTRADA + "</td>";
-                    Tabela += "<td class='text-center align-middle'>" + Consultores[i].STATUS_CONSULTOR + "</td>";
-                    Tabela += "</tr>"
+                    Bloco += "<h2><u>Informações Pessoais</u></h2>";
+                    Bloco += "<strong>ID: </strong>"                        + Consultores[i].ID_CONSULTOR       + "<br>";
+                    Bloco += "<strong>Nome: </strong>"                      + Consultores[i].NOME_CONSULTOR     + "<br>";
+                    Bloco += "<strong>CPF: </strong>"                       + Consultores[i].CPF_CONSULTOR      + "<br>";
+                    Bloco += "<strong>RG: </strong>"                        + Consultores[i].RG_CONSULTOR       + "<br>";
+                    Bloco += "<strong>Email: </strong>"                     + Consultores[i].EMAIL_CONSULTOR    + "<br>";
+                    Bloco += "<strong>Telefone: </strong>"                  + Consultores[i].FONE_CONSULTOR     + "<br>";
+                    Bloco += "<strong>Data de Solicitação: </strong>"       + Consultores[i].DATA_ENTRADA       + "<br>";
+                    Bloco += "<h2><u>Informações de Trabalho</u></h2>";
+                    Bloco += "<strong>Formação: </strong>"                  + Consultores[i].FORMACAO           + "<br>";
+                    Bloco += "<strong>Experiência: </strong>"               + Consultores[i].EXPERIENCIA        + "<br>";
+                    Bloco += "<strong>Habilidade: </strong>"                + Consultores[i].HABILIDADE         + "<br>";
+                    Bloco += "<strong>Anexo: </strong>"                     + Consultores[i].ANEXO_CONSULTOR    + "<br>";
+                    Bloco += "<strong>Modalidade: </strong>"                + Consultores[i].MODALIDADE         + "<br>";
+                    Bloco += "<strong>Publico Alvo: </strong>"              + Consultores[i].PULICO_ALVO        + "<br>";
+                    Bloco += "<strong>Duração de Consultoria: </strong>"    + Consultores[i].DURACAO_CONS       + "<br>";
+                    Bloco += "<h2><u>Localização</u></h2>";
+                    Bloco += "<strong>Cidade: </strong>"                    + Consultores[i].CIDADE_CONSULTOR   + "<br>";
+                    Bloco += "<strong>Estado: </strong>"                    + Consultores[i].ESTADO_CONSULTOR   + "<br>";
+                    Bloco += "<form action='ControleCon-Adm.php' method='get' id='frm_AtvCon'> <input style='display: none' type='number' name='IdCon' id='IdCon' class='form-control m-2' value=" + Consultores[i].ID_CONSULTOR + "><input type='submit' id='btn_AtivarConsultor' name='btn_AtivarConsultor' class='iframe-btn btn m-3 btn-outline-light' value='Ativar'></form>"
                 }
 
-                $("#infoCon").append(Tabela);
+                $("#infoCon").append(Bloco);
             }
         })
 
