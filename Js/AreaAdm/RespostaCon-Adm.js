@@ -12,6 +12,7 @@ function ConsultarCon(event) {
 
         .done(function (dadosPHP) {
             document.getElementById("result").innerHTML = "";
+            document.getElementById("tableCon").innerHTML = "";
             if (dadosPHP.trim() === "") {
                 console.log("Resposta vazia do servidor.");
             }
@@ -20,7 +21,7 @@ function ConsultarCon(event) {
 
                 // CONSULTA EM Tabela
                 var Tabela = '';
-                Tabela += "<table class='table table-bordered table-striped table-dark ml-5'";
+                Tabela += "<table class='table table-bordered table-striped table-dark ml-x'";
 
                 Tabela += "<tr><th scope='col' class='text-center'>ID</th><th scope='col' class='text-center'>Nome</th><th scope='col' class='text-center'>CPF</th><th scope='col' class='text-center'>Email</th><th scope='col' class='text-center'>Telefone</th><th scope='col' class='text-center'>Data de Cadastro</th><th scope='col' class='text-center'>Status</th>"
                 for (i = 0; i < Consultores.length; i++) {
@@ -60,6 +61,7 @@ function ListarCon(event) {
 
         .done(function (dadosPHP) {
             document.getElementById("result").innerHTML = "";
+            document.getElementById("tableCon").innerHTML = "";
             if (dadosPHP.trim() === "") {
                 console.log("Resposta vazia do servidor.");
             }
@@ -109,6 +111,7 @@ function ConsultoresAtivados(event) {
 
         .done(function (dadosPHP) {
             document.getElementById("result").innerHTML = "";
+            document.getElementById("tableCon").innerHTML = "";
             if (dadosPHP.trim() === "") {
                 console.log("Resposta vazia do servidor.");
             }
@@ -117,9 +120,9 @@ function ConsultoresAtivados(event) {
 
                 // CONSULTA EM Tabela
                 var Tabela = '';
-                Tabela += "<table class='table table-bordered table-striped table-dark ml-5'";
+                Tabela += "<table class='table table-bordered table-striped table-dark mx-5";
 
-                Tabela += "<tr><th scope='col' class='text-center'>ID</th><th scope='col' class='text-center'>Nome</th><th scope='col' class='text-center'>CPF</th><th scope='col' class='text-center'>Email</th><th scope='col' class='text-center'>Telefone</th><th scope='col' class='text-center'>Data de Cadastro</th><th scope='col' class='text-center'>Status</th><th scope='col' class='text-center'></th>"
+                Tabela += "<tr><th scope='col' class='text-center'></th><th scope='col' class='text-center'>ID</th><th scope='col' class='text-center'>Nome</th><th scope='col' class='text-center'>CPF</th><th scope='col' class='text-center'>Email</th><th scope='col' class='text-center'>Telefone</th><th scope='col' class='text-center'>Data de Cadastro</th><th scope='col' class='text-center'>Status</th><th scope='col' class='text-center'></th>"
                 for (i = 0; i < Consultores.length; i++) {
                     Tabela += "<tr>";
                     Tabela += "<td class='text-center align-middle'>" + Consultores[i].ID_CONSULTOR + "</td>";
@@ -158,6 +161,8 @@ function ConsultoresDesativados(event) {
 
         .done(function (dadosPHP) {
             document.getElementById("result").innerHTML = "";
+            document.getElementById("tableCon").innerHTML = "";
+            document.querySelector("#infoCon").setAttribute("class", "col-6 border border-light rounded");
             if (dadosPHP.trim() === "") {
                 console.log("Resposta vazia do servidor.");
             }
@@ -178,11 +183,60 @@ function ConsultoresDesativados(event) {
                     Tabela += "<td class='text-center align-middle'>" + Consultores[i].FONE_CONSULTOR + "</td>";
                     Tabela += "<td class='text-center align-middle'>" + Consultores[i].DATA_ENTRADA + "</td>";
                     Tabela += "<td class='text-center align-middle'>" + Consultores[i].STATUS_CONSULTOR + "</td>"; 
-                    Tabela += "<td class='text-center align-middle'><form action='ControleCon-Adm.php' method='get' id='frm_AtvCon'> <input style='display: none' type='number' name='IdCon' id='IdCon' class='form-control m-2' value=" + Consultores[i].ID_CONSULTOR + "><input type='submit' id='btn_AtivarConsultor' name='btn_AtivarConsultor' class='iframe-btn btn m-3 btn-outline-light' value='Ativar'></form></td>";
+                    Tabela += "<td class='text-center align-middle'><form action='ControleCon-Adm.php' method='get' id='frm_ConCon'> <input style='display: none' type='number' name='IdCon' id='IdCon' class='form-control m-2' value=" + Consultores[i].ID_CONSULTOR + "><input type='submit' id='btn_ConsultarCon' name='btn_ConsultarCon' class='iframe-btn btn m-3 btn-outline-light' value='Visualizar' onclick='verinfo(event)'></form></td>";
+                    //Tabela += "<td class='text-center align-middle'><form action='ControleCon-Adm.php' method='get' id='frm_AtvCon'> <input style='display: none' type='number' name='IdCon' id='IdCon' class='form-control m-2' value=" + Consultores[i].ID_CONSULTOR + "><input type='submit' id='btn_AtivarConsultor' name='btn_AtivarConsultor' class='iframe-btn btn m-3 btn-outline-light' value='Ativar'></form></td>";
                     Tabela += "</tr>"
                 }
 
-                $("#result").append(Tabela);
+                $("#tableCon").append(Tabela);
+            }
+        })
+
+        .fail(function () {
+            alert("falha");
+        })
+
+    return false;
+
+}
+
+function verinfo(event) {
+    event.preventDefault();
+    var DadosForm = $('#frm_ConCon').serialize();
+    console.log(DadosForm);
+
+    $.ajax({
+        method: 'GET',
+        url: 'ControleCon-Adm.php?btn_ConsultarCon',
+        data: DadosForm
+    })
+
+        .done(function (dadosPHP) {
+            document.getElementById("result").innerHTML = "";
+            if (dadosPHP.trim() === "") {
+                console.log("Resposta vazia do servidor.");
+            }
+            else {
+                var Consultores = JSON.parse(dadosPHP);
+
+                // CONSULTA EM Tabela
+                var Tabela = '';
+                Tabela += "<table class='table table-bordered table-striped table-dark ml-x'";
+
+                Tabela += "<tr><th scope='col' class='text-center'>ID</th><th scope='col' class='text-center'>Nome</th><th scope='col' class='text-center'>CPF</th><th scope='col' class='text-center'>Email</th><th scope='col' class='text-center'>Telefone</th><th scope='col' class='text-center'>Data de Cadastro</th><th scope='col' class='text-center'>Status</th>"
+                for (i = 0; i < Consultores.length; i++) {
+                    Tabela += "<tr>";
+                    Tabela += "<td class='text-center align-middle'>" + Consultores[i].ID_CONSULTOR + "</td>";
+                    Tabela += "<td class='text-center align-middle'>" + Consultores[i].NOME_CONSULTOR + "</td>";
+                    Tabela += "<td class='text-center align-middle'>" + Consultores[i].CPF_CONSULTOR + "</td>";
+                    Tabela += "<td class='text-center align-middle'>" + Consultores[i].EMAIL_CONSULTOR + "</td>";
+                    Tabela += "<td class='text-center align-middle'>" + Consultores[i].FONE_CONSULTOR + "</td>";
+                    Tabela += "<td class='text-center align-middle'>" + Consultores[i].DATA_ENTRADA + "</td>";
+                    Tabela += "<td class='text-center align-middle'>" + Consultores[i].STATUS_CONSULTOR + "</td>";
+                    Tabela += "</tr>"
+                }
+
+                $("#infoCon").append(Tabela);
             }
         })
 
@@ -192,6 +246,7 @@ function ConsultoresDesativados(event) {
 
     return false;
 }
+
 
 // Alterar Login do Consultor
 function AltLogCon(event) {

@@ -75,7 +75,8 @@ function alterarPag(pagName) {
         document.querySelector("#btn_cons").setAttribute("class", "btn btn-light active");
         document.querySelector("#btn_alt").setAttribute("class", "btn btn-outline-light");
         document.querySelector("#btn_del").setAttribute("class", "btn btn-outline-light");
-        document.querySelector("#section").innerHTML = `<h1 class="text-center mt-3">Consultar Consultores</h1>
+        document.querySelector("#section").innerHTML = `
+        <h1 class="text-center mt-3">Consultar Consultores</h1>
 
         <form action="ControleCon-Adm.php" method="get" class="container mt-5" id="frm_ConListCon">
             <div class="row">
@@ -89,7 +90,11 @@ function alterarPag(pagName) {
                 <input type="submit" id="btn_ConsultoresAtivados"       name="btn_ConsultoresAtivados"      class="iframe-btn btn m-2  btn-outline-light" value="Ver Apenas Consultores Ativados"      onclick="ConsultoresAtivados(event)">
                 <input type="submit" id="btn_ConsultoresDesativados"    name="btn_ConsultoresDesativados"   class="iframe-btn btn m-2  btn-outline-light" value="Ver Apenas Consultores Desativados"   onclick="ConsultoresDesativados(event)">
             </div>
-        </form><br>`;
+        </form><br>
+        <div class="row mx-1">
+            <div class="col-6" id="tableCon"></div>
+            <div class="col-6" id="infoCon"></div>
+        </div>`;
         document.querySelector("#result").innerHTML =
             ``;
     }

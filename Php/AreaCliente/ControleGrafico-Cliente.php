@@ -1,16 +1,14 @@
 <?php 
     session_start();
 
-            require_once 'dompdf/autoload.inc.php';
-      
-       use Dompdf\Dompdf;
-        
-       $dompdf = new Dompdf();
+    require_once '../dompdf/autoload.inc.php';
 
     include_once "Cls_GraficoCliente.php";
 
-
-
+      
+    use Dompdf\Dompdf;
+        
+    $dompdf = new Dompdf();
 
     $ID_Cliente  = $_SESSION["id"];
     $ID_Gasto    = filter_input(INPUT_GET, "Id_Gasto", FILTER_SANITIZE_NUMBER_INT);
