@@ -11,6 +11,7 @@ class Cls_PerfilCons{
     private $Duracao_Cons;
     private $Formacao;
     private $Avaliacao;
+    private $Anexo_Cons;
     
     //------------------------------
     public function getEmail_Consultor(){
@@ -91,7 +92,13 @@ class Cls_PerfilCons{
         $this->Formacao = $formac;
     }
     //----------------------------------
-
+    public function getAnexo_Cons(){
+        return $this->Anexo_Cons;
+    }
+    public function setAnexo_Cons($anexo){
+        $this->Anexo_Cons = $anexo;
+    }
+    //---------------------------------
 
 
 
@@ -132,7 +139,7 @@ class Cls_PerfilCons{
 
         try
         {
-            $Comando = $conexao->prepare("INSERT INTO tb_Consultor(NOME_CONSULTOR, EMAIL_CONSULTOR, SENHA_CONSULTOR, CEL_CONSULTOR, DATA_ENTRADA, MODALIDADE, PUBLICO, DURACAO_CONS, FORMACAO, EXPERIENCIA, HABILIDADE) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);");
+            $Comando = $conexao->prepare("INSERT INTO tb_Consultor(NOME_CONSULTOR, EMAIL_CONSULTOR, SENHA_CONSULTOR, CEL_CONSULTOR, DATA_ENTRADA, MODALIDADE, PUBLICO, DURACAO_CONS, FORMACAO, EXPERIENCIA, HABILIDADE, ANEXO_CONSULTOR) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
             $Comando->bindParam(1, $this->Nome_Consultor);
             $Comando->bindParam(2, $this->Email_Consultor);
             $Comando->bindParam(3, $this->Senha_Consultor);
@@ -142,8 +149,9 @@ class Cls_PerfilCons{
             $Comando->bindParam(7, $this->Publico);
             $Comando->bindParam(8, $this->Duracao_Cons);
             $Comando->bindParam(9, $this->Formacao);
-            $Comando ->bindParam(10, $this->Experiencia );
-            $Comando ->bindParam(11, $this->Habilidade);
+            $Comando->bindParam(10, $this->Experiencia );
+            $Comando->bindParam(11, $this->Habilidade);
+            $Comando->bindParam(13, $this->Anexo_Cons);
            
 
             if($Comando->execute())

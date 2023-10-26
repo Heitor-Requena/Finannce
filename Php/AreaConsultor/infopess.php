@@ -115,6 +115,23 @@
                    </div>
                  </div> <br>
 
+                <!--ANEXOS-->
+
+                 <div class="row">
+                    <div class="col-6">
+                      <label class="col-form-label" for="Avatar_Cons"><h5>Foto de Perfil</h5></label><br>
+                      <input type="file" name="Avatar_Cons" id="Avatar_Cons" placeholder="Insira seu Arquivo" accept=" image/jpeg, image/jpg, image/png">
+                    </div>
+                    
+                    <div class="col-6">
+                      <label class="col-form-label" for="Anexo_Cons"><h5>Anexo Adicionais</h5></label><br>
+                      <input type="file" name="Anexo_Cons" id="Anexo_Cons" placeholder="Insira seu Arquivo" accept=" .jpeg, .jpg, .png, .doc">
+                    </div>
+                   </div>
+
+                   <hr>
+                   <br>
+
 
                   <!--MAIS DADOS-->
 
@@ -151,6 +168,7 @@
                   </div>
 
                   <br>
+                  
        
                  <!--MAIS DADOS-->
                 
@@ -199,10 +217,6 @@
                      <label class="col-form-label "for="TempCons"><h5>Duração da Consultoria (Em Horas)</h5></label>
                      <input type="time" name="TempCons" id="TempCons" class="form-control m-2" placeholder="TempCons">
                    </div>
-
-                   <div>
-                    <h1>Fotinha</h1>
-
                    </div>
        
                    <div class="text-center">

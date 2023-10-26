@@ -265,7 +265,7 @@ INSERT INTO tb_cronograma (NOME, ATIVIDADE, SEMANA) VALUES
 
 select NOME,ATIVIDADE,SEMANA from tb_cronograma order by SEMANA;
 
-CREATE TABLE tb_gasto(
+CREATE TABLE tb_gastos(
 	ID_GASTO int NOT NULL AUTO_INCREMENT,
 	ID_CLIENTE int not null, 
 	NOME_GASTO varchar(30) not null,
