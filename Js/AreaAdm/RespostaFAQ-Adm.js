@@ -43,7 +43,7 @@ function ListarPergunta(event) {
 
                 // CONSULTA EM Tabela
                 var Tabela = '';
-                Tabela += "<table class='table table-bordered table-striped table-dark ml-5'";
+                Tabela += "<div class='table-responsive'><table class='table table-bordered table-striped table-dark ml-5'";
 
                 Tabela += "<tr><th scope='col' class='text-center'>ID</th><th scope='col' class='text-center'>Nome</th><th scope='col' class='text-center'>Email</th><th scope='col' class='text-center'>Pergunta</th>"
                 for (i = 0; i < Pergunta.length; i++) {
@@ -90,7 +90,7 @@ function ConsultarPergunta(event) {
 
                 // CONSULTA EM Tabela
                 var Tabela = '';
-                Tabela += "<table class='table table-bordered table-striped table-dark ml-5'";
+                Tabela += "<div class='table-responsive'><table class='table table-bordered table-striped table-dark ml-5'";
 
                 Tabela += "<tr><th scope='col' class='text-center'>ID</th><th scope='col' class='text-center'>Nome</th><th scope='col' class='text-center'>Email</th><th scope='col' class='text-center'>Pergunta</th>"
                 for (i = 0; i < Pergunta.length; i++) {

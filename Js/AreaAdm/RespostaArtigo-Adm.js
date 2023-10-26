@@ -72,7 +72,7 @@ function ConsultarArtigo(event) {
 
             // CONSULTA EM Tabela
             var Tabela = '';
-            Tabela += "<table class='table table-bordered table-striped table-dark ml-5'";
+            Tabela += "<div class='table-responsive'><table class='table table-bordered table-striped table-dark ml-5'";
 
             Tabela += "<tr><th scope='col' class='text-center'>ID</th><th scope='col' class='text-center'>Título</th><th scope='col' class='text-center'>Artigo</th><th scope='col' class='text-center'>Autor</th><th scope='col' class='text-center'>Data de Publicação</th>"
             for (i = 0; i < Artigo.length; i++) {
@@ -117,7 +117,7 @@ function ListarArtigo(event) {
 
             // CONSULTA EM Tabela
             var Tabela = '';
-            Tabela += "<table class='table table-bordered table-striped table-dark ml-5'";
+            Tabela += "<div class='table-responsive'><table class='table table-bordered table-striped table-dark ml-5'";
 
             Tabela += "<tr><th scope='col' class='text-center'>ID</th><th scope='col' class='text-center'>Título</th><th scope='col' class='text-center'>Artigo</th><th scope='col' class='text-center'>Autor</th><th scope='col' class='text-center'>Data de Publicação</th>"
             for (i = 0; i < Artigo.length; i++) {

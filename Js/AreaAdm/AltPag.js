@@ -85,15 +85,15 @@ function alterarPag(pagName) {
                 </div>
             </div>
             <div class="text-center">
-                <input type="submit" id="btn_ConsultarCon"              name="btn_ConsultarCon"             class="iframe-btn btn m-2  btn-outline-light" value="Consultar"                            onclick="ConsultarCon(event)">
-                <input type="submit" id="btn_ListarCon"                 name="btn_ListarCon"                class="iframe-btn btn m-2  btn-outline-light" value="Ver Todos Consultores"                onclick="ListarCon(event)"> <br>
-                <input type="submit" id="btn_ConsultoresAtivados"       name="btn_ConsultoresAtivados"      class="iframe-btn btn m-2  btn-outline-light" value="Ver Apenas Consultores Ativados"      onclick="ConsultoresAtivados(event)">
-                <input type="submit" id="btn_ConsultoresDesativados"    name="btn_ConsultoresDesativados"   class="iframe-btn btn m-2  btn-outline-light" value="Ver Apenas Consultores Desativados"   onclick="ConsultoresDesativados(event)">
+                <input type="submit" id="btn_ConsultarCon"              name="btn_ConsultarCon"             class="iframe-btn btn m-2  btn-outline-light" value="Consultar"     onclick="ConsultarCon(event)">
+                <input type="submit" id="btn_ListarCon"                 name="btn_ListarCon"                class="iframe-btn btn m-2  btn-outline-light" value="Ver Todos"     onclick="ListarCon(event)"> <br>
+                <input type="submit" id="btn_ConsultoresAtivados"       name="btn_ConsultoresAtivados"      class="iframe-btn btn m-2  btn-outline-light" value="Ativados"      onclick="ConsultoresAtivados(event)">
+                <input type="submit" id="btn_ConsultoresDesativados"    name="btn_ConsultoresDesativados"   class="iframe-btn btn m-2  btn-outline-light" value="Desativados"   onclick="ConsultoresDesativados(event)">
             </div>
         </form><br>
         <div class="row mx-1 d-flex justify-content-around">
+            <div class="mb-3" id="infoCon"></div>
             <div class="" id="tableCon"></div>
-            <div class="" id="infoCon"></div>
         </div>`;
         document.querySelector("#result").innerHTML =    ``;
         document.getElementById("tableCon").innerHTML = "";
