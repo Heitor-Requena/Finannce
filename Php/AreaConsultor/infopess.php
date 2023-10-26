@@ -115,6 +115,23 @@
                    </div>
                  </div> <br>
 
+                <!--ANEXOS-->
+
+                 <div class="row">
+                    <div class="col-6">
+                      <label class="col-form-label" for="Avatar_Consultor"><h5>Foto de Perfil</h5></label><br>
+                      <input type="file" name="Avatar_Consultor" id="Avatar_Consultor" placeholder="Insira seu Arquivo" accept=" image/jpeg, image/jpg, image/png">
+                    </div>
+                    
+                    <div class="col-6">
+                      <label class="col-form-label" for="Anexo_Consultor"><h5>Anexo Adicionais</h5></label><br>
+                      <input type="file" name="Anexo_Consultor" id="Anexo_Consultor" placeholder="Insira seu Arquivo" accept=" .jpeg, .jpg, .png, .doc">
+                    </div>
+                   </div>
+                   
+                   <hr>
+                   <br>
+
 
                   <!--MAIS DADOS-->
 
@@ -151,6 +168,7 @@
                   </div>
 
                   <br>
+                  
        
                  <!--MAIS DADOS-->
                 
@@ -158,9 +176,13 @@
                        <div class="col-sm-5 col-md-6">
                          <label for="Modalidade"><h5>Modalidade:</h5></label> <br>
                          
-                         <input type="radio" name="Modalidade" id="EAD"> EAD <br>
+                         <input type="radio" name="Modalidade" id="R"> Remoto <br>
        
-                         <input type="radio" name="Modalidade" id="Presencial" > Presencial
+                         <input type="radio" name="Modalidade" id="P" > Presencial <br>
+
+                         <input type="radio" name="Modalidade" id="H" > Híbrido <br>
+
+                         
                        </div>
        
        
@@ -176,17 +198,17 @@
              
                     <div class="">
                       <label for="Formacao"  class=" col-form-label  "><h5>Formação: </h5></label>
-                       <textarea name="Formacao" id="Formacao"  rows="3" class="form-control" ></textarea>
+                       <textarea name="Formacao" id="Formacao"  rows="3" class="form-control" placeholder="Falculdades, cursos técnicos..."></textarea>
                     </div>
 
                    <br>
        
                    <div class="mb-3">
-                     <label for="Experiencia" class=" col-form-label  "><h5>Escreva sobre sua Experiência:</h5></label>
-                     <textarea class="form-control" name="Experiencia" id="Experiencia" rows="3" placeholder="Experiencia"></textarea></div>  
+                     <label for="Experiencia" class=" col-form-label  "><h5>Fale um pouco sobre suas Experiências:</h5></label>
+                     <textarea class="form-control" name="Experiencia" id="Experiencia" rows="3" placeholder="Ex: trabalhos anteriores, vivências, tabalhos voluntários..."></textarea></div>  
 
                      <div class="mb-3">
-                     <label for="Habilidade" class=" col-form-label  "><h5>Escreva sobre sua Habilidade:</h5></label>
+                     <label for="Habilidade" class=" col-form-label  "><h5>Escreva sobre suas Habilidades:</h5></label>
                      <textarea class="form-control" name="Habilidade" id="Habilidade" rows="3" placeholder="Habilidades profissionais adquiridas ao longo da vida"></textarea></div>  
           
        
@@ -195,10 +217,6 @@
                      <label class="col-form-label "for="TempCons"><h5>Duração da Consultoria (Em Horas)</h5></label>
                      <input type="time" name="TempCons" id="TempCons" class="form-control m-2" placeholder="TempCons">
                    </div>
-
-                   <div>
-                    <h1>Fotinha</h1>
-
                    </div>
        
                    <div class="text-center">
