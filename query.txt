@@ -1,4 +1,3 @@
-
 create database finannce;
 
 use finannce;
@@ -164,26 +163,34 @@ CREATE TABLE `tb_consultor`(
   `COMPLEMENTO_CONSULTOR` varchar (50),
   `CIDADE_CONSULTOR` varchar (50),
   `ESTADO_CONSULTOR` char (2),
-  `FOTO_PERF_CONSULTOR` BLOB,
+  `AVATAR_CONSULTOR` BLOB,
   `ANEXO_CONSULTOR` BLOB,
   `STATUS_CONSULTOR` char (1),
   `DATA_ENTRADA` datetime DEFAULT CURRENT_TIMESTAMP,
   `AVALIAÇAO_CONSULTOR` char(2) NULL,
-  `DESC_CONSULTOR` text,
+  `MODALIDADE` char (1),
+  `PUBLICO_ALVO` char (1),
+  `FORMACAO` text,
+  `EXPERIENCIA` text,
+  `HABILIDADE` text,
+  `DURACAO_CONS` varchar (4),
   PRIMARY KEY (`ID_CONSULTOR`),
   UNIQUE KEY `EMAIL_CONSULTOR` (`EMAIL_CONSULTOR`));
-INSERT INTO tb_consultor (NOME_CONSULTOR, EMAIL_CONSULTOR, SENHA_CONSULTOR, CPF_CONSULTOR, RG_CONSULTOR, FONE_CONSULTOR, CEP_CONSULTOR, RUA_CONSULTOR, BAIRRO_CONSULTOR, NUMERO_CASA_CONSULTOR, COMPLEMENTO_CONSULTOR, CIDADE_CONSULTOR, ESTADO_CONSULTOR, FOTO_PERF_CONSULTOR, ANEXO_CONSULTOR, STATUS_CONSULTOR, AVALIAÇAO_CONSULTOR, DESC_CONSULTOR) VALUES
-  ('Maria Santos', 'consultor3@x.com', 'abcd', '234.567.890-12', '23.456.789-3', '987-654-3210', 23456789, 'Rua 2', 'Bairro 2', 2, 'Complemento 2', 'Cidade 2', 'RJ', NULL, NULL, 'A', '7', 'Descrição 2'),
-  ('Pedro Oliveira', 'consultor4@x.com', 'efgh', '345.678.901-23', '34.567.890-3', '555-555-5555', 34567890, 'Rua 3', 'Bairro 3', 3, 'Complemento 3', 'Cidade 3', 'MG', NULL, NULL, 'A', '6', 'Descrição 3'),
-  ('Ana Pereira', 'consultor5@x.com', 'ijkl', '456.789.012-34', '45.678.901-4', '999-999-9999', 45678901, 'Rua 4', 'Bairro 4', 4, 'Complemento 4', 'Cidade 4', 'BA', NULL, NULL, 'A', '5', 'Descrição 4'),
-  ('Carlos Ferreira', 'consultor6@x.com', 'mnop', '567.890.123-45', '56.789.012-5', '111-222-3333', 56789012, 'Rua 5', 'Bairro 5', 5, 'Complemento 5', 'Cidade 5', 'SC', NULL, NULL, 'A', '4', 'Descrição 5'),
-  ('Marta Teixeira', 'consultor7@x.com', 'qrst', '678.901.234-56', '67.890.123-4', '444-555-6666', 67890123, 'Rua 6', 'Bairro 6', 6, 'Complemento 6', 'Cidade 6', 'RS', NULL, NULL, 'A', '3', 'Descrição 6'),
-  ('Ricardo Santos', 'consultor8@x.com', 'uvwx', '789.012.345-67', '78.901.234-5', '777-888-9999', 78901234, 'Rua 7', 'Bairro 7', 7, 'Complemento 7', 'Cidade 7', 'PR', NULL, NULL, 'A', '2', 'Descrição 7'),
-  ('Isabel Rodrigues', 'consultor9@x.com', 'yz01', '890.123.456-78', '89.012.345-6', '888-999-0000', 89012345, 'Rua 8', 'Bairro 8', 8, 'Complemento 8', 'Cidade 8', 'PA', NULL, NULL, 'A', '1', 'Descrição 8'),
-  ('Fernando Alves', 'consultor10@x.com', '2345', '901.234.567-89', '90.123.456-9', '222-333-4444', 90123456, 'Rua 9', 'Bairro 9', 9, 'Complemento 9', 'Cidade 9', 'MA', NULL, NULL, 'A', NULL, 'Descrição 9'),
-  ('Sofia Pereira', 'consultor11@x.com', '6789', '123.456.789-01', '12.345.678-9', '666-777-8888', 12345678, 'Rua 10', 'Bairro 10', 10, 'Complemento 10', 'Cidade 10', 'TO', NULL, NULL, 'A', NULL, 'Descrição 10');
+INSERT INTO tb_consultor (NOME_CONSULTOR, EMAIL_CONSULTOR, SENHA_CONSULTOR, CPF_CONSULTOR, RG_CONSULTOR, FONE_CONSULTOR, CEP_CONSULTOR, RUA_CONSULTOR, BAIRRO_CONSULTOR, NUMERO_CASA_CONSULTOR, COMPLEMENTO_CONSULTOR, CIDADE_CONSULTOR, ESTADO_CONSULTOR, AVATAR_CONSULTOR, ANEXO_CONSULTOR, STATUS_CONSULTOR, AVALIAÇAO_CONSULTOR, MODALIDADE, PUBLICO_ALVO, FORMACAO, EXPERIENCIA, HABILIDADE) VALUES
+	('Maria Santos', 'consultor3@x.com', 'abcd', '234.567.890-12', '23.456.789-3', '987-654-3210', 23456789, 'Rua 2', 'Bairro 2', 2, 'Complemento 2', 'Cidade 2', 'RJ', NULL, NULL, 'A', '7', 'P', 'A', 'Formaçao 2', 'Experiencia 2', 'Habilidade 2'),
+  ('Pedro Oliveira', 'consultor4@x.com', 'efgh', '345.678.901-23', '34.567.890-3', '555-555-5555', 34567890, 'Rua 3', 'Bairro 3', 3, 'Complemento 3', 'Cidade 3', 'MG', NULL, NULL, 'A', '6', 'P', 'A', 'Formaçao 3 ', 'Experiencia 3', 'Habilidade 3'),
+  ('Ana Pereira', 'consultor5@x.com', 'ijkl', '456.789.012-34', '45.678.901-4', '999-999-9999', 45678901, 'Rua 4', 'Bairro 4', 4, 'Complemento 4', 'Cidade 4', 'BA', NULL, NULL, 'A', '5', 'P', 'A', 'Formaçao 4', 'Experiencia 4', 'Habilidade 4'),
+  ('Carlos Ferreira', 'consultor6@x.com', 'mnop', '567.890.123-45', '56.789.012-5', '111-222-3333', 56789012, 'Rua 5', 'Bairro 5', 5, 'Complemento 5', 'Cidade 5', 'SC', NULL, NULL, 'A', '4', 'P', 'A', 'Formaçao 5', 'Experiencia 5', 'Habilidade 5'),
+  ('Marta Teixeira', 'consultor7@x.com', 'qrst', '678.901.234-56', '67.890.123-4', '444-555-6666', 67890123, 'Rua 6', 'Bairro 6', 6, 'Complemento 6', 'Cidade 6', 'RS', NULL, NULL, 'A', '3', 'P', 'A', 'Formaçao 6', 'Experiencia 6', 'Habilidade 6'),
+  ('Ricardo Santos', 'consultor8@x.com', 'uvwx', '789.012.345-67', '78.901.234-5', '777-888-9999', 78901234, 'Rua 7', 'Bairro 7', 7, 'Complemento 7', 'Cidade 7', 'PR', NULL, NULL, 'A', '2', 'P', 'A', 'Formaçao 7', 'Experiencia 7', 'Habilidade 7'),
+  ('Isabel Rodrigues', 'consultor9@x.com', 'yz01', '890.123.456-78', '89.012.345-6', '888-999-0000', 89012345, 'Rua 8', 'Bairro 8', 8, 'Complemento 8', 'Cidade 8', 'PA', NULL, NULL, 'A', '1', 'P', 'A', 'Formaçao 8', 'Experiencia 8', 'Habilidade 8'),
+  ('Fernando Alves', 'consultor10@x.com', '2345', '901.234.567-89', '90.123.456-9', '222-333-4444', 90123456, 'Rua 9', 'Bairro 9', 9, 'Complemento 9', 'Cidade 9', 'MA', NULL, NULL, 'A', '0', 'P', 'A', 'Formaçao 9', 'Experiencia 9', 'Habilidade 9'),
+  ('Sofia Pereira', 'consultor11@x.com', '6789', '123.456.789-01', '12.345.678-9', '666-777-8888', 12345678, 'Rua 10', 'Bairro 10', 10, 'Complemento 10', 'Cidade 10', 'TO', NULL, NULL, 'A', '8', 'P', 'A', 'Formaçao 10', 'Experiencia 10', 'Habilidade 10');
+  
+  drop table tb_consultor;
   
 select * from tb_consultor;
+
 -- ------------------------------------------------------
 -- Estrutura da tabela `faq/sac`
 CREATE TABLE tb_perguntasFaq(
