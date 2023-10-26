@@ -119,16 +119,16 @@
 
                  <div class="row">
                     <div class="col-6">
-                      <label class="col-form-label" for="Avatar_Cons"><h5>Foto de Perfil</h5></label><br>
-                      <input type="file" name="Avatar_Cons" id="Avatar_Cons" placeholder="Insira seu Arquivo" accept=" image/jpeg, image/jpg, image/png">
+                      <label class="col-form-label" for="Avatar_Consultor"><h5>Foto de Perfil</h5></label><br>
+                      <input type="file" name="Avatar_Consultor" id="Avatar_Consultor" placeholder="Insira seu Arquivo" accept=" image/jpeg, image/jpg, image/png">
                     </div>
                     
                     <div class="col-6">
-                      <label class="col-form-label" for="Anexo_Cons"><h5>Anexo Adicionais</h5></label><br>
-                      <input type="file" name="Anexo_Cons" id="Anexo_Cons" placeholder="Insira seu Arquivo" accept=" .jpeg, .jpg, .png, .doc">
+                      <label class="col-form-label" for="Anexo_Consultor"><h5>Anexo Adicionais</h5></label><br>
+                      <input type="file" name="Anexo_Consultor" id="Anexo_Consultor" placeholder="Insira seu Arquivo" accept=" .jpeg, .jpg, .png, .doc">
                     </div>
                    </div>
-
+                   
                    <hr>
                    <br>
 
