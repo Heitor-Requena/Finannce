@@ -117,14 +117,6 @@ class Cls_PerfilCons{
         $this->Modalidade = $modali;
     }
   
-    //-------------------------
-    public function getDuracao_Cons(){
-        return $this->Duracao_Cons;
-    }
-
-    public function setDuracao_Cons($duracao){
-        $this->Duracao_Cons = $duracao;
-    }
     //---------------------------------
     public function getFormacao(){
         return $this->Formacao;
@@ -133,7 +125,33 @@ class Cls_PerfilCons{
     public function setFormacao($formac){
         $this->Formacao = $formac;
     }
+    //---------------------------------
+    public function getExperiencia(){
+        return $this->Experiencia;
+    }
 
+    public function setExperiencia($experi){
+        $this->Experiencia = $experi;
+    }
+
+    //---------------------------------
+    public function getHabilidade(){
+        return $this->Habilidade;
+    }
+
+    public function setHabilidade($habil){
+        $this->Habilidade = $habil;
+    }
+
+    //-------------------------
+      public function getDuracao_Cons(){
+        return $this->Duracao_Cons;
+    }
+
+    public function setDuracao_Cons($duracao){
+        $this->Duracao_Cons = $duracao;
+    }
+    //----------------------------------
 
 
     public function EntrarConsultor(){
