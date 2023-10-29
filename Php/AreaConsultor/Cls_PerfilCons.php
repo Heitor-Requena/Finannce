@@ -258,7 +258,7 @@ class Cls_PerfilCons{
             }
             else
             {   
-                $Retorno = json_encode("Não foi possível carregar os dados para formlario.");
+                $Retorno = json_encode("Não foi possível carregar os dados para formulario.");
             }
         }
         catch (PDOException $Erro)
