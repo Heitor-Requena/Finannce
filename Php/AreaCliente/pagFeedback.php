@@ -26,6 +26,7 @@
 
     }
   ?>  
+  
   <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top bg-primary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#" id="alterarLogo"><img src="../../Img/logo branca finannce.png" alt="" style="height: 56px;"></a>
@@ -40,16 +41,16 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#" name="Home"><i class="bi bi-house-fill"></i></a>
+              <a class="nav-link active" aria-current="page" href="#" name="Home"><i class="bi bi-house"></i></a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="pagGastos.php" name="MeusGastos">Meus Gastos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="pagConsultores.php" name="MeusGastos">Consultores</a>
+              <a class="nav-link active" aria-current="page" href="pagConsultores.php" name="MeusGastos">Consulotres</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="pagFeedback.php" name="MeusGastos">FeedBack's</a>
+              <a class="nav-link active" aria-current="page" href="#" name="MeusGastos"><strong>FEEDBACK</strong></a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="infopess.php" name="MeusGastos">Meus Dados</a>
@@ -64,10 +65,25 @@
     </div>
   </nav>
 
-  <section id="section" style="margin-top: 100px;">
-    <h1 class="text-center align-middle mt-5">Seja bem vindo, <?php echo $Nome?></h1>
-    <div class="text-center">
-      <img src="../../Img/Area/cute-penguin.gif" class="rounded" alt="...">
+
+  <section id="section" style="width: 80%; margin: 100px auto;" class="d-flex justify-content-around flex-column">
+    <h1 class="text-center">FeedBack</h1>
+    <div>
+      <form action="ControleFeedBack-Cliente.php" method="get" class="form-control m-2 d-flex justify-content-around flex-column">
+        <input type="text" name="Nome_Consultor" id="Nome_Consultor" class="form-control m-2" placeholder="Nome Consultor">
+
+        <input type="email" name="Email_Consultar" id="Email_Consultar" class="form-control m-2" placeholder="Email Consultor">
+
+        <textarea name="Avaliacao" id="Avaliacao" cols="30" rows="10" placeholder="Avaliação do Consultor" class="form-control m-2"></textarea>
+
+        <input type="number" name="Nota_Consultor" id="Nota_Consultor" placeholder="Nota" step="1" min="0" max="5" class="form-control m-2">
+        <input type="number" name="ID_FeedBack" id="ID_FeedBack" placeholder="Id FeedBack" step="1" min="1" class="form-control m-2">
+
+        <button id="btn_CadastrarFeedBack" name="btn_CadastrarFeedBack" class="iframe-btn btn m-3 btn-outline-light" onclick="CadastrarFeedBack()">Adicionar</button>
+        <button id="btn_ExcluirFeedback" name="btn_ExcluirFeedback" class="iframe-btn btn m-3 btn-outline-light" onclick="ExcluirFeedBack()">Excluir</button>
+        <button id="btn_ListarFeedBack" name="btn_ListarFeedBack" class="iframe-btn btn m-3 btn-outline-light" onclick="ListarFeedBack()">Listar</button>
+
+      </form>
     </div>
   </section>
 

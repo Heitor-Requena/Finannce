@@ -50,7 +50,7 @@
               <a class="nav-link active" aria-current="page" href="#" name="MeusGastos"><strong>CONSULTORES</strong></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#" name="MeusGastos" onclick="alterarPag('FeedBack')">FeedBack's</a>
+              <a class="nav-link active" aria-current="page" href="pagFeedback.php" name="MeusGastos">FeedBack's</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="infopess.php" name="MeusGastos">Meus Dados</a>
