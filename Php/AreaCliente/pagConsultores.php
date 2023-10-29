@@ -26,6 +26,7 @@
 
     }
   ?>  
+  
   <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top bg-primary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#" id="alterarLogo"><img src="../../Img/logo branca finannce.png" alt="" style="height: 56px;"></a>
@@ -40,13 +41,13 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#" name="Home"><i class="bi bi-house-fill"></i></a>
+              <a class="nav-link active" aria-current="page" href="#" name="Home"><i class="bi bi-house"></i></a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="pagGastos.php" name="MeusGastos">Meus Gastos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#" name="MeusGastos">Consultores</a>
+              <a class="nav-link active" aria-current="page" href="#" name="MeusGastos"><strong>CONSULTORES</strong></a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#" name="MeusGastos" onclick="alterarPag('FeedBack')">FeedBack's</a>
@@ -64,10 +65,24 @@
     </div>
   </nav>
 
-  <section id="section" style="margin-top: 100px;">
-    <h1 class="text-center align-middle mt-5">Seja bem vindo, <?php echo $Nome?></h1>
-    <div class="text-center">
-      <img src="../../Img/Area/cute-penguin.gif" class="rounded" alt="...">
+
+  <section id="section" style="margin-top: 100px;" class="d-flex justify-content-around flex-column">
+  <h1 class="text-center m-5">Consultores</h1>
+    <div class='container' onload="TodosConsultores(), ConsultoresAnuncio()">
+      <div id="ConsultoresAnunciantes">
+        
+      </div>
+
+      <div>
+        <form action="ControleConsultor-Cliente.php" method="get" class="d-flex justify-content-around flex-column">
+          <input type="text" name="" id="" class="form-control m-2" placeholder="Nome Consultor">
+          <button onclick="ConsultorPesquisa()" id="btn_ConsultorNome" name="btn_ConsultorNome" class="iframe-btn btn m-3 btn-outline-light">Pesquisar</button>
+        </form>
+      </div>
+
+      <div id='Consulotes-resposta'>
+
+      </div>
     </div>
   </section>
 

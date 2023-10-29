@@ -26,6 +26,7 @@
 
     }
   ?>  
+  
   <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top bg-primary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#" id="alterarLogo"><img src="../../Img/logo branca finannce.png" alt="" style="height: 56px;"></a>
@@ -40,28 +41,25 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#" name="Home" onclick="alterarPag('Home')">Home</a>
+              <a class="nav-link active" aria-current="page" href="#" name="Home"><i class="bi bi-house"></i></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#" name="MeusGastos" onclick="alterarPag('MeusGastos')">Meus Gastos</a>
+              <a class="nav-link active" aria-current="page" href="pagGastos.php" name="MeusGastos">Meus Gastos</a>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" onclick="alterarPag('Configuracoes')">
-                Configurações
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#" onclick="alterarPag('InfoPess')">Meus Dados</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
             <li class="nav-item">
-              <a class="nav-link active text-danger" aria-current="page" href="../../index.html" name="Sair">Sair</a>
+              <a class="nav-link active" aria-current="page" href="pagConsultores.php" name="MeusGastos">Consultores</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#" name="MeusGastos" onclick="alterarPag('FeedBack')">FeedBack's</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="infopess.php" name="MeusGastos"><strong>MEUS DADOS</strong></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-danger" aria-current="page" href="../../index.html" name="Sair"><i class="bi bi-box-arrow-right"></i></a>
             </li>
             </li>
-          </ul>
+          </ul>                 
         </div>
       </div>
     </div>

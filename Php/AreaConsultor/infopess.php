@@ -76,7 +76,7 @@
 
     <h2 class="text-center mt-3">Meus Dados</h2>
                
-               <form class="container mt-5" action="" method="POST">
+               <form class="container mt-5" action="Controle_PerfilCons.php" method="POST">
                  <h4 class="text-start">Informações pessoais</h4>
                  <div class="row">
                    <div class="col-6">
@@ -220,12 +220,8 @@
                    </div>
        
                    <div class="text-center">
-                   <button type="button" id="iframe-submit-btn2" class="iframe-btn btn m-3 col-6 btn-outline-light">Salvar</button>
-                 </div>
-       
-             
-
-
+                    <input type="submit" value="Salvar"  id="iframe-submit-btn2" class="iframe-btn btn m-3 col-6 btn-outline-light">
+                   </div>
                </form>
 
   </section>
