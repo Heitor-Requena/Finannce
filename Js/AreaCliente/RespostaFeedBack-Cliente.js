@@ -1,11 +1,11 @@
 function CadastrarFeedBack(){
     console.log("CHAMOU");
-    var dados = '';
+    var DadosForm = $("#frm_feedback").serialize();
 
     $.ajax({
         method: 'GET',
         url: 'ControleFeedBack-Cliente.php?btn_CadastrarFeedBack',
-        data: dados,
+        data: DadosForm,
 
         beforeSend: function () {
             console.log("DAdos enviados")
@@ -28,12 +28,12 @@ function CadastrarFeedBack(){
 
 function ExcluirFeedBack(){
     console.log("CHAMOU");
-    var dados = '';
+    var DadosForm = $("#frm_feedback").serialize();
 
     $.ajax({
         method: 'GET',
         url: 'ControleFeedBack-Cliente.php?btn_ExcluirFeedBack',
-        data: dados,
+        data: DadosForm,
 
         beforeSend: function () {
             console.log("DAdos enviados")
@@ -56,12 +56,12 @@ function ExcluirFeedBack(){
 
 function ListarFeedBack(){
     console.log("CHAMOU");
-    var dados = '';
+    var DadosForm = $("#frm_feedback").serialize();
 
     $.ajax({
         method: 'GET',
         url: 'ControleFeedBack-Cliente.php?btn_ListarFeedBack',
-        data: dados,
+        data: DadosForm,
 
         beforeSend: function () {
             console.log("DAdos enviados")

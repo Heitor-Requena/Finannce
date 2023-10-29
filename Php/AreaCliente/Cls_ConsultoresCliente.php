@@ -25,7 +25,7 @@ class Cls_ConsultoresCliente{
 
         try
         {
-            $Comando = $conexao->prepare("SELECT * FROM tb_consultor WHERE SITUACAO = 'A';");
+            $Comando = $conexao->prepare("SELECT NOME_CONSULTOR, EMAIL_CONSULTOR FROM tb_consultor WHERE STATUS_CONSULTOR = 'A';");
 
             if($Comando->execute())
             {
@@ -51,8 +51,7 @@ class Cls_ConsultoresCliente{
 
         try
         {
-            $Comando = $conexao->prepare("SELECT * FROM `tb_consultor` WHERE NOME_CONSULTOR LIKE '%?%';");
-            $Comando->bindParam(1, $this->Nome_Consultor);
+            $Comando = $conexao->prepare("SELECT NOME_CONSULTOR, EMAIL_CONSULTOR FROM tb_consultor WHERE STATUS_CONSULTOR = 'P';");
 
             if($Comando->execute())
             {
@@ -78,7 +77,8 @@ class Cls_ConsultoresCliente{
 
         try
         {
-            $Comando = $conexao->prepare("SELECT * FROM tb_consultor WHERE SITUACAO = 'P';");
+            $Comando = $conexao->prepare("SELECT NOME_CONSULTOR, EMAIL_CONSULTOR FROM tb_consultor WHERE NOME_CONSULTOR LIKE '%?%';");
+            $Comando->bindParam(1, $this->Nome_Consultor);
 
             if($Comando->execute())
             {

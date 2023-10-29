@@ -20,13 +20,9 @@ function ConsultoresAnuncio(){
             var Bloco = "";
 
             for (i = 0; i < Consultores.length; i++){
-                Bloco += "<div class=''>";
-                    Bloco += "Imagem";
-                    Bloco += "Nome";
-                    Bloco += "Email";
-                    Bloco += "";
-                    Bloco += "";
-                    Bloco += "";
+                Bloco += "<div class='col-3'>";
+                    Bloco += "Nome: " + Consultores[i].NOME_CONSULTOR;
+                    Bloco += "Email: " + Consultores[i].EMAIL_CONSULTOR;
                 Bloco += "</div>";
             }
 
@@ -62,13 +58,9 @@ function TodosConsultores(){
             var Bloco = "";
 
             for (i = 0; i < Consultores.length; i++){
-                Bloco += "<div class=''>";
-                    Bloco += "";
-                    Bloco += "";
-                    Bloco += "";
-                    Bloco += "";
-                    Bloco += "";
-                    Bloco += "";
+                Bloco += "<div class='col-3'>";
+                    Bloco += "Nome: " + Consultores[i].NOME_CONSULTOR;
+                    Bloco += "Email: " + Consultores[i].EMAIL_CONSULTOR;
                 Bloco += "</div>";
 
             }
@@ -85,12 +77,12 @@ function TodosConsultores(){
 
 function ConsultorPesquisa(){
     console.log("CHAMOU");
-    var dados = '';
+    var DadosForm = $("#frm_PesquisaConsultor").serialize();
 
     $.ajax({
         method: 'GET',
         url: 'ControleConsultor-Cliente.php?btn_ConsultorNome',
-        data: dados,
+        data: DadosForm,
 
         beforeSend: function () {
             console.log("DAdos enviados")
@@ -105,13 +97,9 @@ function ConsultorPesquisa(){
             var Bloco = "";
 
             for (i = 0; i < Consultores.length; i++){
-                Bloco += "<div>";
-                    Bloco += "";
-                    Bloco += "";
-                    Bloco += "";
-                    Bloco += "";
-                    Bloco += "";
-                    Bloco += "";
+                Bloco += "<div class='col-3'>";
+                    Bloco += "Nome: " + Consultores[i].NOME_CONSULTOR;
+                    Bloco += "Email: " + Consultores[i].EMAIL_CONSULTOR;
                 Bloco += "</div>";
             }
 

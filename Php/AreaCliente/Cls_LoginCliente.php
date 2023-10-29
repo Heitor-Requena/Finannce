@@ -86,7 +86,7 @@
                     session_start();
                     $_SESSION["email"] = $this->Email_Cliente;
                     $_SESSION["nome"]  = $this->Nome_Cliente;
-                    header('Location: http://localhost/Finannce/Php/AreaCliente/infopess.php');
+                    header('Location: ../../Html/Home/login.html');
                 }
                 else
                 {   

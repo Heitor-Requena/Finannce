@@ -2,6 +2,8 @@
     session_start();
     include "Cls_ConsultoresCliente.php";
 
+    $Nome_Consultor = filter_input(INPUT_GET,"Nome_Consultor", FILTER_SANITIZE_STRING);
+
     $Consultor = new Cls_ConsultoresCliente();
 
     if(isset($_GET["TodosConsultores"])){
@@ -15,6 +17,7 @@
     }
 
     else if(isset($_GET["btn_ConsultorNome"])){
+        $Consultor->setNome_Consultor($Nome_Consultor);
         $Retorno = $Consultor->PesquisaConsultorNome();
         echo $Retorno;
     }

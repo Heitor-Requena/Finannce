@@ -1,7 +1,7 @@
 <?php 
  
 session_start();
-include "Cls_FeedBackCleinte.php";
+include "Cls_FeedBackCliente.php";
 
 $ID_Cliente      = $_SESSION["id"];
 $ID_FeedBack     = filter_input(INPUT_GET, "ID_FeedBack", FILTER_VALIDATE_INT);
