@@ -79,7 +79,7 @@ class ClsAdmCon
 
             $Matriz     = $Comando->fetchAll();
             $Retorno    = json_encode($Matriz);
-        } catch (PDOException $Eroo) {
+        } catch (PDOException $Erro) {
             $Retorno = json_encode("Erro" . $Erro->getMessage());
         }
         return $Retorno;
@@ -96,7 +96,7 @@ class ClsAdmCon
 
             $Matriz     = $Comando->fetchAll();
             $Retorno    = json_encode($Matriz);
-        } catch (PDOException $Eroo) {
+        } catch (PDOException $Erro) {
             $Retorno = json_encode("Erro" . $Erro->getMessage());
         }
         return $Retorno;
