@@ -1,4 +1,5 @@
 function GraficoRosca(event){
+    event.preventDefault();
     console.log("CHAMOU")
     var DadosForm = $("#frm_Grafico").serialize()
     console.log(DadosForm)
@@ -53,6 +54,7 @@ function GraficoRosca(event){
 }
 
 function TabelaRosca(event){
+    event.preventDefault();
     console.log("CHAMOU")
     var DadosForm = $("#frm_Grafico").serialize()
     console.log(DadosForm)
@@ -146,6 +148,7 @@ function ExcluirGasto(event) {
 }
 
 function GraficoColuna(event){
+    event.preventDefault();
     console.log("CHAMOU")
     var DadosForm = $("#frm_Grafico").serialize()
 

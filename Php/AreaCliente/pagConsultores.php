@@ -71,15 +71,15 @@
       </div>
 
       <div>
-        <form id="frm_PesquisaConsultor" class="d-flex justify-content-around flex-column">
-          <input type="text" name="Nome_Consultor" id="Nome_Consultor" class="form-control m-2" placeholder="Nome Consultor">
-          <button type="button" onclick="ConsultorPesquisa()" id="btnPesquisar" class="iframe-btn btn m-3 btn-outline-light">Pesquisar</button>
-          <button onclick="TodosConsultores()" id="TodosConsultores" name="TodosConsultores" class="iframe-btn btn m-3 btn-outline-light">Ver Todos</button>
+        <form action="ControleConsultor-Cliente.php" method="get" id="frm_PesquisaConsultor" class="d-flex justify-content-around flex-column">
+          <input type="text" name="Nome_Consultor" id="Nome_Consultor" class="form-control m-2" placeholder="Nome Consultor" required>
+          <button type="button" onclick="ConsultorPesquisa(event)" id="btnPesquisar" class="iframe-btn btn m-3 btn-outline-light">Pesquisar</button>
+          <input type="submit" value="Ver Todos" onclick="ConsultorPesquisa(event)" id="TodosConsultores" name="TodosConsultores" class="iframe-btn btn m-3 btn-outline-light">
         </form>
       </div>
 
       <!-- Área onde os consultores serão exibidos -->
-      <div id='Consultores-resposta' class="d-flex justify-content-around">
+      <div id='Consultores-resposta' class="d-flex justify-content-around flex-wrap">
         <!-- Aqui os cards dos consultores serão inseridos dinamicamente -->
       </div>
     </div>

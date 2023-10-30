@@ -36,45 +36,9 @@ function ConsultoresAnuncio() {
   return false;
 }
 
-function TodosConsultores() {
-  console.log("CHAMOU");
-  var dados = "";
 
-  $.ajax({
-    method: "GET",
-    url: "ControleConsultor-Cliente.php?TodosConsultores",
-    data: dados,
-
-    beforeSend: function () {
-      console.log("DAdos enviados");
-    },
-  })
-
-    .done(function (dadosPHP) {
-      console.log("Depois do done");
-      console.log(dadosPHP);
-      var Consultores = JSON.parse(dadosPHP);
-
-      var Bloco = "";
-
-      for (i = 0; i < Consultores.length; i++) {
-        Bloco += "<div class='col-3'>";
-        Bloco += "Nome: " + Consultores[i].NOME_CONSULTOR;
-        Bloco += "Email: " + Consultores[i].EMAIL_CONSULTOR;
-        Bloco += "</div>";
-      }
-
-      $("#Consulotes-resposta").html(Bloco);
-    })
-
-    .fail(function () {
-      alert("DEU ERRADO A CONSULTA");
-    });
-
-  return false;
-}
-
-function ConsultorPesquisa() {
+function ConsultorPesquisa(event) {
+  event.preventDefault();
   console.log("CHAMOU");
   var NomeConsultor = $("#Nome_Consultor").val();
 
@@ -95,7 +59,7 @@ function ConsultorPesquisa() {
 
       for (i = 0; i < Consultores.length; i++) {
         Bloco +=
-          "<div class='card text-center' style='width: 18rem;'><div class='card-body'>";
+          "<div class='card text-center m-2' style='width: 18rem;'><div class='card-body'>";
         Bloco +=
           "<h5 class='card-title text-center'>" +
           Consultores[i].NOME_CONSULTOR +

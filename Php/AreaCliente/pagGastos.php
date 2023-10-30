@@ -86,6 +86,7 @@
             </div>
             <div class="  container d-flex justify-content-around flex-column">
                 <div class="row d-flex justify-content-around m-3" >
+                    <div id="GraficoRosca" class=""></div>
                     <div id="TabelaGraficoRosca" class=""></div>
                 </div>
 
@@ -192,7 +193,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="../../Js/AreaCliente/AltPag.js"></script>
-    <script src="../../Js/AreaCliente/Js-InfoPess.js"></script>
     <script src="../../Js/AreaCliente/RespostaGrafico-Cliente.js"></script>
     <script src="../../Js/AreaCliente/RespostaConsultores-Cliente.js"></script>
     <script src="../../Js/AreaCliente/RespostaFeedBack-Cliente.js"></script>
