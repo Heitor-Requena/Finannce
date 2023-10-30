@@ -30,7 +30,7 @@ class Cls_ConsultoresCliente
         include_once "../conexao.php";
 
         try {
-            $Comando = $conexao->prepare("SELECT NOME_CONSULTOR, EMAIL_CONSULTOR FROM tb_consultor WHERE STATUS_CONSULTOR = 'A';");
+            $Comando = $conexao->prepare("SELECT * FROM tb_consultor WHERE STATUS_CONSULTOR = 'A';");
 
             if ($Comando->execute()) {
                 $Matriz  = $Comando->fetchALL(PDO::FETCH_OBJ);
@@ -77,7 +77,7 @@ class Cls_ConsultoresCliente
             $Comando->bindParam(1, $NomePesquisa);
 
             if ($Comando->execute()) {
-                $Matriz = $Comando->fetchAll(PDO::FETCH_ASSOC);
+                $Matriz = $Comando->fetchAll(PDO::FETCH_OBJ);
                 $Retorno = json_encode($Matriz);
             } else {
                 $Retorno = json_encode('Erro na query. Parte 1');
