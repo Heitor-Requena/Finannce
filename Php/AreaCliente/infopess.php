@@ -10,20 +10,21 @@
   <title>Area Cliente</title>
 </head>
 
-<body>
+<body onload="CarregarDadosForm()">
   <?php
     session_start();
 
     if ((!isset($_SESSION["id"]) == true) and (!isset($_SESSION["nome"]) == true) and (!isset($_SESSION["email"]) == true))
     {
       unset($_SESSION["id"]);
-      unset($_SESSION["id"]);
-      unset($_SESSION["id"]);
+      unset($_SESSION["nome"]);
+      unset($_SESSION["email"]);
       header('location: ../../index.html');
     } 
     else{
-      $Nome = $_SESSION["nome"];
-
+      $Nome  = $_SESSION["nome"];
+      $Email = $_SESSION["email"];
+      $ID    = $_SESSION["id"];
     }
   ?>  
   
@@ -69,14 +70,11 @@
     <h1 class="text-center mt-3">Meus Dados</h1>
         <p class="text-center">Se quiser fazer alguma alteração apenas mude os campos e clique no botão "Salvar".</p>
           
-        <form class="container mt-5" action="" method="get">
+        <form class="container mt-5" action="ControleInfopess-Cliente.php" id="frm_InfopesDados" method="get">
           <h4 class="text-start">Informações pessoais</h4>
           <div class="row">
-            <div class="col-6">
+            <div class="col">
               <input type="text" name="Nome" id="Nome" class="form-control m-2" placeholder="Nome">
-            </div>
-            <div class="col-6">
-              <input type="text" name="Sobrenome" id="Sobrenome" class="form-control m-2" placeholder="Sobrenome">
             </div>
           </div>
       
@@ -101,13 +99,8 @@
               <input type="date" class="form-control" id="Nasc" placeholder="Senha" min="2005-01-01">
             </div>
           </div>
-      
-          <div class="text-center">
-            <button type="button" id="iframe-submit-btn1" class="iframe-btn btn m-3 col-6 btn-outline-light">Salvar</button>
-          </div>
-        </form>
-      
-        <form action="" method="get" class="container mt-5">
+
+          <br>
           <h4 class="text-start">Endereço</h4>
       
           <div class="row">
@@ -141,7 +134,7 @@
           </div>
       
           <div class="text-center">
-            <button type="button" id="iframe-submit-btn2" class="iframe-btn btn m-3 col-6 btn-outline-light">Salvar</button>
+            <button type="button" id="iframe-submit-btn2" class="iframe-btn btn m-3 col-6 btn-outline-light" onclick="SalvarDados()">Salvar</button>
           </div>
         </form>
   </section>
