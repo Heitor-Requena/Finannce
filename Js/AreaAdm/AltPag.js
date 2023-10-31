@@ -92,7 +92,7 @@ function alterarPag(pagName) {
             </div>
         </form><br>
         <div class="row mx-1 d-flex justify-content-around">
-            <div class="mb-3" id="infoCon"></div>
+            <div class="mb-3 col-xl-6 col-sm-2" id="infoCon"></div>
             <div class="" id="tableCon"></div>
         </div>`;
         document.querySelector("#result").innerHTML =    ``;
