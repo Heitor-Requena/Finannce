@@ -10,7 +10,7 @@
   <title>Area Cliente</title>
 </head>
 
-<body>
+<body onload="ConsultorPesquisa(event)">
   <?php
   session_start();
 

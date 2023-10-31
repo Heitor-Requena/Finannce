@@ -38,6 +38,7 @@ function ConsultoresAnuncio() {
 
 
 function ConsultorPesquisa(event) {
+  document.querySelector("#Nome_Consultor")
   event.preventDefault();
   console.log("CHAMOU");
   var NomeConsultor = $("#Nome_Consultor").val();
@@ -146,6 +147,9 @@ function ConsultorPesquisa(event) {
     .fail(function () {
       alert("DEU ERRADO A CONSULTA");
     });
+
+    const idNome = document.querySelector("#Nome_Consultor")
+    idNome.value = ""
 
   return false;
 }
