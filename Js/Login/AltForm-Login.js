@@ -37,21 +37,30 @@ function Cadastro_Cliente() {
 
 function Login_Cliente() {
     document.querySelector("#header").innerHTML =
-        `<div class="container">
-        <div class="flex">
-            <a class="logo" href="#"><img src="../Imagens/header/logo branca finannce.png"></a>
-            <nav class="nav">
-                <button class="hamburger"></button>
-                <ul class="nav-list">
-                    <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="sobrenos.html">Sobre nós</a></li>
-                    <li><a href="artigos.html">Artigos</a></li>
-                    <li><a href="../Paginas/Area-Consultor 1.6/area-consultor.html">Consultores</a></li>
-                    <a class="btn-lgn" href="#" onclick="Login_Adm()"><i class="bi bi-person-gear"></i>Área Restrita</a>
-                </ul>
-            </nav>
-        </div>
-    </div>`
+        `<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item ">
+            <a class="nav-link active text-white" aria-current="page" href="../../index.html">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-white" href="sobrenos.html">Sobre Nós</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link text-white" href="faqsac.html">Faq/Sac</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link text-white"
+                href="/Html/Home/Area-Consultor 1.6/area-consultor.html">Consultores</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link text-white" href="/Html/Home/artigos.html">Artigos</a>
+        </li>
+    </ul>
+    <a class="btn-lgn text-white btn btn-outline-light" href="#" onclick="Login_Adm()">
+        <i class="bi bi-person-gear"></i>Área Restrita
+    </a>`
 
     document.querySelector(".container2").innerHTML =
         `<h2><i class="bi bi-person-circle"></i>Login</h2>
@@ -173,22 +182,31 @@ function RecuperarSenha_Consultor() {
 
 // Adm
 function Login_Adm() {
-    document.querySelector("#header").innerHTML =
-        `<div class="container">
-        <div class="flex">
-            <a class="logo" href="#"><img src="../Imagens/header/logo branca finannce.png"></a>
-            <nav class="nav">
-                <button class="hamburger"></button>
-                <ul class="nav-list">
-                    <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="sobrenos.html">Sobre nós</a></li>
-                    <li><a href="artigos.html">Artigos</a></li>
-                    <li><a href="../Paginas/Area-Consultor 1.6/area-consultor.html">Consultores</a></li>
-                    <a class="btn-lgn" href="#" onclick="Login_Cliente()">LOGIN</a>
-                </ul>
-            </nav>
-        </div>
-    </div>`
+    document.querySelector("#header").innerHTML = `
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item ">
+            <a class="nav-link active text-white" aria-current="page" href="../../index.html">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-white" href="sobrenos.html">Sobre Nós</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link text-white" href="faqsac.html">Faq/Sac</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link text-white"
+                href="/Html/Home/Area-Consultor 1.6/area-consultor.html">Consultores</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link text-white" href="/Html/Home/artigos.html">Artigos</a>
+        </li>
+    </ul>
+    <a class="btn-lgn text-white btn btn-outline-light" href="#" onclick="Login_Cliente()">
+        <i class="bi bi-person-circle"></i>Login
+    </a>`
 
     document.querySelector(".container2").innerHTML =
         `<h2><i class="bi bi-person-gear"></i>Login Adm</h2>
