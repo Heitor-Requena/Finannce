@@ -210,10 +210,11 @@ VALUES
 select * from tb_perguntasFaq;
 
 -- Estrutura da tabela `tb_cronograma`
+-- Estrutura da tabela `tb_cronograma`
 CREATE TABLE tb_cronograma(
 	NOME varchar(60) not null,
 	ATIVIDADE text not null,
-    SEMANA varchar(2) not null);
+    SEMANA varchar(3) );
 select * from tb_cronograma;
 
 -- Inserindo dados para a Semana 1
@@ -255,7 +256,77 @@ INSERT INTO tb_cronograma (NOME, ATIVIDADE, SEMANA) VALUES
     ('João Santos', 'Finalização da Home page, login e cadastro. Função Listagem e documentação.', 's4'),
     ('Matheus Cerqueira', 'Ajuste da Logo e Design da Home', 's4'),
     ('Ranielly', 'Ajustes na vitrine e desenvolvimento do TCC (documentação)', 's4');
+    
 
+-- Inserindo dados para a Semana 5
+INSERT INTO tb_cronograma (NOME, ATIVIDADE, SEMANA)
+VALUES 	('Davidson', 'Alteração e inclusão de novas tabelas no BD', 's5'),
+	('Ranielly', 'Ajustes no TCC', 's5');
+
+-- Inserindo dados para a Semana 6
+INSERT INTO tb_cronograma (NOME, ATIVIDADE, SEMANA)
+VALUES ('Davidson', 'Alteração na estrutura do BD e atualização do Diagrama e do Dicionário de dados', 's6'),
+	('Fernanda', 'Inclusão de tabelas no banco de dados, desenvolvimento da documentação do TCC', 's6'),
+	('Heitor', 'Login', 's6'),
+	('Jéssica', 'Criação da pagina FAQ/SAC do novo layout', 's6'),
+	('João Santos', 'Criação da Área Adm', 's6'),
+	('Matheus Cerqueira', 'Reestruturação da Home', 's6'),
+	('Ranielly', 'Criação do Ciclo de Vida, alterações na vitrine, criação do perfil do consultor', 's6');
+
+-- Inserindo dados para a Semana 7
+INSERT INTO tb_cronograma (NOME, ATIVIDADE, SEMANA)
+VALUES ('Davidson', 'Alteração na página Artigos e Tabela "Cliente" e "Consultor".', 's7'),
+	('Fernanda', 'Desenvolvimento do Perfil Consultor', 's7'),
+	('Heitor', 'Desenvolvimento da Área Adm', 's7'),
+	('João Santos', 'Desenvolvimento da Área Adm', 's7'),
+	('Matheus Cerqueira', 'Finalização dos Cards da Home', 's7'),
+	('Ranielly', 'Reunião, implementação do avaliador na vitrine, fluxograma e mapa do site', 's7');
+
+-- Inserindo dados para a Semana 8
+INSERT INTO tb_cronograma (NOME, ATIVIDADE, SEMANA)
+VALUES ('Davidson', 'Home', 's8'),	
+	('Heitor', 'Finalização da Área Adm', 's8'),
+	('João Santos', 'Finalização da Área Adm e Ajustes no layout do Login', 's8'),
+	('Matheus Cerqueira', 'Carrossel e Ajustes na responsividade do site', 's8'),
+	('Ranielly', 'Documentação', 's8');
+
+-- Inserindo dados para a Semana 9
+INSERT INTO tb_cronograma (NOME, ATIVIDADE, SEMANA) VALUES
+    ('Davidson', 'Inclusão de novas tabelas no BD', 's9'),
+    ('Fernanda', 'Inclusão de tabelas BD', 's9'),
+    ('Heitor', 'Criação e ajustes na parte dos Meus Gastos do cliente', 's9'),
+    ('Jéssica', 'Reformulação da página FAQ', 's9'),
+    ('João Santos', 'Atualização de caminhos php', 's9'),
+    ('Ranielly', 'Ajustes no cadastro Consultor, reunião', 's9');
+
+-- Inserindo dados para a Semana 10
+INSERT INTO tb_cronograma (NOME, ATIVIDADE, SEMANA) VALUES
+    ('Davidson', 'Alteração na estrutura do Banco e atualização do diagrama e dicionário de dados', 's10'),
+    ('Fernanda', 'Desenvolvimento documentação TCC', 's10'),
+    ('Heitor', 'Criação da função de relatório de gastos do cliente', 's10'),
+    ('Jéssica', 'Estudo das APIs financeiras', 's10'),
+    ('João Santos', 'Atualizações na home, criação da página de informações pessoais', 's10'),
+    ('Ranielly', 'Desenvolvimento e planejamento do Perfil Consultor', 's10');
+
+-- Inserindo dados para a Semana 11
+INSERT INTO tb_cronograma (NOME, ATIVIDADE, SEMANA) VALUES
+    ('Davidson', 'Alteração das tabelas Cliente e Consultor. Início da reformulação da Navbar', 's11'),
+    ('Fernanda', 'Criação perfil consultor e fluxogramas/mapas do site documentação', 's11'),
+    ('Heitor', 'Criação das funções na parte de feedback do cliente e consultor', 's11'),
+    ('Jéssica', 'Início da configuração de consumo da API HGBrasil', 's11'),
+    ('João Santos', 'Ajustes na consulta de Consultores, Ativação e Desativação', 's11'),
+    ('Ranielly', 'Ajustes Perfil Consultor, alteração no BD Consultor', 's11');
+
+-- Inserindo dados para a Semana 12
+INSERT INTO tb_cronograma (NOME, ATIVIDADE, SEMANA) VALUES
+    ('Davidson', 'Finalização da Navbar. Alterações no Diagrama do BD, alterações na página home', 's12'),
+    ('Fernanda', 'Documentação TCC e Imagens no PHP', 's12'),
+    ('Heitor', 'Término da parte de feedback e ajustes na área do Cliente referente à visualização dos consultores', 's12'),
+    ('Jéssica', 'Continuação da configuração do consumo da API e estudo dos gráficos com ChartJS', 's12'),
+    ('João Santos', 'Visualização de dados do consultor em tabela para ativação, Atualização na Consulta de Consultores Desativados, Ajuste responsividade das tabelas para mobile e correção de bug na visualização de dados de consultores desativados, Separação de páginas do acesso cliente, Página de feedback, Pesquisa de consultor por nomes e modal, Listagem automática ao abrir a página, Correção bug AltForm-Login, Ajustes responsividade Gastos, Adição do link do consultor', 's12'),
+    ('Ranielly', 'Caso de uso e RFU (documentação)', 's12');
+
+    
 select NOME,ATIVIDADE,SEMANA from tb_cronograma order by SEMANA;
 
 CREATE TABLE tb_gastos(
@@ -292,10 +363,6 @@ CREATE TABLE tb_feedback(
 
 INSERT INTO `tb_feedback`(`ID_CLIENTE`, `NOME_CONSULTOR`, `EMAIL_CONSULTOR`, `AVALIACAO`, `NOTA_CONSULTOR`, `DATA_INCLUSAO`) VALUES (1,'Maria Santos','consultor3@x.com', 'Muito bom ele', 4, NOW());
 
-SELECT ID_FEEDBACK, NOME_CLIENTE, EMAIL_CLIENTE, AVALIACAO, NOTA_CONSULTOR, DATA_INCLUSAO
-FROM tb_feedback
-INNER JOIN tb_cliente
-ON tb_feedback.ID_CLIENTE = tb_cliente.ID_CLIENTE WHERE NOME_CONSULTOR = ? AND EMAIL_CONSULTOR = ?;
 
 SELECT * FROM tb_consultor WHERE NOME_CONSULTOR LIKE "%Carlos Ferreira%";
 
