@@ -126,7 +126,7 @@ function ConsultorPesquisa(event) {
         Bloco += "    </div>";
         Bloco += "    <div class='modal-footer'>";
         Bloco +=
-          "        <button type='button' class='btn btn-outline-light' data-bs-dismiss='modal'>Fechar</button>";
+          "        <a href="+ Consultores[i].LINK_CONSULTOR +" class='btn btn-outline-light' role='button' target='_blank'>Entrar em Contato</a><button type='button' class='btn btn-outline-light' data-bs-dismiss='modal'>Fechar</button>";
         Bloco += "    </div>";
         Bloco += "    </div>";
         Bloco += "</div>";
