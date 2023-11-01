@@ -1,4 +1,7 @@
 function GraficoRosca(event){
+    document.getElementById("GraficoColuna").innerHTML = "";
+    document.getElementById("TabelaGraficoColuna").innerHTML = "";
+    document.getElementById("TabelaGraficoRosca").innerHTML = "";
     event.preventDefault();
     console.log("CHAMOU")
     var DadosForm = $("#frm_Grafico").serialize()
@@ -54,6 +57,9 @@ function GraficoRosca(event){
 }
 
 function TabelaRosca(event){
+    document.getElementById("GraficoColuna").innerHTML = "";
+    document.getElementById("TabelaGraficoColuna").innerHTML = "";
+    document.getElementById("GraficoRosca").innerHTML = "";
     event.preventDefault();
     console.log("CHAMOU")
     var DadosForm = $("#frm_Grafico").serialize()
@@ -148,6 +154,9 @@ function ExcluirGasto(event) {
 }
 
 function GraficoColuna(event){
+    document.getElementById("TabelaGraficoRosca").innerHTML = "";
+    document.getElementById("TabelaGraficoColuna").innerHTML = "";
+    document.getElementById("GraficoRosca").innerHTML = "";
     event.preventDefault();
     console.log("CHAMOU")
     var DadosForm = $("#frm_Grafico").serialize()
@@ -210,6 +219,9 @@ function GraficoColuna(event){
 }
 
 function TabelaColuna(event){
+    document.getElementById("TabelaGraficoRosca").innerHTML = "";
+    document.getElementById("TabelaGraficoColuna").innerHTML = "";
+    document.getElementById("GraficoColuna").innerHTML = "";
     var DadosForm = $("#frm_Grafico").serialize()
 
     $.ajax({
