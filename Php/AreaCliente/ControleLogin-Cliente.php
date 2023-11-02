@@ -5,7 +5,7 @@ $Email_Cliente = filter_input(INPUT_GET, "Email_Cliente", FILTER_SANITIZE_EMAIL)
 $Senha_Cliente = filter_input(INPUT_GET, "Senha_Cliente");
 
 $EmailCadastro_Cliente = filter_input(INPUT_GET, "EmailCadastro_Cliente", FILTER_SANITIZE_EMAIL);
-$NomeCadastro_Cliente = filter_input(INPUT_GET, "Nome_Cliente", FILTER_SANITIZE_STRING);
+$NomeCadastro_Cliente = filter_input(INPUT_GET, "Nome_Cliente");
 $SenhaCadastro_Cliente = filter_input(INPUT_GET, "SenhaCadastro_Cliente");
 $FoneCadastro_Cliente = filter_input(INPUT_GET, "Fone_Cliente");
 
