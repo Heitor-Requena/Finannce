@@ -40,5 +40,5 @@ if(isset($_GET["btn_CadastrarCliente"])){
     $Retorno = $login->CadastrarCliente();
 
 
-    header('Location: infopess.php');
+    header('Location: ../../Html/Home/login.html');
 }
