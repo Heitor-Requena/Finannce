@@ -10,7 +10,7 @@
   <title>Area Cliente</title>
 </head>
 
-<body>
+<body onload="CarregarDadosForm()">
 
   <?php
     session_start();
@@ -95,7 +95,7 @@
         
         <div class="row">
           <div class="col-6">
-            <input type="text" name="CNPJ" id="CNPJ" class="form-control m-2" placeholder="CNPJ - 000.000/0000-00" pattern="[0-9]{3}.[0-9]{3}/[0-9]{4}-[0-9]{2}">
+          <input type="text" name="CPF" id="CPF" class="form-control m-2" placeholder="CPF - 000.000.000-00" pattern="[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}">
           </div>
           <div class="col-6">
             <input type="text" name="RG" id="RG" class="form-control m-2" placeholder="RG - 00.000.000-0" pattern="[0-9]{2}.[0-9]{3}.[0-9]{3}-[0-9]{1}">
@@ -164,21 +164,21 @@
               <div class="col-sm-5 col-md-6">
                 <label for="Modalidade"><h5>Modalidade:</h5></label> <br>
                 
-                <input type="radio" name="Modalidade" id="R"> Remoto <br>
+                <input type="radio" name="Modalidade" id="Remoto"> Remoto <br>
 
-                <input type="radio" name="Modalidade" id="P" > Presencial <br>
+                <input type="radio" name="Modalidade" id="Presencial" > Presencial <br>
 
-                <input type="radio" name="Modalidade" id="H" > Híbrido <br>
+                <input type="radio" name="Modalidade" id="Híbrido" > Híbrido <br>
 
                 
               </div>
 
 
               <div class="col-sm-5 col-md-6">
-                <label for="PubAlvo"><H5>Público Alvo:</H5></label> <br>
+                <label for="PubAlvo" id="PubAlvo"><H5>Público Alvo:</H5></label> <br>
                 <input type="radio" name="PubAlvo" id="Adultos"> Adultos <br>
-
-                <input type="radio" name="PubAlvo" id="Adolescentes"> Adolescentes
+                <input type="radio" name="PubAlvo" id="Adolescentes"> Adolescentes <br>
+                <input type="radio" name="PubAlvo" id="Idoso"> Idoso
               </div>
       </div>
       <br>
@@ -208,7 +208,6 @@
           </div>
 
           <div class="text-center">
-            <input type="submit" id="btn_CarregarDados" name="btn_CarregarDados" class="iframe-btn btn m-3 col-6 btn-outline-light" value="Carregar">
             <button type="button" id="btn_EnviarInfo" name="btn_EnviarInfo" class="iframe-btn btn m-3 col-6 btn-outline-light" onclick="EnviarInfo()">Salvar</button>
         </div>
       </form>
@@ -219,7 +218,7 @@
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script src="../../Js/AreaCliente/Js-InfoPess.js"></script>
+  <script src="../../Js/AreaConsultor/Js-InfoPess.js"></script>
   <script src="../../Js/AreaConsultor/RespostaInfoPess-Consultor.js"></script>
 
 </body>

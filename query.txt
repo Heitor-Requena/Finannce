@@ -155,14 +155,15 @@ CREATE TABLE `tb_consultor`(
   `STATUS_CONSULTOR` char (1),
   `DATA_ENTRADA` datetime DEFAULT CURRENT_TIMESTAMP,
   `AVALIAÇAO_CONSULTOR` char(2) NULL,
-  `MODALIDADE` char (1),
-  `PUBLICO_ALVO` char (1),
+  `MODALIDADE` varchar (10),
+  `PUBLICO_ALVO` varchar (12),
   `FORMACAO` text,
   `EXPERIENCIA` text,
   `HABILIDADE` text,
-  `DURACAO_CONS` varchar (4),
+  `DURACAO_CONS` varchar (5),
   `LINK_CONSULTOR` varchar (100),
-  PRIMARY KEY (`ID_CONSULTOR`);
+  PRIMARY KEY (`ID_CONSULTOR`),
+  UNIQUE KEY `EMAIL_CONSULTOR` (`EMAIL_CONSULTOR`));
 INSERT INTO tb_consultor (NOME_CONSULTOR, EMAIL_CONSULTOR, SENHA_CONSULTOR, CPF_CONSULTOR, RG_CONSULTOR, FONE_CONSULTOR, CEP_CONSULTOR, RUA_CONSULTOR, BAIRRO_CONSULTOR, NUMERO_CASA_CONSULTOR, COMPLEMENTO_CONSULTOR, CIDADE_CONSULTOR, ESTADO_CONSULTOR, AVATAR_CONSULTOR, ANEXO_CONSULTOR, STATUS_CONSULTOR, AVALIAÇAO_CONSULTOR, MODALIDADE, PUBLICO_ALVO, FORMACAO, EXPERIENCIA, HABILIDADE, DURACAO_CONS, LINK_CONSULTOR) VALUES
 	('Maria Santos', 'consultor3@x.com', 'abcd', '234.567.890-12', '23.456.789-3', '987-654-3210', 23456789, 'Rua 2', 'Bairro 2', 2, 'Complemento 2', 'Cidade 2', 'RJ', NULL, NULL, 'A', '7', 'P', 'A', 'Formaçao 2', 'Experiencia 2', 'Habilidade 2', '', ''),
   ('Pedro Oliveira', 'consultor4@x.com', 'efgh', '345.678.901-23', '34.567.890-3', '555-555-5555', 34567890, 'Rua 3', 'Bairro 3', 3, 'Complemento 3', 'Cidade 3', 'MG', NULL, NULL, 'A', '6', 'P', 'A', 'Formaçao 3 ', 'Experiencia 3', 'Habilidade 3', '', ''),
@@ -175,10 +176,14 @@ INSERT INTO tb_consultor (NOME_CONSULTOR, EMAIL_CONSULTOR, SENHA_CONSULTOR, CPF_
   ('Sofia Pereira', 'consultor11@x.com', '6789', '123.456.789-01', '12.345.678-9', '666-777-8888', 12345678, 'Rua 10', 'Bairro 10', 10, 'Complemento 10', 'Cidade 10', 'TO', NULL, NULL, 'A', '8', 'P', 'A', 'Formaçao 10', 'Experiencia 10', 'Habilidade 10', '', ''),
   ('Pietro Antonio Ian Viana', 'pietro_antonio_viana@henrimar.com.br', '6789', '094.654.917-64', '33.900.120-3', '(84) 2670-1908',
     59122-045, 'Rua das Prímulas', 'Redinha', 10, 'Complemento 10', 'Natal', 'RN', NULL, NULL, 'A',
-    '8', 'P', 'A', 'Graduação em Economia - Universidade Federal; Pós-graduação em Finanças Corporativas - Instituto de Finanças', 'Analista Financeiro na Empresa X - Responsável pela análise de investimentos e projeções financeiras;
-Consultor Financeiro Sênior na Empresa Y - Prestou consultoria a grandes empresas em estratégias financeiras e de investimento.', 'Análise de Investimentos: Capacidade de analisar o potencial de investimentos, considerando riscos e retornos;
+    '8', 'Presencial', 'Adultos', 
+    'Graduação em Economia - Universidade Federal;
+Pós-graduação em Finanças Corporativas - Instituto de Finanças', 
+    'Analista Financeiro na Empresa X - Responsável pela análise de investimentos e projeções financeiras;
+Consultor Financeiro Sênior na Empresa Y - Prestou consultoria a grandes empresas em estratégias financeiras e de investimento.', 
+    'Análise de Investimentos: Capacidade de analisar o potencial de investimentos, considerando riscos e retornos;
 Consultoria Financeira: Experiência em oferecer orientação e estratégias para otimizar a situação financeira de empresas;
-Gestão de Riscos: Habilidade em avaliar e gerenciar riscos financeiros.', '', 'https://vitoralvs.github.io/Landing-page-consultor/');
+Gestão de Riscos: Habilidade em avaliar e gerenciar riscos financeiros.', '01:00', 'https://vitoralvs.github.io/Landing-page-consultor/');
   
   
 select * from tb_consultor;
