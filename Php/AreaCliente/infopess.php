@@ -96,7 +96,7 @@
           <div class="row">
             <label for="Nasc" class="col-sm-2 col-form-label text-center" >Data de Nascimento: </label>
             <div class="col-sm-10">
-              <input type="date" class="form-control" id="Nasc" placeholder="Senha" min="2005-01-01">
+              <input type="date" class="form-control" name="Nasc" id="Nasc" placeholder="Senha" min="2005-01-01">
             </div>
           </div>
 
@@ -134,7 +134,8 @@
           </div>
       
           <div class="text-center">
-            <button type="button" id="iframe-submit-btn2" class="iframe-btn btn m-3 col-6 btn-outline-light" onclick="SalvarDados()">Salvar</button>
+            <input type="submit" value="Salvar" class="iframe-btn btn m-3 col-6 btn-outline-light" name="Salvar" id="Salvar" onclick="SalvarDados(event)">
+            <!-- <button type="button" id="iframe-submit-btn2" class="iframe-btn btn m-3 col-6 btn-outline-light" name="Salvar" id="Salvar" onclick="SalvarDados()">Salvar</button> -->
           </div>
         </form>
   </section>

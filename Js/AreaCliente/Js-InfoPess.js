@@ -70,14 +70,15 @@ function CarregarDadosForm(){
     return false;
 }
 
-/*
-function SalvarDados(){
+
+function SalvarDados(event) {
+    event.preventDefault();
     console.log("CHAMOU");
     var DadosForm = $("#frm_InfopessDados").serialize();
 
     $.ajax({
         method: "GET",
-        url: "ControleInfopess-Cliente.php?SalvarDados",
+        url: "ControleInfopess-Cliente.php?Salvar",
         data: DadosForm,
         beforeSend: function () {
         console.log("Dados enviados");
@@ -88,6 +89,9 @@ function SalvarDados(){
         console.log("Depois do done");
         console.log(dadosPHP);
         var Dados = JSON.parse(dadosPHP);
+        var Bloco = "<h3 class='text-center m-0'><strong class='text-center m-0'>" + Dados + "</strong></h3>";
+
+        $("#result").html(Bloco);
         
         alert(Dados);
     })
@@ -97,4 +101,4 @@ function SalvarDados(){
     })
 
     return false;
-}*/
+}
