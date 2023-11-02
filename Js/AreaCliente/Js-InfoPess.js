@@ -71,8 +71,7 @@ function CarregarDadosForm(){
 }
 
 
-function SalvarDados(event) {
-    event.preventDefault();
+function SalvarDados(){
     console.log("CHAMOU");
     var DadosForm = $("#frm_InfopessDados").serialize();
 

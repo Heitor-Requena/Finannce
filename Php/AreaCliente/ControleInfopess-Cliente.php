@@ -3,18 +3,18 @@
     include_once "Cls_InfopessCliente.php";
 
     $ID_Cliente          = $_SESSION["id"];
-    $Nome_Cliente        = filter_input(INPUT_GET, "Nome", FILTER_SANITIZE_NUMBER_INT);
-    $Email_Cliente       = filter_input(INPUT_GET, "Email", );
-    $CPF_Cliente         = filter_input(INPUT_GET, "CPF", );
-    $RG_Cliente          = filter_input(INPUT_GET, "RG", );
-    $Data_Nascimento     = filter_input(INPUT_GET, "Nasc", );
-    $CEP                 = filter_input(INPUT_GET, "CEP", );
-    $Rua                 = filter_input(INPUT_GET, "Rua", );
-    $Bairro              = filter_input(INPUT_GET, "Bairro", );
-    $Numero_Casa         = filter_input(INPUT_GET, "Numero", FILTER_SANITIZE_NUMBER_INT);
-    $Complemento_Cliente = filter_input(INPUT_GET, "Complemento", );
-    $Cidade              = filter_input(INPUT_GET, "Cidade", );
-    $Estado              = filter_input(INPUT_GET, "Estado", );
+    $Nome_Cliente        = filter_input(INPUT_GET, "Nome");
+    $Email_Cliente       = filter_input(INPUT_GET, "Email");
+    $CPF_Cliente         = filter_input(INPUT_GET, "CPF");
+    $RG_Cliente          = filter_input(INPUT_GET, "RG");
+    $Data_Nascimento     = filter_input(INPUT_GET, "Nasc");
+    $CEP                 = filter_input(INPUT_GET, "CEP");
+    $Rua                 = filter_input(INPUT_GET, "Rua");
+    $Bairro              = filter_input(INPUT_GET, "Bairro");
+    $Numero_Casa         = filter_input(INPUT_GET, "Numero");
+    $Complemento_Cliente = filter_input(INPUT_GET, "Complemento");
+    $Cidade              = filter_input(INPUT_GET, "Cidade");
+    $Estado              = filter_input(INPUT_GET, "Estado");
 
     $Dados = new Cls_InfopessCliente();
 

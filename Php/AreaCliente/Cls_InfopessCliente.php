@@ -170,7 +170,7 @@ class Cls_InfopessCliente{
 
             if($Comando->execute())
             {
-                $Retorno = json_encode("Salvo com sucesso");
+                $Retorno = "<script>window.alert('Salvo com sucesso'); location.href='infopess.php'</script>;";
             }
             else
             {   
