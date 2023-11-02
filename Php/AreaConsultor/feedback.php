@@ -7,10 +7,10 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-  <title>Area Consultor</title>
+  <title>Area Cliente</title>
 </head>
 
-<body>
+<body onload="FeedBack()">
 
   <?php
     session_start();
@@ -27,7 +27,7 @@
       $Email = $_SESSION["email"];
       $ID = $_SESSION["id"];
     }
-  ?>
+  ?>  
 
   <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
     <div class="container-fluid">
@@ -43,10 +43,10 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#" name="Home">Home</a>
+              <a class="nav-link active" aria-current="page" href="indexConsultor.php" name="Home">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="feedback.php" name="FeedBack">FeedBack's</a>
+              <a class="nav-link active" aria-current="page" href="#" name="FeedBack" onclick="alterarPag('FeedBack')">FeedBack's</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="infopess.php" name="MeusDados">Meus Dados</a>
@@ -62,15 +62,17 @@
   </nav>
 
   <section id="section" style="margin-top: 100px;">
-    <h1 class="text-center align-middle mt-5">Seja bem vindo, <?php echo $Nome?></h1>
+        <h1 class="text-center align-middle mt-5"></h1> 
+        <div class="text-center">
+            <button onclick="FeedBack()"  class="iframe-btn btn m-3 col btn-outline-light">Meus FeedBack's</button>
+        </div>
   </section>
 
-  <section id="result"></section>
-
+  <section id="result" class="d-flex justify-content-around flex-column text-center" style="width: 80%; margin: 0 auto;"></section>
+  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="../../Js/AreaConsultor/AltPag.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script src="../../Js/AreaConsultor/RespostaFeedBack-Consultor.js"></script>
-  <script src="../../Js/AreaConsultor/InfoPess.php"></script>
 </body>
 
 </html>
