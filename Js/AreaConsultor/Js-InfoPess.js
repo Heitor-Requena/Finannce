@@ -54,6 +54,7 @@ function CarregarDadosForm(){
         document.getElementById("Tel").value         = Dados[0].FONE_CONSULTOR;
         document.getElementById("CPF").value         = Dados[0].CPF_CONSULTOR;
         document.getElementById("RG").value          = Dados[0].RG_CONSULTOR;
+        document.getElementById("Nasc").value          = Dados[0].DTA_NASC_CONSULTOR;
         document.getElementById("CEP").value         = Dados[0].CEP_CONSULTOR;
         document.getElementById("Rua").value         = Dados[0].RUA_CONSULTOR;
         document.getElementById("Bairro").value      = Dados[0].BAIRRO_CONSULTOR;
@@ -67,6 +68,7 @@ function CarregarDadosForm(){
         document.getElementById("Experiencia").value      = Dados[0].EXPERIENCIA;
         document.getElementById("Habilidade").value      = Dados[0].HABILIDADE;
         document.getElementById("TempCons").value      = Dados[0].DURACAO_CONS;
+        document.getElementById("Link").value      = Dados[0].LINK_CONSULTOR;
     })
 
     .fail(function() {
@@ -79,11 +81,11 @@ function CarregarDadosForm(){
 
 function SalvarDados(){
     console.log("CHAMOU");
-    var DadosForm = $("#frm_InfopessDados").serialize();
+    var DadosForm = $("#frm_InfoPess").serialize();
 
     $.ajax({
         method: "GET",
-        url: "ControleInfopess-Cliente.php?Salvar",
+        url: "ControleInfopess-Consultor.php?Salvar",
         data: DadosForm,
         beforeSend: function () {
         console.log("Dados enviados");

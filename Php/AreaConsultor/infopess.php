@@ -73,45 +73,53 @@
     </section>
       <h2 class="text-center mt-3">Meus Dados</h2>
   
-      <form class="container mt-5" action="Controle_PerfilCons.php" id="frm_InfoPess" method="POST">
+      <form class="container mt-5" action="ControleInfopess-Consultor.php" id="frm_InfoPess" method="get">
         <h4 class="text-start">Informações pessoais</h4>
         <div class="row">
-          <div class="col-12">
+          <div class="col">
             <input type="text" name="Nome" id="Nome" class="form-control m-2" placeholder="Nome Completo">
           </div>
         </div>
     
         <div class="row">
-            <div class="col-6">
+            <div class="col">
               <input type="email" name="Email" id="Email" class="form-control m-2" placeholder="Email">
         </div>
 
         
-        <div class="col-6">
+        <div class="col">
             <input type="text" name="Tel" id="Tel" class="form-control m-2" placeholder="Contato: (00) 00000-0000">
           </div>
         </div>
       
         
         <div class="row">
-          <div class="col-6">
+          <div class="col">
           <input type="text" name="CPF" id="CPF" class="form-control m-2" placeholder="CPF - 000.000.000-00" pattern="[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}">
           </div>
-          <div class="col-6">
+          <div class="col">
             <input type="text" name="RG" id="RG" class="form-control m-2" placeholder="RG - 00.000.000-0" pattern="[0-9]{2}.[0-9]{3}.[0-9]{3}-[0-9]{1}">
           </div>
         </div>
-        <br>
 
+        <div class="row">
+            <label for="Nasc" class="col-sm col-form-label text-center" >Data de Nascimento: </label>
+            <div class="col-sm">
+              <input type="date" class="form-control" name="Nasc" id="Nasc" placeholder="Senha" max="2005-01-01">
+            </div>
+        </div>
+
+        <br>
+        <br>
       <!--ANEXOS-->
 
         <div class="row">
-          <div class="col-6">
+          <div class="col">
             <label class="col-form-label" for="Avatar_Consultor"><h5>Foto de Perfil</h5></label><br>
             <input type="file" name="Avatar_Consultor" id="Avatar_Consultor" placeholder="Insira seu Arquivo" accept=" image/jpeg, image/jpg, image/png">
           </div>
           
-          <div class="col-6">
+          <div class="col">
             <label class="col-form-label" for="Anexo_Consultor"><h5>Anexo Adicionais</h5></label><br>
             <input type="file" name="Anexo_Consultor" id="Anexo_Consultor" placeholder="Insira seu Arquivo" accept=" .jpeg, .jpg, .png, .doc">
           </div>
@@ -126,22 +134,22 @@
         <h4 class="text-start">Endereço</h4>
 
         <div class="row">
-          <div class="col-4">
+          <div class="col">
             <input type="number" name="CEP" id="CEP" class="form-control m-2" placeholder="CEP (Sem traço)" pattern="[0-9]{9}">
           </div>
-          <div class="col-4">
+          <div class="col">
             <input type="text" name="Rua" id="Rua" class="form-control m-2" placeholder="Rua">
           </div>
-          <div class="col-4">
+          <div class="col">
             <input type="text" name="Bairro" id="Bairro" class="form-control m-2" placeholder="Bairro">
           </div>
         </div>
     
         <div class="row">
-          <div class="col-3">
+          <div class="col">
             <input type="number" name="Numero" id="Numero" class="form-control m-2" placeholder="Número">
           </div>
-          <div class="col-9">
+          <div class="col">
             <input type="text" name="Complemento" id="Complemento" class="form-control m-2" placeholder="Complemento">
           </div>
         </div>
@@ -161,24 +169,24 @@
         <!--MAIS DADOS-->
       
       <div class="row">
-              <div class="col-sm-5 col-md-6">
+              <div class="col-sm col-md">
                 <label for="Modalidade"><h5>Modalidade:</h5></label> <br>
                 
-                <input type="radio" name="Modalidade" id="Remoto"> Remoto <br>
+                <input type="radio" name="Modalidade" id="Remoto" value="Remoto"> Remoto <br>
 
-                <input type="radio" name="Modalidade" id="Presencial" > Presencial <br>
+                <input type="radio" name="Modalidade" id="Presencial" value="Presencial" > Presencial <br>
 
-                <input type="radio" name="Modalidade" id="Híbrido" > Híbrido <br>
+                <input type="radio" name="Modalidade" id="Híbrido" value="Híbrido" > Híbrido <br>
 
                 
               </div>
 
 
-              <div class="col-sm-5 col-md-6">
+              <div class="col-sm col-md">
                 <label for="PubAlvo" id="PubAlvo"><H5>Público Alvo:</H5></label> <br>
-                <input type="radio" name="PubAlvo" id="Adultos"> Adultos <br>
-                <input type="radio" name="PubAlvo" id="Adolescentes"> Adolescentes <br>
-                <input type="radio" name="PubAlvo" id="Idoso"> Idoso
+                <input type="radio" name="PubAlvo" id="Adultos" value="Adultos"> Adultos <br>
+                <input type="radio" name="PubAlvo" id="Adolescentes" value="Adolescentes"> Adolescentes <br>
+                <input type="radio" name="PubAlvo" id="Idoso" value="Idoso"> Idoso
               </div>
       </div>
       <br>
@@ -193,22 +201,32 @@
 
           <div class="mb-3">
             <label for="Experiencia" class=" col-form-label  "><h5>Fale um pouco sobre suas Experiências:</h5></label>
-            <textarea class="form-control" name="Experiencia" id="Experiencia" rows="3" placeholder="Ex: trabalhos anteriores, vivências, tabalhos voluntários..."></textarea></div>  
+            <textarea class="form-control" name="Experiencia" id="Experiencia" rows="3" placeholder="Ex: trabalhos anteriores, vivências, tabalhos voluntários..."></textarea>
+          </div>  
+          
 
-            <div class="mb-3">
+          <div class="mb-3">
             <label for="Habilidade" class=" col-form-label  "><h5>Escreva sobre suas Habilidades:</h5></label>
-            <textarea class="form-control" name="Habilidade" id="Habilidade" rows="3" placeholder="Habilidades profissionais adquiridas ao longo da vida"></textarea></div>  
+            <textarea class="form-control" name="Habilidade" id="Habilidade" rows="3" placeholder="Habilidades profissionais adquiridas ao longo da vida"></textarea>
+          </div>  
 
 
-          <div class="row">
-          <div class="col-6">
-            <label class="col-form-label "for="TempCons"><h5>Duração da Consultoria (Em Horas)</h5></label>
-            <input type="time" name="TempCons" id="TempCons" class="form-control m-2" placeholder="TempCons">
+          <div class="row mb-3">
+            <div class="col">
+              <label class="col-form-label "for="TempCons"><h5>Duração da Consultoria (Em Horas)</h5></label>
+              <input type="time" name="TempCons" id="TempCons" class="form-control m-2" placeholder="TempCons">
+            </div>
           </div>
+
+          <div class="row mb-3">
+            <div class="col">
+              <label class="col-form-label "for="TempCons"><h5>Link para Consultoria</h5></label>
+              <input type="text" name="Link" id="Link" class="form-control m-2" placeholder="Link" required>
+            </div>
           </div>
 
           <div class="text-center">
-            <button type="button" id="btn_EnviarInfo" name="btn_EnviarInfo" class="iframe-btn btn m-3 col-6 btn-outline-light" onclick="EnviarInfo()">Salvar</button>
+            <input type="submit" value="Salvar" class="iframe-btn btn m-3 col-6 btn-outline-light" name="Salvar" id="Salvar" onclick="SalvarDados()">
         </div>
       </form>
 

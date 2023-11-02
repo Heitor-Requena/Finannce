@@ -3,6 +3,7 @@ class Cls_InfopessConsultor{
     private $Id_Consultor;
     private $Nome_Consultor;
     private $Email_Consultor;
+    private $Tel_Consultor;
     private $CPF_Consultor;
     private $RG_Consultor;
     private $Nasc_Consultor;
@@ -13,6 +14,13 @@ class Cls_InfopessConsultor{
     private $Complemento_Consultor;
     private $Cidade_Consultor;
     private $Estado_Consultor;
+    private $Modalidade_Consultor;
+    private $PubAlvo_Consultor;
+    private $Formacao_Consultor;
+    private $Experiencia_Consultor;
+    private $Habilidade_Consultor;
+    private $TempCons_Consultor;
+    private $Link_Consultor;
 
     //-------------------------------------
     public function getID_Consultor(){
@@ -37,6 +45,14 @@ class Cls_InfopessConsultor{
 
     public function setEmailConsultor($Email){
         $this->Email_Consultor = $Email;
+    }
+    //-------------------------------------
+    public function getTelConsultor(){
+        return $this->Tel_Consultor;
+    }       
+
+    public function setTelConsultor($Tel){
+        $this->Tel_Consultor = $Tel;
     }
     //-------------------------------------
     public function getCPFConsultor(){
@@ -118,6 +134,62 @@ class Cls_InfopessConsultor{
     public function setEstadoConsultor($Estado){
         $this->Estado_Consultor = $Estado;
     }
+    //-------------------------------------
+    public function getModalidadeConsultor(){
+        return $this->Modalidade_Consultor;
+    }       
+
+    public function setModalidadeConsultor($Modalidade){
+        $this->Modalidade_Consultor = $Modalidade;
+    }
+    //-------------------------------------
+    public function getPubAlvoConsultor(){
+        return $this->PubAlvo_Consultor;
+    }       
+
+    public function setPubAlvoConsultor($PubAlvo){
+        $this->PubAlvo_Consultor = $PubAlvo;
+    }
+    //-------------------------------------
+    public function getFormacaoConsultor(){
+        return $this->Formacao_Consultor;
+    }       
+
+    public function setFormacaoConsultor($Formacao){
+        $this->Formacao_Consultor = $Formacao;
+    }
+    //-------------------------------------
+    public function getExperienciaConsultor(){
+        return $this->Experiencia_Consultor;
+    }       
+
+    public function setExperienciaConsultor($Experiencia){
+        $this->Experiencia_Consultor = $Experiencia;
+    }
+    //-------------------------------------
+    public function getHabilidadeConsultor(){
+        return $this->Habilidade_Consultor;
+    }       
+
+    public function setHabilidadeConsultor($Habilidade){
+        $this->Habilidade_Consultor = $Habilidade;
+    }
+    //-------------------------------------
+    public function getTempConsConsultor(){
+        return $this->TempCons_Consultor;
+    }       
+
+    public function setTempConsConsultor($TempCons){
+        $this->TempCons_Consultor = $TempCons;
+    }
+    //-------------------------------------
+    public function getLinkConsultor(){
+        return $this->Link_Consultor;
+    }       
+
+    public function setLinkConsultor($Link){
+        $this->Link_Consultor = $Link;
+    }
 
     //----------------------------------------
     public function CarregarDados(){
@@ -152,20 +224,28 @@ class Cls_InfopessConsultor{
 
         try
         {
-            $Comando = $conexao->prepare("UPDATE tb_Consultor SET NOME_Consultor = ?, 	EMAIL_Consultor = ?, CPF_Consultor = ?, RG_Consultor = ?, DTA_NASC_Consultor = ?, CEP_Consultor = ?, RUA_Consultor = ?, BAIRRO_Consultor = ?, NUMERO_CASA_Consultor = ?, COMPLEMENTO_Consultor = ?, CIDADE_Consultor = ?, ESTADO_Consultor = ? WHERE ID_Consultor = ?;");
+            $Comando = $conexao->prepare("UPDATE tb_consultor SET NOME_CONSULTOR = ?, 	EMAIL_CONSULTOR = ?, FONE_CONSULTOR = ?, CPF_CONSULTOR = ?, RG_CONSULTOR = ?, DTA_NASC_CONSULTOR = ?, CEP_CONSULTOR = ?, RUA_CONSULTOR = ?, BAIRRO_CONSULTOR = ?, NUMERO_CASA_CONSULTOR = ?, COMPLEMENTO_CONSULTOR = ?, CIDADE_CONSULTOR = ?, ESTADO_CONSULTOR = ?, MODALIDADE = ?, PUBLICO_ALVO = ?, FORMACAO = ?, EXPERIENCIA = ?, HABILIDADE = ?, DURACAO_CONS = ?, LINK_CONSULTOR = ? WHERE ID_CONSULTOR = ?;");
             $Comando->bindParam(1, $this->Nome_Consultor);
             $Comando->bindParam(2, $this->Email_Consultor);
-            $Comando->bindParam(3, $this->CPF_Consultor);
-            $Comando->bindParam(4, $this->RG_Consultor);
-            $Comando->bindParam(5, $this->Nasc_Consultor);
-            $Comando->bindParam(6, $this->CEP_Consultor);
-            $Comando->bindParam(7, $this->Rua_Consultor);
-            $Comando->bindParam(8, $this->Bairro_Consultor);
-            $Comando->bindParam(9, $this->NCasa_Consultor);
-            $Comando->bindParam(10, $this->Complemento_Consultor);
-            $Comando->bindParam(11, $this->Cidade_Consultor);
-            $Comando->bindParam(12, $this->Estado_Consultor);
-            $Comando->bindParam(13, $this->Id_Consultor);
+            $Comando->bindParam(3, $this->Tel_Consultor);
+            $Comando->bindParam(4, $this->CPF_Consultor);
+            $Comando->bindParam(5, $this->RG_Consultor);
+            $Comando->bindParam(6, $this->Nasc_Consultor);
+            $Comando->bindParam(7, $this->CEP_Consultor);
+            $Comando->bindParam(8, $this->Rua_Consultor);
+            $Comando->bindParam(9, $this->Bairro_Consultor);
+            $Comando->bindParam(10, $this->NCasa_Consultor);
+            $Comando->bindParam(11, $this->Complemento_Consultor);
+            $Comando->bindParam(12, $this->Cidade_Consultor);
+            $Comando->bindParam(13, $this->Estado_Consultor);
+            $Comando->bindParam(14, $this->Modalidade_Consultor);
+            $Comando->bindParam(15, $this->PubAlvo_Consultor);
+            $Comando->bindParam(16, $this->Formacao_Consultor);
+            $Comando->bindParam(17, $this->Experiencia_Consultor);
+            $Comando->bindParam(18, $this->Habilidade_Consultor);
+            $Comando->bindParam(19, $this->TempCons_Consultor);
+            $Comando->bindParam(20, $this->Link_Consultor);
+            $Comando->bindParam(21, $this->Id_Consultor);
             
 
             if($Comando->execute())
