@@ -15,20 +15,29 @@ function FeedBack(){
         .done(function (dadosPHP) {
             console.log("Depois do done");
             console.log(dadosPHP);
-            var feedBack = JSON.parse(dadosPHP);
-
-            var Bloco = "";
-
-            for (i = 0; i < feedBack.length; i++){
-                Bloco += "<p><strong>ID_FEEDBACK: </strong>" + feedBack[i].ID_FEEDBACK + "</p><br>";
-                Bloco += "<p><strong>Nome CLiente: </strong>" + feedBack[i].NOME_CLIENTE + "</p><br>";
-                Bloco += "<p><strong>Email Cliente: </strong>" + feedBack[i].EMAIL_CLIENTE + "</p><br>";
-                Bloco += "<p><strong>Avaliação: </strong>" + feedBack[i].AVALIACAO + "</p><br>";
-                Bloco += "<p><strong>Nota: </strong>" + feedBack[i].NOTA_CONSULTOR + "</p><br>";
-                Bloco += "<p><strong>Data inclusão: </strong>" + feedBack[i].DATA_INCLUSAO + "</p><br>";                
+            if (dadosPHP.trim() === "[]") {
+                document.getElementById("result").innerHTML = "<h2>Nenhum feedback encontrado</h2>";
             }
+            else {
+                var feedBack = JSON.parse(dadosPHP);
 
-            $("#result").html(Bloco);
+                var Tabela = '';
+                Tabela += "<div class='table-responsive'><table class='table table-bordered table-striped table-dark ml-5'";
+
+                Tabela += "<tr><th scope='col' class='text-center'>ID Feedback</th><th scope='col' class='text-center'>Nome Cliente</th><th scope='col' class='text-center'>Email</th><th scope='col' class='text-center'>Avaliação</th><th scope='col' class='text-center'>Nota</th><th scope='col' class='text-center'>Data de Avaliação</th>"
+                for (i = 0; i < feedBack.length; i++){
+                    Tabela += "<tr>";
+                    Tabela += "<td class='text-center align-middle'>" + feedBack[i].ID_FEEDBACK + "</td>";
+                    Tabela += "<td class='text-center align-middle'>" + feedBack[i].NOME_CLIENTE + "</td>";
+                    Tabela += "<td class='text-center align-middle'>" + feedBack[i].EMAIL_CLIENTE + "</td>";
+                    Tabela += "<td class='text-center align-middle'>" + feedBack[i].AVALIACAO + "</td>";
+                    Tabela += "<td class='text-center align-middle'>" + feedBack[i].NOTA_CONSULTOR + "</td>";
+                    Tabela += "<td class='text-center align-middle'>" + feedBack[i].DATA_INCLUSAO + "</td>";  
+                    Tabela += "</tr>"
+                }
+    
+                $("#result").append(Tabela);
+            }
         })
 
         .fail(function () {

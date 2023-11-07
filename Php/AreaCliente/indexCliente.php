@@ -52,7 +52,7 @@
               <a class="nav-link active" aria-current="page" href="pagFeedback.php" name="MeusGastos">FeedBack's</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="infopess.php" name="MeusGastos">Meus Dados</a>
+              <a class="nav-link active" aria-current="page" href="infopess.php" name="MeusDados">Meus Dados</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active text-danger" aria-current="page" href="../../index.html" name="Sair"><i class="bi bi-box-arrow-right"></i></a>

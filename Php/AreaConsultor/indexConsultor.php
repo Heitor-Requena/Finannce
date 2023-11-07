@@ -43,23 +43,14 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#" name="Home" onclick="alterarPag('Home')">Home</a>
+              <a class="nav-link active" aria-current="page" href="#" name="Home">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#" name="FeedBack" onclick="alterarPag('FeedBack')">FeedBack's</a>
+              <a class="nav-link active" aria-current="page" href="feedback.php" name="FeedBack">FeedBack's</a>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" onclick="alterarPag('Configuracoes')">
-                Configurações
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="infopess.php">Meus Dados</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="infopess.php" name="MeusDados">Meus Dados</a>
+            </li>
             <li class="nav-item">
               <a class="nav-link active text-danger" aria-current="page" href="../../index.html" name="Sair">Sair</a>
             </li>

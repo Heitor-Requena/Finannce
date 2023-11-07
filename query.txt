@@ -102,9 +102,9 @@ CREATE TABLE `tb_cliente` (
   `EMAIL_CLIENTE` varchar(80) NOT NULL,
   `SENHA_CLIENTE` char(8) NOT NULL,
   `FONE_CLIENTE` char(15) NOT NULL,
-  `CPF_CLIENTE` char (14) UNIQUE,
-  `RG_CLIENTE` char (12)  UNIQUE,
-  `DTA_NASC_CLIENTE` DATE NOT NULL,
+  `CPF_CLIENTE` char (14),
+  `RG_CLIENTE` char (12),
+  `DTA_NASC_CLIENTE` DATE,
   `CEP_CLIENTE` int (8),
   `RUA_CLIENTE` varchar (150),
   `BAIRRO_CLIENTE` varchar (50),
@@ -115,8 +115,7 @@ CREATE TABLE `tb_cliente` (
   `DTA_ENTRADA` datetime DEFAULT CURRENT_TIMESTAMP,
   `FOTO_PERF_CLIENTE` BLOB,
   `STATUS_CLIENTE` varchar (40),
-  PRIMARY KEY (`ID_CLIENTE`),
-  UNIQUE KEY `EMAIL_CLIENTE` (`EMAIL_CLIENTE`)
+  PRIMARY KEY (`ID_CLIENTE`)
 );
 
 INSERT INTO tb_cliente (NOME_CLIENTE, EMAIL_CLIENTE, SENHA_CLIENTE, FONE_CLIENTE, CPF_CLIENTE, RG_CLIENTE, DTA_NASC_CLIENTE, CEP_CLIENTE, RUA_CLIENTE, BAIRRO_CLIENTE, NUMERO_CASA_CLIENTE, COMPLEMENTO_CLIENTE, CIDADE_CLIENTE, ESTADO_CLIENTE,FOTO_PERF_CLIENTE, STATUS_CLIENTE) VALUES
@@ -135,19 +134,6 @@ INSERT INTO tb_cliente (NOME_CLIENTE, EMAIL_CLIENTE, SENHA_CLIENTE, FONE_CLIENTE
 select * from tb_cliente;
 
 -- Estrutura da tabela `tb_consultoria`
-CREATE TABLE  `tb_consultoria`(
-  `ID_CONSULTORIA` int NOT NULL AUTO_INCREMENT,
-  `ID_CLIENTE` int NOT NULL,
-  `ID_CONSULTOR` int NOT NULL,
-  `DATA_CONSULTORIA` date NOT NULL,
-  `AVALIACAO_CONSULTORIA` int DEFAULT NULL,
-  PRIMARY KEY (`ID_CONSULTORIA`),
-  KEY `ID_CLIENTE` (`ID_CLIENTE`),
-  KEY `ID_CONSULTOR` (`ID_CONSULTOR`)
-);
-select * from tb_consultoria;
-
--- Estrutura da tabela `tb_consultor`
 CREATE TABLE `tb_consultor`(
   `ID_CONSULTOR` int NOT NULL AUTO_INCREMENT,
   `NOME_CONSULTOR` varchar(60) NOT NULL,
@@ -155,6 +141,7 @@ CREATE TABLE `tb_consultor`(
   `SENHA_CONSULTOR` char(8) NOT NULL,
   `CPF_CONSULTOR` varchar (14) UNIQUE,
   `RG_CONSULTOR` varchar (12) UNIQUE,
+  `DTA_NASC_CONSULTOR` DATE,
   `FONE_CONSULTOR` varchar (14) NOT NULL,
   `CEP_CONSULTOR` int (8),
   `RUA_CONSULTOR` varchar (150),
@@ -168,26 +155,36 @@ CREATE TABLE `tb_consultor`(
   `STATUS_CONSULTOR` char (1),
   `DATA_ENTRADA` datetime DEFAULT CURRENT_TIMESTAMP,
   `AVALIAÇAO_CONSULTOR` char(2) NULL,
-  `MODALIDADE` char (1),
-  `PUBLICO_ALVO` char (1),
+  `MODALIDADE` varchar (10),
+  `PUBLICO_ALVO` varchar (12),
   `FORMACAO` text,
   `EXPERIENCIA` text,
   `HABILIDADE` text,
-  `DURACAO_CONS` varchar (4),
+  `DURACAO_CONS` varchar (5),
+  `LINK_CONSULTOR` varchar (100),
   PRIMARY KEY (`ID_CONSULTOR`),
   UNIQUE KEY `EMAIL_CONSULTOR` (`EMAIL_CONSULTOR`));
-INSERT INTO tb_consultor (NOME_CONSULTOR, EMAIL_CONSULTOR, SENHA_CONSULTOR, CPF_CONSULTOR, RG_CONSULTOR, FONE_CONSULTOR, CEP_CONSULTOR, RUA_CONSULTOR, BAIRRO_CONSULTOR, NUMERO_CASA_CONSULTOR, COMPLEMENTO_CONSULTOR, CIDADE_CONSULTOR, ESTADO_CONSULTOR, AVATAR_CONSULTOR, ANEXO_CONSULTOR, STATUS_CONSULTOR, AVALIAÇAO_CONSULTOR, MODALIDADE, PUBLICO_ALVO, FORMACAO, EXPERIENCIA, HABILIDADE, DURACAO_CONS) VALUES
-	('Maria Santos', 'consultor3@x.com', 'abcd', '234.567.890-12', '23.456.789-3', '987-654-3210', 23456789, 'Rua 2', 'Bairro 2', 2, 'Complemento 2', 'Cidade 2', 'RJ', NULL, NULL, 'A', '7', 'P', 'A', 'Formaçao 2', 'Experiencia 2', 'Habilidade 2', ''),
-  ('Pedro Oliveira', 'consultor4@x.com', 'efgh', '345.678.901-23', '34.567.890-3', '555-555-5555', 34567890, 'Rua 3', 'Bairro 3', 3, 'Complemento 3', 'Cidade 3', 'MG', NULL, NULL, 'A', '6', 'P', 'A', 'Formaçao 3 ', 'Experiencia 3', 'Habilidade 3', ''),
-  ('Ana Pereira', 'consultor5@x.com', 'ijkl', '456.789.012-34', '45.678.901-4', '999-999-9999', 45678901, 'Rua 4', 'Bairro 4', 4, 'Complemento 4', 'Cidade 4', 'BA', NULL, NULL, 'A', '5', 'P', 'A', 'Formaçao 4', 'Experiencia 4', 'Habilidade 4', ''),
-  ('Carlos Ferreira', 'consultor6@x.com', 'mnop', '567.890.123-45', '56.789.012-5', '111-222-3333', 56789012, 'Rua 5', 'Bairro 5', 5, 'Complemento 5', 'Cidade 5', 'SC', NULL, NULL, 'A', '4', 'P', 'A', 'Formaçao 5', 'Experiencia 5', 'Habilidade 5', ''),
-  ('Marta Teixeira', 'consultor7@x.com', 'qrst', '678.901.234-56', '67.890.123-4', '444-555-6666', 67890123, 'Rua 6', 'Bairro 6', 6, 'Complemento 6', 'Cidade 6', 'RS', NULL, NULL, 'A', '3', 'P', 'A', 'Formaçao 6', 'Experiencia 6', 'Habilidade 6', ''),
-  ('Ricardo Santos', 'consultor8@x.com', 'uvwx', '789.012.345-67', '78.901.234-5', '777-888-9999', 78901234, 'Rua 7', 'Bairro 7', 7, 'Complemento 7', 'Cidade 7', 'PR', NULL, NULL, 'A', '2', 'P', 'A', 'Formaçao 7', 'Experiencia 7', 'Habilidade 7', ''),
-  ('Isabel Rodrigues', 'consultor9@x.com', 'yz01', '890.123.456-78', '89.012.345-6', '888-999-0000', 89012345, 'Rua 8', 'Bairro 8', 8, 'Complemento 8', 'Cidade 8', 'PA', NULL, NULL, 'A', '1', 'P', 'A', 'Formaçao 8', 'Experiencia 8', 'Habilidade 8', ''),
-  ('Fernando Alves', 'consultor10@x.com', '2345', '901.234.567-89', '90.123.456-9', '222-333-4444', 90123456, 'Rua 9', 'Bairro 9', 9, 'Complemento 9', 'Cidade 9', 'MA', NULL, NULL, 'A', '0', 'P', 'A', 'Formaçao 9', 'Experiencia 9', 'Habilidade 9', ''),
-  ('Sofia Pereira', 'consultor11@x.com', '6789', '123.456.789-01', '12.345.678-9', '666-777-8888', 12345678, 'Rua 10', 'Bairro 10', 10, 'Complemento 10', 'Cidade 10', 'TO', NULL, NULL, 'A', '8', 'P', 'A', 'Formaçao 10', 'Experiencia 10', 'Habilidade 10', '');
+INSERT INTO tb_consultor (NOME_CONSULTOR, EMAIL_CONSULTOR, SENHA_CONSULTOR, CPF_CONSULTOR, RG_CONSULTOR, DTA_NASC_CONSULTOR, FONE_CONSULTOR, CEP_CONSULTOR, RUA_CONSULTOR, BAIRRO_CONSULTOR, NUMERO_CASA_CONSULTOR, COMPLEMENTO_CONSULTOR, CIDADE_CONSULTOR, ESTADO_CONSULTOR, AVATAR_CONSULTOR, ANEXO_CONSULTOR, STATUS_CONSULTOR, AVALIAÇAO_CONSULTOR, MODALIDADE, PUBLICO_ALVO, FORMACAO, EXPERIENCIA, HABILIDADE, DURACAO_CONS, LINK_CONSULTOR) VALUES
+	('Maria Santos', 'consultor3@x.com', 'abcd', '234.567.890-12', '23.456.789-3', '2000-02-02', '987-654-3210', 23456789, 'Rua 2', 'Bairro 2', 2, 'Complemento 2', 'Cidade 2', 'RJ', NULL, NULL, 'A', '7', 'P', 'A', 'Formaçao 2', 'Experiencia 2', 'Habilidade 2', '', ''),
+  ('Pedro Oliveira', 'consultor4@x.com', 'efgh', '345.678.901-23', '34.567.890-3', '2000-02-02', '555-555-5555', 34567890, 'Rua 3', 'Bairro 3', 3, 'Complemento 3', 'Cidade 3', 'MG', NULL, NULL, 'A', '6', 'P', 'A', 'Formaçao 3 ', 'Experiencia 3', 'Habilidade 3', '', ''),
+  ('Ana Pereira', 'consultor5@x.com', 'ijkl', '456.789.012-34', '45.678.901-4', '2000-02-02', '999-999-9999', 45678901, 'Rua 4', 'Bairro 4', 4, 'Complemento 4', 'Cidade 4', 'BA', NULL, NULL, 'A', '5', 'P', 'A', 'Formaçao 4', 'Experiencia 4', 'Habilidade 4', '', ''),
+  ('Carlos Ferreira', 'consultor6@x.com', 'mnop', '567.890.123-45', '56.789.012-5', '2000-02-02', '111-222-3333', 56789012, 'Rua 5', 'Bairro 5', 5, 'Complemento 5', 'Cidade 5', 'SC', NULL, NULL, 'A', '4', 'P', 'A', 'Formaçao 5', 'Experiencia 5', 'Habilidade 5', '', ''),
+  ('Marta Teixeira', 'consultor7@x.com', 'qrst', '678.901.234-56', '67.890.123-4', '2000-02-02', '444-555-6666', 67890123, 'Rua 6', 'Bairro 6', 6, 'Complemento 6', 'Cidade 6', 'RS', NULL, NULL, 'A', '3', 'P', 'A', 'Formaçao 6', 'Experiencia 6', 'Habilidade 6', '', ''),
+  ('Ricardo Santos', 'consultor8@x.com', 'uvwx', '789.012.345-67', '78.901.234-5', '2000-02-02', '777-888-9999', 78901234, 'Rua 7', 'Bairro 7', 7, 'Complemento 7', 'Cidade 7', 'PR', NULL, NULL, 'A', '2', 'P', 'A', 'Formaçao 7', 'Experiencia 7', 'Habilidade 7', '', ''),
+  ('Isabel Rodrigues', 'consultor9@x.com', 'yz01', '890.123.456-78', '89.012.345-6', '2000-02-02', '888-999-0000', 89012345, 'Rua 8', 'Bairro 8', 8, 'Complemento 8', 'Cidade 8', 'PA', NULL, NULL, 'A', '1', 'P', 'A', 'Formaçao 8', 'Experiencia 8', 'Habilidade 8', '', ''),
+  ('Fernando Alves', 'consultor10@x.com', '2345', '901.234.567-89', '90.123.456-9', '2000-02-02', '222-333-4444', 90123456, 'Rua 9', 'Bairro 9', 9, 'Complemento 9', 'Cidade 9', 'MA', NULL, NULL, 'A', '0', 'P', 'A', 'Formaçao 9', 'Experiencia 9', 'Habilidade 9', '', ''),
+  ('Sofia Pereira', 'consultor11@x.com', '6789', '123.456.789-01', '12.345.678-9', '2000-02-02', '666-777-8888', 12345678, 'Rua 10', 'Bairro 10', 10, 'Complemento 10', 'Cidade 10', 'TO', NULL, NULL, 'A', '8', 'P', 'A', 'Formaçao 10', 'Experiencia 10', 'Habilidade 10', '', ''),
+  ('Pietro Antonio Ian Viana', 'pietro_antonio_viana@henrimar.com.br', '6789', '094.654.917-64', '33.900.120-3', '2000-02-02', '(84) 2670-1908',
+    59122-045, 'Rua das Prímulas', 'Redinha', 10, 'Complemento 10', 'Natal', 'RN', NULL, NULL, 'A',
+    '8', 'Presencial', 'Adultos', 
+    'Graduação em Economia - Universidade Federal;
+Pós-graduação em Finanças Corporativas - Instituto de Finanças', 
+    'Analista Financeiro na Empresa X - Responsável pela análise de investimentos e projeções financeiras;
+Consultor Financeiro Sênior na Empresa Y - Prestou consultoria a grandes empresas em estratégias financeiras e de investimento.', 
+    'Análise de Investimentos: Capacidade de analisar o potencial de investimentos, considerando riscos e retornos;
+Consultoria Financeira: Experiência em oferecer orientação e estratégias para otimizar a situação financeira de empresas;
+Gestão de Riscos: Habilidade em avaliar e gerenciar riscos financeiros.', '01:00', 'https://vitoralvs.github.io/Landing-page-consultor/');
   
-  drop table tb_consultor;
   
 select * from tb_consultor;
 
@@ -217,10 +214,11 @@ VALUES
 select * from tb_perguntasFaq;
 
 -- Estrutura da tabela `tb_cronograma`
+-- Estrutura da tabela `tb_cronograma`
 CREATE TABLE tb_cronograma(
 	NOME varchar(60) not null,
 	ATIVIDADE text not null,
-    SEMANA varchar(2) not null);
+    SEMANA varchar(3) );
 select * from tb_cronograma;
 
 -- Inserindo dados para a Semana 1
@@ -262,7 +260,77 @@ INSERT INTO tb_cronograma (NOME, ATIVIDADE, SEMANA) VALUES
     ('João Santos', 'Finalização da Home page, login e cadastro. Função Listagem e documentação.', 's4'),
     ('Matheus Cerqueira', 'Ajuste da Logo e Design da Home', 's4'),
     ('Ranielly', 'Ajustes na vitrine e desenvolvimento do TCC (documentação)', 's4');
+    
 
+-- Inserindo dados para a Semana 5
+INSERT INTO tb_cronograma (NOME, ATIVIDADE, SEMANA)
+VALUES 	('Davidson', 'Alteração e inclusão de novas tabelas no BD', 's5'),
+	('Ranielly', 'Ajustes no TCC', 's5');
+
+-- Inserindo dados para a Semana 6
+INSERT INTO tb_cronograma (NOME, ATIVIDADE, SEMANA)
+VALUES ('Davidson', 'Alteração na estrutura do BD e atualização do Diagrama e do Dicionário de dados', 's6'),
+	('Fernanda', 'Inclusão de tabelas no banco de dados, desenvolvimento da documentação do TCC', 's6'),
+	('Heitor', 'Login', 's6'),
+	('Jéssica', 'Criação da pagina FAQ/SAC do novo layout', 's6'),
+	('João Santos', 'Criação da Área Adm', 's6'),
+	('Matheus Cerqueira', 'Reestruturação da Home', 's6'),
+	('Ranielly', 'Criação do Ciclo de Vida, alterações na vitrine, criação do perfil do consultor', 's6');
+
+-- Inserindo dados para a Semana 7
+INSERT INTO tb_cronograma (NOME, ATIVIDADE, SEMANA)
+VALUES ('Davidson', 'Alteração na página Artigos e Tabela "Cliente" e "Consultor".', 's7'),
+	('Fernanda', 'Desenvolvimento do Perfil Consultor', 's7'),
+	('Heitor', 'Desenvolvimento da Área Adm', 's7'),
+	('João Santos', 'Desenvolvimento da Área Adm', 's7'),
+	('Matheus Cerqueira', 'Finalização dos Cards da Home', 's7'),
+	('Ranielly', 'Reunião, implementação do avaliador na vitrine, fluxograma e mapa do site', 's7');
+
+-- Inserindo dados para a Semana 8
+INSERT INTO tb_cronograma (NOME, ATIVIDADE, SEMANA)
+VALUES ('Davidson', 'Home', 's8'),	
+	('Heitor', 'Finalização da Área Adm', 's8'),
+	('João Santos', 'Finalização da Área Adm e Ajustes no layout do Login', 's8'),
+	('Matheus Cerqueira', 'Carrossel e Ajustes na responsividade do site', 's8'),
+	('Ranielly', 'Documentação', 's8');
+
+-- Inserindo dados para a Semana 9
+INSERT INTO tb_cronograma (NOME, ATIVIDADE, SEMANA) VALUES
+    ('Davidson', 'Inclusão de novas tabelas no BD', 's9'),
+    ('Fernanda', 'Inclusão de tabelas BD', 's9'),
+    ('Heitor', 'Criação e ajustes na parte dos Meus Gastos do cliente', 's9'),
+    ('Jéssica', 'Reformulação da página FAQ', 's9'),
+    ('João Santos', 'Atualização de caminhos php', 's9'),
+    ('Ranielly', 'Ajustes no cadastro Consultor, reunião', 's9');
+
+-- Inserindo dados para a Semana 10
+INSERT INTO tb_cronograma (NOME, ATIVIDADE, SEMANA) VALUES
+    ('Davidson', 'Alteração na estrutura do Banco e atualização do diagrama e dicionário de dados', 's10'),
+    ('Fernanda', 'Desenvolvimento documentação TCC', 's10'),
+    ('Heitor', 'Criação da função de relatório de gastos do cliente', 's10'),
+    ('Jéssica', 'Estudo das APIs financeiras', 's10'),
+    ('João Santos', 'Atualizações na home, criação da página de informações pessoais', 's10'),
+    ('Ranielly', 'Desenvolvimento e planejamento do Perfil Consultor', 's10');
+
+-- Inserindo dados para a Semana 11
+INSERT INTO tb_cronograma (NOME, ATIVIDADE, SEMANA) VALUES
+    ('Davidson', 'Alteração das tabelas Cliente e Consultor. Início da reformulação da Navbar', 's11'),
+    ('Fernanda', 'Criação perfil consultor e fluxogramas/mapas do site documentação', 's11'),
+    ('Heitor', 'Criação das funções na parte de feedback do cliente e consultor', 's11'),
+    ('Jéssica', 'Início da configuração de consumo da API HGBrasil', 's11'),
+    ('João Santos', 'Ajustes na consulta de Consultores, Ativação e Desativação', 's11'),
+    ('Ranielly', 'Ajustes Perfil Consultor, alteração no BD Consultor', 's11');
+
+-- Inserindo dados para a Semana 12
+INSERT INTO tb_cronograma (NOME, ATIVIDADE, SEMANA) VALUES
+    ('Davidson', 'Finalização da Navbar. Alterações no Diagrama do BD, alterações na página home', 's12'),
+    ('Fernanda', 'Documentação TCC e Imagens no PHP', 's12'),
+    ('Heitor', 'Término da parte de feedback e ajustes na área do Cliente referente à visualização dos consultores', 's12'),
+    ('Jéssica', 'Continuação da configuração do consumo da API e estudo dos gráficos com ChartJS', 's12'),
+    ('João Santos', 'Visualização de dados do consultor em tabela para ativação, Atualização na Consulta de Consultores Desativados, Ajuste responsividade das tabelas para mobile e correção de bug na visualização de dados de consultores desativados, Separação de páginas do acesso cliente, Página de feedback, Pesquisa de consultor por nomes e modal, Listagem automática ao abrir a página, Correção bug AltForm-Login, Ajustes responsividade Gastos, Adição do link do consultor', 's12'),
+    ('Ranielly', 'Caso de uso e RFU (documentação)', 's12');
+
+    
 select NOME,ATIVIDADE,SEMANA from tb_cronograma order by SEMANA;
 
 CREATE TABLE tb_gastos(
@@ -299,10 +367,6 @@ CREATE TABLE tb_feedback(
 
 INSERT INTO `tb_feedback`(`ID_CLIENTE`, `NOME_CONSULTOR`, `EMAIL_CONSULTOR`, `AVALIACAO`, `NOTA_CONSULTOR`, `DATA_INCLUSAO`) VALUES (1,'Maria Santos','consultor3@x.com', 'Muito bom ele', 4, NOW());
 
-SELECT ID_FEEDBACK, NOME_CLIENTE, EMAIL_CLIENTE, AVALIACAO, NOTA_CONSULTOR, DATA_INCLUSAO
-FROM tb_feedback
-INNER JOIN tb_cliente
-ON tb_feedback.ID_CLIENTE = tb_cliente.ID_CLIENTE WHERE NOME_CONSULTOR = ? AND EMAIL_CONSULTOR = ?;
 
 SELECT * FROM tb_consultor WHERE NOME_CONSULTOR LIKE "%Carlos Ferreira%";
 

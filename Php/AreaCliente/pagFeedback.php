@@ -47,7 +47,7 @@
               <a class="nav-link active" aria-current="page" href="pagGastos.php" name="MeusGastos">Meus Gastos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="pagConsultores.php" name="MeusGastos">Consulotres</a>
+              <a class="nav-link active" aria-current="page" href="pagConsultores.php" name="MeusGastos">Consultores</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#" name="MeusGastos"><strong>FEEDBACK</strong></a>

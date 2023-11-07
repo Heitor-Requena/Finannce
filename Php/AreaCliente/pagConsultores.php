@@ -10,23 +10,20 @@
   <title>Area Cliente</title>
 </head>
 
-<body>
+<body onload="ConsultorPesquisa(event)">
   <?php
-    session_start();
+  session_start();
 
-    if ((!isset($_SESSION["id"]) == true) and (!isset($_SESSION["nome"]) == true) and (!isset($_SESSION["email"]) == true))
-    {
-      unset($_SESSION["id"]);
-      unset($_SESSION["id"]);
-      unset($_SESSION["id"]);
-      header('location: ../../index.html');
-    } 
-    else{
-      $Nome = $_SESSION["nome"];
+  if ((!isset($_SESSION["id"]) == true) and (!isset($_SESSION["nome"]) == true) and (!isset($_SESSION["email"]) == true)) {
+    unset($_SESSION["id"]);
+    unset($_SESSION["id"]);
+    unset($_SESSION["id"]);
+    header('location: ../../index.html');
+  } else {
+    $Nome = $_SESSION["nome"];
+  }
+  ?>
 
-    }
-  ?>  
-  
   <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top bg-primary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#" id="alterarLogo"><img src="../../Img/logo branca finannce.png" alt="" style="height: 56px;"></a>
@@ -59,7 +56,7 @@
               <a class="nav-link active text-danger" aria-current="page" href="../../index.html" name="Sair"><i class="bi bi-box-arrow-right"></i></a>
             </li>
             </li>
-          </ul>                 
+          </ul>
         </div>
       </div>
     </div>
@@ -67,34 +64,43 @@
 
 
   <section id="section" style="margin-top: 100px;" class="d-flex justify-content-around flex-column">
-  <h1 class="text-center m-5">Consultores</h1>
+    <h1 class="text-center m-5">Consultores</h1>
     <div class='container' onload="TodosConsultores(), ConsultoresAnuncio()">
       <div id="ConsultoresAnunciantes">
-        
+
       </div>
 
       <div>
-        <form action="ControleConsultor-Cliente.php" method="get" class="d-flex justify-content-around flex-column">
-          <input type="text" name="" id="" class="form-control m-2" placeholder="Nome Consultor">
-          <button onclick="ConsultorPesquisa()" id="btn_ConsultorNome" name="btn_ConsultorNome" class="iframe-btn btn m-3 btn-outline-light">Pesquisar</button>
+        <form action="ControleConsultor-Cliente.php" method="get" id="frm_PesquisaConsultor" class="d-flex justify-content-around flex-column">
+          <input type="text" name="Nome_Consultor" id="Nome_Consultor" class="form-control m-2" placeholder="Nome Consultor" required>
+          <button type="button" onclick="ConsultorPesquisa(event)" id="btnPesquisar" class="iframe-btn btn m-3 btn-outline-light">Pesquisar</button>
+          <input type="submit" value="Ver Todos" onclick="ConsultorPesquisa(event)" id="TodosConsultores" name="TodosConsultores" class="iframe-btn btn m-3 btn-outline-light">
         </form>
       </div>
 
-      <div id='Consulotes-resposta'>
-
+      <!-- Área onde os consultores serão exibidos -->
+      <div id='Consultores-resposta' class="d-flex justify-content-around flex-wrap">
+        <!-- Aqui os cards dos consultores serão inseridos dinamicamente -->
       </div>
     </div>
   </section>
 
+  <!-- Adicione o modal fora do loop dos consultores -->
+  <div class='modal fade' id='modalExemplo' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+    <div class='modal-dialog' role='document'>
+      <!-- Conteúdo do modal -->
+    </div>
+  </div>
+
   <section id="result"></section>
-  
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script src="../../Js/AreaCliente/AltPag.js"></script>
-  <script src="../../Js/AreaCliente/Js-InfoPess.js"></script>
   <script src="../../Js/AreaCliente/RespostaGrafico-Cliente.js"></script>
   <script src="../../Js/AreaCliente/RespostaConsultores-Cliente.js"></script>
   <script src="../../Js/AreaCliente/RespostaFeedBack-Cliente.js"></script>
 
 </body>
+
 </html>

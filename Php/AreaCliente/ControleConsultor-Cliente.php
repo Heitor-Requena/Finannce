@@ -2,7 +2,7 @@
     session_start();
     include "Cls_ConsultoresCliente.php";
 
-    $Nome_Consultor = filter_input(INPUT_GET,"Nome_Consultor", FILTER_SANITIZE_STRING);
+    $Nome_Consultor = filter_input(INPUT_GET,"Nome_Consultor");
 
     $Consultor = new Cls_ConsultoresCliente();
 
@@ -21,5 +21,3 @@
         $Retorno = $Consultor->PesquisaConsultorNome();
         echo $Retorno;
     }
-
-?>

@@ -83,7 +83,7 @@
 
 
   <section id="result">
-    <div class="col-6" id="tableCon">
+    <div class="col-xl-6 col-sm-2" id="tableCon">
       
     </div>
   </section>

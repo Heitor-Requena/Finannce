@@ -101,7 +101,7 @@
 
             try
             {
-                $Comando = $conexao->prepare("select NOME,ATIVIDADE,SEMANA from tb_cronograma order by SEMANA;");
+                $Comando = $conexao->prepare("select NOME,ATIVIDADE,SEMANA from tb_cronograma;");
 
                 $Comando->execute();
                 $Retorno = $Comando->fetchAll(PDO::FETCH_OBJ);
