@@ -5,22 +5,20 @@
 
     include_once "Cls_GraficoCliente.php";
 
-      
     use Dompdf\Dompdf;
         
     $dompdf = new Dompdf();
 
     $ID_Cliente  = $_SESSION["id"];
+
     $ID_Gasto    = filter_input(INPUT_GET, "Id_Gasto", FILTER_SANITIZE_NUMBER_INT);
-    $Nome_Gasto  = filter_input(INPUT_GET, "NomeGasto", FILTER_SANITIZE_STRING);
-    $Valor_Gasto = filter_input(INPUT_GET, "ValorGasto");
+    $Nome_Gasto  = filter_input(INPUT_GET, "Nome_Gasto");
+    $Valor_Gasto = filter_input(INPUT_GET, "ValorGasto", FILTER_SANITIZE_NUMBER_FLOAT);
+
 
     $data = new Cls_GraficoCliente();
 
     $data->setID_Cliente($ID_Cliente);
-    $data->setNome_Gasto($Nome_Gasto);
-    $data->setValor_Gasto($Valor_Gasto);
-    $data->setID_Gasto($ID_Gasto);
 
 
     if(isset($_GET["GerarGraficoRosca"])){
@@ -34,11 +32,14 @@
     }
 
     else if(isset($_GET["btn_AdicionarGasto"])){
+        $data->setNome_Gasto($Nome_Gasto);
+        $data->setValor_Gasto($Valor_Gasto);
         $Retorno = $data->AdicionarGasto();
         echo $Retorno;
     }
 
     else if(isset($_GET["btn_ExcluirGasto"])){
+        $data->setID_Gasto($ID_Gasto);
         $Retorno = $data->ExcluirGasto();
         echo $Retorno;
     }

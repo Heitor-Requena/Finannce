@@ -105,6 +105,7 @@
                 $Comando->bindParam(1, $this->Id_Cliente);
                 $Comando->bindParam(2, $this->Nome_Gasto);
                 $Comando->bindParam(3, $this->Valor_Gastos);
+
     
                 if($Comando->execute())
                 {

@@ -44,6 +44,9 @@
               <a class="nav-link active" aria-current="page" href="pagGastos.php" name="MeusGastos">Meus Gastos</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="pagArtigos.php" name="Artigos">Artigos</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#" name="MeusGastos"><strong>CONSULTORES</strong></a>
             </li>
             <li class="nav-item">
@@ -97,10 +100,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script src="../../Js/AreaCliente/AltPag.js"></script>
-  <script src="../../Js/AreaCliente/RespostaGrafico-Cliente.js"></script>
   <script src="../../Js/AreaCliente/RespostaConsultores-Cliente.js"></script>
-  <script src="../../Js/AreaCliente/RespostaFeedBack-Cliente.js"></script>
-
 </body>
 
 </html>

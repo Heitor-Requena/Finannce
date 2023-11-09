@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
+<html lang="pt-br" data-bs-theme="dark">
 
 <head>
   <meta charset="UTF-8">
@@ -10,22 +10,20 @@
   <title>Area Cliente</title>
 </head>
 
-<body>
+<body onload="CarregarArtigos(event)">
   <?php
-    session_start();
+  session_start();
 
-    if ((!isset($_SESSION["id"]) == true) and (!isset($_SESSION["nome"]) == true) and (!isset($_SESSION["email"]) == true))
-    {
-      unset($_SESSION["id"]);
-      unset($_SESSION["id"]);
-      unset($_SESSION["id"]);
-      header('location: ../../index.html');
-    } 
-    else{
-      $Nome = $_SESSION["nome"];
+  if ((!isset($_SESSION["id"]) == true) and (!isset($_SESSION["nome"]) == true) and (!isset($_SESSION["email"]) == true)) {
+    unset($_SESSION["id"]);
+    unset($_SESSION["id"]);
+    unset($_SESSION["id"]);
+    header('location: ../../index.html');
+  } else {
+    $Nome = $_SESSION["nome"];
+  }
+  ?>
 
-    }
-  ?>  
   <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top bg-primary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#" id="alterarLogo"><img src="../../Img/logo branca finannce.png" alt="" style="height: 56px;"></a>
@@ -40,13 +38,13 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#" name="Home"><i class="bi bi-house-fill"></i></a>
+              <a class="nav-link active" aria-current="page" href="#" name="Home"><i class="bi bi-house"></i></a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="pagGastos.php" name="MeusGastos">Meus Gastos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="pagArtigos.php" name="MeusGastos">Artigos</a>
+              <a class="nav-link active" aria-current="page" href="pagArtigos.php" name="MeusGastos"><strong>ARTIGOS</strong></a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="pagConsultores.php" name="MeusGastos">Consultores</a>
@@ -55,34 +53,48 @@
               <a class="nav-link active" aria-current="page" href="pagFeedback.php" name="MeusGastos">FeedBack's</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="infopess.php" name="MeusDados">Meus Dados</a>
+              <a class="nav-link active" aria-current="page" href="infopess.php" name="MeusGastos">Meus Dados</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active text-danger" aria-current="page" href="../../index.html" name="Sair"><i class="bi bi-box-arrow-right"></i></a>
             </li>
             </li>
-          </ul>                 
+          </ul>
         </div>
       </div>
     </div>
   </nav>
 
-  <section id="section" style="margin-top: 100px;">
-    <h1 class="text-center align-middle mt-5">Seja bem vindo, <?php echo $Nome?></h1>
-    <div class="text-center">
-      <img src="../../Img/Area/cute-penguin.gif" class="rounded" alt="...">
-    </div>
-  </section>
 
-  <section id="result"></section>
-  
+    <section id="section" style="margin-top: 100px;" class="d-flex justify-content-around flex-column">
+        <div class="container">
+            <div class="row">
+                <div class="col-5">
+                    <h1 class="text ">Artigos</h1>
+                </div>
+
+                <div class="col-7">
+                    <form action="ControleArtigo-Cliente.php" id="frm_PesquisaArtigo" name="frm_PesquisaArtigo" method="get">
+                        <input type="text" name="Titulo" id="Titulo" placeholder="Titulo/Palavra-Chave">
+                        <button class="btn btn-light" onclick="ProcurarArtigo()"><i class="bi bi-search"></i></button>
+                    </form>
+                </div>
+            </div>
+
+            <br><br>
+
+            <div class="row">
+                <section id="Artigos">
+                </section>
+            </div>
+        </div>
+    </section>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script src="../../Js/AreaCliente/AltPag.js"></script>
-  <script src="../../Js/AreaCliente/Js-InfoPess.js"></script>
-  <script src="../../Js/AreaCliente/RespostaGrafico-Cliente.js"></script>
-  <script src="../../Js/AreaCliente/RespostaConsultores-Cliente.js"></script>
-  <script src="../../Js/AreaCliente/RespostaFeedBack-Cliente.js"></script>
+  <script src="../../Js/AreaCliente/RespostaArtigos-Cliente.js"></script>
 
 </body>
+
 </html>

@@ -51,6 +51,9 @@
               <a class="nav-link active" aria-current="page" href="pagGastos.php" name="MeusGastos"><strong>MEUS GASTOS</strong></a>
             </li>
             <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="pagArtigos.php" name="Artigos">Artigos</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="pagConsultores.php" name="MeusGastos">Consultores</a>
             </li>
             <li class="nav-item">
@@ -81,7 +84,7 @@
                         <button onclick="TabelaColuna(event), GraficoColuna(event)" class="iframe-btn btn btn-outline-light m-2">Todos Gastos</button>
                         <div id="GraficoColuna" class="col-12"></div>
                         <div id="TabelaGraficoColuna" class="col-12"></div>
-                        <form action="ControleGrafico-Cliente.php" id="frm_Grafico" method="get" class="row d-flex justify-content-around" style="width: 99%; margin: 0 auto;">
+                        <form action="ControleGrafico-Cliente.php" id="frm_Grafico1" method="get" class="row d-flex justify-content-around" style="width: 99%; margin: 0 auto;">
                             <input type="submit" id="btn_Relatorio" name="btn_Relatorio" class="iframe-btn btn btn-outline-light m-2" value="Relatorio">
                         </form>
                 </div>
@@ -92,12 +95,12 @@
                     </div>
 
                     <div class="row d-flex justify-content-around m-3">
-                        <div id="secaoForm" class=" center m-3">
-                            <form action="ControleGrafico-Cliente.php" id="frm_Grafico" method="get" class="container mt-12">
+                        <div id="secaoForm" class="center m-3">
+                            <form action="ControleGrafico-Cliente.php" id="frm_Grafico2" method="get" class="container mt-12">
 
                                 <div class="row">
                                     <div class="">
-                                        <input type="text" name="NomeGasto" id="NomeGasto" class="form-control m-2  " placeholder="Nome do Gasto">
+                                        <input type="text" name="Nome_Gasto" id="NomeGasto" class="form-control m-2" placeholder="Nome do Gasto">
                                     </div>
                                 </div>
 
@@ -107,86 +110,23 @@
                                     </div>
                                 </div>
 
-                                    <input type="number" name="Id_Gasto" id="Id_Gasto" min=0 class="form-control m-2 " placeholder="Número" style="display: none;">
-
-                                    <div class="row">
-                                        <div class="2 text-center">
-                                            <input type="submit" id="btn_AdicionarGasto" name="btn_AdicionarGasto" class="iframe-btn btn m-1  btn-outline-light" value="Adicionar" onclick="AdicionarGasto(event)">
-                                            <input type="submit" id="btn_ExcluirGasto" name="btn_ExcluirGasto" class="iframe-btn btn m-1  btn-outline-light" value="Excluir" onclick="ExcluirGasto(event)">
-                                        </div>
+                                <div class="row">
+                                    <div class="">
+                                        <input type="number" name="Id_Gasto" id="Id_Gasto" min=0 class="form-control m-2 " placeholder="Número">
                                     </div>
-                                </form>
-                            </div>
-                        </div>
-                </div>
-                
-            </div>
+                                </div>
 
-            <!-- <div class="container d-flex justify-content-around flex-column">
-
-                <div class="row d-flex justify-content-around m-3">
-                    <button onclick="GraficoRosca(event)" class="col-4 iframe-btn btn btn-outline-light">Gráfico de Gastos Recentes</button><br>
-                    <button onclick="TabelaRosca(event)" class="col-4 iframe-btn btn btn-outline-light">Tabela de Gastos Recentes</button>
-                </div>
-
-                <div class="row">
-                    <div id="GraficoRosca" style="width: 400px; height: 300px;" class="col-6"></div>
-
-                    <div class="col-6">
-
-                        <div class="row d-flex justify-content-around m-3" >
-                            <div id="TabelaGraficoRosca" class="col-12"></div>
-                        </div>
-
-                        <div class="row d-flex justify-content-around m-3">
-                            <div id="secaoForm" class="col-12 center m-3">
-                                <form action="ControleGrafico-Cliente.php" id="frm_Grafico" method="get" class="container mt-12">
-
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <input type="text" name="NomeGasto" id="NomeGasto" class="form-control m-2  col-9" placeholder="Nome do Gasto">
-                                        </div>
+                                <div class="row">
+                                    <div class="2 text-center">
+                                        <input type="submit" id="btn_AdicionarGasto" name="btn_AdicionarGasto" class="iframe-btn btn m-1  btn-outline-light" value="Adicionar" onclick="AdicionarGasto(event)">
+                                        <input type="submit" id="btn_ExcluirGasto" name="btn_ExcluirGasto" class="iframe-btn btn m-1  btn-outline-light" value="Excluir" onclick="ExcluirGasto(event)">
                                     </div>
-
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <input type="number" name="ValorGasto" id="ValorGasto" min=0 step=0.1 class="form-control m-2  col-9" placeholder="Valor">
-                                        </div>
-                                    </div>
-
-                                    <input type="number" name="Id_Gasto" id="Id_Gasto" min=0 class="form-control m-2 col-9" placeholder="Número" style="display: none;">
-
-                                    <div class="row">
-                                        <div class="col-12 text-center">
-                                            <input type="submit" id="btn_AdicionarGasto" name="btn_AdicionarGasto" class="iframe-btn btn m-1 col-6 btn-outline-light" value="Adicionar" onclick="AdicionarGasto(event)">
-                                            <input type="submit" id="btn_ExcluirGasto" name="btn_ExcluirGasto" class="iframe-btn btn m-1 col-6 btn-outline-light" value="Excluir" onclick="ExcluirGasto(event)">
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
-
-                <div class="row">
-                    <button onclick="TabelaColuna(event), GraficoColuna(event)" class="col-4 iframe-btn btn btn-outline-light">Todos Gastos</button><br>
-                </div>
-
-                <div class="row">
-                    <div id="GraficoColuna" class="col-12"></div>
-                </div>
-
-                <div class="row">
-                    <div id="TabelaGraficoColuna" class="col-12"></div>
-                </div>
-
-                <div class="row">
-                    <form action="ControleGrafico-Cliente.php" id="frm_Grafico" method="get">
-                        <input type="submit" id="btn_Relatorio" name="btn_Relatorio" class="col-4 iframe-btn btn btn-outline-light" value="Relatorio">
-                    </form>
-                </div>
-
-            </div> -->
+            </div>
         </section>
     </div>
 
@@ -196,9 +136,6 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="../../Js/AreaCliente/AltPag.js"></script>
     <script src="../../Js/AreaCliente/RespostaGrafico-Cliente.js"></script>
-    <script src="../../Js/AreaCliente/RespostaConsultores-Cliente.js"></script>
-    <script src="../../Js/AreaCliente/RespostaFeedBack-Cliente.js"></script>
-
 </body>
 
 </html>

@@ -2,10 +2,9 @@ function GraficoRosca(event){
     document.getElementById("GraficoColuna").innerHTML = "";
     document.getElementById("TabelaGraficoColuna").innerHTML = "";
     document.getElementById("TabelaGraficoRosca").innerHTML = "";
-    event.preventDefault();
-    console.log("CHAMOU")
-    var DadosForm = $("#frm_Grafico").serialize()
-    console.log(DadosForm)
+    console.log("CHAMOU");
+    var DadosForm = $("#frm_Grafico2").serialize();
+    console.log(DadosForm);
 
     $.ajax({
         method: 'GET',
@@ -60,9 +59,8 @@ function TabelaRosca(event){
     document.getElementById("GraficoColuna").innerHTML = "";
     document.getElementById("TabelaGraficoColuna").innerHTML = "";
     document.getElementById("GraficoRosca").innerHTML = "";
-    event.preventDefault();
     console.log("CHAMOU")
-    var DadosForm = $("#frm_Grafico").serialize()
+    var DadosForm = $("#frm_Grafico2").serialize()
     console.log(DadosForm)
 
     $.ajax({
@@ -105,8 +103,7 @@ function TabelaRosca(event){
 
 function AdicionarGasto(event) {
     event.preventDefault();
-    var DadosForm = $('#frm_Grafico').serialize()
-    console.log(DadosForm)
+    var DadosForm = $("#frm_Grafico2").serialize();
 
     $.ajax({
         method: 'GET',
@@ -115,7 +112,6 @@ function AdicionarGasto(event) {
     })
         .done(function (dadosPHP) {
             var Resposta = JSON.parse(dadosPHP);
-            console.log(Resposta);
             var msg = Resposta;
             alert(msg);
             GraficoRosca();
@@ -131,7 +127,7 @@ function AdicionarGasto(event) {
 
 function ExcluirGasto(event) {
     event.preventDefault();
-    var DadosForm = $('#frm_Grafico').serialize()
+    var DadosForm = $('#frm_Grafico2').serialize();
 
     $.ajax({
         method: 'GET',
@@ -157,9 +153,8 @@ function GraficoColuna(event){
     document.getElementById("TabelaGraficoRosca").innerHTML = "";
     document.getElementById("TabelaGraficoColuna").innerHTML = "";
     document.getElementById("GraficoRosca").innerHTML = "";
-    event.preventDefault();
     console.log("CHAMOU")
-    var DadosForm = $("#frm_Grafico").serialize()
+    var DadosForm = $("#frm_Grafico2").serialize()
 
     $.ajax({
         method: 'GET',
