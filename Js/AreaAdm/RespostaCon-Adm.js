@@ -202,61 +202,67 @@ function ConsultoresDesativados(event) {
 
 function verinfo(event) {
     event.preventDefault();
-    var consultorId = event.currentTarget.dataset.idcon; // Obtém o ID do atributo de dados
+    var consultorId = event.currentTarget.dataset.idcon;
 
+    abrirModalInfo(consultorId);
+}
+
+function abrirModalInfo(consultorId) {
     var url = 'ControleCon-Adm.php?btn_ConsultarCon&IdCon=' + consultorId;
-    var DadosForm = $('#frm_ConCon').serialize();
-    console.log(DadosForm);
 
     $.ajax({
         method: 'GET',
         url: url,
-        data: DadosForm
+        data: $('#frm_ConCon').serialize(),
     })
 
         .done(function (dadosPHP) {
-            document.getElementById("result").innerHTML = "";
-            document.getElementById("infoCon").innerHTML = "";
-            document.querySelector("#infoCon").setAttribute("class", "border border-light rounded text-center mx-5 my-3");
+            $('#result').html('');
+            $('#infoConModal').html(''); // Limpa o conteúdo anterior do modal
+
             if (dadosPHP.trim() === "") {
                 console.log("Resposta vazia do servidor.");
-            }
-            else {
+            } else {
                 var Consultores = JSON.parse(dadosPHP);
 
-                // CONSULTA EM Tabela
-                var Bloco = '';
-                for (i = 0; i < Consultores.length; i++) {
+                // Construir o conteúdo do modal
+                var modalContent = '';
+                for (var i = 0; i < Consultores.length; i++) {
                     if (Consultores[i].ID_CONSULTOR === consultorId) {
-                    Bloco += "<h2><u>Informações Pessoais</u></h2>";
-                    Bloco += "<strong>ID: </strong>"                        + Consultores[i].ID_CONSULTOR       + "<br>";
-                    Bloco += "<strong>Nome: </strong>"                      + Consultores[i].NOME_CONSULTOR     + "<br>";
-                    Bloco += "<strong>CPF: </strong>"                       + Consultores[i].CPF_CONSULTOR      + "<br>";
-                    Bloco += "<strong>RG: </strong>"                        + Consultores[i].RG_CONSULTOR       + "<br>";
-                    Bloco += "<strong>Email: </strong>"                     + Consultores[i].EMAIL_CONSULTOR    + "<br>";
-                    Bloco += "<strong>Telefone: </strong>"                  + Consultores[i].FONE_CONSULTOR     + "<br>";
-                    Bloco += "<strong>Data de Solicitação: </strong>"       + Consultores[i].DATA_ENTRADA       + "<br>";
-                    Bloco += "<h2><u>Informações de Trabalho</u></h2>";
-                    Bloco += "<strong>Formação: </strong>"                  + Consultores[i].FORMACAO           + "<br>";
-                    Bloco += "<strong>Experiência: </strong>"               + Consultores[i].EXPERIENCIA        + "<br>";
-                    Bloco += "<strong>Habilidade: </strong>"                + Consultores[i].HABILIDADE         + "<br>";
-                    Bloco += "<strong>Anexo: </strong>"                     + Consultores[i].ANEXO_CONSULTOR    + "<br>";
-                    Bloco += "<strong>Modalidade: </strong>"                + Consultores[i].MODALIDADE         + "<br>";
-                    Bloco += "<strong>Publico Alvo: </strong>"              + Consultores[i].PULICO_ALVO        + "<br>";
-                    Bloco += "<strong>Duração de Consultoria: </strong>"    + Consultores[i].DURACAO_CONS       + "<br>";
-                    Bloco += "<h2><u>Localização</u></h2>";
-                    Bloco += "<strong>Cidade: </strong>"                    + Consultores[i].CIDADE_CONSULTOR   + "<br>";
-                    Bloco += "<strong>Estado: </strong>"                    + Consultores[i].ESTADO_CONSULTOR   + "<br>";
-                    Bloco += "<form action='ControleCon-Adm.php' method='get' id='frm_AtvCon'> <input style='display: none' type='number' name='IdCon' id='IdCon' class='form-control m-2' value=" + Consultores[i].ID_CONSULTOR + "><input type='submit' id='btn_AtivarConsultor' name='btn_AtivarConsultor' class='iframe-btn btn m-3 btn-outline-light' value='Ativar'></form>"
-                }}
+                        modalContent += "<h4>Informações Pessoais</h4>";
+                        modalContent += "<strong>ID: </strong>"                             + Consultores[i].ID_CONSULTOR + "<br>";
+                        modalContent += "<strong>Nome: </strong>"                           + Consultores[i].NOME_CONSULTOR + "<br>";
+                        modalContent += "<strong>CPF: </strong>"                            + Consultores[i].CPF_CONSULTOR + "<br>";
+                        modalContent += "<strong>RG: </strong>"                             + Consultores[i].RG_CONSULTOR + "<br>";
+                        modalContent += "<strong>Email: </strong>"                          + Consultores[i].EMAIL_CONSULTOR + "<br>";
+                        modalContent += "<strong>Telefone: </strong>"                       + Consultores[i].FONE_CONSULTOR + "<br>";
+                        modalContent += "<strong>Data de Solicitação: </strong>"            + Consultores[i].DATA_ENTRADA + "<br>";
+                        modalContent += "<br><h4>Informações de Trabalho</h4>";
+                        modalContent += "<strong>Formação: </strong>"                       + Consultores[i].FORMACAO           + "<br>";
+                        modalContent += "<br><strong>Experiência: </strong>"                + Consultores[i].EXPERIENCIA        + "<br>";
+                        modalContent += "<br><strong>Habilidade: </strong>"                 + Consultores[i].HABILIDADE         + "<br>";
+                        modalContent += "<br><strong>Anexo: </strong>"                      + Consultores[i].ANEXO_CONSULTOR    + "<br>";
+                        modalContent += "<br><strong>Modalidade: </strong>"                 + Consultores[i].MODALIDADE         + "<br>";
+                        modalContent += "<br><strong>Publico Alvo: </strong>"               + Consultores[i].PULICO_ALVO        + "<br>";
+                        modalContent += "<br><strong>Duração de Consultoria: </strong>"     + Consultores[i].DURACAO_CONS       + "<br>";
+                        modalContent += "<br><h4>Localização</h4>";
+                        modalContent += "<strong>Cidade: </strong>"                         + Consultores[i].CIDADE_CONSULTOR   + "<br>";
+                        modalContent += "<strong>Estado: </strong>"                         + Consultores[i].ESTADO_CONSULTOR   + "<br>";
+                        document.getElementById("btn_atv").innerHTML = `<form action='ControleCon-Adm.php' method='get' id='frm_AtvCon'> <input style='display: none' type='number' name='IdCon' id='IdCon' class='form-control m-2' value="` + Consultores[i].ID_CONSULTOR + `"><input type='submit' id='btn_AtivarConsultor' name='btn_AtivarConsultor' class='iframe-btn btn m-3 btn-outline-light' value='Ativar'></form>`;
+                    }
+                }
 
-                $("#infoCon").append(Bloco);
+                // Atualizar o conteúdo do modal
+                $('#infoConModal').html(modalContent);
+
+                // Exibir o modal
+                $('#modalExemplo').modal('show');
             }
         })
 
         .fail(function () {
-            alert("falha");
-        })
+            alert("Falha ao obter informações do consultor.");
+        });
 
     return false;
 }

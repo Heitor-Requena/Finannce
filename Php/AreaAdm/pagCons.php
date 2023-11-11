@@ -88,6 +88,27 @@
     </div>
   </section>
 
+  <div class="modal fade" id="modalExemplo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Detalhes do Consultor</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body" id="infoConModal">
+        <!-- O conteúdo do modal será preenchido dinamicamente pela função abrirModalInfo() -->
+      </div>
+      <div class="modal-footer">
+        <div id="btn_atv">
+          
+        </div>
+        <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="../../Js/AreaAdm/AltPag.js"></script>
   <script src="../../Js/AreaAdm/RespostaUsr-Adm.js"></script>
@@ -95,5 +116,6 @@
   <script src="../../Js/AreaAdm/RespostaAdm-Adm.js"></script>
   <script src="../../Js/AreaAdm/RespostaArtigo-Adm.js"></script>
   <script src="../../Js/AreaAdm/RespostaFAQ-Adm.js"></script>
+
 
 </html>
