@@ -40,3 +40,12 @@ if(isset($_GET["btn_CadastrarConsultor"])){
     $login->setFone_Consultor($FoneCadastro_Consultor);
     echo $login->CadastrarConsultor();
 }
+
+if(isset($_GET["RecuperarSenha"])){
+    $login->setEmail_Consultor($Email_Consultor);
+
+    $Retorno = $login->RecuperarSenha();
+
+    echo $Retorno;
+
+}

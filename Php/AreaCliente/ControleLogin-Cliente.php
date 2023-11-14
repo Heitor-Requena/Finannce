@@ -42,3 +42,12 @@ if(isset($_GET["btn_CadastrarCliente"])){
 
     header('Location: ../../Html/Home/login.html');
 }
+
+if(isset($_GET["RecuperarSenha"])){
+    $login->setEmail_Cliente($Email_Cliente);
+
+    $Retorno = $login->RecuperarSenha();
+
+    echo $Retorno;
+
+}

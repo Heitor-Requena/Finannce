@@ -99,4 +99,36 @@
             
             return $Retorno;
         }
+
+        //---------------------------------
+        public function RecuperarSenha(){
+            include_once "../conexao.php";
+
+            try{
+                $Comando = $conexao->prepare("INSERT INTO tb_recsenha(EMAIL) SELECT EMAIL_CONSULTOR FROM tb_consultor WHERE EMAIL_CONSULTOR = ?");
+                $Comando->bindParam(1, $this->Email_Consultor);
+        
+                if($Comando->execute())
+                {
+                    if($Comando->rowCount() == 1)
+                    {
+                        $Retorno = "<script>alert('Você receberá uma nova senha por e-mail em até 3 dias'); location.href='../../index.html'</script>";
+                    }
+                    else
+                    {
+                        $Retorno = "<script>alert('Email não encontrado'); location.href='../../Html/Home/login.html'</script>";
+                    }
+                }
+                else
+                {
+                    $Retorno = "<script>alert('Erro ao executar a consulta'); location.href='../../index.html'</script>";
+                }
+            }
+            catch (PDOException $Erro)
+            {
+                $Retorno = "ERRO: " . $Erro->getMessage();
+            }
+        
+            return $Retorno;
+        }
     }

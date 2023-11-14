@@ -213,7 +213,15 @@ VALUES
 
 select * from tb_perguntasFaq;
 
--- Estrutura da tabela `tb_cronograma`
+-- Estrutura da tabela `tb_recsenha`
+create table tb_recsenha(
+	EMAIL varchar(80) NOT NULL,
+	DATA_REQUISICAO datetime DEFAULT CURRENT_TIMESTAMP
+);
+
+select * from tb_recsenha;
+
+
 -- Estrutura da tabela `tb_cronograma`
 CREATE TABLE tb_cronograma(
 	NOME varchar(60) not null,

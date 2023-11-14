@@ -91,11 +91,11 @@ function RecuperarSenha_Cliente() {
         `<h2 id="title"><i class="bi bi-person-circle"></i>Recuperar Senha</h2>
     <form action="../../Php/AreaCliente/ControleLogin-Cliente.php" method="get" class="frmEsqSenha">
         <div class="inpt-box">
-            <label for="EmailSenha_Cliente"></label>
-            <i class="bi bi-envelope-at"></i><input type="email" name="EmailSenha_Cliente" id="EmailSenha_Cliente" class="inpt2 inpt" placeholder="Email">
+            <label for="Email_Cliente"></label>
+            <i class="bi bi-envelope-at"></i><input type="email" name="Email_Cliente" id="Email_Cliente" class="inpt2 inpt" placeholder="Email">
         </div>
         <br>
-        <input type="submit" value="Pedir Senha" class="inpt3">
+        <input type="submit" value="Enviar" class="inpt3 RecuperarSenha" name="RecuperarSenha" id="RecuperarSenha">
     </form>
     <div class="link-form">
         <a onclick="Login_Cliente()" href="#">Lembrou a senha?</a>
@@ -169,11 +169,11 @@ function RecuperarSenha_Consultor() {
         `<h2 id="title"><i class="bi bi-briefcase"></i>Recuperar Senha</h2>
     <form action="../../Php/AreaConsultor/ControleLogin-Consultor.php" method="get" class="frmEsqSenha">
         <div class="inpt-box">
-            <label for="EmailSenha_Consultor"></label>
-            <i class="bi bi-envelope-at"></i><input type="email" name="EmailSenha_Consultor" id="EmailSenha_Consultor" class="inpt2 inpt" placeholder="Email">
+            <label for="Email_Consultor"></label>
+            <i class="bi bi-envelope-at"></i><input type="email" name="Email_Consultor" id="Email_Consultor" class="inpt2 inpt" placeholder="Email">
         </div>
         <br>
-        <input type="submit" value="Pedir Senha" class="inpt3">
+        <input type="submit" value="Enviar" class="inpt3 RecuperarSenha" name="RecuperarSenha" id="RecuperarSenha">
     </form>
     <div class="link-form">
         <a onclick="Login_Consultor()" href="#">Lembrou a senha?</a>
