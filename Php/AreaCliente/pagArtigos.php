@@ -11,6 +11,12 @@
 </head>
 
 <body onload="CarregarArtigos(event)">
+  <!-- <style>
+    *{
+      border: 1px solid red;
+    }
+  </style> -->
+
   <?php
   session_start();
 
@@ -68,13 +74,13 @@
   <section id="section" style="margin-top: 100px;" class="d-flex justify-content-around flex-column">
       <div class="container">
           <div class="row">
-              <div class="col-5">
-                  <h1 class="text ">Artigos</h1>
+              <div class="">
+                  <h1 class="text center"></h1>
               </div>
 
-              <div class="col-7">
-                  <form action="ControleArtigo-Cliente.php" id="frm_PesquisaArtigo" name="frm_PesquisaArtigo" method="get">
-                      <input type="text" name="Titulo" id="Titulo" placeholder="Titulo/Palavra-Chave" required>
+              <div class="">
+                  <form action="ControleArtigo-Cliente.php" id="frm_PesquisaArtigo" name="frm_PesquisaArtigo" method="get" class="text-center">
+                      <input type="text" name="Titulo" id="Titulo" placeholder="Titulo/Palavra-Chave" class="form-control" required>
                       <input type="submit" value="Pesquisar" class="iframe-btn btn m-3 btn-outline-light" id="btn_PesquisaTitulo" name="btn_PesquisaTitulo" onclick="ProcurarArtigo(event)">
                       <input type="submit" value="Todos" class="iframe-btn btn m-3 btn-outline-light" id="btn_PesquisaTitulo" name="btn_PesquisaTitulo" onclick="CarregarArtigos(event)">
                   </form>

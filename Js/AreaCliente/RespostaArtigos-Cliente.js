@@ -39,7 +39,7 @@ function CarregarArtigos(event){
                     Bloco += " | Escrito por " + Artigos[i].AUTOR_ARTIGO;
                 Bloco += "</div>";
             Bloco += "</div>";
-            Bloco += "<br><br><br>";
+            Bloco += "<br><hr><br><br>";
         }
 
         $("#Artigos").html(Bloco);
