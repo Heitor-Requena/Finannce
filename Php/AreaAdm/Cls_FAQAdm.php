@@ -1,4 +1,15 @@
 <?php 
+ob_start();
+
+require_once('src/PHPMailer.php');
+require_once('src/SMTP.php');
+require_once('src/Exception.php');
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+
 class ClsFAQAdm{
     private $ID_Pergunta;
     private $Resposta;
@@ -29,8 +40,6 @@ class ClsFAQAdm{
             $Comando = $conexao->prepare("UPDATE tb_perguntasFaq SET RESPOSTA = ? WHERE ID_PERGUNTA = ? ORDER BY tb_perguntasFaq.ID_PERGUNTA ASC;");
             $Comando->bindParam(1, $this->Resposta);
             $Comando->bindParam(2, $this->ID_Pergunta);
-
-            //TODO: Enviar email avisando que a pergunta foi respondida
 
             if ($Comando->execute())
             {
@@ -78,6 +87,67 @@ class ClsFAQAdm{
 
             $Matriz  = $Comando->fetchALL();
             $Retorno = json_encode($Matriz);
+        }
+        catch(PDOException $Erro)
+        {
+            $Retorno = json_encode("Erro" . $Erro->getMessage());
+        }
+        return $Retorno;
+    }
+
+    //----------------------------------
+    public function EnvioEmailResposta($id){
+        include_once "../conexao.php";
+        
+        try
+        {   
+            $Comando = $conexao->prepare("SELECT NOME_USUARIO, EMAIL_USUARIO, PERGUNTA, RESPOSTA FROM tb_perguntasFaq WHERE ID_PERGUNTA = ?;");
+            $Comando->bindParam(1, $id);
+            $Comando->execute();
+
+            $Matriz = $Comando->fetchALL(PDO::FETCH_OBJ);
+
+            foreach ($Matriz as $Ma){
+                $NomeUsuario  = $Ma->NOME_USUARIO;
+                $EmailUsuario = $Ma->EMAIL_USUARIO;
+                $PerguntaDado = $Ma->PERGUNTA;
+                $RespostaDado = $Ma->RESPOSTA;
+            }
+
+            $mail = new PHPMailer(true);
+
+            try {
+                $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+                $mail->isSMTP();
+                $mail->Host = 'smtp.office365.com'; // Altere para o host do Outlook
+                $mail->SMTPAuth = true;
+                $mail->Username = 'finannce.contato@outlook.com'; // Altere para o seu email do Outlook
+                $mail->Password = 'W3HjVxK!9hk6W::'; // Altere para a sua senha do Outlook
+                $mail->SMTPSecure = 'tls'; // Use 'tls'
+                $mail->Port = 587; // Porta para TLS/STARTTLS
+
+                $mail->setFrom('finannce.contato@outlook.com');
+                $mail->addAddress($EmailUsuario);
+
+                $mail->isHTML(true);
+                $mail->CharSet = 'UTF-8';
+                $mail->Subject = 'Nova senha do Finannce';
+                $mail->Body = '<div style="margin: 0 auto; text-align: center; font-family: `poppins`, sans-serif;">
+                                    <img src="https://www.bing.com/images/blob?bcid=Tg5aB40pW1IG1nURUgpcJyyDTb8A.....4o" alt="" width="40%">
+                                    <h2>Olá ' . $NomeUsuario . ', Recebemos sua pergunta.</h2>
+                                    <h2>Pergunta: ' . $PerguntaDado . '</h2>
+                                    <h2>Resposta: ' . $RespostaDado . '</h2>
+                                </div>';
+                $mail->AltBody = 'Olá ' . $NomeUsuario . ', Recebemos sua pergunta. Pergunta: ' . $PerguntaDado .'Resposta: ' . $RespostaDado;
+
+                if($mail->send()) {
+                    $Retorno = true;
+                } else {
+                    $Retorno = 'Email nao enviado';
+                }
+            } catch (Exception $e) {
+                $Retorno = "Erro ao enviar mensagem: {$mail->ErrorInfo}";
+            }
         }
         catch(PDOException $Erro)
         {

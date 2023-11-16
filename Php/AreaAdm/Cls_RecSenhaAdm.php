@@ -120,6 +120,5 @@ class Cls_RecSenha
         } catch (Exception $e) {
             echo "Erro ao enviar mensagem: {$mail->ErrorInfo}";
         }
-
     }
 }

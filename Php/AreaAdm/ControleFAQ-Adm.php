@@ -17,6 +17,7 @@
         $Adm->setResposta($Resposta);
         $Retorno = $Adm->CadastrarResposta();
         echo $Retorno;
+        $Adm->EnvioEmailResposta($ID_Pergunta);
     }
 
     if(isset($_GET["btn_ListarPergunta"])){
