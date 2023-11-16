@@ -58,6 +58,9 @@
               <a class="nav-link active" aria-current="page" href="pagAdm.php" name="Adm">Adm</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="pagRecSenha.php" name="RecSenha">Recuperação de Senha</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="pagArtigos.php" name="Artigos">FAQ</a>
             </li>
             <li class="nav-item">
