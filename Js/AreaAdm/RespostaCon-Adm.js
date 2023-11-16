@@ -248,7 +248,7 @@ function abrirModalInfo(consultorId) {
                         modalContent += "<br><h4>Localização</h4>";
                         modalContent += "<strong>Cidade: </strong>"                         + Consultores[i].CIDADE_CONSULTOR   + "<br>";
                         modalContent += "<strong>Estado: </strong>"                         + Consultores[i].ESTADO_CONSULTOR   + "<br>";
-                        document.getElementById("btn_atv").innerHTML = `<form action='ControleCon-Adm.php' method='get' id='frm_AtvCon'> <input style='display: none' type='number' name='IdCon' id='IdCon' class='form-control m-2' value="` + Consultores[i].ID_CONSULTOR + `"><input type='submit' id='btn_AtivarConsultor' name='btn_AtivarConsultor' class='iframe-btn btn m-3 btn-outline-light' value='Ativar'></form>`;
+                        document.getElementById("btn_atv").innerHTML = `<form action='ControleCon-Adm.php' method='get' id='frm_AtvCon'> <input style='display: none' type='email' name='EmailCon' id='EmailCon' class='form-control m-2' value="`+Consultores[i].EMAIL_CONSULTOR+`"><input style='display: none' type='number' name='IdCon' id='IdCon' class='form-control m-2' value="` + Consultores[i].ID_CONSULTOR + `"><input type='submit' id='btn_AtivarConsultor' name='btn_AtivarConsultor' class='iframe-btn btn m-3 btn-outline-light' value='Ativar'></form>`;
                     }
                 }
 

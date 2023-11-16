@@ -29,6 +29,7 @@ if (isset($_GET["btn_ConsultarCon"])) {
 }  else if(isset($_GET["btn_AtivarConsultor"])) {
     $Retorno = $Adm->AtvCon();
     echo $Retorno;
+    $Adm->EnvioEmail();
 }
 else if (isset($_GET["btn_AltLogCon"])) {
     $Retorno = $Adm->AlterarLoginCon();
