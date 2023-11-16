@@ -34,12 +34,12 @@ function ExcluirFeedBack(event){
         data: DadosForm,
     })
 
-    .done(function (dadosPHP) {
-        console.log("Depois do done");
-        var Resposta = JSON.parse(dadosPHP);
-        var msg = Resposta;
-        alert(msg);
-    })
+        .done(function (dadosPHP) {
+            console.log("Depois do done");
+            var Resposta = JSON.parse(dadosPHP);
+            var msg = Resposta;
+            alert(msg);
+        })
 
     .fail(function () {
         alert("Não foi possível enviar o FeedBack");

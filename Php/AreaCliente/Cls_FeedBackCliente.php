@@ -109,7 +109,7 @@ class Cls_FeedBack{
             $Comando->bindParam(2, $this->ID_FeedBack);
 
             if($Comando->execute())
-            {
+            {                   
                 $Comando = $conexao->prepare("UPDATE tb_consultor SET AVALIAÇAO_CONSULTOR = (SELECT AVG(NOTA_CONSULTOR) FROM tb_feedback WHERE NOME_CONSULTOR = ? AND EMAIL_CONSULTOR = ?) WHERE NOME_CONSULTOR = ? AND EMAIL_CONSULTOR = ?;");
                 
                 $Comando->bindParam(1, $this->Nome_Consultor);

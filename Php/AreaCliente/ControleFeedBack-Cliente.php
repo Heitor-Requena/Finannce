@@ -24,6 +24,9 @@ if(isset($_GET["btn_CadastrarFeedBack"])){
 }
 
 else if(isset($_GET["btn_ExcluirFeedBack"])){
+    $feedback->setNome_Consultor($Nome_Consultor);
+    $feedback->setEmail_Consultor($Email_Consultor);
+    $feedback->setID_Cliente($ID_Cliente);
     $feedback->setID_FeedBack($ID_FeedBack);
 
     $Retorno = $feedback->ExcluirFeedBack();
