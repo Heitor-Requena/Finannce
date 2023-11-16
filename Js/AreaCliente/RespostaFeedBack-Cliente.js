@@ -41,9 +41,9 @@ function ExcluirFeedBack(event){
             alert(msg);
         })
 
-    .fail(function () {
-        alert("Não foi possível enviar o FeedBack");
-    })
+        .fail(function () {
+            alert("Não foi possível enviar o FeedBack");
+        })
 
     return false;
 }
