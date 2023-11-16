@@ -1,4 +1,5 @@
-function RecSenha() {
+function RecSenha(event) {
+    event.preventDefault();
     document.getElementById("result").innerHTML = ``;
     console.log("CHAMOU");
     var dados = '';
@@ -13,7 +14,7 @@ function RecSenha() {
             console.log("Depois do done");
             console.log(dadosPHP);
             if (dadosPHP.trim() === "[]") {
-                document.getElementById("result").innerHTML = "<h2>Nenhum feedback encontrado</h2>";
+                document.getElementById("result").innerHTML = "<div class='text-center'><h2>Nenhuma requisição encontrada</h2></div>";
             }
             else {
                 var Dado = JSON.parse(dadosPHP);

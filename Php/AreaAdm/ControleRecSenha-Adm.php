@@ -16,4 +16,5 @@ if (isset($_GET["btn_RecSenha"])) {
 } else if (isset($_GET["btn_AltSenha"])) {
     $Retorno = $RecSenha->AltSenha();
     echo $Retorno;
+    $RecSenha->EnvioEmail();
 }

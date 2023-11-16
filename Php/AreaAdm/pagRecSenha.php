@@ -13,7 +13,7 @@
   <title>Adm</title>
 </head>
 
-<body onload="RecSenha()">
+<body onload="RecSenha(event)">
   <?php
   session_start();
 
@@ -74,7 +74,7 @@
 
   <section id="section" style="margin-top: 100px;">
     <div class="text-center">
-      <button onclick="RecSenha()" class="iframe-btn btn m-3 col btn-outline-light">Recarregar</button>
+      <button onclick="RecSenha(event)" class="iframe-btn btn m-3 col btn-outline-light">Recarregar</button>
     </div>
   </section>
 
