@@ -194,7 +194,7 @@ class ClsFAQAdm{
     public function EnvioEmailResposta($id){
         include_once "../conexao.php";
 
-            $Comando = $conexao->prepare("SELECT NOME_USUARIO, EMAIL_USUARIO, PERGUNTA, RESPOSTA FROM tb_perguntasFaq WHERE ID_PERGUNTA = ?;");
+            $Comando = $conexao->prepare("SELECT NOME_USUARIO, EMAIL_USUARIO, PERGUNTA, RESPOSTA FROM tb_perguntasFaq WHERE ID_PERGUNTA = (?);");
             $Comando->bindParam(1, $id);
             $Comando->execute();
 

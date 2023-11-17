@@ -70,7 +70,6 @@
   <section id="section" style="margin-top: 100px;">
     <h1 class="text-center align-middle mt-5">Seja bem vindo, <?php echo $Nome?></h1>
     <div class="text-center">
-      <img src="../../Img/Area/cute-penguin.gif" class="rounded" alt="...">
     </div>
   </section>
 

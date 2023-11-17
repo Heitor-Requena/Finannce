@@ -90,7 +90,7 @@
             </div>
 
             <div class="text-center">
-                <input type="submit" value="Responder" id="btn_ResponderPergunta" name="btn_ResponderPergunta" class="iframe-btn btn m-3  btn-outline-light" onclick="EnviarResposta(event)">
+                <input type="submit" value="Responder" id="btn_ResponderPergunta" name="btn_ResponderPergunta" class="iframe-btn btn m-3  btn-outline-light" >
                 <input type="submit" value="Consultar" id="btn_ConsultarPergunta" name="btn_ConsultarPergunta" class="iframe-btn btn m-3  btn-outline-light" onclick="ConsultarPergunta(event)">
                 <input type="submit" value="Ver todas Perguntas" id="btn_ListarPergunta" name="btn_ListarPergunta" class="iframe-btn btn m-3  btn-outline-light" onclick="ListarPergunta(event)">
             </div>

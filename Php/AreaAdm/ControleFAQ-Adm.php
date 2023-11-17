@@ -20,8 +20,8 @@
         $Adm->setResposta($Resposta);
     
         $Retorno = $Adm->CadastrarResposta();
+        $Retorno = $Adm->EnvioEmailResposta($ID_Pergunta);
         echo $Retorno;
-        $Retorno = $Adm->EnvioEmailResposta($ID_Pergunta); // Adicione $conexao como argumento
     }    
     
     if(isset($_GET["btn_ListarPergunta"])){
