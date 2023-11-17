@@ -93,38 +93,38 @@ class ClsFAQAdm{
     public function EmailPergunta(){
         $mail = new PHPMailer(true);
 
-                try {
-                    $mail->SMTPDebug = SMTP::DEBUG_SERVER;
-                    $mail->isSMTP();
-                    $mail->Host = 'smtp.office365.com'; // Altere para o host do Outlook
-                    $mail->SMTPAuth = true;
-                    $mail->Username = 'finannce.contato@outlook.com'; // Altere para o seu email do Outlook
-                    $mail->Password = 'W3HjVxK!9hk6W::'; // Altere para a sua senha do Outlook
-                    $mail->SMTPSecure = 'tls'; // Use 'tls'
-                    $mail->Port = 587; // Porta para TLS/STARTTLS
+        try {
+            $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+            $mail->isSMTP();
+            $mail->Host = 'smtp.office365.com'; // Altere para o host do Outlook
+            $mail->SMTPAuth = true;
+            $mail->Username = 'finannce.contato@outlook.com'; // Altere para o seu email do Outlook
+            $mail->Password = 'W3HjVxK!9hk6W::'; // Altere para a sua senha do Outlook
+            $mail->SMTPSecure = 'tls'; // Use 'tls'
+            $mail->Port = 587; // Porta para TLS/STARTTLS
 
-                    $mail->setFrom('finannce.contato@outlook.com');
-                    $mail->addAddress($this->Email);
+            $mail->setFrom('finannce.contato@outlook.com');
+            $mail->addAddress($this->Email);
 
-                    $mail->isHTML(true);
-                    $mail->CharSet = 'UTF-8';
-                    $mail->Subject = 'Recebemos sua pergunta';
-                    $mail->Body = '<div style="margin: 0 auto; text-align: center; font-family: `poppins`, sans-serif;">
-                                        <img src="https://www.bing.com/images/blob?bcid=Tg5aB40pW1IG1nURUgpcJyyDTb8A.....4o" alt="" width="40%">
-                                        <h2>Olá ' . $this->Nome . ', Recebemos sua pergunta.</h2>
-                                        <h2>Pergunta: ' . $this->Pergunta . '</h2>
-                                        <h2>Você receberá um e-mail com a resposta em breve</h2>
-                                    </div>';
-                    $mail->AltBody = 'Olá ' . $this->Nome . ', Recebemos sua pergunta. Pergunta: ' . $this->Pergunta .' - Você receberá uma resposta via e-mail em breve. ';
+            $mail->isHTML(true);
+            $mail->CharSet = 'UTF-8';
+            $mail->Subject = 'Recebemos sua pergunta';
+            $mail->Body = '<div style="margin: 0 auto; text-align: center; font-family: `poppins`, sans-serif;">
+                                <img src="https://www.bing.com/images/blob?bcid=Tg5aB40pW1IG1nURUgpcJyyDTb8A.....4o" alt="" width="40%">
+                                <h2>Olá ' . $this->Nome . ', Recebemos sua pergunta.</h2>
+                                <h2>Pergunta: ' . $this->Pergunta . '</h2>
+                                <h2>Você receberá um e-mail com a resposta em breve</h2>
+                            </div>';
+            $mail->AltBody = 'Olá ' . $this->Nome . ', Recebemos sua pergunta. Pergunta: ' . $this->Pergunta .' - Você receberá uma resposta via e-mail em breve. ';
 
-                    if($mail->send()) {
-                        $Retorno = true;
-                    } else {
-                        $Retorno = 'Email nao enviado';
-                    }
-                } catch (Exception $e) {
-                    $Retorno = "Erro ao enviar mensagem: {$mail->ErrorInfo}";
-                }
+            if($mail->send()) {
+                $Retorno = true;
+            } else {
+                $Retorno = 'Email nao enviado';
+            }
+        } catch (Exception $e) {
+            $Retorno = "Erro ao enviar mensagem: {$mail->ErrorInfo}";
+        }
     }
 
     //----------------------------------
@@ -191,58 +191,66 @@ class ClsFAQAdm{
     }
 
     //----------------------------------
-    public function EnvioEmailResposta($id){
+    public function DadosEnvioEMail(){
         include_once "../conexao.php";
 
-            $Comando = $conexao->prepare("SELECT NOME_USUARIO, EMAIL_USUARIO, PERGUNTA, RESPOSTA FROM tb_perguntasFaq WHERE ID_PERGUNTA = (?);");
-            $Comando->bindParam(1, $id);
-            $Comando->execute();
+        try{
+            $Comando = $conexao->prepare("SELECT NOME_USUARIO, EMAIL_USUARIO, PERGUNTA, RESPOSTA FROM tb_perguntasFaq WHERE ID_PERGUNTA = ?;");
+            $Comando->bindParam(1, $this->ID_Pergunta);
 
-            $Matriz = $Comando->fetchALL(PDO::FETCH_OBJ);
-
-            foreach ($Matriz as $Ma){
-                $NomeUsuario  = $Ma->NOME_USUARIO;
-                $EmailUsuario = $Ma->EMAIL_USUARIO;
-                $PerguntaDado = $Ma->PERGUNTA;
-                $RespostaDado = $Ma->RESPOSTA;
+            if($Comando->execute()){
+                $Retorno = $Comando->fetchALL(PDO::FETCH_OBJ);
             }
-
-            $mail = new PHPMailer(true);
-
-            try {
-                $mail->SMTPDebug = SMTP::DEBUG_SERVER;
-                $mail->isSMTP();
-                $mail->Host = 'smtp.office365.com'; // Altere para o host do Outlook
-                $mail->SMTPAuth = true;
-                $mail->Username = 'finannce.contato@outlook.com'; // Altere para o seu email do Outlook
-                $mail->Password = 'W3HjVxK!9hk6W::'; // Altere para a sua senha do Outlook
-                $mail->SMTPSecure = 'tls'; // Use 'tls'
-                $mail->Port = 587; // Porta para TLS/STARTTLS
-
-                $mail->setFrom('finannce.contato@outlook.com');
-                $mail->addAddress($EmailUsuario);
-
-                $mail->isHTML(true);
-                $mail->CharSet = 'UTF-8';
-                $mail->Subject = 'Resposta a sua pergunta';
-                $mail->Body = '<div style="margin: 0 auto; text-align: center; font-family: `poppins`, sans-serif;">
-                                    <img src="https://www.bing.com/images/blob?bcid=Tg5aB40pW1IG1nURUgpcJyyDTb8A.....4o" alt="" width="40%">
-                                    <h2>Olá ' . $NomeUsuario . ', Recebemos sua pergunta.</h2>
-                                    <h2>Pergunta: ' . $PerguntaDado . '</h2>
-                                    <h2>Resposta: ' . $RespostaDado . '</h2>
-                                </div>';
-                $mail->AltBody = 'Olá ' . $NomeUsuario . ', Recebemos sua pergunta. Pergunta: ' . $PerguntaDado .'Resposta: ' . $RespostaDado;
-
-                if($mail->send()) {
-                    $Retorno = true;
-                } else {
-                    $Retorno = 'Email nao enviado';
-                }
-            } 
-            catch (Exception $e) {
-                $Retorno = "Erro ao enviar mensagem: {$mail->ErrorInfo}";
+            else{
+                $Retorno = false;
             }
-            return $Retorno;
         }
-    }
+        catch(PDOException $Erro)
+        {
+            $Retorno = json_encode("Erro" . $Erro->getMessage());
+        }
 
+        return $Retorno;
+    }
+    //---------------------------------
+    public function EnvioEmailResposta($Nome, $Email, $Pergunta, $Resposta){
+        include_once "../conexao.php";
+
+        $mail = new PHPMailer(true);
+
+        try {
+            $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+            $mail->isSMTP();
+            $mail->Host = 'smtp.office365.com'; // Altere para o host do Outlook
+            $mail->SMTPAuth = true;
+            $mail->Username = 'finannce.contato@outlook.com'; // Altere para o seu email do Outlook
+            $mail->Password = 'W3HjVxK!9hk6W::'; // Altere para a sua senha do Outlook
+            $mail->SMTPSecure = 'tls'; // Use 'tls'
+            $mail->Port = 587; // Porta para TLS/STARTTLS
+
+            $mail->setFrom('finannce.contato@outlook.com');
+            $mail->addAddress($Email);
+
+            $mail->isHTML(true);
+            $mail->CharSet = 'UTF-8';
+            $mail->Subject = 'Resposta a sua pergunta';
+            $mail->Body = '<div style="margin: 0 auto; text-align: center; font-family: `poppins`, sans-serif;">
+                                <img src="https://www.bing.com/images/blob?bcid=Tg5aB40pW1IG1nURUgpcJyyDTb8A.....4o" alt="" width="40%">
+                                <h2>Olá ' . $Nome . ', Recebemos sua pergunta.</h2>
+                                <h2>Pergunta: ' . $Pergunta . '</h2>
+                                <h2>Resposta: ' . $Resposta . '</h2>
+                            </div>';
+            $mail->AltBody = 'Olá ' . $Nome . ', Recebemos sua pergunta. Pergunta: ' . $Pergunta .'Resposta: ' . $Resposta;
+
+            if($mail->send()) {
+                $Retorno = true;
+            } else {
+                $Retorno = 'Email nao enviado';
+            }
+        } 
+        catch (Exception $e) {
+            $Retorno = "Erro ao enviar mensagem: {$mail->ErrorInfo}";
+        }
+        return $Retorno;
+    }
+}

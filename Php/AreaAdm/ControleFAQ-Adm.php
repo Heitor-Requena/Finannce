@@ -20,8 +20,20 @@
         $Adm->setResposta($Resposta);
     
         $Retorno = $Adm->CadastrarResposta();
-        $Retorno = $Adm->EnvioEmailResposta($ID_Pergunta);
+
+        $Dados = $Adm->DadosEnvioEMail();
+
+        foreach ($Dados as $Dd){
+            $NomeUsuario  = $Dd->NOME_USUARIO;
+            $EmailUsuario = $Dd->EMAIL_USUARIO;
+            $PerguntaDado = $Dd->PERGUNTA;
+            $RespostaDado = $Dd->RESPOSTA;
+        }
+
+        echo $NomeUsuario, $EmailUsuario, $PerguntaDado,  $RespostaDado;
         echo $Retorno;
+
+        //$Retorno = $Adm->EnvioEmailResposta($NomeUsuario, $EmailUsuario, $PerguntaDado, $RespostaDado);
     }    
     
     if(isset($_GET["btn_ListarPergunta"])){
@@ -36,5 +48,6 @@
 
         $Retorno = $Adm->CadPergunta();
         echo $Retorno;
+
         $Retorno = $Adm->EmailPergunta();
     }

@@ -21,6 +21,7 @@ class Cls_InfopessConsultor{
     private $Habilidade_Consultor;
     private $TempCons_Consultor;
     private $Link_Consultor;
+    private $Avatar;
 
     //-------------------------------------
     public function getID_Consultor(){
@@ -191,6 +192,15 @@ class Cls_InfopessConsultor{
         $this->Link_Consultor = $Link;
     }
 
+    //-------------------------------------
+    public function getAvatar(){
+        return $this->Avatar;
+    }       
+
+    public function setAvatar($foto){
+        $this->Avatar = $foto;
+    }
+
     //----------------------------------------
     public function CarregarDados(){
         include_once "../conexao.php";
@@ -224,7 +234,7 @@ class Cls_InfopessConsultor{
 
         try
         {
-            $Comando = $conexao->prepare("UPDATE tb_consultor SET NOME_CONSULTOR = ?, 	EMAIL_CONSULTOR = ?, FONE_CONSULTOR = ?, CPF_CONSULTOR = ?, RG_CONSULTOR = ?, DTA_NASC_CONSULTOR = ?, CEP_CONSULTOR = ?, RUA_CONSULTOR = ?, BAIRRO_CONSULTOR = ?, NUMERO_CASA_CONSULTOR = ?, COMPLEMENTO_CONSULTOR = ?, CIDADE_CONSULTOR = ?, ESTADO_CONSULTOR = ?, MODALIDADE = ?, PUBLICO_ALVO = ?, FORMACAO = ?, EXPERIENCIA = ?, HABILIDADE = ?, DURACAO_CONS = ?, LINK_CONSULTOR = ? WHERE ID_CONSULTOR = ?;");
+            $Comando = $conexao->prepare("UPDATE tb_consultor SET NOME_CONSULTOR = ?, 	EMAIL_CONSULTOR = ?, FONE_CONSULTOR = ?, CPF_CONSULTOR = ?, RG_CONSULTOR = ?, DTA_NASC_CONSULTOR = ?, CEP_CONSULTOR = ?, RUA_CONSULTOR = ?, BAIRRO_CONSULTOR = ?, NUMERO_CASA_CONSULTOR = ?, COMPLEMENTO_CONSULTOR = ?, CIDADE_CONSULTOR = ?, ESTADO_CONSULTOR = ?, MODALIDADE = ?, PUBLICO_ALVO = ?, FORMACAO = ?, EXPERIENCIA = ?, HABILIDADE = ?, DURACAO_CONS = ?, LINK_CONSULTOR = ?, AVATAR_CONSULTOR = ? WHERE ID_CONSULTOR = ?;");
             $Comando->bindParam(1, $this->Nome_Consultor);
             $Comando->bindParam(2, $this->Email_Consultor);
             $Comando->bindParam(3, $this->Tel_Consultor);
@@ -245,8 +255,8 @@ class Cls_InfopessConsultor{
             $Comando->bindParam(18, $this->Habilidade_Consultor);
             $Comando->bindParam(19, $this->TempCons_Consultor);
             $Comando->bindParam(20, $this->Link_Consultor);
-            $Comando->bindParam(21, $this->Id_Consultor);
-            
+            $Comando->bindParam(21, $this->Avatar);
+            $Comando->bindParam(22, $this->Id_Consultor);
 
             if($Comando->execute())
             {

@@ -23,39 +23,39 @@
     $Habilidade             = filter_input(INPUT_GET, "Habilidade");
     $TempCons               = filter_input(INPUT_GET, "TempCons");
     $Link                   = filter_input(INPUT_GET, "Link");
-
-
+    
+    //$ArquivoAtual = $_FILES['Avatar_Consultor']['name'];
+    
     $Dados = new Cls_InfopessConsultor();
 
-    $Dados->setID_Consultor($ID_Consultor);
-    $Dados->setNomeConsultor($Nome_Consultor);
-    $Dados->setEmailConsultor($Email_Consultor);
-    $Dados->setTelConsultor($Tel_Consultor);
-    $Dados->setCPFConsultor($CPF_Consultor);
-    $Dados->setRGConsultor($RG_Consultor);
-    $Dados->setDataNasc($Data_Nascimento);
-    $Dados->setCEPConsultor($CEP);
-    $Dados->setRuaConsultor($Rua);
-    $Dados->setBairroConsultor($Bairro);
-    $Dados->setNumeroCasaConsultor($Numero_Casa);
-    $Dados->setComplementoConsultor($Complemento_Consultor);
-    $Dados->setCidadeConsultor($Cidade);
-    $Dados->setEstadoConsultor($Estado);
-    $Dados->setModalidadeConsultor($Modalidade);
-    $Dados->setPubAlvoConsultor($PubAlvo);
-    $Dados->setFormacaoConsultor($Formacao);
-    $Dados->setExperienciaConsultor($Experiencia);
-    $Dados->setHabilidadeConsultor($Habilidade);
-    $Dados->setTempConsConsultor($TempCons);
-    $Dados->setLinkConsultor($Link);
-
-
     if(isset($_GET["CarregarDados"])){
+        $Dados->setID_Consultor($ID_Consultor);
         $Retorno = $Dados->CarregarDados();
         echo $Retorno;
     }
 
     else if(isset($_GET["Salvar"])){
+        $Dados->setNomeConsultor($Nome_Consultor);
+        $Dados->setEmailConsultor($Email_Consultor);
+        $Dados->setTelConsultor($Tel_Consultor);
+        $Dados->setCPFConsultor($CPF_Consultor);
+        $Dados->setRGConsultor($RG_Consultor);
+        $Dados->setDataNasc($Data_Nascimento);
+        $Dados->setCEPConsultor($CEP);
+        $Dados->setRuaConsultor($Rua);
+        $Dados->setBairroConsultor($Bairro);
+        $Dados->setNumeroCasaConsultor($Numero_Casa);
+        $Dados->setComplementoConsultor($Complemento_Consultor);
+        $Dados->setCidadeConsultor($Cidade);
+        $Dados->setEstadoConsultor($Estado);
+        $Dados->setModalidadeConsultor($Modalidade);
+        $Dados->setPubAlvoConsultor($PubAlvo);
+        $Dados->setFormacaoConsultor($Formacao);
+        $Dados->setExperienciaConsultor($Experiencia);
+        $Dados->setHabilidadeConsultor($Habilidade);
+        $Dados->setTempConsConsultor($TempCons);
+        $Dados->setLinkConsultor($Link);
+        $Dados->setAvatar($ArquivoAtual);
         $Retorno = $Dados->SalvarDados();
         echo $Retorno;
     }
