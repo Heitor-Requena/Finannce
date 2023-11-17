@@ -198,6 +198,41 @@
             </div>
         </div>
 
+        <br>
+        <div class="card border-white">
+            <style>
+                .card {
+                    background-color: transparent;
+                    /* Remove o fundo do card */
+                }
+            </style>
+            <div class="card-header bg-transparent border-white text-white text-center">
+                <h5>Envie sua dúvida</h5>
+            </div>
+            <div class="card-body">
+                <blockquote class=" text-white mb-0">
+                    <form action="../../Php/AreaAdm/ControleFAQ-Adm.php">
+                        <div class="row">
+                            <div class="col">
+                              <input type="text" class="form-control nome" id="nome" name="nome" placeholder="Seu nome">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleFormControlInput1"></label>
+                          <input type="email" class="form-control email" id="email" name="email" placeholder="Seu e-mail">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1"></label>
+                            <textarea class="form-control Pergunta" id="Pergunta" name="Pergunta" placeholder="Sua dúvida" rows="3"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <input type="submit" value="Enviar" class="btn btn-light m-2 btn_cadPergunta" id="btn_cadPergunta" name="btn_cadPergunta">
+                        </div>
+                    </form>
+                </blockquote>
+            </div>
+        </div>
+
     </div>
 
     <!-- FOOTER -->

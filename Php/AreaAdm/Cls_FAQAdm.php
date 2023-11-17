@@ -13,6 +13,9 @@ use PHPMailer\PHPMailer\Exception;
 class ClsFAQAdm{
     private $ID_Pergunta;
     private $Resposta;
+    private $Nome;
+    private $Email;
+    private $Pergunta;
 
     //----------------------------------
     public function getID_Pergunta(){
@@ -30,6 +33,98 @@ class ClsFAQAdm{
     public function setResposta($resposta){
         $this->Resposta = $resposta;
 
+    }
+    //----------------------------------
+    public function getNome(){
+        return $this->Nome;
+    }
+
+    public function setNome($Nome){
+        $this->Nome = $Nome;
+
+    }
+    //----------------------------------
+    public function getEmail(){
+        return $this->Email;
+    }
+
+    public function setEmail($Email){
+        $this->Email = $Email;
+
+    }
+    //----------------------------------
+    public function getPergunta(){
+        return $this->Pergunta;
+    }
+
+    public function setPergunta($Pergunta){
+        $this->Pergunta = $Pergunta;
+
+    }
+
+
+    //----------------------------------
+    public function CadPergunta(){
+        include_once "../conexao.php";
+
+        try{
+            $Comando = $conexao->prepare("INSERT INTO tb_perguntasFaq (NOME_USUARIO, EMAIL_USUARIO, PERGUNTA) VALUES (?,?,?);");
+            $Comando->bindParam(1, $this->Nome);
+            $Comando->bindParam(2, $this->Email);
+            $Comando->bindParam(3, $this->Pergunta);
+
+            if ($Comando->execute())
+            {
+                $Retorno = "<script>window.alert('Pergunta enviada, você receberá um e-mail com a resposta em breve'); location.href='../../Html/Home/faqsac.html'</script>;";
+            }
+            else{
+                $Retorno = json_encode("Não foi possível responder a pergunta");
+            }
+            
+        }
+        catch(PDOException $Erro)
+        {
+            $Retorno = "<script>window.alert('Não foi possível enviar sua pergunta, tente novamente em instantes'); location.href='../../Html/Home/faqsac.html'</script>;";
+        }
+        return $Retorno;
+    }
+
+    //----------------------------------
+    public function EmailPergunta(){
+        $mail = new PHPMailer(true);
+
+                try {
+                    $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+                    $mail->isSMTP();
+                    $mail->Host = 'smtp.office365.com'; // Altere para o host do Outlook
+                    $mail->SMTPAuth = true;
+                    $mail->Username = 'finannce.contato@outlook.com'; // Altere para o seu email do Outlook
+                    $mail->Password = 'W3HjVxK!9hk6W::'; // Altere para a sua senha do Outlook
+                    $mail->SMTPSecure = 'tls'; // Use 'tls'
+                    $mail->Port = 587; // Porta para TLS/STARTTLS
+
+                    $mail->setFrom('finannce.contato@outlook.com');
+                    $mail->addAddress($this->Email);
+
+                    $mail->isHTML(true);
+                    $mail->CharSet = 'UTF-8';
+                    $mail->Subject = 'Recebemos sua pergunta';
+                    $mail->Body = '<div style="margin: 0 auto; text-align: center; font-family: `poppins`, sans-serif;">
+                                        <img src="https://www.bing.com/images/blob?bcid=Tg5aB40pW1IG1nURUgpcJyyDTb8A.....4o" alt="" width="40%">
+                                        <h2>Olá ' . $this->Nome . ', Recebemos sua pergunta.</h2>
+                                        <h2>Pergunta: ' . $this->Pergunta . '</h2>
+                                        <h2>Você receberá um e-mail com a resposta em breve</h2>
+                                    </div>';
+                    $mail->AltBody = 'Olá ' . $this->Nome . ', Recebemos sua pergunta. Pergunta: ' . $this->Pergunta .' - Você receberá uma resposta via e-mail em breve. ';
+
+                    if($mail->send()) {
+                        $Retorno = true;
+                    } else {
+                        $Retorno = 'Email nao enviado';
+                    }
+                } catch (Exception $e) {
+                    $Retorno = "Erro ao enviar mensagem: {$mail->ErrorInfo}";
+                }
     }
 
     //----------------------------------
@@ -98,9 +193,7 @@ class ClsFAQAdm{
     //----------------------------------
     public function EnvioEmailResposta($id){
         include_once "../conexao.php";
-        
-        try
-        {   
+
             $Comando = $conexao->prepare("SELECT NOME_USUARIO, EMAIL_USUARIO, PERGUNTA, RESPOSTA FROM tb_perguntasFaq WHERE ID_PERGUNTA = ?;");
             $Comando->bindParam(1, $id);
             $Comando->execute();
@@ -131,7 +224,7 @@ class ClsFAQAdm{
 
                 $mail->isHTML(true);
                 $mail->CharSet = 'UTF-8';
-                $mail->Subject = 'Nova senha do Finannce';
+                $mail->Subject = 'Resposta a sua pergunta';
                 $mail->Body = '<div style="margin: 0 auto; text-align: center; font-family: `poppins`, sans-serif;">
                                     <img src="https://www.bing.com/images/blob?bcid=Tg5aB40pW1IG1nURUgpcJyyDTb8A.....4o" alt="" width="40%">
                                     <h2>Olá ' . $NomeUsuario . ', Recebemos sua pergunta.</h2>
@@ -145,14 +238,11 @@ class ClsFAQAdm{
                 } else {
                     $Retorno = 'Email nao enviado';
                 }
-            } catch (Exception $e) {
+            } 
+            catch (Exception $e) {
                 $Retorno = "Erro ao enviar mensagem: {$mail->ErrorInfo}";
             }
+            return $Retorno;
         }
-        catch(PDOException $Erro)
-        {
-            $Retorno = json_encode("Erro" . $Erro->getMessage());
-        }
-        return $Retorno;
     }
-}
+

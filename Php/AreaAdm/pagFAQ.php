@@ -13,7 +13,7 @@
   <title>Adm</title>
 </head>
 
-<body>
+<body onload="ListarPergunta(event)">
   <?php
   session_start();
 
