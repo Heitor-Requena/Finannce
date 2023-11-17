@@ -92,10 +92,10 @@ class Cls_RecSenha
         try {
             $mail->SMTPDebug = SMTP::DEBUG_SERVER;
             $mail->isSMTP();
-            $mail->Host = 'smtp.office365.com'; // Altere para o host do Outlook
+            $mail->Host = 'smtp.office365.com'; 
             $mail->SMTPAuth = true;
-            $mail->Username = 'finannce.contato@outlook.com'; // Altere para o seu email do Outlook
-            $mail->Password = 'W3HjVxK!9hk6W::'; // Altere para a sua senha do Outlook
+            $mail->Username = 'finannce.contato@outlook.com'; 
+            $mail->Password = 'W3HjVxK!9hk6W::'; 
             $mail->SMTPSecure = 'tls'; // Use 'tls'
             $mail->Port = 587; // Porta para TLS/STARTTLS
 
