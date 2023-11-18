@@ -173,19 +173,8 @@ INSERT INTO tb_consultor (NOME_CONSULTOR, EMAIL_CONSULTOR, SENHA_CONSULTOR, CPF_
   ('Ricardo Santos', 'consultor8@x.com', 'uvwx', '789.012.345-67', '78.901.234-5', '2000-02-02', '777-888-9999', 78901234, 'Rua 7', 'Bairro 7', 7, 'Complemento 7', 'Cidade 7', 'PR', NULL, NULL, 'A', '2', 'P', 'A', 'Formaçao 7', 'Experiencia 7', 'Habilidade 7', '', ''),
   ('Isabel Rodrigues', 'consultor9@x.com', 'yz01', '890.123.456-78', '89.012.345-6', '2000-02-02', '888-999-0000', 89012345, 'Rua 8', 'Bairro 8', 8, 'Complemento 8', 'Cidade 8', 'PA', NULL, NULL, 'A', '1', 'P', 'A', 'Formaçao 8', 'Experiencia 8', 'Habilidade 8', '', ''),
   ('Fernando Alves', 'consultor10@x.com', '2345', '901.234.567-89', '90.123.456-9', '2000-02-02', '222-333-4444', 90123456, 'Rua 9', 'Bairro 9', 9, 'Complemento 9', 'Cidade 9', 'MA', NULL, NULL, 'A', '0', 'P', 'A', 'Formaçao 9', 'Experiencia 9', 'Habilidade 9', '', ''),
-  ('Sofia Pereira', 'consultor11@x.com', '6789', '123.456.789-01', '12.345.678-9', '2000-02-02', '666-777-8888', 12345678, 'Rua 10', 'Bairro 10', 10, 'Complemento 10', 'Cidade 10', 'TO', NULL, NULL, 'A', '8', 'P', 'A', 'Formaçao 10', 'Experiencia 10', 'Habilidade 10', '', ''),
-  ('Pietro Antonio Ian Viana', 'pietro_antonio_viana@henrimar.com.br', '6789', '094.654.917-64', '33.900.120-3', '2000-02-02', '(84) 2670-1908',
-    59122-045, 'Rua das Prímulas', 'Redinha', 10, 'Complemento 10', 'Natal', 'RN', NULL, NULL, 'A',
-    '8', 'Presencial', 'Adultos', 
-    'Graduação em Economia - Universidade Federal;
-Pós-graduação em Finanças Corporativas - Instituto de Finanças', 
-    'Analista Financeiro na Empresa X - Responsável pela análise de investimentos e projeções financeiras;
-Consultor Financeiro Sênior na Empresa Y - Prestou consultoria a grandes empresas em estratégias financeiras e de investimento.', 
-    'Análise de Investimentos: Capacidade de analisar o potencial de investimentos, considerando riscos e retornos;
-Consultoria Financeira: Experiência em oferecer orientação e estratégias para otimizar a situação financeira de empresas;
-Gestão de Riscos: Habilidade em avaliar e gerenciar riscos financeiros.', '01:00', 'https://vitoralvs.github.io/Landing-page-consultor/');
-  
-  
+  ('Sofia Pereira', 'consultor11@x.com', '6789', '123.456.789-01', '12.345.678-9', '2000-02-02', '666-777-8888', 12345678, 'Rua 10', 'Bairro 10', 10, 'Complemento 10', 'Cidade 10', 'TO', NULL, NULL, 'A', '8', 'P', 'A', 'Formaçao 10', 'Experiencia 10', 'Habilidade 10', '', '');
+
 select * from tb_consultor;
 
 -- ------------------------------------------------------
