@@ -192,7 +192,7 @@ class ClsFAQAdm{
 
     //----------------------------------
     public function DadosEnvioEMail(){
-        include_once "../conexao.php";
+        include "../conexao.php";
 
         try{
             $Comando = $conexao->prepare("SELECT NOME_USUARIO, EMAIL_USUARIO, PERGUNTA, RESPOSTA FROM tb_perguntasFaq WHERE ID_PERGUNTA = ?;");
@@ -243,9 +243,9 @@ class ClsFAQAdm{
             $mail->AltBody = 'Olá ' . $Nome . ', Recebemos sua pergunta. Pergunta: ' . $Pergunta .'Resposta: ' . $Resposta;
 
             if($mail->send()) {
-                $Retorno = true;
+                $Retorno = "<script>window.alert('Responda enviada'); location.href='pagFAQ.php'</script>;";;
             } else {
-                $Retorno = 'Email nao enviado';
+                $Retorno = "<script>window.alert('Responda não enviada'); location.href='pagFAQ.php'</script>;";;
             }
         } 
         catch (Exception $e) {

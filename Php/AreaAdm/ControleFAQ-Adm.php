@@ -33,7 +33,8 @@
         echo $NomeUsuario, $EmailUsuario, $PerguntaDado,  $RespostaDado;
         echo $Retorno;
 
-        //$Retorno = $Adm->EnvioEmailResposta($NomeUsuario, $EmailUsuario, $PerguntaDado, $RespostaDado);
+        echo $Adm->EnvioEmailResposta($NomeUsuario, $EmailUsuario, $PerguntaDado, $RespostaDado);
+
     }    
     
     if(isset($_GET["btn_ListarPergunta"])){
