@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include_once "Cls_InfopessConsultor.php";
+    include "Cls_InfopessConsultor.php";
 
     $ID_Consultor           = $_SESSION["id"];
     $Nome_Consultor         = filter_input(INPUT_GET, "Nome");
@@ -35,6 +35,7 @@
     }
 
     else if(isset($_GET["Salvar"])){
+        $Dados->setID_Consultor($ID_Consultor);
         $Dados->setNomeConsultor($Nome_Consultor);
         $Dados->setEmailConsultor($Email_Consultor);
         $Dados->setTelConsultor($Tel_Consultor);
@@ -55,9 +56,9 @@
         $Dados->setHabilidadeConsultor($Habilidade);
         $Dados->setTempConsConsultor($TempCons);
         $Dados->setLinkConsultor($Link);
-        $Dados->setAvatar($ArquivoAtual);
         $Retorno = $Dados->SalvarDados();
         echo $Retorno;
+
     }
     
 ?>

@@ -66,6 +66,29 @@
     </section>
       <h2 class="text-center mt-3">Meus Dados</h2>
   
+    <form class="container mt-5" action="ControleInfopess-Consultor.php" id="frm_InfoPessAnexo" method="get">
+      <h4 class="text-start">Anexos</h4>
+      <!--ANEXOS-->
+      <div class="row">
+          <div class="col">
+            <label class="col-form-label" for="Avatar_Consultor"><h5>Foto de Perfil</h5></label><br>
+            <input type="file" class="form-control" name="Avatar_Consultor" id="Avatar_Consultor" placeholder="Insira seu Arquivo" accept=" image/jpeg, image/jpg, image/png">
+          </div>
+          
+          <div class="col">
+            <label class="col-form-label" for="Anexo_Consultor"><h5>Certificação Financeira</h5></label><br>
+            <input type="file" class="form-control" name="Anexo_Consultor" id="Anexo_Consultor" placeholder="Insira seu Arquivo" accept=" .jpeg, .jpg, .png, .doc">
+          </div>
+        </div>
+
+        <div class="text-center">
+            <input type="submit" value="Salvar" class="iframe-btn btn m-3 col-6 btn-outline-light" name="SalvarAnexo" id="SalvarAnexo" onclick="SalvarAnexos()">
+        </div>
+        <hr>
+    </form>
+
+    
+
       <form class="container mt-5" action="ControleInfopess-Consultor.php" id="frm_InfoPess" method="get">
         <h4 class="text-start">Informações pessoais</h4>
         <div class="row">
@@ -103,21 +126,8 @@
         </div>
 
         <br>
-        <br>
-      <!--ANEXOS-->
+        <br> 
 
-        <div class="row">
-          <div class="col">
-            <label class="col-form-label" for="Avatar_Consultor"><h5>Foto de Perfil</h5></label><br>
-            <input type="file" name="Avatar_Consultor" id="Avatar_Consultor" placeholder="Insira seu Arquivo" accept=" image/jpeg, image/jpg, image/png">
-          </div>
-          
-          <div class="col">
-            <label class="col-form-label" for="Anexo_Consultor"><h5>Anexo Adicionais</h5></label><br>
-            <input type="file" name="Anexo_Consultor" id="Anexo_Consultor" placeholder="Insira seu Arquivo" accept=" .jpeg, .jpg, .png, .doc">
-          </div>
-          </div>
-          
           <hr>
           <br>
 

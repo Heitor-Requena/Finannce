@@ -234,7 +234,7 @@ class Cls_InfopessConsultor{
 
         try
         {
-            $Comando = $conexao->prepare("UPDATE tb_consultor SET NOME_CONSULTOR = ?, 	EMAIL_CONSULTOR = ?, FONE_CONSULTOR = ?, CPF_CONSULTOR = ?, RG_CONSULTOR = ?, DTA_NASC_CONSULTOR = ?, CEP_CONSULTOR = ?, RUA_CONSULTOR = ?, BAIRRO_CONSULTOR = ?, NUMERO_CASA_CONSULTOR = ?, COMPLEMENTO_CONSULTOR = ?, CIDADE_CONSULTOR = ?, ESTADO_CONSULTOR = ?, MODALIDADE = ?, PUBLICO_ALVO = ?, FORMACAO = ?, EXPERIENCIA = ?, HABILIDADE = ?, DURACAO_CONS = ?, LINK_CONSULTOR = ?, AVATAR_CONSULTOR = ? WHERE ID_CONSULTOR = ?;");
+            $Comando = $conexao->prepare("UPDATE tb_consultor SET NOME_CONSULTOR = ?, 	EMAIL_CONSULTOR = ?, FONE_CONSULTOR = ?, CPF_CONSULTOR = ?, RG_CONSULTOR = ?, DTA_NASC_CONSULTOR = ?, CEP_CONSULTOR = ?, RUA_CONSULTOR = ?, BAIRRO_CONSULTOR = ?, NUMERO_CASA_CONSULTOR = ?, COMPLEMENTO_CONSULTOR = ?, CIDADE_CONSULTOR = ?, ESTADO_CONSULTOR = ?, MODALIDADE = ?, PUBLICO_ALVO = ?, FORMACAO = ?, EXPERIENCIA = ?, HABILIDADE = ?, DURACAO_CONS = ?, LINK_CONSULTOR = ? WHERE ID_CONSULTOR = ?;");
             $Comando->bindParam(1, $this->Nome_Consultor);
             $Comando->bindParam(2, $this->Email_Consultor);
             $Comando->bindParam(3, $this->Tel_Consultor);
@@ -255,23 +255,17 @@ class Cls_InfopessConsultor{
             $Comando->bindParam(18, $this->Habilidade_Consultor);
             $Comando->bindParam(19, $this->TempCons_Consultor);
             $Comando->bindParam(20, $this->Link_Consultor);
-            $Comando->bindParam(21, $this->Avatar);
-            $Comando->bindParam(22, $this->Id_Consultor);
+            $Comando->bindParam(21, $this->Id_Consultor);
 
-            if($Comando->execute())
-            {
-                $Retorno = "<script>window.alert('Salvo com sucesso'); location.href='infopess.php'</script>;";
+            if($Comando->execute()) {
+                $Retorno = "<script>window.alert('Informações Salvas'); location.href='infopess.php'</script>;";
+            } else {
+                $Retorno = "<script>window.alert('Não foi possível salvar informações, tente novamente mais tarde'); location.href='infopess.php'</script>;";
             }
-            else
-            {   
-                $Retorno = json_encode('Erro na query. Parte 1');
-            }
+        } catch (PDOException $Erro) {
+            $Retorno = "Erro ao salvar dados: " . $Erro->getMessage();
         }
-        catch (PDOException $Erro)
-        {
-            $Retorno = json_encode("ERRO: " . $Erro->getMessage());
-        }
-        
+    
         return $Retorno;
     }
 
