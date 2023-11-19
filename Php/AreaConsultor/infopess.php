@@ -223,7 +223,7 @@
     <hr>
   </form>
 
-  <form class="container mt-5" action="ControleInfopess-Consultor.php" id="frm_InfoPessAnexo" method="get">
+  <form class="container mt-5" action="ControleInfopess-Consultor.php" id="frm_InfoPessAnexo" method="post" enctype="multipart/form-data">
     <h4 class="text-start">Anexos</h4>
     <!--ANEXOS-->
     <div class="row">
@@ -244,6 +244,7 @@
 
     <div class="text-center">
       <input type="submit" value="Salvar" class="iframe-btn btn m-3 col-6 btn-outline-light" name="SalvarAnexo" id="SalvarAnexo" onclick="SalvarAnexos()">
+      <input type="submit" value="Consultar" class="iframe-btn btn m-3 col-6 btn-outline-light" name="ConsultarAnexo" id="ConsultarAnexo" onclick="CarregarFotoPerfil()">
     </div>
   </form>
 
@@ -254,7 +255,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script src="../../Js/AreaConsultor/Js-InfoPess.js"></script>
-  <script src="../../Js/AreaConsultor/RespostaInfoPess-Consultor.js"></script>
 
 </body>
 

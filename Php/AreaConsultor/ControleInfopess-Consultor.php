@@ -23,8 +23,7 @@
     $Habilidade             = filter_input(INPUT_GET, "Habilidade");
     $TempCons               = filter_input(INPUT_GET, "TempCons");
     $Link                   = filter_input(INPUT_GET, "Link");
-    
-    //$ArquivoAtual = $_FILES['Avatar_Consultor']['name'];
+ 
     
     $Dados = new Cls_InfopessConsultor();
 
@@ -56,9 +55,32 @@
         $Dados->setHabilidadeConsultor($Habilidade);
         $Dados->setTempConsConsultor($TempCons);
         $Dados->setLinkConsultor($Link);
+
         $Retorno = $Dados->SalvarDados();
         echo $Retorno;
+    }
 
+    else if (isset($_POST["SalvarAnexo"])){  
+        $Dados->setID_Consultor($ID_Consultor);
+        
+        $ArquivoAtual   = $_FILES['Avatar_Consultor']['name'];
+        $ArquivoTmp     = $_FILES['Avatar_Consultor']['tmp_name'];
+        $Destino        = 'Imagens/' . $ArquivoAtual;
+
+        
+        move_uploaded_file($ArquivoTmp, $Destino);
+        
+        $Imagem = file_get_contents("http://localhost/finannce/PHP/AreaConsultor/Imagens/" . $ArquivoAtual);
+        $Dados->setImagem($Imagem);
+
+        $Retorno = $Dados->SalvarAnexo();
+        echo $Retorno;
+    }
+
+    else if (isset($_POST["ConsultarAnexo"])){
+        $Dados->setID_Consultor($ID_Consultor);
+        $Retorno = $Dados->VerFotoPerfil();
+        echo $Retorno;
     }
     
 ?>

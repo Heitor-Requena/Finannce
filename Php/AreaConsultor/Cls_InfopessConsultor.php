@@ -21,7 +21,7 @@ class Cls_InfopessConsultor{
     private $Habilidade_Consultor;
     private $TempCons_Consultor;
     private $Link_Consultor;
-    private $Avatar;
+    private $Imagem;
 
     //-------------------------------------
     public function getID_Consultor(){
@@ -191,23 +191,22 @@ class Cls_InfopessConsultor{
     public function setLinkConsultor($Link){
         $this->Link_Consultor = $Link;
     }
-
     //-------------------------------------
-    public function getAvatar(){
-        return $this->Avatar;
+    public function getImagem(){
+        return $this->Imagem;
     }       
 
-    public function setAvatar($foto){
-        $this->Avatar = $foto;
+    public function setImagem($Imagem){
+        $this->Imagem = $Imagem;
     }
 
     //----------------------------------------
     public function CarregarDados(){
-        include_once "../conexao.php";
+        include "../conexao.php";
 
         try
         {
-            $Comando = $conexao->prepare("SELECT * FROM tb_Consultor WHERE ID_CONSULTOR = ?;");
+            $Comando = $conexao->prepare("SELECT ID_CONSULTOR, NOME_CONSULTOR, EMAIL_CONSULTOR, SENHA_CONSULTOR, CPF_CONSULTOR, RG_CONSULTOR, DTA_NASC_CONSULTOR, FONE_CONSULTOR, CEP_CONSULTOR, RUA_CONSULTOR, BAIRRO_CONSULTOR, NUMERO_CASA_CONSULTOR, COMPLEMENTO_CONSULTOR, CIDADE_CONSULTOR, ESTADO_CONSULTOR, STATUS_CONSULTOR, DATA_ENTRADA, MODALIDADE, PUBLICO_ALVO, FORMACAO, EXPERIENCIA, HABILIDADE, DURACAO_CONS, LINK_CONSULTOR FROM tb_consultor WHERE ID_CONSULTOR = ?");
             $Comando->bindParam(1, $this->Id_Consultor);
 
             if($Comando->execute())
@@ -230,7 +229,7 @@ class Cls_InfopessConsultor{
 
     
     public function SalvarDados(){
-        include_once "../conexao.php";
+        include "../conexao.php";
 
         try
         {
@@ -269,5 +268,46 @@ class Cls_InfopessConsultor{
         return $Retorno;
     }
 
+    public function SalvarAnexo(){
+        include "../conexao.php";
+
+        try{
+            $Comando = $conexao->prepare("UPDATE tb_consultor SET AVATAR_CONSULTOR = ? WHERE ID_CONSULTOR = ?;");
+            $Comando->bindParam(1, $this->Imagem);
+            $Comando->bindParam(2, $this->Id_Consultor);
+            $Comando->execute();
+
+            if ($Comando->rowCount() > 0){
+                $Retorno = "<script>window.alert('Foto de perfil enviada com sucesso'); location.href='infopess.php'</script>;";
+            }
+        }
+        catch (PDOException $Erro) {
+            $Retorno = "Erro ao salvar dados: " . $Erro->getMessage();
+        }
+
+        return $Retorno;
+    }
+
+    public function VerFotoPerfil(){
+        include "../conexao.php";
+        $Comando = $conexao->prepare("SELECT AVATAR_CONSULTOR FROM tb_consultor WHERE ID_CONSULTOR = ?;");
+        $Comando->bindParam(1, $this->Id_Consultor);
+    
+        if ($Comando->execute()) {
+            $Resultado = $Comando->fetch(PDO::FETCH_OBJ);
+        
+            if ($Resultado) {
+                $Retorno = "<img src='data:image/jpg;base64, " . base64_encode($Resultado->AVATAR_CONSULTOR) . "' width=50px height=auto>";
+                
+            } else {
+                $Retorno = "<p>Nenhuma foto encontrada para o consultor com ID " . $this->Id_Consultor . "</p>";
+            }
+        } else {
+            $Retorno = "<p>Erro ao executar a consulta.</p>";
+        }
+        
+    
+        return $Retorno;
+    }
+    
 }
-?>

@@ -57,8 +57,7 @@ function CarregarDadosForm() {
       document.getElementById("Rua").value = Dados[0].RUA_CONSULTOR;
       document.getElementById("Bairro").value = Dados[0].BAIRRO_CONSULTOR;
       document.getElementById("Numero").value = Dados[0].NUMERO_CASA_CONSULTOR;
-      document.getElementById("Complemento").value =
-        Dados[0].COMPLEMENTO_CONSULTOR;
+      document.getElementById("Complemento").value = Dados[0].COMPLEMENTO_CONSULTOR;
       document.getElementById("Cidade").value = Dados[0].CIDADE_CONSULTOR;
       document.getElementById("Estado").value = Dados[0].ESTADO_CONSULTOR;
       document.getElementById(Dados[0].PUBLICO_ALVO).checked = true;
@@ -77,7 +76,37 @@ function CarregarDadosForm() {
   return false;
 }
 
-function SalvarDados() {
+function CarregarFotoPerfil(event) {
+    document.preventDefault
+  console.log("CHAMOU");
+  var DadosForm = $("#frm_InfopessDados").serialize();
+
+  $.ajax({
+    method: "GET",
+    url: "ControleInfopess-Consultor.php?ConsultarAnexo",
+    data: DadosForm,
+    beforeSend: function () {
+      console.log("Dados enviados");
+    },
+  })
+
+    .done(function (dadosPHP) {
+      console.log("Depois do done");
+      console.log(dadosPHP);
+      var Dados = JSON.parse(dadosPHP);
+
+      document.getElementById("result").innerHTML = Dados[0].AVATAR_CONSULTOR;
+    })
+
+    .fail(function () {
+      alert("DEU ERRADO A CONSULTA");
+    });
+
+  return false;
+}
+
+function SalvarDados(event) {
+    event.preventDefault();
   console.log("CHAMOU");
   var DadosForm = $("#frm_InfoPess").serialize();
 
@@ -113,7 +142,7 @@ function SalvarDados() {
 
 function SalvarAnexos(event){
     event.preventDefault()
-    var DadosForm = $("#frm_InfoPessAnexo").serialize()
+    var DadosForm = $("#frm_InfoPessAnexo").FormData()
 
     $.ajax({
         method: "GET",
@@ -125,5 +154,5 @@ function SalvarAnexos(event){
         }
     })
 
-
+    return false;
 }
