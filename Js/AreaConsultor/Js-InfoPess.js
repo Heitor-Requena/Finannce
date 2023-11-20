@@ -77,7 +77,7 @@ function CarregarDadosForm() {
 }
 
 function CarregarFotoPerfil(event) {
-    document.preventDefault
+    event.preventDefault()
   console.log("CHAMOU");
   var DadosForm = $("#frm_InfopessDados").serialize();
 
@@ -95,7 +95,7 @@ function CarregarFotoPerfil(event) {
       console.log(dadosPHP);
       var Dados = JSON.parse(dadosPHP);
 
-      document.getElementById("result").innerHTML = Dados[0].AVATAR_CONSULTOR;
+      document.getElementById("result").innerHTML = Dados;
     })
 
     .fail(function () {
