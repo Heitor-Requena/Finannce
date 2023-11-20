@@ -1,3 +1,36 @@
+<?php
+
+
+include 'hg_finance.php';
+
+// Primeiro parametro do construtor recebe a chave da API
+$HGFinance = new HGFinance('4ba65def');
+
+// Metodo para obter os todos dados
+
+$dados = $HGFinance->get();
+$dadosEMBR = $HGFinance->get('stock_price', array( 'symbol' => 'EMBR3'));
+$dadosITSA = $HGFinance->get('stock_price', array( 'symbol' => 'ITSA4'));
+
+
+// Verificando a autenticacao da chave
+if($HGFinance->valid_key()){
+  echo 'CHAVE VALIDA';
+} else {
+  echo 'CHAVE INVALIDA';
+}
+
+?>
+
+
+<?php
+
+// Retorno dos resultados da API
+//pr($HGFinance->data);
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,136 +82,95 @@
 
     <!-- MAIN -->
 
-    <br><br><br>
-    <div class="container">
-        <h1 class="text-white text-center">ARTIGOS</h1>
-        <br><br><br>
-        <div class="card mb-3 text-white border-white">
-            <img src="../../img/investimento.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Como Controlar Suas Finanças Pessoais de Forma Fácil</h5>
-                <p class="card-text">Administrar suas finanças pessoais é uma habilidade essencial para alcançar
-                    estabilidade financeira e paz de espírito. No entanto, muitas pessoas consideram esse processo
-                    complexo e intimidante. Felizmente, com algumas estratégias simples e práticas, é possível controlar
-                    suas finanças de maneira fácil e eficaz. Neste artigo, exploraremos dicas que podem ajudá-lo a tomar
-                    as rédeas de suas finanças pessoais sem complicações.
-                    <br>
-                    <br>
-                <h3>Crie um Orçamento Realista:</h3>
-                <br>
-                O primeiro passo para controlar suas finanças pessoais é criar um orçamento realista. Anote todas as
-                suas fontes de renda e despesas mensais. Isso inclui gastos fixos como aluguel, hipoteca, contas de
-                serviços públicos, bem como gastos variáveis como alimentação, entretenimento e vestuário. Use
-                ferramentas como a nossa área de controle financeiro para ajudar a categorizar e acompanhar seus gastos.
-                <br>
-                <br>
-                <h3>Estabeleça Metas Financeiras Claras:</h3>
-
-                Definir metas financeiras é crucial para manter o foco e a motivação. Determine objetivos de curto
-                prazo, como construir uma reserva de emergência, e metas de longo prazo, como comprar uma casa ou se
-                aposentar confortavelmente. Ter metas claras em mente o ajudará a direcionar seus esforços financeiros
-                de maneira mais eficaz.
-                <br>
-                <br>
-                <h3>Pague a Si Mesmo Primeiro:</h3>
-
-                Ao receber sua renda, priorize economizar uma porção dela antes de qualquer outra despesa. Isso é
-                conhecido como "pagar a si mesmo primeiro". Configure transferências automáticas para sua conta de
-                poupança ou investimento assim que receber seu salário. Isso garante que você esteja construindo sua
-                segurança financeira antes de gastar com outras coisas.
-                <br>
-                <br>
-                <h3>Evite Dívidas Desnecessárias:</h3>
-
-                Dívidas podem rapidamente desequilibrar suas finanças. Evite usar cartões de crédito de maneira
-                impulsiva e só recorra a empréstimos quando realmente necessário. Se você já possui dívidas, crie um
-                plano de pagamento para eliminá-las gradualmente enquanto continua a manter suas despesas sob controle.
-                <br>
-                <br>
-                <h3>Acompanhe seus Gastos:</h3>
-
-                Mantenha o controle regular de seus gastos para identificar áreas onde você pode reduzir ou eliminar
-                gastos desnecessários. Ver suas despesas detalhadas pode ser uma revelação surpreendente e ajudar a
-                ajustar seu comportamento financeiro.
-                <br>
-                <br>
-                <h3>Automatize suas Finanças:</h3>
-
-                Automatizar pagamentos de contas e transferências para economias ou investimentos é uma maneira eficaz
-                de garantir que você não se esqueça de cumprir suas obrigações financeiras. Isso também ajuda a evitar a
-                tentação de gastar dinheiro que deveria ser reservado.
-                <br>
-                <br>
-                <h3>Financeiramente:</h3>
-
-                Aprender sobre finanças pessoais é um investimento valioso. Existem muitos recursos disponíveis, desde
-                livros até cursos online, que podem ajudá-lo a entender conceitos como investimentos, impostos e
-                planejamento de aposentadoria. Quanto mais você souber, mais capacitado se sentirá para tomar decisões
-                financeiras informadas.
-                <br>
-                <br>
-                <h3>Reveja e Ajuste Regularmente:</h3>
-
-                As circunstâncias da vida mudam, e suas finanças também devem se adaptar a essas mudanças. Regularmente,
-                reveja seu orçamento, suas metas e suas estratégias financeiras. Isso permitirá que você faça ajustes
-                conforme necessário e continue no caminho certo.
-
-                Em conclusão, controlar suas finanças pessoais não precisa ser uma tarefa assustadora. Com um plano bem
-                estruturado, disciplina e educação financeira básica, você pode simplificar o processo e garantir um
-                futuro financeiro mais estável e seguro. Comece com passos pequenos e vá construindo sua confiança ao
-                longo do tempo - sua saúde financeira agradecerá!</p>
-                <p class="card-text"><small class="text-body-secondary">Escrito por: Davidson Vitoriano</small></p>
-            </div>
-        </div>
-
-        <br>
-
-        <div class="card mb-3 text-white border-white">
-            <img src="../../img/Dinheiro.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Como investir com sabedoria</h5>
-                <p class="card-text">Investir é uma maneira inteligente de fazer o dinheiro trabalhar para você, mas
-                    requer conhecimento e estratégia para alcançar resultados positivos. Aqui estão algumas dicas
-                    essenciais para investir com sabedoria:</p>
-                <h3>Defina Objetivos Claros:</h3>
-                <p>Antes de começar a investir, estabeleça objetivos claros. Determine se você está investindo para
-                    aposentadoria, comprar uma casa ou alcançar qualquer outro objetivo financeiro. Isso ajudará a
-                    moldar sua abordagem de investimento.</p>
-                <h3>Conheça Seu Perfil de Risco:</h3>
-                <p>Entenda sua tolerância ao risco. Investimentos têm diferentes níveis de risco e retorno
-                    potencial. Avalie quanta volatilidade você está disposto a aceitar e escolha investimentos que
-                    estejam alinhados com sua conforto.</p>
-                <h3>Diversificação é Chave:</h3>
-                <p>Diversificar seus investimentos é crucial. Não coloque todo o seu dinheiro em um único ativo,
-                    como ações de uma única empresa. Espalhe seus investimentos por diferentes classes de ativos,
-                    como ações, títulos e imóveis, para reduzir o risco.</p>
-                <h3>Aprenda Antes de Investir:</h3>
-                <p>Aprenda Antes de Investir:</p>
-                <h3>Invista no Longo Prazo:</h3>
-                <p>O investimento de sucesso requer paciência. Os melhores retornos geralmente vêm ao longo do
-                    tempo. Evite tomar decisões impulsivas com base em flutuações de curto prazo no mercado.</p>
-                <h3>Evite Tentar Cronometrar o Mercado:</h3>
-                <p>É difícil prever os movimentos do mercado consistentemente. Tentar cronometrar o mercado pode
-                    levar a decisões erradas e perdas desnecessárias. Em vez disso, mantenha uma abordagem
-                    consistente e disciplinada.</p>
-                <h3>Esteja Preparado para Mudanças:</h3>
-                <p>O mercado financeiro é dinâmico. Esteja pronto para ajustar sua carteira de investimentos
-                    conforme as condições mudam. Reavalie periodicamente seus investimentos para garantir que ainda
-                    estejam alinhados com seus objetivos.</p>
-                <h3>Evite Investimentos Impulsivos:</h3>
-                <p>Não deixe que emoções ditem suas decisões de investimento. Investir com base em dicas quentes ou
-                    notícias do momento pode levar a resultados desfavoráveis. Mantenha-se focado em sua estratégia
-                    de longo prazo.</p>
-                <h3>Acompanhe e Reavalie Regularmente:</h3>
-                <p>Mantenha um olho constante em seus investimentos. Verifique seu progresso regularmente e faça
-                    ajustes conforme necessário. À medida que sua vida e metas mudam, sua estratégia de investimento
-                    também pode precisar mudar.</p>
-                <p class="card-text"><small class="text-body-secondary">Escrito por: Davidson Vitoriano</small></p>
-            </div>
-        </div>
-
-
+    <!--COTAÇÕES-->
+    <div class="container text-center">
+  <div class="row">
+    <div class="col">
+      Column
     </div>
+    <div class="col">
+      Column
+    </div>
+    <div class="col">
+      Column
+    </div>
+  </div>
+</div>
+
+
+<div>
+<h4>
+  <?php 
+    echo "Dolar: R$" . (number_format($dados['currencies']['USD']['buy'], 2 , ',' , '.'));
+  ?>
+</h4>
+<h4>
+  <?php 
+    echo "Euro: R$" . (number_format($dados['currencies']['EUR']['buy'], 2 , ',' , '.'));
+  ?>
+</h4>
+<h4>
+  <?php 
+    echo "Libras Esterlinas: R$" . (number_format($dados['currencies']['GBP']['buy'], 2 , ',' , '.'));
+  ?>
+</h4>
+<h4>
+  <?php 
+    echo "Peso Argentino`: R$" . (number_format($dados['currencies']['ARS']['buy'], 2 , ',' , '.'));
+  ?>
+</h4>
+<h4>
+  <?php 
+    echo "Dolar Canadense: R$" . (number_format($dados['currencies']['CAD']['buy'], 2 , ',' , '.'));
+  ?>
+</h4>
+<h4>
+  <?php 
+    echo "Dolar Autraliano: R$" . (number_format($dados['currencies']['AUD']['buy'], 2 , ',' , '.'));
+  ?>
+</h4>
+<h4>
+  <?php 
+    echo "Iene: R$" . (number_format($dados['currencies']['JPY']['buy'], 2 , ',' , '.'));
+  ?>
+</h4>
+<h4>
+  <?php 
+    echo "Yuan Chinês: R$" . (number_format($dados['currencies']['CNY']['buy'], 2 , ',' , '.'));
+  ?>
+</h4>
+<h4>
+  <?php 
+    echo "Bitcoin: R$" . (number_format($dados['currencies']['BTC']['buy'], 2 , ',' , '.'));
+  ?>
+</h4>
+</div>
+
+<!--BOLSA DE VALORES-->
+<?php foreach($dados['stocks'] as $key => $value) : ?>
+  <h1><?php echo $value['name']?></h1>
+  <h2><?php echo $value['location']?></h2>
+  <h2><?php echo $value['points']?></h2>
+  <h2><?php echo $value['variation']?></h2>
+<?php endforeach; ?>
+
+
+<!--AÇÔES-->
+<?php $aesb3 = $dadosITSA['ITSA4']['name']; ?>
+<h5><?php echo "Nome: " . $aesb3?></h5>
+
+<?php $aesb3 = $dadosEMBR['EMBR3']['company_name']; ?>
+<h5><?php echo "Nome: " . $aesb3?></h5>
+
+<?php $aesb3 = $dadosEMBR['EMBR3']['price']; ?>
+<h5><?php echo "Preço: R$" . (number_format($aesb3, 2, ',', '.'))?></h5>
+
+<?php $aesb3 = $dadosEMBR['EMBR3']['change_price']; ?>
+<h5><?php echo "Nome: " . $aesb3?></h5>
+
+<?php $aesb3 = $dadosEMBR['EMBR3'] ['market_cap']; ?>
+<h5><?php echo "Preço: R$" . (number_format($aesb3, 2 , ',', '.'))?></h5>
+
 
     <!-- FOOTER -->
     <br><br><br>
