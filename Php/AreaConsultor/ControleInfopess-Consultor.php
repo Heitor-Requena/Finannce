@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include_once "Cls_InfopessConsultor.php";
+    include "Cls_InfopessConsultor.php";
 
     $ID_Consultor           = $_SESSION["id"];
     $Nome_Consultor         = filter_input(INPUT_GET, "Nome");
@@ -23,8 +23,7 @@
     $Habilidade             = filter_input(INPUT_GET, "Habilidade");
     $TempCons               = filter_input(INPUT_GET, "TempCons");
     $Link                   = filter_input(INPUT_GET, "Link");
-    
-    //$ArquivoAtual = $_FILES['Avatar_Consultor']['name'];
+ 
     
     $Dados = new Cls_InfopessConsultor();
 
@@ -35,6 +34,7 @@
     }
 
     else if(isset($_GET["Salvar"])){
+        $Dados->setID_Consultor($ID_Consultor);
         $Dados->setNomeConsultor($Nome_Consultor);
         $Dados->setEmailConsultor($Email_Consultor);
         $Dados->setTelConsultor($Tel_Consultor);
@@ -55,8 +55,31 @@
         $Dados->setHabilidadeConsultor($Habilidade);
         $Dados->setTempConsConsultor($TempCons);
         $Dados->setLinkConsultor($Link);
-        $Dados->setAvatar($ArquivoAtual);
+
         $Retorno = $Dados->SalvarDados();
+        echo $Retorno;
+    }
+
+    else if (isset($_POST["SalvarAnexo"])){  
+        $Dados->setID_Consultor($ID_Consultor);
+        
+        $ArquivoAtual   = $_FILES['Avatar_Consultor']['name'];
+        $ArquivoTmp     = $_FILES['Avatar_Consultor']['tmp_name'];
+        $Destino        = 'Imagens/' . $ArquivoAtual;
+
+        
+        move_uploaded_file($ArquivoTmp, $Destino);
+        
+        $Imagem = file_get_contents("http://localhost/finannce/PHP/AreaConsultor/Imagens/" . $ArquivoAtual);
+        $Dados->setImagem($Imagem);
+
+        $Retorno = $Dados->SalvarAnexo();
+        echo $Retorno;
+    }
+
+    else if (isset($_POST["ConsultarAnexo"])){
+        $Dados->setID_Consultor($ID_Consultor);
+        $Retorno = $Dados->VerFotoPerfil();
         echo $Retorno;
     }
     
