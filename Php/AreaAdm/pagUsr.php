@@ -69,7 +69,6 @@
             <li class="nav-item">
               <a class="nav-link active fw-bold text-uppercase" aria-current="page" href="pagUsr.php" name="Usuário">Usuário</a>
             </li>
-            li class="nav-item">
               <a class="nav-link active" aria-current="page" href="pagCons.php" name="Consultor">Consultor</a>
             </li>
             <li class="nav-item">
@@ -100,8 +99,9 @@
   <div class="nav2-align text-center">
     <div class="btn-group">
       <!-- Botões de ação -->
-      <a href="#" class="btn btn-outline-light" id="btn_cons" onclick="alterarPag('ConsUsr')">Consultar</a>
-      <!-- ... (repetir para outros botões) -->
+      <a href="#" class="btn btn-outline-light" id="btn_cons"  onclick="alterarPag('ConsUsr')">Consultar</a>
+      <a href="#" class="btn btn-outline-light" id="btn_altlog"   onclick="alterarPag('AltUsr')">Alterar Login</a>
+      <a href="#" class="btn btn-outline-light" id="btn_del"    onclick="alterarPag('DelUsr')">Deletar</a>
     </div>
   </div>
 
