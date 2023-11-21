@@ -219,9 +219,9 @@ class ClsAdmCon
             $mail->Subject = 'Cadastro Consultor ativado do Finannce';
             $mail->Body = '<div style="margin: 0 auto; text-align: center; font-family: `poppins`, sans-serif;">
                                 <img src="https://www.bing.com/images/blob?bcid=Tg5aB40pW1IG1nURUgpcJyyDTb8A.....4o" alt="" width="40%">
-                                <h2>Parabéns, seu cadastro foi ativado. Você já pode entrar no site, finalizar o cadastro e aproveitar a plataforma</h2>
+                                <h2>Parabéns, seu cadastro foi ativado. Você já pode entrar no site e aproveitar a plataforma</h2>
                             </div>';
-            $mail->AltBody = 'Parabéns, seu cadastro foi ativado. Você já pode entrar no site, finalizar o cadastro e aproveitar a plataforma';
+            $mail->AltBody = 'Parabéns, seu cadastro foi ativado. Você já pode entrar no site e aproveitar a plataforma';
 
             if($mail->send()) {
                 echo 'Email enviado com sucesso';
