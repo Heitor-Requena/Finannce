@@ -287,29 +287,5 @@ class Cls_InfopessConsultor{
 
         return $Retorno;
     }
-
-    public function VerFotoPerfil(){
-    include "../conexao.php";
-    $Comando = $conexao->prepare("SELECT AVATAR_CONSULTOR FROM tb_consultor WHERE ID_CONSULTOR = ?;");
-    $Comando->bindParam(1, $this->Id_Consultor);
-
-    if ($Comando->execute()) {
-        $Resultado = $Comando->fetch(PDO::FETCH_OBJ);
-
-        if ($Resultado) {
-            $ImagemCodificada = base64_encode($Resultado->AVATAR_CONSULTOR);
-            error_log("Imagem Codificada: " . $ImagemCodificada);
-            $Retorno = "<img src='data:image/jpg;base64," . $ImagemCodificada . "' width='50%' height='auto' style='margin: 0 auto; border-radius: 50%'  />";
-        } else {
-            $Retorno = "<p>Nenhuma foto encontrada para o consultor com ID " . $this->Id_Consultor . "</p>";
-        }
-    } else {
-        $Retorno = "<p>Erro ao executar a consulta.</p>";
-    }
-
-    return $Retorno;
-}
-
-    
     
 }

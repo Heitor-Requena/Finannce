@@ -49,6 +49,6 @@
 
         $Retorno = $Adm->CadPergunta();
         echo $Retorno;
-
         $Retorno = $Adm->EmailPergunta();
+
     }

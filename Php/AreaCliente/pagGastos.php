@@ -112,7 +112,7 @@
 
                                 <div class="row">
                                     <div class="">
-                                        <input type="number" name="Id_Gasto" id="Id_Gasto" min=0 class="form-control m-2 " placeholder="Número">
+                                        <input style="display: none;" type="number" name="Id_Gasto" id="Id_Gasto" min=0 class="form-control m-2 " placeholder="Número">
                                     </div>
                                 </div>
 

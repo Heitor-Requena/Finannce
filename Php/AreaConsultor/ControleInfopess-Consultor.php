@@ -76,11 +76,5 @@
         $Retorno = $Dados->SalvarAnexo();
         echo $Retorno;
     }
-
-    else if (isset($_POST["ConsultarAnexo"])){
-        $Dados->setID_Consultor($ID_Consultor);
-        $Retorno = $Dados->VerFotoPerfil();
-        echo $Retorno;
-    }
     
 ?>

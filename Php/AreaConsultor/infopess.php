@@ -220,32 +220,6 @@
     <div class="text-center">
       <input type="submit" value="Salvar" class="iframe-btn btn m-3 col-6 btn-outline-light" name="Salvar" id="Salvar" onclick="SalvarDados()">
     </div>
-    <hr>
-  </form>
-
-  <form class="container mt-5" action="ControleInfopess-Consultor.php" id="frm_InfoPessAnexo" method="post" enctype="multipart/form-data">
-    <h4 class="text-start">Anexos</h4>
-    <!--ANEXOS-->
-    <div class="row">
-      <div class="col">
-        <label class="col-form-label" for="Avatar_Consultor">
-          <h5>Foto de Perfil</h5>
-        </label><br>
-        <input type="file" class="form-control" name="Avatar_Consultor" id="Avatar_Consultor" placeholder="Insira seu Arquivo" accept=" image/jpeg, image/jpg, image/png">
-      </div>
-
-      <div class="col">
-        <label class="col-form-label" for="Anexo_Consultor">
-          <h5>Certificação Financeira</h5>
-        </label><br>
-        <input type="file" class="form-control" name="Anexo_Consultor" id="Anexo_Consultor" placeholder="Insira seu Arquivo" accept=" .jpeg, .jpg, .png, .doc">
-      </div>
-    </div>
-
-    <div class="text-center">
-      <input type="submit" value="Salvar" class="iframe-btn btn m-3 col-6 btn-outline-light" name="SalvarAnexo" id="SalvarAnexo" onclick="SalvarAnexos()">
-      <input type="submit" value="Consultar" class="iframe-btn btn m-3 col-6 btn-outline-light" name="ConsultarAnexo" id="ConsultarAnexo" onclick="CarregarFotoPerfil()">
-    </div>
   </form>
 
   </section>
