@@ -245,7 +245,7 @@ class ClsFAQAdm{
             if($mail->send()) {
                 $Retorno = "<script>window.alert('Responda enviada'); location.href='pagFAQ.php'</script>;";;
             } else {
-                $Retorno = "<script>window.alert('Responda não enviada'); location.href='pagFAQ.php'</script>;";;
+                $Retorno = "<script>window.alert('Responda não enviada'); location.href='pagFAQ.php'</script>;";
             }
         } 
         catch (Exception $e) {

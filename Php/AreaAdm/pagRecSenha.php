@@ -50,13 +50,13 @@
               <a class="nav-link active" aria-current="page" href="pagAdm.php" name="Adm">Adm</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="pagRecSenha.php" name="RecSenha">Recuperação de Senha</a>
+              <a class="nav-link active fw-bold text-uppercase" aria-current="page" href="pagRecSenha.php" name="RecSenha">Recuperação de Senha</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="pagFAQ.php" name="Artigos">FAQ</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active fw-bold text-uppercase" aria-current="page" href="pagArtigos.php" name="Artigos">Artigos</a>
+              <a class="nav-link active e" aria-current="page" href="pagArtigos.php" name="Artigos">Artigos</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="indexAdm.php" name="Home" title="Home"><i class="bi bi-house"></i></a>

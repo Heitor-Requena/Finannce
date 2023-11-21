@@ -1,0 +1,32 @@
+
+--Consultor
+gmail: pietroantonioianviana@gmail.com
+Senha: .eJbRE7ckHAJ6Hg
+
+Nome :Pietro Antonio Ian Viana
+E-mail: pietroantonioianviana@gmail.com
+Tel: (84) 2670-1908
+Senha: 6789
+CPF: 094.654.917-64
+RG: 33.900.120-3
+Data Nasc: 02/02/200
+
+Cep: 74357027
+Modalidade: Presencial
+Público Alvo: Adultos
+
+Formação: 
+- Graduação em Economia - Universidade Federal;
+- Pós-graduação em Finanças Corporativas - Instituto de Finanças. 
+
+Experiências: 
+-Analista Financeiro na Empresa X - Responsável pela análise de investimentos e projeções financeiras;
+- Consultor Financeiro Sênior na Empresa Y - Prestou consultoria a grandes empresas em estratégias financeiras e de investimento.
+
+Habilidades: 
+-Análise de Investimentos: Capacidade de analisar o potencial de investimentos, considerando riscos e retornos;
+-Consultoria Financeira: Experiência em oferecer orientação e estratégias para otimizar a situação financeira de empresas;
+-Gestão de Riscos: Habilidade em avaliar e gerenciar riscos financeiros.
+
+Duração de Consultoria: 01:00
+Link: https://vitoralvs.github.io/Landing-page-consultor
