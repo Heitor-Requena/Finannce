@@ -78,6 +78,9 @@ O planejamento para o futuro é uma parte importante do gerenciamento financeiro
 Lembre-se, o gerenciamento financeiro é uma jornada, não um destino. É importante revisar e ajustar seu plano financeiro conforme necessário para garantir que você esteja no caminho certo para alcançar seus objetivos financeiros.
 
 --USUÁRIO--
+--Login
+E-mail: cliente2@example.com
+Senha: cliente2@example.com
 
 --Gasto
 Nome: Roupas
