@@ -261,7 +261,7 @@
                         $Relat .= '<td>' . $L->MAIOR . '</td>';
                         $Relat .= '<td>' . $L->MINIMO . '</td>';
                         $Relat .= '<td>' . $L->SOMA . '</td>';
-                        $Relat .= '<td>' . $L->MEDIA . '</td>';
+                        $Relat .= '<td>' . $L->MEDIA. '</td>';
                     $Relat .= '</tr>';
                 }
                 $Relat .= '</table>';
