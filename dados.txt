@@ -1,12 +1,23 @@
-
---Consultor
+--GMAIL--
 gmail: pietroantonioianviana@gmail.com
 Senha: .eJbRE7ckHAJ6Hg
 
+---HOME---
+
+--Faq
+Nome: Pietro Antonio Viana
+Email: pietroantonioianviana@gmail.com
+Pergunta: Quais são algumas estratégias eficazes para economizar dinheiro?
+
+--CONSULTOR---
+
+--Criar Conta
 Nome :Pietro Antonio Ian Viana
 E-mail: pietroantonioianviana@gmail.com
 Tel: (84) 2670-1908
 Senha: 6789
+
+--Informações
 CPF: 094.654.917-64
 RG: 33.900.120-3
 Data Nasc: 02/02/200
@@ -30,3 +41,50 @@ Habilidades:
 
 Duração de Consultoria: 01:00
 Link: https://vitoralvs.github.io/Landing-page-consultor
+
+--ADM--
+
+--Cadastrar ADM
+Nome:Pedro Henrique Theo Iago Cardoso
+Email: adm21@finannce.com
+CPF: 426.027.423-68
+RG: 14.659.124-0
+Senha: 1234
+
+--Responder FAQ
+Id: 11
+Resposta: Algumas estratégias eficazes para economizar dinheiro incluem a criação de um orçamento para rastrear seus gastos, a redução de despesas desnecessárias, a criação de uma conta poupança automática, a investimento em um plano de aposentadoria e a busca de maneiras de aumentar sua renda. Também é útil estabelecer metas financeiras claras e revisá-las regularmente para se manter motivado. Lembre-se, o gerenciamento financeiro eficaz requer disciplina e consistência.
+
+--Artigos
+Nome:  Gerenciamento Financeiro: Uma Visão Geral
+Autor: Finannce
+Artigo: O gerenciamento financeiro é uma habilidade essencial na vida de todos. Ele envolve o planejamento, a organização, a direção e o controle das atividades financeiras, como a captação e a utilização dos fundos de uma empresa. Aqui estão algumas dicas para ajudá-lo a gerenciar suas finanças de maneira eficaz.
+
+1. Crie um Orçamento
+A primeira etapa para um gerenciamento financeiro eficaz é criar um orçamento. Um orçamento é uma estimativa de receitas e despesas para um período de tempo específico no futuro e é preparado com base em um plano de ação definido. Ele ajuda a entender para onde seu dinheiro está indo e a tomar decisões informadas sobre seus gastos.
+
+2. Economize Dinheiro
+Economizar dinheiro é uma parte crucial do gerenciamento financeiro. Isso não apenas proporciona segurança financeira, mas também oferece a oportunidade de crescer financeiramente. Tente economizar uma certa porcentagem de sua renda todos os meses. Lembre-se, não importa o quanto você economize, o importante é começar.
+
+3. Invista com Sabedoria
+Investir é uma ótima maneira de fazer seu dinheiro trabalhar para você. No entanto, é importante investir com sabedoria. Pesquise diferentes opções de investimento e escolha aquelas que se alinham com seus objetivos financeiros e tolerância ao risco.
+
+4. Evite Dívidas
+Dívidas podem ser uma grande barreira para alcançar seus objetivos financeiros. Portanto, é importante evitar dívidas desnecessárias. Se você já tem dívidas, faça um plano para pagá-las o mais rápido possível.
+
+5. Planeje para o Futuro
+O planejamento para o futuro é uma parte importante do gerenciamento financeiro. Isso pode incluir a criação de um fundo de emergência, a economia para a aposentadoria ou a economia para metas financeiras específicas, como comprar uma casa.
+
+Lembre-se, o gerenciamento financeiro é uma jornada, não um destino. É importante revisar e ajustar seu plano financeiro conforme necessário para garantir que você esteja no caminho certo para alcançar seus objetivos financeiros.
+
+--USUÁRIO--
+
+--Gasto
+Nome: Roupas
+Valor: 50
+
+--Feedback
+Nome Consultor: Pietro Antonio Ian Viana
+E-mail: pietroantonioianviana@gmail.com
+Avaliação: Gostei muito, recomendo.
+Nota: 5

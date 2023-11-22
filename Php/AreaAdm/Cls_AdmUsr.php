@@ -76,30 +76,6 @@ class ClsAdmUsr
         return $Retorno;
     }
 
-    // Método para alterar o login do usuário
-    public function AlterarLoginUsr()
-    {
-        include_once "../conexao.php";
-
-        try {
-            // Preparação da consulta SQL
-            $Comando = $conexao->prepare("UPDATE tb_cliente SET EMAIL_CLIENTE = ?, SENHA_CLIENTE = ? WHERE ID_CLIENTE = ?;");
-            $Comando->bindParam(1, $this->Email);
-            $Comando->bindParam(2, $this->Senha);
-            $Comando->bindParam(3, $this->Id);
-
-            // Execução da atualização e retorno do resultado
-            if ($Comando->execute()) {
-                $Retorno = json_encode("Alterado com Sucesso");
-            } else {
-                $Retorno = json_encode("Não foi possível Alterar");
-            }
-        } catch (PDOException $Erro) {
-            $Retorno = json_encode("Erro" . $Erro->getMessage());
-        }
-        return $Retorno;
-    }
-
     // Método para deletar o usuário
     public function DeletarUsr()
     {

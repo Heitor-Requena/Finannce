@@ -75,7 +75,6 @@
   <div class="nav2-align text-center">
     <div class="btn-group">
       <a href="#" class="btn btn-outline-light" id="btn_cons"  onclick="alterarPag('ConsCon')">Consultar</a>
-      <a href="#" class="btn btn-outline-light" id="btn_alt"   onclick="alterarPag('AltCon')">Alterar Login</a>
       <a href="#" class="btn btn-outline-light" id="btn_del"    onclick="alterarPag('DelCon')">Deletar</a>
     </div>
   </div>

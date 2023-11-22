@@ -243,7 +243,7 @@ function abrirModalInfo(consultorId) {
                         modalContent += "<br><strong>Habilidade: </strong>"                 + Consultores[i].HABILIDADE         + "<br>";
                         modalContent += "<br><strong>Anexo: </strong>"                      + Consultores[i].ANEXO_CONSULTOR    + "<br>";
                         modalContent += "<br><strong>Modalidade: </strong>"                 + Consultores[i].MODALIDADE         + "<br>";
-                        modalContent += "<br><strong>Publico Alvo: </strong>"               + Consultores[i].PULICO_ALVO        + "<br>";
+                        modalContent += "<br><strong>Publico Alvo: </strong>"               + Consultores[i].PUBLICO_ALVO        + "<br>";
                         modalContent += "<br><strong>Duração de Consultoria: </strong>"     + Consultores[i].DURACAO_CONS       + "<br>";
                         modalContent += "<br><h4>Localização</h4>";
                         modalContent += "<strong>Cidade: </strong>"                         + Consultores[i].CIDADE_CONSULTOR   + "<br>";

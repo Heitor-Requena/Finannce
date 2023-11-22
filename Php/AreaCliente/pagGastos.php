@@ -57,7 +57,7 @@
               <a class="nav-link active" aria-current="page" href="pagConsultores.php" name="MeusGastos">Consultores</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#" name="MeusGastos" onclick="alterarPag('FeedBack')">FeedBack's</a>
+              <a class="nav-link active" aria-current="page" href="pagFeedback.php" name="MeusGastos">FeedBack's</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="infopess.php" name="MeusGastos">Meus Dados</a>
@@ -112,7 +112,7 @@
 
                                 <div class="row">
                                     <div class="">
-                                        <input style="display: none;" type="number" name="Id_Gasto" id="Id_Gasto" min=0 class="form-control m-2 " placeholder="Número">
+                                        <input type="number" name="Id_Gasto" id="Id_Gasto" min=0 class="form-control m-2 " placeholder="Número">
                                     </div>
                                 </div>
 

@@ -26,11 +26,6 @@
         $Retorno = $Adm->ListarUsr();
         echo $Retorno;
     }
-    else if(isset($_GET["btn_AltLogUsr"])){
-        // Chamada do método AlterarLoginUsr e exibição do retorno
-        $Retorno = $Adm->AlterarLoginUsr();
-        echo $Retorno;
-    }
     else if(isset($_GET["btn_DeletarUsr"])){
         // Chamada do método DeletarUsr e exibição do retorno
         $Retorno = $Adm->DeletarUsr();

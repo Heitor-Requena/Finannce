@@ -2,7 +2,6 @@ function alterarPag(pagName) {
     // Usuário--------------------------------------------------------------------------------------------------------
     if (pagName === "ConsUsr") {
         document.querySelector("#btn_cons").setAttribute("class", "btn btn-light");
-        document.querySelector("#btn_altlog").setAttribute("class", "btn btn-outline-light");
         document.querySelector("#btn_del").setAttribute("class", "btn btn-outline-light");
         document.querySelector("#section").innerHTML =
             `<h1 class="text-center mt-3">Consultar Usuário</h1>
@@ -23,36 +22,8 @@ function alterarPag(pagName) {
         document.querySelector("#result").innerHTML =
             ``;
     }
-    else if (pagName === "AltUsr") {
-        document.querySelector("#btn_cons").setAttribute("class", "btn btn-outline-light");
-        document.querySelector("#btn_altlog").setAttribute("class", "btn btn-light");
-        document.querySelector("#btn_del").setAttribute("class", "btn btn-outline-light");
-        document.querySelector("#section").innerHTML = `<h1 class="text-center mt-3">Alterar Login Usuário</h1>
-
-        <form action="ControleUsr-Adm.php" method="get" class="container mt-5" id="frm_AltUsr">
-            <div class="row">
-                <div class="col">
-                    <input type="number" name="IdUsr" id="IdUsr" class="form-control m-2" placeholder="ID Usuário">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-6">
-                    <input type="email" name="EmailUsr" id="EmailUsr" class="form-control m-2" placeholder="Email">
-                </div>
-                <div class="col-6">
-                    <input type="password" name="SenhaUsr" id="SenhaUsr" class="form-control m-2" placeholder="Senha">
-                </div>
-            </div>
-            <div class="text-center">
-                <input type="submit"  id="btn_AltLogUsr" name="btn_AltLogUsr" class="iframe-btn btn m-3 btn-outline-light" value="Alterar" onclick="AltLogUsr(event)">
-            </div>
-        </form>`;
-        document.querySelector("#result").innerHTML =
-            ``;
-    }
     else if (pagName === "DelUsr") {
         document.querySelector("#btn_cons").setAttribute("class", "btn btn-outline-light");
-        document.querySelector("#btn_altlog").setAttribute("class", "btn btn-outline-light");
         document.querySelector("#btn_del").setAttribute("class", "btn btn-light");
         document.querySelector("#section").innerHTML = `<h1 class="text-center mt-3">Deletar Usuário</h1>
 
@@ -73,7 +44,6 @@ function alterarPag(pagName) {
     // Consultor--------------------------------------------------------------------------------------------------------
     else if (pagName === "ConsCon") {
         document.querySelector("#btn_cons").setAttribute("class", "btn btn-light active");
-        document.querySelector("#btn_alt").setAttribute("class", "btn btn-outline-light");
         document.querySelector("#btn_del").setAttribute("class", "btn btn-outline-light");
         document.querySelector("#section").innerHTML = `
         <h1 class="text-center mt-3">Consultar Consultores</h1>
@@ -98,38 +68,8 @@ function alterarPag(pagName) {
         document.querySelector("#result").innerHTML =    ``;
         document.getElementById("tableCon").innerHTML = "";
     }
-    else if (pagName === "AltCon") {
-        document.getElementById("tableCon").innerHTML = "";
-        document.querySelector("#infoCon").setAttribute("class", "col-6 border border-light rounded");
-        document.querySelector("#btn_cons").setAttribute("class", "btn btn-outline-light");
-        document.querySelector("#btn_alt").setAttribute("class", "btn btn-light active");
-        document.querySelector("#btn_del").setAttribute("class", "btn btn-outline-light");
-        document.querySelector("#section").innerHTML = `<h1 class="text-center mt-3">Alterar Login Consultor</h1>
-
-       <form action="ControleCon-Adm.php" method="get" class="container mt-5" id="frm_AltCon">
-           <div class="row">
-               <div class="col">
-                   <input type="number" name="IdCon" id="IdCon" class="form-control m-2" placeholder="ID Consultor">
-               </div>
-           </div>
-           <div class="row">
-               <div class="col-6">
-                   <input type="email" name="EmailCon" id="EmailCon" class="form-control m-2" placeholder="Email">
-               </div>
-               <div class="col-6">
-                   <input type="password" name="SenhaCon" id="SenhaCon" class="form-control m-2" placeholder="Senha">
-               </div>
-           </div>
-           <div class="text-center">
-                <input type="submit" id="btn_AltLogCon" name="btn_AltLogCon" class="iframe-btn btn m-3  btn-outline-light" value="Alterar" onclick="AltLogCon(event)">
-           </div>
-       </form>`;
-        document.querySelector("#result").innerHTML =
-            ``;
-    }
     else if (pagName === "DelCon") {
         document.querySelector("#btn_cons").setAttribute("class", "btn btn-outline-light");
-        document.querySelector("#btn_alt").setAttribute("class", "btn btn-outline-light");
         document.querySelector("#btn_del").setAttribute("class", "btn btn-light active");
         document.querySelector("#section").innerHTML = `<h1 class="text-center mt-3">Deletar Consultor</h1>
 

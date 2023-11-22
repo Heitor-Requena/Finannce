@@ -64,17 +64,17 @@ function ListarFeedBack(event){
         var feedBack = JSON.parse(dadosPHP);
         var Tabela = "";
 
-        Tabela += "<table>";
-        Tabela += "<tr><th>Id_Feedback</th> <th>Nome Consultor</th> <th>Email Consultor</th> <th>Avaliação</th> <th>Nota</th> <th>Data de Envio</th></tr>";
+        Tabela += "<div class='table-responsive m-5'><table class='table table-bordered table-striped table-dark ml-5'";
+        Tabela += "<tr><th  scope='col' class='text-center'>Id_Feedback</th> <th  scope='col' class='text-center'>Nome Consultor</th> <th  scope='col' class='text-center'>Email Consultor</th> <th  scope='col' class='text-center'>Avaliação</th> <th  scope='col' class='text-center'>Nota</th> <th  scope='col' class='text-center'>Data de Envio</th></tr>";
 
         for (i = 0; i < feedBack.length; i++){
             Tabela += "<tr>";
-                Tabela += "<td>" + feedBack[i].ID_FEEDBACK     + "</td>";
-                Tabela += "<td>" + feedBack[i].NOME_CONSULTOR  + "</td>";
-                Tabela += "<td>" + feedBack[i].EMAIL_CONSULTOR + "</td>";
-                Tabela += "<td>" + feedBack[i].AVALIACAO       + "</td>";
-                Tabela += "<td>" + feedBack[i].NOTA_CONSULTOR  + "</td>";
-                Tabela += "<td>" + feedBack[i].DATA_INCLUSAO   + "</td>";
+                Tabela += "<td  class='text-center align-middle'>" + feedBack[i].ID_FEEDBACK     + "</td>";
+                Tabela += "<td  class='text-center align-middle'>" + feedBack[i].NOME_CONSULTOR  + "</td>";
+                Tabela += "<td  class='text-center align-middle'>" + feedBack[i].EMAIL_CONSULTOR + "</td>";
+                Tabela += "<td  class='text-center align-middle'>" + feedBack[i].AVALIACAO       + "</td>";
+                Tabela += "<td  class='text-center align-middle'>" + feedBack[i].NOTA_CONSULTOR  + "</td>";
+                Tabela += "<td  class='text-center align-middle'>" + feedBack[i].DATA_INCLUSAO   + "</td>";
             Tabela += "</tr>";
         }
 

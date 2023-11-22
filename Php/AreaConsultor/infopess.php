@@ -156,7 +156,7 @@
 
         <input type="radio" name="Modalidade" id="Presencial" value="Presencial"> Presencial <br>
 
-        <input type="radio" name="Modalidade" id="Híbrido" value="Híbrido"> Híbrido <br>
+        <input type="radio" name="Modalidade" id="Hibrido" value="Hibrido"> Híbrido <br>
 
 
       </div>

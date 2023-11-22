@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
 <!-- Declaração de tema dark -->
@@ -100,7 +99,6 @@
     <div class="btn-group">
       <!-- Botões de ação -->
       <a href="#" class="btn btn-outline-light" id="btn_cons"  onclick="alterarPag('ConsUsr')">Consultar</a>
-      <a href="#" class="btn btn-outline-light" id="btn_altlog"   onclick="alterarPag('AltUsr')">Alterar Login</a>
       <a href="#" class="btn btn-outline-light" id="btn_del"    onclick="alterarPag('DelUsr')">Deletar</a>
     </div>
   </div>
