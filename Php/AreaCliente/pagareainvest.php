@@ -100,52 +100,99 @@ if($HGFinance->valid_key()){
 
 
   <section id="section" style="margin-top: 100px;" class="d-flex justify-content-around flex-column">
-  <div>
-<h4>
+  <!-- Carroussel -->
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+    <div class="container text-center">
+  <div class="row">
+    <div class="col">
+    <h4>
   <?php 
     echo "Dolar: R$" . (number_format($dados['currencies']['USD']['buy'], 2 , ',' , '.'));
   ?>
 </h4>
-<h4>
+    </div>
+    <div class="col">
+    <h4>
   <?php 
     echo "Euro: R$" . (number_format($dados['currencies']['EUR']['buy'], 2 , ',' , '.'));
   ?>
 </h4>
-<h4>
+    </div>
+    <div class="col">
+    <h4>
   <?php 
     echo "Libras Esterlinas: R$" . (number_format($dados['currencies']['GBP']['buy'], 2 , ',' , '.'));
   ?>
 </h4>
-<h4>
+    </div>
+  </div>
+</div>
+    </div>
+    <div class="carousel-item">
+    <div class="container text-center">
+  <div class="row">
+    <div class="col">
+    <h4>
   <?php 
-    echo "Peso Argentino`: R$" . (number_format($dados['currencies']['ARS']['buy'], 2 , ',' , '.'));
+    echo "Peso Argentino: R$" . (number_format($dados['currencies']['ARS']['buy'], 2 , ',' , '.'));
   ?>
 </h4>
-<h4>
+    </div>
+    <div class="col">
+    <h4>
   <?php 
     echo "Dolar Canadense: R$" . (number_format($dados['currencies']['CAD']['buy'], 2 , ',' , '.'));
   ?>
 </h4>
-<h4>
+    </div>
+    <div class="col">
+    <h4>
   <?php 
     echo "Dolar Autraliano: R$" . (number_format($dados['currencies']['AUD']['buy'], 2 , ',' , '.'));
   ?>
 </h4>
-<h4>
+    </div>
+  </div>
+</div>
+    </div>
+    <div class="carousel-item">
+    <div class="container text-center">
+  <div class="row">
+    <div class="col">
+    <h4>
   <?php 
     echo "Iene: R$" . (number_format($dados['currencies']['JPY']['buy'], 2 , ',' , '.'));
   ?>
 </h4>
-<h4>
+    </div>
+    <div class="col">
+    <h4>
   <?php 
     echo "Yuan Chinês: R$" . (number_format($dados['currencies']['CNY']['buy'], 2 , ',' , '.'));
   ?>
 </h4>
-<h4>
+    </div>
+    <div class="col">
+    <h4>
   <?php 
     echo "Bitcoin: R$" . (number_format($dados['currencies']['BTC']['buy'], 2 , ',' , '.'));
   ?>
 </h4>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+  
+</div>
+
+  <!-- Carroussel -->
+  <div>
+
+
+
 </div>
 
 <!--BOLSA DE VALORES-->
