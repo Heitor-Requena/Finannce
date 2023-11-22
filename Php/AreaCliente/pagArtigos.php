@@ -44,13 +44,13 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#" name="Home"><i class="bi bi-house"></i></a>
+              <a class="nav-link active" aria-current="page" href="indexCliente.php" name="Home"><i class="bi bi-house"></i></a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="pagGastos.php" name="MeusGastos">Meus Gastos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="pagArtigos.php" name="MeusGastos"><strong>ARTIGOS</strong></a>
+              <a class="nav-link active fw-bold text-uppercase" aria-current="page" href="pagArtigos.php" name="MeusGastos">Artigos</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="pagConsultores.php" name="MeusGastos">Consultores</a>
