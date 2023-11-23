@@ -289,7 +289,7 @@ $variationCRFB = ($dadosCRFB['CRFB3']['change_percent'] < 0) ? 'bg-danger' : 'bg
       </p>
       <p>
         <?php $ITSA = $dadosITSA['ITSA4']['market_cap'] ?>
-        <?php echo "Market Cap: " . (number_format($ITSA, 0, '.')) . 'B' ?>
+        <?php echo "Market Cap: " . (number_format($ITSA, 0, ',','.')) . 'B' ?>
       </p>
       <p class="badge text-<?php echo ($variationITSA); ?>">
         <?php $ITSA = $dadosITSA['ITSA4']['price'] ?>
@@ -331,7 +331,7 @@ $variationCRFB = ($dadosCRFB['CRFB3']['change_percent'] < 0) ? 'bg-danger' : 'bg
       </p>
       <p>
         <?php $EMBR = $dadosEMBR['EMBR3']['market_cap'] ?>
-        <?php echo "Market Cap: " . (number_format($EMBR, 0, '.')) . 'B' ?>
+        <?php echo "Market Cap: " . (number_format($EMBR, 0,',', '.')) . 'B' ?>
       </p>
       <p class="badge text-<?php echo ($variationEMBR); ?>">
         <?php $EMBR = $dadosEMBR['EMBR3']['price'] ?>
@@ -370,7 +370,7 @@ $variationCRFB = ($dadosCRFB['CRFB3']['change_percent'] < 0) ? 'bg-danger' : 'bg
       </p>
       <p>
         <?php $PETR4 = $dadosPETR['PETR4']['market_cap'] ?>
-        <?php echo "Market Cap: " . (number_format($PETR4, 0, '.')) . 'B' ?>
+        <?php echo "Market Cap: " . (number_format($PETR4, 0, ',','.')) . 'B' ?>
       </p>
       <p class="badge text-<?php echo ($variationPETR); ?>">
         <?php $PETR4 = $dadosPETR['PETR4']['price'] ?>
@@ -409,7 +409,7 @@ $variationCRFB = ($dadosCRFB['CRFB3']['change_percent'] < 0) ? 'bg-danger' : 'bg
       </p>
       <p>
         <?php $PSSA3 = $dadosPSSA['PSSA3']['market_cap'] ?>
-        <?php echo "Market Cap: " . (number_format($PSSA3, 0, '.')) . 'B' ?>
+        <?php echo "Market Cap: " . (number_format($PSSA3, 0,',', '.')) . 'B' ?>
       </p>
       <p class="badge text-<?php echo ($variationPSSA); ?>">
         <?php $PSSA3 = $dadosPSSA['PSSA3']['price'] ?>
@@ -448,7 +448,7 @@ $variationCRFB = ($dadosCRFB['CRFB3']['change_percent'] < 0) ? 'bg-danger' : 'bg
       </p>
       <p>
         <?php $CRFB3 = $dadosCRFB['CRFB3']['market_cap'] ?>
-        <?php echo "Market Cap: " . (number_format($CRFB3, 0, '.')) . 'B' ?>
+        <?php echo "Market Cap: " . (number_format($CRFB3, 0,',', '.')) . 'B' ?>
       </p>
       <p class="badge text-<?php echo ($variationCRFB); ?>">
         <?php $CRFB3 = $dadosCRFB['CRFB3']['price'] ?>
