@@ -162,14 +162,14 @@ $variationCRFB = ($dadosCRFB['CRFB3']['change_percent'] <= 0) ? 'bg-danger' : 'b
               </div>
 
               <div class="col">
-                <p><span class="badge badge-pill badge-<?php echo ($variationEUR); ?>">
+                <p><span class="badge text-<?php echo ($variationEUR); ?>">
                     <?php echo "Euro: R$" . (number_format($dados['currencies']['EUR']['buy'], 2, ',', '.')); ?>
                     <?php echo "(" . $dados['currencies']['EUR']['variation'] . ")" ?>
                   </span></p>
               </div>
 
               <div class="col">
-                <p><span class="badge badge-pill badge-<?php echo ($variationGBP); ?>">
+                <p><span class="badge text-<?php echo ($variationGBP); ?>">
                     <?php echo "GBP: R$" . (number_format($dados['currencies']['GBP']['buy'], 2, ',', '.')); ?>
                     <?php echo "(" . $dados['currencies']['GBP']['variation'] . ")" ?>
                   </span></p>
@@ -183,21 +183,21 @@ $variationCRFB = ($dadosCRFB['CRFB3']['change_percent'] <= 0) ? 'bg-danger' : 'b
           <div class="container text-center">
             <div class="row">
               <div class="col">
-                <p><span class="badge badge-pill badge-<?php echo ($variationARS); ?>">
+                <p><span class="badge text-<?php echo ($variationARS); ?>">
                     <?php echo "ARS: R$" . (number_format($dados['currencies']['ARS']['buy'], 2, ',', '.')); ?>
                     <?php echo "(" . $dados['currencies']['ARS']['variation'] . ")" ?>
                   </span></p>
               </div>
 
               <div class="col">
-                <p><span class="badge badge-pill badge-<?php echo ($variationCAD); ?>">
+                <p><span class="badge text-<?php echo ($variationCAD); ?>">
                     <?php echo "CAD: R$" . (number_format($dados['currencies']['CAD']['buy'], 2, ',', '.')); ?>
                     <?php echo "(" . $dados['currencies']['CAD']['variation'] . ")" ?>
                   </span></p>
               </div>
 
               <div class="col">
-                <p><span class="badge badge-pill badge-<?php echo ($variationAUD); ?>">
+                <p><span class="badge text-<?php echo ($variationAUD); ?>">
                     <?php echo "AUD: R$" . (number_format($dados['currencies']['AUD']['buy'], 2, ',', '.')); ?>
                     <?php echo "(" . $dados['currencies']['AUD']['variation'] . ")" ?>
                   </span></p>
@@ -209,22 +209,21 @@ $variationCRFB = ($dadosCRFB['CRFB3']['change_percent'] <= 0) ? 'bg-danger' : 'b
           <div class="container text-center">
             <div class="row">
               <div class="col">
-                <h4>
-                  <?php
-                  echo "Iene: R$" . (number_format($dados['currencies']['JPY']['buy'], 2, ',', '.'));
-                  ?>
-                </h4>
-              </div>
-              <div class="col">
-                <p><span class="badge badge-pill badge-<?php echo ($variationJPY); ?>">
+                <p><span class="badge text-<?php echo ($variationJPY); ?>">
                     <?php echo "JPY: R$" . (number_format($dados['currencies']['JPY']['buy'], 2, ',', '.')); ?>
                     <?php echo "(" . $dados['currencies']['JPY']['variation'] . ")" ?>
                   </span></p>
               </div>
               <div class="col">
-                <p><span class="badge badge-pill badge-<?php echo ($variationCNY); ?>">
+                <p><span class="badge text-<?php echo ($variationCNY); ?>">
                     <?php echo "CNY: R$" . (number_format($dados['currencies']['CNY']['buy'], 2, ',', '.')); ?>
                     <?php echo "(" . $dados['currencies']['CNY']['variation'] . ")" ?>
+                  </span></p>
+              </div>
+              <div class="col">
+                <p><span class="badge text-<?php echo ($variationCNY); ?>">
+                    <?php echo "BTC: R$" . (number_format($dados['currencies']['BTC']['buy'], 2, ',', '.')); ?>
+                    <?php echo "(" . $dados['currencies']['BTC']['variation'] . ")" ?>
                   </span></p>
               </div>
             </div>
