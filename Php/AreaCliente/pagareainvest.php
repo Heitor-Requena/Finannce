@@ -17,24 +17,24 @@ $dadosCRFB = $HGFinance->get('stock_price', array('symbol' => 'CRFB3'));
 
 //Mudar cor de acordo com a variação da cotação
 $variationDolar = ($dados['currencies']['USD']['variation'] < 0) ? 'bg-danger' : 'bg-success';
-$variationEUR = ($dados['currencies']['EUR']['variation'] < 0) ? 'bg-danger' : 'bg-success';
-$variationGBP = ($dados['currencies']['GBP']['variation'] < 0) ? 'bg-danger' : 'bg-success';
-$variationARS = ($dados['currencies']['ARS']['variation'] < 0) ? 'bg-danger' : 'bg-success';
-$variationCAD = ($dados['currencies']['CAD']['variation'] < 0) ? 'bg-danger' : 'bg-success';
-$variationAUD = ($dados['currencies']['AUD']['variation'] < 0) ? 'bg-danger' : 'bg-success';
-$variationJPY = ($dados['currencies']['JPY']['variation'] < 0) ? 'bg-danger' : 'bg-success';
-$variationCNY = ($dados['currencies']['CNY']['variation'] < 0) ? 'bg-danger' : 'bg-success';
-$variationBTC = ($dados['currencies']['BTC']['variation'] < 0) ? 'bg-danger' : 'bg-success';
+$variationEUR = ($dados['currencies']['EUR']['variation'] <= 0) ? 'bg-danger' : 'bg-success';
+$variationGBP = ($dados['currencies']['GBP']['variation'] <= 0) ? 'bg-danger' : 'bg-success';
+$variationARS = ($dados['currencies']['ARS']['variation'] <= 0) ? 'bg-danger' : 'bg-success';
+$variationCAD = ($dados['currencies']['CAD']['variation'] <= 0) ? 'bg-danger' : 'bg-success';
+$variationAUD = ($dados['currencies']['AUD']['variation'] <= 0) ? 'bg-danger' : 'bg-success';
+$variationJPY = ($dados['currencies']['JPY']['variation'] <= 0) ? 'bg-danger' : 'bg-success';
+$variationCNY = ($dados['currencies']['CNY']['variation'] <= 0) ? 'bg-danger' : 'bg-success';
+$variationBTC = ($dados['currencies']['BTC']['variation'] <= 0) ? 'bg-danger' : 'bg-success';
 
 //Mudar cor de acordo com a variação da bolsa de valores
 $variationStock = ($dados['stocks']['variation'] < 0) ? 'bg-danger' : 'bg-success';
 
 //Mudar cor de acordo com a variação da ação
-$variationEMBR = ($dadosEMBR['EMBR3']['change_percent'] <= 0) ? 'bg-danger' : 'bg-success';
-$variationITSA = ($dadosITSA['ITSA4']['change_percent'] <= 0) ? 'bg-danger' : 'bg-success';
-$variationPETR = ($dadosPETR['PETR4']['change_percent'] <= 0) ? 'bg-danger' : 'bg-success';
-$variationPSSA = ($dadosPSSA['PSSA3']['change_percent'] <= 0) ? 'bg-danger' : 'bg-success';
-$variationCRFB = ($dadosCRFB['CRFB3']['change_percent'] <= 0) ? 'bg-danger' : 'bg-success';
+$variationEMBR = ($dadosEMBR['EMBR3']['change_percent'] < 0) ? 'bg-danger' : 'bg-success';
+$variationITSA = ($dadosITSA['ITSA4']['change_percent'] < 0) ? 'bg-danger' : 'bg-success';
+$variationPETR = ($dadosPETR['PETR4']['change_percent'] < 0) ? 'bg-danger' : 'bg-success';
+$variationPSSA = ($dadosPSSA['PSSA3']['change_percent'] < 0) ? 'bg-danger' : 'bg-success';
+$variationCRFB = ($dadosCRFB['CRFB3']['change_percent'] < 0) ? 'bg-danger' : 'bg-success';
 
 
 // Verificando a autenticacao da chave
@@ -252,7 +252,7 @@ $variationCRFB = ($dadosCRFB['CRFB3']['change_percent'] <= 0) ? 'bg-danger' : 'b
       </p>
 
       <p>
-        <span class="badge badge-pill badge-<?php echo ($variationStock); ?>">
+        <span class="badge text-<?php echo ($variationStock); ?>">
           <?php echo (number_format($value['points'], 2, ',', '.')) . " BRL" ?>
           <?php echo "(" . $value['variation'] . ")" ?>
         </span>
@@ -291,7 +291,7 @@ $variationCRFB = ($dadosCRFB['CRFB3']['change_percent'] <= 0) ? 'bg-danger' : 'b
         <?php $ITSA = $dadosITSA['ITSA4']['market_cap'] ?>
         <?php echo "Market Cap: " . (number_format($ITSA, 0, '.')) . 'B' ?>
       </p>
-      <p class="badge badge-pill badge-<?php echo ($variationITSA); ?>">
+      <p class="badge text-<?php echo ($variationITSA); ?>">
         <?php $ITSA = $dadosITSA['ITSA4']['price'] ?>
         <?php echo "Preço: " . (number_format($ITSA, 2,',', '.')) . ' BRL' ?>
         <?php $ITSA = $dadosITSA['ITSA4']['change_percent'] ?>
@@ -333,7 +333,7 @@ $variationCRFB = ($dadosCRFB['CRFB3']['change_percent'] <= 0) ? 'bg-danger' : 'b
         <?php $EMBR = $dadosEMBR['EMBR3']['market_cap'] ?>
         <?php echo "Market Cap: " . (number_format($EMBR, 0, '.')) . 'B' ?>
       </p>
-      <p class="badge badge-pill badge-<?php echo ($variationEMBR); ?>">
+      <p class="badge text-<?php echo ($variationEMBR); ?>">
         <?php $EMBR = $dadosEMBR['EMBR3']['price'] ?>
         <?php echo "Preço: " . (number_format($EMBR, 2,',', '.')) . ' BRL' ?>
         <?php $EMBR = $dadosEMBR['EMBR3']['change_percent'] ?>
@@ -372,7 +372,7 @@ $variationCRFB = ($dadosCRFB['CRFB3']['change_percent'] <= 0) ? 'bg-danger' : 'b
         <?php $PETR4 = $dadosPETR['PETR4']['market_cap'] ?>
         <?php echo "Market Cap: " . (number_format($PETR4, 0, '.')) . 'B' ?>
       </p>
-      <p class="badge badge-pill badge-<?php echo ($variationPETR); ?>">
+      <p class="badge text-<?php echo ($variationPETR); ?>">
         <?php $PETR4 = $dadosPETR['PETR4']['price'] ?>
         <?php echo "Preço: " . (number_format($PETR4, 2,',', '.')) . ' BRL' ?>
         <?php $PETR4 = $dadosPETR['PETR4']['change_percent'] ?>
@@ -411,7 +411,7 @@ $variationCRFB = ($dadosCRFB['CRFB3']['change_percent'] <= 0) ? 'bg-danger' : 'b
         <?php $PSSA3 = $dadosPSSA['PSSA3']['market_cap'] ?>
         <?php echo "Market Cap: " . (number_format($PSSA3, 0, '.')) . 'B' ?>
       </p>
-      <p class="badge badge-pill badge-<?php echo ($variationPSSA); ?>">
+      <p class="badge text-<?php echo ($variationPSSA); ?>">
         <?php $PSSA3 = $dadosPSSA['PSSA3']['price'] ?>
         <?php echo "Preço: " . (number_format($PSSA3, 2,',', '.')) . ' BRL' ?>
         <?php $PSSA3 = $dadosPSSA['PSSA3']['change_percent'] ?>
@@ -450,7 +450,7 @@ $variationCRFB = ($dadosCRFB['CRFB3']['change_percent'] <= 0) ? 'bg-danger' : 'b
         <?php $CRFB3 = $dadosCRFB['CRFB3']['market_cap'] ?>
         <?php echo "Market Cap: " . (number_format($CRFB3, 0, '.')) . 'B' ?>
       </p>
-      <p class="badge badge-pill badge-<?php echo ($variationCRFB); ?>">
+      <p class="badge text-<?php echo ($variationCRFB); ?>">
         <?php $CRFB3 = $dadosCRFB['CRFB3']['price'] ?>
         <?php echo "Preço: " . (number_format($CRFB3, 2,',', '.')) . ' BRL' ?>
         <?php $CRFB3 = $dadosCRFB['CRFB3']['change_percent'] ?>
