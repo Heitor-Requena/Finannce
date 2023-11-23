@@ -80,7 +80,7 @@ $variationCRFB = ($dadosCRFB['CRFB3']['change_percent'] < 0) ? 'bg-danger' : 'bg
   <title>Area Cliente</title>
 </head>
 
-<body>
+<body onload="ConsultorPesquisa(event)">
   <?php
   session_start();
 
@@ -94,7 +94,7 @@ $variationCRFB = ($dadosCRFB['CRFB3']['change_percent'] < 0) ? 'bg-danger' : 'bg
   }
   ?>
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top bg-primary">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top bg-primary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#" id="alterarLogo"><img src="../../Img/logo branca finannce.png" alt=""
           style="height: 56px;"></a>
@@ -121,9 +121,9 @@ $variationCRFB = ($dadosCRFB['CRFB3']['change_percent'] < 0) ? 'bg-danger' : 'bg
               <a class="nav-link active" aria-current="page" href="pagArtigos.php" name="Artigos">Artigos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="pagGastos.php" name="MeusGastos"></a>
+              <a class="nav-link active" aria-current="page" href="#" name="MeusGastos"></a>
             </li>
-           <li class="nav-item">
+            <li class="nav-item">
               <a class="nav-link active fw-bold text-uppercase" aria-current="page" href="pagareainvest.php"
                 name="Home">Investimentos</i></a>
             </li>
@@ -289,11 +289,7 @@ $variationCRFB = ($dadosCRFB['CRFB3']['change_percent'] < 0) ? 'bg-danger' : 'bg
       </p>
       <p>
         <?php $ITSA = $dadosITSA['ITSA4']['market_cap'] ?>
-<<<<<<< Updated upstream
         <?php echo "Market Cap: " . (number_format($ITSA, 0, ',','.')) . 'B' ?>
-=======
-        <?php echo "Market Cap: " . (number_format($ITSA, 0, ',' , '.')) . 'B' ?>
->>>>>>> Stashed changes
       </p>
       <p class="badge text-<?php echo ($variationITSA); ?>">
         <?php $ITSA = $dadosITSA['ITSA4']['price'] ?>
@@ -335,11 +331,7 @@ $variationCRFB = ($dadosCRFB['CRFB3']['change_percent'] < 0) ? 'bg-danger' : 'bg
       </p>
       <p>
         <?php $EMBR = $dadosEMBR['EMBR3']['market_cap'] ?>
-<<<<<<< Updated upstream
         <?php echo "Market Cap: " . (number_format($EMBR, 0,',', '.')) . 'B' ?>
-=======
-        <?php echo "Market Cap: " . (number_format($EMBR, 0, ',', '.')) . 'B' ?>
->>>>>>> Stashed changes
       </p>
       <p class="badge text-<?php echo ($variationEMBR); ?>">
         <?php $EMBR = $dadosEMBR['EMBR3']['price'] ?>
@@ -378,11 +370,7 @@ $variationCRFB = ($dadosCRFB['CRFB3']['change_percent'] < 0) ? 'bg-danger' : 'bg
       </p>
       <p>
         <?php $PETR4 = $dadosPETR['PETR4']['market_cap'] ?>
-<<<<<<< Updated upstream
         <?php echo "Market Cap: " . (number_format($PETR4, 0, ',','.')) . 'B' ?>
-=======
-        <?php echo "Market Cap: " . (number_format($PETR4, 0,',', '.')) . 'B' ?>
->>>>>>> Stashed changes
       </p>
       <p class="badge text-<?php echo ($variationPETR); ?>">
         <?php $PETR4 = $dadosPETR['PETR4']['price'] ?>
@@ -421,11 +409,7 @@ $variationCRFB = ($dadosCRFB['CRFB3']['change_percent'] < 0) ? 'bg-danger' : 'bg
       </p>
       <p>
         <?php $PSSA3 = $dadosPSSA['PSSA3']['market_cap'] ?>
-<<<<<<< Updated upstream
         <?php echo "Market Cap: " . (number_format($PSSA3, 0,',', '.')) . 'B' ?>
-=======
-        <?php echo "Market Cap: " . (number_format($PSSA3, 0, ',','.')) . 'B' ?>
->>>>>>> Stashed changes
       </p>
       <p class="badge text-<?php echo ($variationPSSA); ?>">
         <?php $PSSA3 = $dadosPSSA['PSSA3']['price'] ?>
@@ -464,11 +448,7 @@ $variationCRFB = ($dadosCRFB['CRFB3']['change_percent'] < 0) ? 'bg-danger' : 'bg
       </p>
       <p>
         <?php $CRFB3 = $dadosCRFB['CRFB3']['market_cap'] ?>
-<<<<<<< Updated upstream
         <?php echo "Market Cap: " . (number_format($CRFB3, 0,',', '.')) . 'B' ?>
-=======
-        <?php echo "Market Cap: " . (number_format($CRFB3, 0, ',', '.')) . 'B' ?>
->>>>>>> Stashed changes
       </p>
       <p class="badge text-<?php echo ($variationCRFB); ?>">
         <?php $CRFB3 = $dadosCRFB['CRFB3']['price'] ?>
@@ -488,6 +468,8 @@ $variationCRFB = ($dadosCRFB['CRFB3']['change_percent'] < 0) ? 'bg-danger' : 'bg
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="../../Js/AreaCliente/AltPag.js"></script>
+    <script src="../../Js/AreaCliente/RespostaConsultores-Cliente.js"></script>
 </body>
 
 </html>
