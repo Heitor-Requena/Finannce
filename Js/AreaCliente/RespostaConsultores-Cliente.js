@@ -148,8 +148,8 @@ function ConsultorPesquisa(event) {
       alert("DEU ERRADO A CONSULTA");
     });
 
-    const idNome = document.querySelector("#Nome_Consultor")
-    idNome.value = ""
+    const idNome = document.querySelector("#Nome_Consultor");
+    idNome.value = "";
 
   return false;
 }

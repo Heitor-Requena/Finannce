@@ -50,6 +50,9 @@
               <a class="nav-link active fw-bold text-uppercase" aria-current="page" href="#" name="MeusGastos">Consultores</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="pagareainvest.php" name="Home">Investimentos</i></a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="pagFeedback.php" name="MeusGastos">FeedBack's</a>
             </li>
             <li class="nav-item">
