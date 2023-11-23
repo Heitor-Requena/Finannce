@@ -77,7 +77,7 @@ $variationCRFB = ($dadosCRFB['CRFB3']['change_percent'] < 0) ? 'bg-danger' : 'bg
   <title>Area Cliente</title>
 </head>
 
-<body onload="ConsultorPesquisa(event)">
+<body>
   <?php
   session_start();
 
