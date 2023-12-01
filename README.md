@@ -1,17 +1,17 @@
-* [Finannce](#Finannce)
-* [Objetivo](#Objetivo)
-* [Índice](#índice)
-* [Descrição do Projeto](#descrição-do-projeto)
-* [Status do Projeto](#status-do-Projeto)
-* [Funcionalidades e Demonstração da Aplicação](#funcionalidades-e-demonstração-da-aplicação)
-* [Acesso ao Projeto](#acesso-ao-projeto)
-* [Tecnologias utilizadas](#tecnologias-utilizadas)
-* [Pessoas Contribuidoras](#pessoas-contribuidoras)
-* [Pessoas Desenvolvedoras do Projeto](#pessoas-desenvolvedoras)
-* [Licença](#licença)
-* [Conclusão](#conclusão)
+<h1>Índice</h1>
 
-<h1 id="Finannce">Finannce</h1>
+* [O Finannce](#Finannce)
+* [Objetivo](#Objetivo)
+* [Tecnologias Utilizadas](#Tecnologias)
+    * [Linguagens de Programação](#Linguagens)
+    * [Bibliotecas](#Bibliotecas)
+    * [APIs](#Apis)
+    * [Ferramentas de Desenvolvimento de Software](#Fer.DesSoftware)
+    * [Documentação](#Documentação)
+    * [Manipuladores de Imagem](#Imagem)
+* [Desenvolvedores](#Desenvolvedores)
+
+<h1 id="Finannce">O Finannce</h1>
 <p>O Finannce foi desenvolvido como projeto de TCC para o curso Técnico em Informática para Internet, da Etec Lauro Gomes.</p>
 
 <h2 id="Objetivo">Objetivo</h2>
@@ -25,8 +25,8 @@ visando um melhor planejamento das compras e aproveitamento do dinheiro para que
 possam tanto pagar suas dívidas quanto economizar dinheiro para o lazer.
 </p>
 
-<h2>Tecnologias Utilizadas</h2>
-<h3>Linguagens de Programação</h3>
+<h2 id="Tecnologias">Tecnologias Utilizadas</h2>
+<h3 id="Linguagens">Linguagens de Programação</h3>
 <div align="left">
   <img src="https://cdn.simpleicons.org/html5/E34F26" height="40" alt="html5 logo"/>
   <img width="12" />
@@ -39,14 +39,14 @@ possam tanto pagar suas dívidas quanto economizar dinheiro para o lazer.
    <img src="https://cdn.simpleicons.org/mysql/4479A1" height="40" alt="mysql logo"/>
   <img width="12" />
 </div>
-<h3>Bibliotecas</h3>
+<h3 id="Bibliotecas">Bibliotecas</h3>
 <div align="left">
   <img src="https://cdn.simpleicons.org/bootstrap/7952B3" height="40" alt="bootstrap logo"/>
   <img width="12" />
   <img src="https://cdn.simpleicons.org/jquery/0769AD" height="40" alt="jquery logo"/>
   <img width="12" />
 </div>
-<h3>APIs</h3>
+<h3 id="Apis">APIs</h3>
 <div align="left">
   <img src="https://hgbrasil.com/assets/hgbrasil-dc290344068ea240f20f3fda56da9279a7091b6b2e60905acc691175167719fe.png" height="30" alt="hgbrasil logo"/>
   <img width="12" />
@@ -55,7 +55,7 @@ possam tanto pagar suas dívidas quanto economizar dinheiro para o lazer.
   <img src="https://seeklogo.com/images/G/google-developers-logo-F8BF3155AC-seeklogo.com.png" height="30" alt="googlefordevelopers logo"/>
   <img width="12" />
 </div>
-<h3>Ferramentas de Desenvolvimento de Software</h3>
+<h3 id="Fer.DesSoftware">Ferramentas de Desenvolvimento de Software</h3>
 <div align="left">
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/WampServer-logo.svg/2048px-WampServer-logo.svg.png" height="40" alt="wampserver logo"/>
   <img width="12" />
@@ -63,7 +63,7 @@ possam tanto pagar suas dívidas quanto economizar dinheiro para o lazer.
   <img width="12" />
   <img src="https://cdn.simpleicons.org/github/9500ff" height="40" alt="github logo"/>
 </div>
-<h3>Documentação</h3>
+<h3 id="Documentação">Documentação</h3>
 <div align="left">
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Microsoft_Office_PowerPoint_%282019%E2%80%93present%29.svg/512px-Microsoft_Office_PowerPoint_%282019%E2%80%93present%29.svg.png?20210821050414" height="40" alt="powerpoint logo"/>
   <img width="12" />
@@ -71,14 +71,14 @@ possam tanto pagar suas dívidas quanto economizar dinheiro para o lazer.
   <img width="12" />
   <img src="https://download.logo.wine/logo/OneDrive/OneDrive-Logo.wine.png" height="40" alt="onedrive logo"/>
 </div>
-<h3>Manipuladores de Imagem</h3>
+<h3 id="Imagem">Manipuladores de Imagem</h3>
 <div align="left">
   <img src="https://logosmarcas.net/wp-content/uploads/2020/11/Adobe-Photoshop-Logo.png" height="40" alt="photoshop logo"/>
   <img width="12" />
   <img src="https://1000logos.net/wp-content/uploads/2020/06/Illustrator-Logo.png" height="40" alt="illustrator logo"/>
 </div>
 
-<h2>Desenvolvedores</h2>
+<h2 id="Desenvolvedores">Desenvolvedores</h2>
 <div>
   <a href="https://www.linkedin.com/in/davidson-vitoriano-081668237/" target="_blank">
     <img src="https://img.shields.io/static/v1?message=Davidson&logo=linkedin&label=&color=0077B5&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="linkedin logo"/>
