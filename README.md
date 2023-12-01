@@ -10,6 +10,7 @@
     * [Documentação](#Documentação)
     * [Manipuladores de Imagem](#Imagem)
 * [Desenvolvedores](#Desenvolvedores)
+* [Vizualizar Documentação](#FinanncePDF)
 
 <h1 id="Finannce">O Finannce</h1>
 <p>O Finannce foi desenvolvido como projeto de TCC para o curso Técnico em Informática para Internet, da Etec Lauro Gomes.</p>
@@ -107,4 +108,8 @@ possam tanto pagar suas dívidas quanto economizar dinheiro para o lazer.
   <a href="https://www.linkedin.com/in/ranielly-santos-448687274/" target="_blank">
     <img src="https://img.shields.io/static/v1?message=Ranielly&logo=linkedin&label=&color=0077B5&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="linkedin logo"/>
   </a> → Web Developer + Documentação do Projeto
+</div>
+<h2 id="FinanncePDF">Vizualizar Documentação</h2>
+<div align="left">
+  <a href="./Documentação/Finannce_TCC.pdf">PDF</a>
 </div>
