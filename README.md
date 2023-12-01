@@ -13,7 +13,7 @@
 * [Vizualizar Documentação](#FinanncePDF)
 
 <h1 id="Finannce">O Finannce</h1>
-<p>O Finannce foi desenvolvido como projeto de TCC para o curso Técnico em Informática para Internet, da Etec Lauro Gomes.</p>
+<p>O Finannce foi desenvolvido em 2023 como projeto de TCC para o curso Técnico em Informática para Internet, da Etec Lauro Gomes.</p>
 
 <h2 id="Objetivo">Objetivo</h2>
 <p>
