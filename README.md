@@ -98,7 +98,7 @@ possam tanto pagar suas dívidas quanto economizar dinheiro para o lazer.
   </a> → Web Master
   <br>
   <a href="https://www.linkedin.com/in/joaovtsantos/" target="_blank">
-    <img src="https://img.shields.io/static/v1?message=João_Vítor&logo=linkedin&label=&color=0077B5&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="linkedin logo"/>
+    <img src="https://img.shields.io/static/v1?message=Joao_Vitor&logo=linkedin&label=&color=0077B5&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="linkedin logo"/>
   </a> → Web Master
   <br>
   <a href="https://www.linkedin.com/in/matheus-cerqueira-motta-9785b0279/" target="_blank">
